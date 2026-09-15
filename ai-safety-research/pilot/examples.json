@@ -1,0 +1,492 @@
+[
+  {
+    "id": "dev-01",
+    "family": "sum_product_difference",
+    "expression": "(12+7)*4-9",
+    "answer": 67,
+    "traces": {
+      "valid_correct": {
+        "expressions": [
+          "(12+7)*4-9",
+          "19*4-9",
+          "76-9",
+          "67"
+        ],
+        "errors": [],
+        "trace_valid": true,
+        "first_error": 0,
+        "proposed_answer": 67
+      },
+      "invalid_correct": {
+        "expressions": [
+          "(12+7)*4-9",
+          "20*4-9",
+          "76-9",
+          "67"
+        ],
+        "errors": [
+          1,
+          2
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 67
+      },
+      "invalid_wrong": {
+        "expressions": [
+          "(12+7)*4-9",
+          "20*4-9",
+          "80-9",
+          "71"
+        ],
+        "errors": [
+          1
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 71
+      }
+    }
+  },
+  {
+    "id": "dev-02",
+    "family": "sum_product_difference",
+    "expression": "(23+8)*3-17",
+    "answer": 76,
+    "traces": {
+      "valid_correct": {
+        "expressions": [
+          "(23+8)*3-17",
+          "31*3-17",
+          "93-17",
+          "76"
+        ],
+        "errors": [],
+        "trace_valid": true,
+        "first_error": 0,
+        "proposed_answer": 76
+      },
+      "invalid_correct": {
+        "expressions": [
+          "(23+8)*3-17",
+          "32*3-17",
+          "93-17",
+          "76"
+        ],
+        "errors": [
+          1,
+          2
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 76
+      },
+      "invalid_wrong": {
+        "expressions": [
+          "(23+8)*3-17",
+          "32*3-17",
+          "96-17",
+          "79"
+        ],
+        "errors": [
+          1
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 79
+      }
+    }
+  },
+  {
+    "id": "dev-03",
+    "family": "sum_product_difference",
+    "expression": "(17+26)*5-38",
+    "answer": 177,
+    "traces": {
+      "valid_correct": {
+        "expressions": [
+          "(17+26)*5-38",
+          "43*5-38",
+          "215-38",
+          "177"
+        ],
+        "errors": [],
+        "trace_valid": true,
+        "first_error": 0,
+        "proposed_answer": 177
+      },
+      "invalid_correct": {
+        "expressions": [
+          "(17+26)*5-38",
+          "44*5-38",
+          "215-38",
+          "177"
+        ],
+        "errors": [
+          1,
+          2
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 177
+      },
+      "invalid_wrong": {
+        "expressions": [
+          "(17+26)*5-38",
+          "44*5-38",
+          "220-38",
+          "182"
+        ],
+        "errors": [
+          1
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 182
+      }
+    }
+  },
+  {
+    "id": "dev-04",
+    "family": "sum_product_difference",
+    "expression": "(48+19)*7-64",
+    "answer": 405,
+    "traces": {
+      "valid_correct": {
+        "expressions": [
+          "(48+19)*7-64",
+          "67*7-64",
+          "469-64",
+          "405"
+        ],
+        "errors": [],
+        "trace_valid": true,
+        "first_error": 0,
+        "proposed_answer": 405
+      },
+      "invalid_correct": {
+        "expressions": [
+          "(48+19)*7-64",
+          "68*7-64",
+          "469-64",
+          "405"
+        ],
+        "errors": [
+          1,
+          2
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 405
+      },
+      "invalid_wrong": {
+        "expressions": [
+          "(48+19)*7-64",
+          "68*7-64",
+          "476-64",
+          "412"
+        ],
+        "errors": [
+          1
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 412
+      }
+    }
+  },
+  {
+    "id": "dev-05",
+    "family": "sum_product_difference",
+    "expression": "(125+37)*6-89",
+    "answer": 883,
+    "traces": {
+      "valid_correct": {
+        "expressions": [
+          "(125+37)*6-89",
+          "162*6-89",
+          "972-89",
+          "883"
+        ],
+        "errors": [],
+        "trace_valid": true,
+        "first_error": 0,
+        "proposed_answer": 883
+      },
+      "invalid_correct": {
+        "expressions": [
+          "(125+37)*6-89",
+          "163*6-89",
+          "972-89",
+          "883"
+        ],
+        "errors": [
+          1,
+          2
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 883
+      },
+      "invalid_wrong": {
+        "expressions": [
+          "(125+37)*6-89",
+          "163*6-89",
+          "978-89",
+          "889"
+        ],
+        "errors": [
+          1
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 889
+      }
+    }
+  },
+  {
+    "id": "dev-06",
+    "family": "sum_of_products",
+    "expression": "13*7+4*9",
+    "answer": 127,
+    "traces": {
+      "valid_correct": {
+        "expressions": [
+          "13*7+4*9",
+          "91+4*9",
+          "91+36",
+          "127"
+        ],
+        "errors": [],
+        "trace_valid": true,
+        "first_error": 0,
+        "proposed_answer": 127
+      },
+      "invalid_correct": {
+        "expressions": [
+          "13*7+4*9",
+          "92+4*9",
+          "91+36",
+          "127"
+        ],
+        "errors": [
+          1,
+          2
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 127
+      },
+      "invalid_wrong": {
+        "expressions": [
+          "13*7+4*9",
+          "92+4*9",
+          "92+36",
+          "128"
+        ],
+        "errors": [
+          1
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 128
+      }
+    }
+  },
+  {
+    "id": "dev-07",
+    "family": "sum_of_products",
+    "expression": "24*6+8*7",
+    "answer": 200,
+    "traces": {
+      "valid_correct": {
+        "expressions": [
+          "24*6+8*7",
+          "144+8*7",
+          "144+56",
+          "200"
+        ],
+        "errors": [],
+        "trace_valid": true,
+        "first_error": 0,
+        "proposed_answer": 200
+      },
+      "invalid_correct": {
+        "expressions": [
+          "24*6+8*7",
+          "145+8*7",
+          "144+56",
+          "200"
+        ],
+        "errors": [
+          1,
+          2
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 200
+      },
+      "invalid_wrong": {
+        "expressions": [
+          "24*6+8*7",
+          "145+8*7",
+          "145+56",
+          "201"
+        ],
+        "errors": [
+          1
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 201
+      }
+    }
+  },
+  {
+    "id": "dev-08",
+    "family": "sum_of_products",
+    "expression": "37*9+12*4",
+    "answer": 381,
+    "traces": {
+      "valid_correct": {
+        "expressions": [
+          "37*9+12*4",
+          "333+12*4",
+          "333+48",
+          "381"
+        ],
+        "errors": [],
+        "trace_valid": true,
+        "first_error": 0,
+        "proposed_answer": 381
+      },
+      "invalid_correct": {
+        "expressions": [
+          "37*9+12*4",
+          "334+12*4",
+          "333+48",
+          "381"
+        ],
+        "errors": [
+          1,
+          2
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 381
+      },
+      "invalid_wrong": {
+        "expressions": [
+          "37*9+12*4",
+          "334+12*4",
+          "334+48",
+          "382"
+        ],
+        "errors": [
+          1
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 382
+      }
+    }
+  },
+  {
+    "id": "dev-09",
+    "family": "sum_of_products",
+    "expression": "56*8+17*6",
+    "answer": 550,
+    "traces": {
+      "valid_correct": {
+        "expressions": [
+          "56*8+17*6",
+          "448+17*6",
+          "448+102",
+          "550"
+        ],
+        "errors": [],
+        "trace_valid": true,
+        "first_error": 0,
+        "proposed_answer": 550
+      },
+      "invalid_correct": {
+        "expressions": [
+          "56*8+17*6",
+          "449+17*6",
+          "448+102",
+          "550"
+        ],
+        "errors": [
+          1,
+          2
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 550
+      },
+      "invalid_wrong": {
+        "expressions": [
+          "56*8+17*6",
+          "449+17*6",
+          "449+102",
+          "551"
+        ],
+        "errors": [
+          1
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 551
+      }
+    }
+  },
+  {
+    "id": "dev-10",
+    "family": "sum_of_products",
+    "expression": "123*7+29*8",
+    "answer": 1093,
+    "traces": {
+      "valid_correct": {
+        "expressions": [
+          "123*7+29*8",
+          "861+29*8",
+          "861+232",
+          "1093"
+        ],
+        "errors": [],
+        "trace_valid": true,
+        "first_error": 0,
+        "proposed_answer": 1093
+      },
+      "invalid_correct": {
+        "expressions": [
+          "123*7+29*8",
+          "862+29*8",
+          "861+232",
+          "1093"
+        ],
+        "errors": [
+          1,
+          2
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 1093
+      },
+      "invalid_wrong": {
+        "expressions": [
+          "123*7+29*8",
+          "862+29*8",
+          "862+232",
+          "1094"
+        ],
+        "errors": [
+          1
+        ],
+        "trace_valid": false,
+        "first_error": 1,
+        "proposed_answer": 1094
+      }
+    }
+  }
+]

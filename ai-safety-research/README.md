@@ -4,6 +4,8 @@ Literature notes for an independent research project on sycophancy, correction, 
 
 ## Contents
 
+- [Research state](RESEARCH_STATE.md): current status, result locations, and how to continue from home.
+- [Local pilot](pilot/README.md): checked development examples, scoring, local inference, and reproducible run instructions.
 - [Novelty audit](NOVELTY_AUDIT.md): September 15 follow-up search, newly identified overlap, and a bounded pilot recommendation. Read this before adopting the earlier research direction.
 - [Detailed paper summaries](PAPER_SUMMARIES.md): nine papers and one supplementary repository manuscript, including methods, findings, limitations, and project relevance.
 - [Research implications and reading order](RESEARCH_DIRECTION.md): established findings, a candidate extension, evaluation design, and practical constraints.
