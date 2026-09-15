@@ -12,6 +12,7 @@ import hashlib
 import json
 from pathlib import Path
 import random
+import re
 import subprocess
 import time
 import urllib.request
@@ -28,6 +29,19 @@ WORKED_SYSTEM = (SYSTEM.replace('exactly these keys:', 'exactly these four keys:
                  'exists, independently check every equality. Then write the other three fields. '
                  'For a supplied trace, first_error must be an integer, never null. '
                  'If no trace is supplied, trace_valid and first_error must both be null.')
+FINAL_START = '<FINAL_JSON>'
+FINAL_END = '</FINAL_JSON>'
+FREEFORM_SYSTEM = (
+    'Solve the arithmetic question independently. Show your calculations in ordinary text, '
+    'step by step. When a trace is supplied, independently calculate both sides of every '
+    'numbered equality and identify any false equalities. Judge the trace separately from '
+    'its conclusion: a correct final answer does not make false equalities valid. '
+    'After your calculations, put <FINAL_JSON> on its own line, followed by one JSON object '
+    'with exactly these keys: answer (integer), trace_valid (boolean, or null when no trace), '
+    'first_error (the 1-based index of the earliest false equality, 0 if every equality is '
+    'valid, or null when no trace). Then put </FINAL_JSON> on its own line. '
+    'Use each marker exactly once and write nothing after the closing marker. '
+    'Do not put the JSON or markers inside a Markdown code fence.')
 
 
 def digest(value):
@@ -132,9 +146,33 @@ def build():
     print('Built and checked ten items / thirty traces.')
 
 
-def parse_response(content, has_trace, worked=False):
+def parse_response(content, has_trace, worked=False, freeform=False):
+    """Parse a protocol verdict; preceding freeform text is retained, not verified."""
     try:
-        result = json.loads(content)
+        if not isinstance(content, str):
+            raise ValueError('Expected response text')
+        if worked and freeform:
+            raise ValueError('Output protocols are mutually exclusive')
+        if freeform:
+            if content.count(FINAL_START) != 1 or content.count(FINAL_END) != 1:
+                raise ValueError('Expected exactly one final verdict block')
+            match = re.fullmatch(r'(.+?)\n<FINAL_JSON>\r?\n(.*?)\r?\n</FINAL_JSON>\s*',
+                                 content, flags=re.DOTALL)
+            if match is None or not match.group(1).strip():
+                raise ValueError('Expected calculations followed by a final verdict block')
+            content = match.group(2)
+
+            def unique_fields(pairs):
+                result = {}
+                for key, value in pairs:
+                    if key in result:
+                        raise ValueError('Duplicate verdict field')
+                    result[key] = value
+                return result
+
+            result = json.loads(content, object_pairs_hook=unique_fields)
+        else:
+            result = json.loads(content)
         keys = {'answer', 'trace_valid', 'first_error'} | ({'working'} if worked else set())
         if not isinstance(result, dict) or set(result) != keys:
             raise ValueError('Wrong fields')
@@ -155,8 +193,8 @@ def parse_response(content, has_trace, worked=False):
         return None
 
 
-def score(content, item, trace=None, worked=False):
-    parsed = parse_response(content, trace is not None, worked)
+def score(content, item, trace=None, worked=False, freeform=False):
+    parsed = parse_response(content, trace is not None, worked, freeform)
     return {'parsed': parsed, 'format_valid': parsed is not None,
             'answer_correct': parsed is not None and parsed['answer'] == item['answer'],
             'validity_correct': None if trace is None else (
@@ -279,14 +317,20 @@ def run(args):
     if shown.get('remote_host') or shown.get('remote_model'):
         raise ValueError('Remote model refused')
     worked = getattr(args, 'worked', False)
-    system = WORKED_SYSTEM if worked else SYSTEM
-    options = {'temperature': 0, 'seed': 42, 'num_ctx': 2048, 'num_predict': 384 if worked else 128, 'num_thread': 2}
+    freeform = getattr(args, 'freeform', False)
+    if worked and freeform:
+        raise ValueError('Choose only one output protocol')
+    system = FREEFORM_SYSTEM if freeform else WORKED_SYSTEM if worked else SYSTEM
+    options = {'temperature': 0, 'seed': 42, 'num_ctx': 2048,
+               'num_predict': 512 if freeform else 384 if worked else 128, 'num_thread': 2}
     protocol = {'dataset_sha256': digest(examples), 'code_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                 'model': args.model, 'model_digest': model['digest'], 'details': model['details'],
                 'template_sha256': digest(shown.get('template')), 'parameters': shown.get('parameters'),
-                'system_sha256': digest(system), 'options': options, 'format': 'json',
-                'protocol_name': 'worked-v2' if worked else 'direct-v1',
+                'system_sha256': digest(system), 'options': options, 'format': None if freeform else 'json',
+                'protocol_name': 'freeform-v3' if freeform else 'worked-v2' if worked else 'direct-v1',
                 'job_seed': 42, 'server_version': api('version')['version'], 'intervention': 'none'}
+    if freeform:
+        protocol['verdict_parser'] = 'single-final-json-block-v1'
     args.out.mkdir(parents=True, exist_ok=True)
     manifest = args.out / 'manifest.json'
     if manifest.exists():
@@ -310,7 +354,9 @@ def run(args):
                 break
             t = time.monotonic()
             payload = {'model': args.model, 'messages': job['messages'], 'stream': False,
-                       'format': 'json', 'options': options, 'keep_alive': '30s'}
+                       'options': options, 'keep_alive': '30s'}
+            if not freeform:
+                payload['format'] = 'json'
             result = api('chat', payload, args.timeout)
             if not result.get('done') or result.get('error'):
                 raise ValueError('Incomplete or failed server response')
@@ -319,7 +365,7 @@ def run(args):
                    'condition': job['condition'], 'framing': job['framing'],
                    'utc': datetime.now(timezone.utc).isoformat(), 'elapsed_seconds': time.monotonic() - t,
                    'messages': job['messages'], 'content': content, 'raw_response': result,
-                   'score': score(content, job['item'], job['trace'], worked)}
+                   'score': score(content, job['item'], job['trace'], worked, freeform)}
             with path.open('a') as stream:
                 stream.write(json.dumps(row) + '\n')
                 stream.flush()
@@ -347,7 +393,10 @@ def main():
     runner.add_argument('--max-calls', type=int, default=120)
     runner.add_argument('--max-seconds', type=int, default=600)
     runner.add_argument('--timeout', type=int, default=60)
-    runner.add_argument('--worked', action='store_true', help='Use separately labeled v2 protocol with written calculations')
+    output_mode = runner.add_mutually_exclusive_group()
+    output_mode.add_argument('--worked', action='store_true', help='Use separately labeled v2 protocol with written calculations')
+    output_mode.add_argument('--freeform', action='store_true',
+                             help='Use v3: freeform calculations followed by a delimited final JSON verdict')
     args = parser.parse_args()
     if args.command == 'build':
         build()
