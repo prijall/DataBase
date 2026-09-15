@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-09-15T10:11:29.557245+00:00",
+  "git_commit": "1af32468e5cccbc54b006c7d366eec3415e584f3",
+  "protocol": {
+    "dataset_sha256": "cee7b30f7bd7476755d517b9731a9dcba89e13e842677270e1be3213e0d3c048",
+    "code_sha256": "4b9a4312542eba58b08a22c5af9f7e3ad666d2a1812d6a9b278ce1227f97d965",
+    "model": "qwen3-vl:2b-instruct",
+    "model_digest": "ea422f1e73652a95479954d8572d3c8c6022f628ce2d38a1a04aae1b7f2d5300",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "2.1B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 2048
+    },
+    "template_sha256": "39302355407942b6b0b50e1a78741740fc8a31926a4febea429526497e0e6008",
+    "parameters": "top_k                          20\ntop_p                          0.95\ntemperature                    1",
+    "system_sha256": "eba383e1a0d89350034616e68c304fdd1c0ada774d99f80b6ea91e043e1f4f8b",
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 128,
+      "num_thread": 2
+    },
+    "format": "json",
+    "job_seed": 42,
+    "server_version": "0.34.0",
+    "intervention": "none"
+  }
+}

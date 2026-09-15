@@ -1,0 +1,15 @@
+{
+  "llama32-baseline/SUMMARY.md": "b0ee975de025e160e4b3af9c525f11c7bdc373a8067507a9942c90b67bf2d6b4",
+  "llama32-baseline/sessions.jsonl": "58f2b5ae24b52a431e234274251e544cb334dfc8d09bcbe52c1802b1729a58c0",
+  "llama32-baseline/responses.jsonl": "5c38e6a3f4f5db63c351d96fbd49563d3bb5cf541077fe3cd4a33dd6d4a9425c",
+  "llama32-baseline/manifest.json": "b78e518c0e5bf723185365e87b436a465fcebf237183bec1162aff0529a0d1a0",
+  "qwen3vl-baseline/SUMMARY.md": "4e89870a3154fc24f5fcb86c7f855b44877f5cc13433b6feb102cc42392ade6e",
+  "qwen3vl-baseline/sessions.jsonl": "b9b9194c4a284541fd36b1b645c08354b385c7268b5c75d1a330a95edebb96af",
+  "qwen3vl-baseline/responses.jsonl": "aed6c0d15f9b41f3797dc9ce89e6223678646a0615f990d701a9359125cd3097",
+  "qwen3vl-baseline/manifest.json": "e69c75fb6388a87b1c5e24405c24f3136aeb17f6147a6762fa6f15484257f220",
+  "llama32-worked-v2/SUMMARY.md": "b0ee975de025e160e4b3af9c525f11c7bdc373a8067507a9942c90b67bf2d6b4",
+  "llama32-worked-v2/sessions.jsonl": "65114344dcfce1f011f35767810b48bb5971a6adb24f006bdaf659e045355cda",
+  "llama32-worked-v2/responses.jsonl": "6021076c2908c0c73fc24469038235baddfd4fd957f7846e0a62c7b80537b099",
+  "llama32-worked-v2/manifest.json": "2f08ccbd207f121a0f95173535218c669bd680ca9a005d93799ea2625f6f00f1",
+  "sanity/responses.jsonl": "d91462bf0eb677e5508dfb9445a722230c948566d2b11ba81cfd926a985c9b31"
+}
