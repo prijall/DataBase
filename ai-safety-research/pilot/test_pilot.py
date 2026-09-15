@@ -1,9 +1,13 @@
 """Checks for ground-truth validity, strict scoring, and frozen conversations."""
 
 import json
+import argparse
+import contextlib
+import io
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import pilot
 
@@ -25,6 +29,10 @@ class PilotTests(unittest.TestCase):
             self.assertEqual(item['traces']['invalid_correct']['errors'], [1, 2])
             self.assertEqual(item['traces']['invalid_wrong']['errors'], [1])
 
+    def test_independently_calculated_answers(self):
+        self.assertEqual([x['answer'] for x in pilot.make_examples()],
+                         [67, 76, 177, 405, 883, 127, 200, 381, 550, 1093])
+
     def test_checker_catches_corrupted_gold(self):
         examples = pilot.make_examples()
         examples[0]['traces']['invalid_correct']['first_error'] = 0
@@ -37,6 +45,12 @@ class PilotTests(unittest.TestCase):
         result = pilot.score(response, item, item['traces']['invalid_correct'])
         self.assertTrue(result['answer_correct'])
         self.assertFalse(result['validity_correct'])
+
+    def test_worked_protocol_is_scored_separately(self):
+        content = json.dumps({'working': '12 + 7 = 19; 19 * 4 = 76; 76 - 9 = 67.',
+                              'answer': 67, 'trace_valid': None, 'first_error': None})
+        self.assertIsNone(pilot.parse_response(content, False))
+        self.assertEqual(pilot.parse_response(content, False, worked=True)['answer'], 67)
 
     def test_malformed_responses_fail_without_disappearing(self):
         item = pilot.make_examples()[0]
@@ -70,6 +84,38 @@ class PilotTests(unittest.TestCase):
             path.write_text('{"id":"a"}\n{"id":"a"}\n')
             with self.assertRaises(ValueError):
                 pilot.load_records(path)
+
+    def test_resume_preserves_calls_and_rejects_changed_protocol(self):
+        calls = []
+
+        def fake_api(path, payload=None, timeout=30):
+            if path == 'tags':
+                return {'models': [{'name': 'test:local', 'digest': 'fixed', 'details': {}}]}
+            if path == 'show':
+                return {'template': 'fixed'}
+            if path == 'version':
+                return {'version': 'test'}
+            self.assertEqual(path, 'chat')
+            calls.append(payload['messages'])
+            return {'done': True, 'message': {'content': json.dumps(
+                {'answer': 0, 'trace_valid': None, 'first_error': None})}}
+
+        with tempfile.TemporaryDirectory() as directory, patch.object(pilot, 'api', fake_api), contextlib.redirect_stdout(io.StringIO()):
+            args = argparse.Namespace(model='test:local', out=Path(directory), max_calls=2,
+                                      max_seconds=120, timeout=1)
+            pilot.run(args)
+            originals = (args.out / 'responses.jsonl').read_text()
+            args.max_calls = 120
+            pilot.run(args)
+            self.assertEqual(len(calls), 120)
+            self.assertTrue((args.out / 'responses.jsonl').read_text().startswith(originals))
+            self.assertEqual(len(pilot.load_records(args.out / 'responses.jsonl')), 120)
+            manifest = args.out / 'manifest.json'
+            changed = json.loads(manifest.read_text())
+            changed['protocol']['job_seed'] = 99
+            manifest.write_text(json.dumps(changed))
+            with self.assertRaises(ValueError):
+                pilot.run(args)
 
 
 if __name__ == '__main__':
