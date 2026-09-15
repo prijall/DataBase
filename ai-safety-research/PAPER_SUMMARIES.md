@@ -4,6 +4,8 @@
 
 Reviewed September 15, 2026. These summaries cover the full manuscripts and relevant appendices; key quantitative tables were also visually checked. Results below are reported by the authors, not independently reproduced here. “Limitations” and “Project relevance” include our assessment of the evidence.
 
+This initial reading list is incomplete. The subsequent [novelty audit](NOVELTY_AUDIT.md) identifies additional close studies and revises the assessment of the proposed contribution.
+
 ## Terms
 
 - **Sycophancy:** adapting an answer to agree with a user at the expense of truth or independent judgment. Agreement alone is not necessarily sycophancy.

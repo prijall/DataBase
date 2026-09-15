@@ -4,6 +4,8 @@
 
 Status: proposed research direction, not a verified novelty claim or completed experiment.
 
+**September 15 follow-up:** The [novelty audit](NOVELTY_AUDIT.md) identifies additional overlap in evidence-based updating, persuasive reasoning, and verifier steering. It supersedes the novelty assessment and immediate priorities below. Proceed only with a bounded diagnostic pilot; the broad question is already covered and the narrower contribution remains unverified.
+
 ## Main conclusion
 
 Reducing sycophancy while preserving correct updates is an established research problem. A contribution needs to go beyond showing that anti-sycophancy can cause stubbornness. The supporting sources and their limitations are documented in the [paper summaries](PAPER_SUMMARIES.md).
