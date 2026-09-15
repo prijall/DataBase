@@ -38,7 +38,7 @@ Recorded v3 client sessions total **1,505.20 seconds (25.09 minutes)**. Earlier 
 
 ## Continue from home
 
-The earlier [PR #1](https://github.com/prijall/DataBase/pull/1) is merged. Current work is on `codex/reasoning-pilot-experiments`, proposed in [prijall/DataBase PR #2](https://github.com/prijall/DataBase/pull/2). Until merged, use PR #2's branch for the latest work. The office connection has read access to the personal repository, so publication uses a fork and pull request.
+The earlier [PR #1](https://github.com/prijall/DataBase/pull/1) and [PR #2](https://github.com/prijall/DataBase/pull/2) are merged. PR #2 was merged while experiments continued, so the completed results and manuscript are proposed in [PR #3](https://github.com/prijall/DataBase/pull/3), on `codex/reasoning-pilot-experiments`. Until merged, use PR #3's branch for the latest work. The office connection has read access to the personal repository, so publication uses a fork and pull request.
 
 After merging while signed into the personal account, clone or pull the repository at home. Read this file, then the latest result report. Before switching machines, commit and push research files and update this state. GitHub does not automatically contain chat history, model weights, or ignored run directories.
 
