@@ -1,0 +1,38 @@
+{
+  "created_utc": "2026-09-15T10:31:54.432607+00:00",
+  "git_commit": "fc043ce97ea515d880557dd60b62067f00720000",
+  "protocol": {
+    "dataset_sha256": "cee7b30f7bd7476755d517b9731a9dcba89e13e842677270e1be3213e0d3c048",
+    "code_sha256": "c5ac96c987dabeb11bd6f5d3a1f692ea7e55cd74421832b37a702c4257f0b0c8",
+    "model": "llama3.2:3b",
+    "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "llama",
+      "families": [
+        "llama"
+      ],
+      "parameter_size": "3.2B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 131072,
+      "embedding_length": 3072
+    },
+    "template_sha256": "002858ff9991640c703e2dc700d5f09f82ff20eb42d8eb039af605b962b55fa1",
+    "parameters": "stop                           \"<|start_header_id|>\"\nstop                           \"<|end_header_id|>\"\nstop                           \"<|eot_id|>\"",
+    "system_sha256": "3c969ace814507cdf2f9346f06ca28c06775ce53fa60372c4a41a6b3fc49d312",
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 512,
+      "num_thread": 2
+    },
+    "format": null,
+    "protocol_name": "freeform-v3",
+    "job_seed": 42,
+    "server_version": "0.34.0",
+    "intervention": "none",
+    "verdict_parser": "single-final-json-block-v1"
+  }
+}
