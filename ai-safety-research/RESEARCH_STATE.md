@@ -21,7 +21,7 @@ The pilot implementation passed **eleven regression tests** and all arithmetic-l
 
 Read the [protocol screen report and raw results](pilot/results/2026-09-15-protocol-screen/README.md). Both models solved one control problem correctly with ordinary worked reasoning, so the failure cannot be generalized to all arithmetic capability. Allowing a `working` JSON field did not fix the issue. No activation-steering experiment has run.
 
-Recorded client execution totaled about 85 seconds, excluding idle periods and development. No research process or automation is left running.
+Those earlier calls recorded about 85 seconds of client execution, excluding idle periods and development. The separately frozen [freeform-v3 protocol](pilot/PROTOCOL_V3.md) is now running. Llama passed the ten-question initial gate with ten correct, parseable answers; its remaining baseline calls are in progress. This interim state will be replaced with final archived counts after execution.
 
 ## Constraints and separation
 
@@ -32,10 +32,10 @@ Recorded client execution totaled about 85 seconds, excluding idle periods and d
 
 ## Continue from home
 
-The working branch is `codex/ai-safety-reading-notes`; additions are proposed in [prijall/DataBase PR #1](https://github.com/prijall/DataBase/pull/1). Until merged, use the PR's branch to see the latest work. The office connection has read access to the personal repository, so publication uses a fork and pull request.
+The earlier [PR #1](https://github.com/prijall/DataBase/pull/1) is merged. Current work is on `codex/reasoning-pilot-experiments`, proposed in [prijall/DataBase PR #2](https://github.com/prijall/DataBase/pull/2). Until merged, use PR #2's branch for the latest work. The office connection has read access to the personal repository, so publication uses a fork and pull request.
 
 After merging while signed into the personal account, clone or pull the repository at home. Read this file, then the latest result report. Before switching machines, commit and push research files and update this state. GitHub does not automatically contain chat history, model weights, or ignored run directories.
 
 ## Next decision
 
-The next engineering task is a separately versioned protocol allowing ordinary worked reasoning followed by a delimited machine-readable verdict. Validate it on simple controls before another suitability slice. The current initial-correct cohort is empty, so pressure-induced errors cannot be estimated. Inspect [the ten examples](pilot/EXAMPLES.md), then revise error-position and error-count confounds before building steering or freezing a test set. Continue the literature checks listed in the audit before claiming novelty.
+Complete and archive v3 using its frozen gates. The new Llama initial-correct cohort is full and its naturally wrong cohort is empty, so natural correction acceptance is not estimable for that run. Inspect [the ten examples](pilot/EXAMPLES.md), then revise error-position and error-count confounds before building steering or freezing a test set. Continue the literature checks listed in the audit before claiming novelty. The [paper outline](PAPER_OUTLINE.md) maps manuscript sections to evidence and outstanding work.
