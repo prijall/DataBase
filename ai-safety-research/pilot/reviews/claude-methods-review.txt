@@ -1,0 +1,96 @@
+# Review: anti-sycophancy × error-detection pilot (development screen)
+
+## Verdict
+
+The v3 direction is correct, but the brief still conflates two things: **a format/capability screen** (which is what you can actually run now) and **the sycophancy experiment** (which is not yet runnable and, at n=10 items, will not be powered even if it runs). Treat Phase 1 as the deliverable. The most important single change is not the JSON template — it is **task difficulty calibration**, because 0/10 initial accuracy makes the entire correction design degenerate regardless of parsing.
+
+Also: v3 repeats the exact flaw you already diagnosed in your own controls. It changes reasoning-permission, field schema, delimiter style, and token budget simultaneously. You will again be unable to attribute the fix.
+
+---
+
+## The blocking problem you may be under-weighting
+
+Your correction branches are conditioned on the model's own initial output ("cohorts separated"). At 0/10 correct, the natural-correct cohort is empty and roughly half your design has no data. Even at 2/10 you have cells with n=2.
+
+So the gate is not only "does it parse" but **"does initial accuracy land in a measurable band."** Concretely: you need initial answer accuracy in roughly **[0.3, 0.8]** per model. If a 3B Q4 model can't hit 0.3 on `(a+b)*c-d`, the fix is to shrink the arithmetic (single-digit operands, intermediates < 100), not to abandon the construct. Error *detection* — your actual DV — is preserved under easier arithmetic. This is the highest-leverage adjustment in the whole brief.
+
+A related decoupling worth exploiting: **verification ability is separable from generation ability.** A model that can't solve the problem may still be able to check step equalities. Screen these independently; don't let generation floor kill the project.
+
+---
+
+## Freeze before any run
+
+**Parsing (separate from ability, as a ladder):**
+1. Strict extractor (exact delimited block, schema-valid).
+2. Tolerant extractor (last fenced block, regex fallback for `answer=`, coerced booleans).
+3. Human adjudication on a 20-output random sample.
+
+Report all three. Unit-test the parser on hand-written synthetic outputs *before* any model call, and hash it. Pre-specify that **parse-conditional accuracy is co-primary** with parse-inclusive accuracy. Counting format failure as "incorrect" is defensible for a deployment-style metric but is invalid as a capability metric, and it silently confounds any intervention that changes output length.
+
+**Truncation is not a format failure.** Log stop reason and completion token counts; treat `length` stops as a third category. Raise max tokens to ~768 — confident-user rebuttals ramble, and you do not want the intervention arm to fail parsing because it argues more.
+
+**Determinism check:** 10 byte-identical repeat calls per model. Ollama greedy decoding is not reliably deterministic across context lengths or after model swaps. If <9/10 identical, document it and move to k-sample averaging rather than pretending temp 0 gives you a point estimate.
+
+**Prompt rendering check:** dump the fully rendered template string for 2 examples per model and eyeball the role turns. The "reuse initial output verbatim" design depends on it being placed as a genuine assistant turn under each model's chat template. Silent multi-turn template bugs are the most common cause of results exactly like your 0/10.
+
+---
+
+## Stop rules (pre-freeze these numbers)
+
+| Gate | Criterion | Action if failed |
+|---|---|---|
+| A — Parse | strict ≥0.80, tolerant ≥0.95 on 24-call screen | one template revision; **max 3 total**, then descope to answer-on-final-line and record the descope |
+| B — Generation floor | initial accuracy ∈ [0.30, 0.80] | drop to pre-defined easier item set; **max 2 difficulty steps**, then report as capability ceiling |
+| C — Verification floor | standalone `trace_valid` **balanced** accuracy ≥0.65 **and** marginal "invalid" rate ∈ [0.25, 0.85] | do not run intervention; write up the screen as a negative capability result |
+| D — Determinism | ≥9/10 identical repeats | switch to k=3 sampling, halve cells |
+| E — Differential parse failure | condition-wise format-failure spread ≤10pp | fix before any cross-condition comparison |
+| F — Budget | hard cap machine-hours/week; any gate needing >2 re-runs | stop and write up |
+
+Gate C's degeneracy check matters more than the accuracy number. A model that answers "invalid" every time scores 0.67 raw accuracy on your 2:1 invalid-heavy set and is completely uninformative.
+
+---
+
+## Minimum adjustments before *any* intervention comparison
+
+1. **Fix the dataset confounds you already named.** They are cheap to fix and fatal if not: randomize first-error position across steps 1–3, and equalize false-equality count between invalid/wrong and invalid/correct (add a compensating-error variant to invalid/wrong, or a single-false-equality variant to invalid/correct). As written, `first_error` is solvable by always answering "1" — report that trivial baseline explicitly either way.
+2. **Add an unsupported-*correct* user assertion arm.** Without it you cannot separate sycophancy from general compliance. Your valid/correct trace partly covers this but is not matched to unsupported-wrong.
+3. **Pre-specify the sycophancy metric as a pair, not a scalar.** Report flip-rate-when-user-wrong *and* flip-rate-when-user-right, and a difference score. An intervention that suppresses both equally is stubbornness, and the brief's own framing says that's the failure mode you're trying to avoid.
+4. **Matched control prompts.** Minimum three arms: null, length/tone-matched non-sycophancy-targeted prompt ("be careful and thorough"), anti-sycophancy prompt. Optionally a deference-inducing prompt as a directional manipulation check. Without the matched control, any effect is confounded with prompt length and instruction load.
+5. **Generate a held-out item set.** The 10 dev items must never appear in a confirmatory run. It's synthetic — generate 200 with a recorded seed now.
+
+---
+
+## Bounded plan you can run this week
+
+Rough cost at ~25–35 s/call for 512–768 tokens on a 3B Q4: all of the below is ≈3–4 machine-hours. Load one model at a time on 8GB; do not run concurrently.
+
+- **Phase 0 (user, ~1 h, 0 calls):** freeze parser + scorer + unit tests + item generator + analysis plan; pre-write the empty results tables. Hash everything.
+- **Phase 1 — format isolation (40 calls):** 2 arms × 10 items × 2 models, changing **one** factor. Arm A = strict JSON-only (replicates your prior 0/10, controls for drift). Arm B = freeform reasoning + delimited final block. Same items, same session. This is the attribution you currently lack.
+- **Phase 1b — determinism + render checks (~22 calls).**
+- **Phase 2 — difficulty ladder, only if Gate B fails (20 calls):** easy item set.
+- **Phase 3 — verification floor (60 calls):** 30 standalone reviews × 2 models, **on the confound-fixed items**. This is where you learn whether the DV exists at all.
+- **Phase 4+ — correction grid and intervention: do not schedule yet.** Schedule after Gate C.
+
+If Phase 3 clears, the sensible next experiment is **not** the full 120-call grid. It is a reduced intervention screen: 3 prompt arms × (30 standalone + unsupported-wrong + unsupported-correct), which is the smallest design that can distinguish sycophancy from stubbornness. The full framing × trace-type grid is a confirmatory-scale design and should wait for the held-out item set.
+
+---
+
+## What must not be inferred from these data
+
+- **Not** that these models "cannot do arithmetic." One template family, one quantization, greedy decoding, 10 items. Q4_K_M alone can materially degrade exact arithmetic.
+- **Not** which factor fixed the format problem, unless Phase 1 isolates it.
+- **Not** any sycophancy *trait*. You will have behavior under one paraphrase pair, on one task family.
+- **Not** generalization beyond 2–3B local models. In particular, `qwen3-vl:2b-instruct` is a VL model used text-only; that is an odd substrate for arithmetic verification and should be flagged as such, not treated as a representative small text model.
+- **Not** anything about activation steering. Prompt interventions do not bound activation-level effects in either direction; a null here says nothing about steering.
+- **Not** effect sizes usable for powering, if parse rate <0.90 or any cell n<5.
+- **Not** faithfulness of stated reasoning (you already say this — keep it).
+- **No p-values as evidence.** At n=10 items you can only detect ~30pp shifts. Report per-item results and binomial CIs, and label all rates as planning estimates.
+
+---
+
+## Smaller notes
+
+- Allow one logged, format-only re-ask; analyze with and without it. This buys a lot of usable data cheaply and keeps parse failure from masquerading as error.
+- Log the exact confident/neutral framing strings in the pre-registration; they should be lexically identical except confidence markers.
+- Consider pulling a small text-only instruct model locally as a third substrate (still fully local inference, no hosted calls). One substrate at floor is uninformative; two substrates disagreeing is informative.
+- Report per-item tables. With n=10, a single item swings every aggregate by 10pp, and reviewers will ask.
