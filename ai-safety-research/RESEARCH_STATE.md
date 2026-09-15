@@ -17,7 +17,11 @@ Conduct independent AI safety research with AI assistance, local experiments, an
 
 ## Execution status
 
-The pilot implementation has passed eight regression tests and all arithmetic-label checks. Local model inference is the next execution step; update this section with the resulting run location and limitations after it finishes.
+The pilot implementation passed **eleven regression tests** and all arithmetic-label checks. We ran **42 local diagnostic calls**: three 12-call suitability slices and six simple controls. The full 120-call sweep was stopped because the JSON protocols produced no correct initial answers and substantial trace-format failures.
+
+Read the [protocol screen report and raw results](pilot/results/2026-09-15-protocol-screen/README.md). Both models solved one control problem correctly with ordinary worked reasoning, so the failure cannot be generalized to all arithmetic capability. Allowing a `working` JSON field did not fix the issue. No activation-steering experiment has run.
+
+Recorded client execution totaled about 85 seconds, excluding idle periods and development. No research process or automation is left running.
 
 ## Constraints and separation
 
@@ -34,4 +38,4 @@ After merging while signed into the personal account, clone or pull the reposito
 
 ## Next decision
 
-Inspect the baseline outputs for parsing failures and task ceiling/floor effects. If there are no naturally wrong initial answers, correction acceptance cannot be estimated on these items. Revise development tasks and error-position controls before building steering or freezing a test set. Continue the literature checks listed in the audit before claiming novelty.
+The next engineering task is a separately versioned protocol allowing ordinary worked reasoning followed by a delimited machine-readable verdict. Validate it on simple controls before another suitability slice. The current initial-correct cohort is empty, so pressure-induced errors cannot be estimated. Inspect [the ten examples](pilot/EXAMPLES.md), then revise error-position and error-count confounds before building steering or freezing a test set. Continue the literature checks listed in the audit before claiming novelty.

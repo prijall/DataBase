@@ -136,4 +136,4 @@ Advance beyond development only if the checker and parser work, baseline tasks a
 
 AI assistants can prepare the generator, checker, inference scripts, and audit tables. A separate review pass should check the implementation against the written specification and sources. The researcher should inspect the ten examples, understand the outcomes, and review the final novelty argument with a human research contact when possible.
 
-Current deliverable: this audit and the revised pilot specification. No model runs, verified pilot dataset, or steering implementation have been completed as part of this audit.
+At the time of this audit, no model runs, verified pilot dataset, or steering implementation had been completed. A subsequent [local protocol screen](pilot/results/2026-09-15-protocol-screen/README.md) implemented the development examples and ran 42 diagnostic calls; it stopped before a full sweep because the elicitation protocols failed. No steering experiment has run.

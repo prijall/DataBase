@@ -16,4 +16,4 @@ Prepared with AI assistance on September 15, 2026, from the reviewed manuscripts
 
 Publication labels refer to the reviewed versions; an under-review manuscript or repository artifact is not evidence of conference acceptance. A candidate research question is not a verified novelty claim. Consult the linked primary sources before citing results in a paper.
 
-The PDFs are linked rather than redistributed. This folder contains literature documentation, not experimental results from this project.
+The PDFs are linked rather than redistributed. The folder includes literature documentation and a [small local diagnostic screen](pilot/results/2026-09-15-protocol-screen/README.md); it contains no completed steering study or publication-level empirical claims.

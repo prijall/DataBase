@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-09-15T10:10:23.019990+00:00",
+  "git_commit": "1af32468e5cccbc54b006c7d366eec3415e584f3",
+  "protocol": {
+    "dataset_sha256": "cee7b30f7bd7476755d517b9731a9dcba89e13e842677270e1be3213e0d3c048",
+    "code_sha256": "4b9a4312542eba58b08a22c5af9f7e3ad666d2a1812d6a9b278ce1227f97d965",
+    "model": "llama3.2:3b",
+    "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "llama",
+      "families": [
+        "llama"
+      ],
+      "parameter_size": "3.2B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 131072,
+      "embedding_length": 3072
+    },
+    "template_sha256": "002858ff9991640c703e2dc700d5f09f82ff20eb42d8eb039af605b962b55fa1",
+    "parameters": "stop                           \"<|start_header_id|>\"\nstop                           \"<|end_header_id|>\"\nstop                           \"<|eot_id|>\"",
+    "system_sha256": "eba383e1a0d89350034616e68c304fdd1c0ada774d99f80b6ea91e043e1f4f8b",
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 128,
+      "num_thread": 2
+    },
+    "format": "json",
+    "job_seed": 42,
+    "server_version": "0.34.0",
+    "intervention": "none"
+  }
+}
