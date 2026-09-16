@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-09-16T04:32:59.464836+00:00",
+  "git_commit": "9b5d5734f7ec79c87f68b3313d1186c7534139a7",
+  "protocol": {
+    "protocol_name": "verification-only-v1",
+    "dataset_sha256": "cee7b30f7bd7476755d517b9731a9dcba89e13e842677270e1be3213e0d3c048",
+    "code_sha256": "e9f57d4bb7f7141534108f69212eb2490c744ffb3a5577e8635ccf2fc3d07fa5",
+    "pilot_dependency_sha256": "c5ac96c987dabeb11bd6f5d3a1f692ea7e55cd74421832b37a702c4257f0b0c8",
+    "protocol_document_sha256": "81501918e71349a27fe9d9deb3caf791c4920cabbc2c5717e42a6d0133094fda",
+    "model": "qwen3-vl:2b-instruct",
+    "model_digest": "ea422f1e73652a95479954d8572d3c8c6022f628ce2d38a1a04aae1b7f2d5300",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "2.1B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 2048
+    },
+    "template_sha256": "39302355407942b6b0b50e1a78741740fc8a31926a4febea429526497e0e6008",
+    "parameters": "temperature                    1\ntop_k                          20\ntop_p                          0.95",
+    "system_sha256": "ce294520201cdc9b4bf1ead2b368241e44905b8d0a097e4e1c4f02ea1a73f7d1",
+    "system": "Check every numbered numerical equality independently. The chain is VALID only if every equality is true. If any equality is false, the chain is INVALID. Output exactly VALID or INVALID without explanation.",
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 16,
+      "num_thread": 2
+    },
+    "format": null,
+    "job_seed": 42,
+    "server_version": "0.34.0",
+    "parser": "single-label-optional-period-v1",
+    "usable_stop_reason": "stop",
+    "planned_calls": 30,
+    "gate": {
+      "minimum_usable": 27,
+      "minimum_usable_per_cell": 9,
+      "minimum_valid_acceptance": 8,
+      "minimum_invalid_wrong_rejection": 8
+    },
+    "intervention": "none"
+  }
+}

@@ -4,9 +4,22 @@
 
 This is an unsteered development screen, not the final benchmark or a novelty claim. It tests local inference, scoring, and whether the task exposes useful variation before investing in activation steering.
 
-**Current result:** [Freeform-v3](results/2026-09-15-freeform-v3/README.md) produced a complete Llama baseline (60/120 strictly parsed) and a stopped Qwen initial screen (2/10 parsed). Both failed their applicable gate. The [earlier 42-call report](results/2026-09-15-protocol-screen/README.md) remains archived. The commands below reproduce development work; no intervention study has run. Results are incorporated in the [working manuscript](../paper/manuscript.md).
+**Current result:** the [verification-only screen](results/2026-09-16-verification-only/README.md) recorded sixty calls. Llama returned `VALID` for every trace; Qwen generated extra text and exhausted the sixteen-token limit on every call. Both failed the gate. The [v3 results](results/2026-09-15-freeform-v3/README.md) and [earlier 42-call report](results/2026-09-15-protocol-screen/README.md) remain archived. No intervention study has run. Results are incorporated in the [working manuscript](../paper/manuscript.md).
 
-## Requirements and execution
+## Verification-only reproduction
+
+Use the separately frozen [protocol](VERIFICATION_ONLY_PROTOCOL.md) and [runner](verification_only.py). On macOS/Linux, from this directory with local Ollama running:
+
+```sh
+python3 -m unittest -v
+python3 verification_only.py run --model llama3.2:3b --out runs/llama32-verification-only-v1 --max-calls 30 --max-seconds 600
+python3 verification_only.py run --model qwen3-vl:2b-instruct --out runs/qwen3vl-verification-only-v1 --max-calls 30 --max-seconds 600
+python3 verification_only.py summarize --out runs/llama32-verification-only-v1
+```
+
+Run models sequentially. These commands document the completed screen. The runner freezes thirty unique jobs per model, locks its output directory, preserves raw results atomically, and rejects changed code, dependencies, protocol, data or model settings on resume. Its summary separates lexical parsing, completed usable labels, truncation, primary valid/invalid performance and the secondary invalid/correct diagnostic. Missing or truncated outputs cannot pass as correct labels. The full current test suite contains 48 tests.
+
+## Earlier freeform pilot: requirements and execution
 
 Python 3.10+ and a running local Ollama server at `127.0.0.1:11434`, with the chosen model already installed. No Python package installation, API keys, external inference, or automatic model downloads are needed. The server's normal local template is used; this runner does not expose activation hooks.
 

@@ -4,7 +4,7 @@
 
 ## Stage
 
-This is an evolving manuscript built alongside the experiments. It reports 172 archived calls: 42 earlier diagnostics, the complete 120-call Llama freeform-v3 run, and Qwen's ten-call v3 screen. Llama failed the full parsing gate; Qwen failed its initial gate and stopped. No further inference is running for this experiment batch. The draft contains no completed intervention study or verified novelty claim and is not ready for conference submission.
+This is an evolving manuscript built alongside the experiments. As of September 16, 2026, it reports **232 archived calls**: 42 earlier diagnostics, 130 freeform-v3 calls, and sixty verification-only calls. The two v3 models failed their respective suitability gates. In verification-only evaluation, Llama returned VALID for all thirty traces; Qwen produced thirty length-stopped, unusable responses. Both failed the gate. Qwen's conditional verification accuracy is not estimable. No further inference is running for this experiment batch. The draft contains no completed intervention study or verified novelty claim and is not ready for conference submission.
 
 ## Files
 
@@ -31,4 +31,6 @@ The existing [paper outline](../PAPER_OUTLINE.md) tracks outstanding methodologi
 | [Llama strict-score audit](../pilot/results/2026-09-15-freeform-v3/llama32/AUDIT.md) | Main descriptive results and failed parsing gate |
 | [Llama presentation audit](../pilot/results/2026-09-15-freeform-v3/llama32/PRESENTATION_AUDIT.md) | Separately labeled post-hoc diagnostic |
 | [Qwen initial-screen audit](../pilot/results/2026-09-15-freeform-v3/qwen3vl/AUDIT.md) and [presentation audit](../pilot/results/2026-09-15-freeform-v3/qwen3vl/PRESENTATION_AUDIT.md) | Failed initial gate; no follow-ups or presentation recoveries |
+| [Verification-only protocol](../pilot/VERIFICATION_ONLY_PROTOCOL.md) and [sixty-call archive](../pilot/results/2026-09-16-verification-only/README.md) | Binary interface, primary/secondary comparisons, failed gates, and timing |
+| [Llama binary summary](../pilot/results/2026-09-16-verification-only/llama32/SUMMARY.md) and [Qwen binary summary](../pilot/results/2026-09-16-verification-only/qwen3vl/SUMMARY.md) | Per-condition scores, unusable/truncated outputs, and paired outcomes |
 | [Novelty audit](../NOVELTY_AUDIT.md) | Scope and overlap with prior work |

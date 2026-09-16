@@ -1,6 +1,6 @@
 # Research state
 
-Updated: September 15, 2026. This file is the handoff for continuing on another computer or in another assistant conversation.
+Updated: September 16, 2026. This file is the handoff for continuing on another computer or in another assistant conversation.
 
 ## Objective
 
@@ -18,7 +18,9 @@ Conduct independent AI safety research with AI assistance, local experiments, an
 
 ## Execution status
 
-The runner and two analysis modules passed **32 regression tests**, exact arithmetic checks, and independent AI review. The repository now archives **172 local experimental/diagnostic completions**: 42 earlier calls and 130 freeform-v3 calls.
+The inference and analysis tools passed **48 regression tests**, exact arithmetic checks, and independent AI review. The repository now archives **232 local experimental/diagnostic completions**: 42 earlier calls, 130 freeform-v3 calls and sixty verification-only calls.
+
+**Latest result:** the [September 16 verification-only screen](pilot/results/2026-09-16-verification-only/README.md) completed all thirty planned calls per model. Llama produced thirty usable `VALID` labels, accepting all valid traces and missing all twenty invalid traces (50% primary balanced accuracy). Qwen produced thirty extra-text responses, all truncated at sixteen tokens and unusable under the fixed parser. Its usable-conditional accuracy is not estimable. Both primary gates failed; neither outcome supports an intervention study. The manuscript now incorporates both screens.
 
 Read the [protocol screen report and raw results](pilot/results/2026-09-15-protocol-screen/README.md). Both models solved one control problem correctly with ordinary worked reasoning, so the failure cannot be generalized to all arithmetic capability. Allowing a `working` JSON field did not fix the issue. No activation-steering experiment has run.
 
@@ -26,7 +28,7 @@ The [completed v3 report](pilot/results/2026-09-15-freeform-v3/README.md) record
 
 The separate post-hoc presentation audit recovers one Llama verdict and none for Qwen. It leaves primary scores and failed gates unchanged. No intervention ran. These are development findings about the tested interface and examples, not a general alignment effect. The working manuscript contains the verified results and limitations.
 
-Recorded v3 client sessions total **1,505.20 seconds (25.09 minutes)**. Earlier calls recorded about 85 seconds. These figures exclude development, hosted AI assistance, idle gaps and model residency. No inference runner or scheduled research automation is left active.
+Recorded v3 client sessions total **1,505.20 seconds (25.09 minutes)**. The verification-only screen added **52.079 seconds**; earlier diagnostics recorded about 85 seconds. These figures exclude development, hosted AI assistance, idle gaps and model residency. This work session left no inference runner or scheduled research automation active.
 
 ## Constraints and separation
 
@@ -44,6 +46,8 @@ After merging while signed into the personal account, clone or pull the reposito
 
 ## Next decision
 
-Stop protocol revisions for this work session. Plan a small **verification-only feasibility test** before dataset expansion or steering. Inspect [the ten examples](pilot/EXAMPLES.md), then address error-position and error-count confounds, calibrate difficulty, obtain independent example review, and freeze held-out data and a matched intervention/control plan. Continue the remaining literature checks before claiming novelty.
+Stop inference for the completed screen. The next deliverable is an **offline measurement-validation plan**: review the existing failures, select a published verification interface and documented scoring procedure for a bounded baseline replication, and specify separate calibration material, generation settings and stopping rules before further inference. Increasing Qwen's budget alone is not a demonstrated remedy: its observed prefixes already contain disallowed prose. Do not reinterpret those prefixes as successful judgments under the frozen rule.
+
+Before returning to the conversational research question, establish reliable valid acceptance and invalid rejection. Then address error-position/error-count confounds, obtain independent example review, and freeze held-out data and matched intervention controls. Continue the remaining literature checks before claiming novelty.
 
 With every completed research increment, archive and verify evidence, update the manuscript's Methods/Results/Discussion and abstract as appropriate, then update the concise README and this handoff in the same commit. Preserve failed runs, denominators and primary/post-hoc distinctions. The [paper outline](PAPER_OUTLINE.md) maps manuscript sections to evidence and outstanding work. The draft is not yet ready for conference submission.

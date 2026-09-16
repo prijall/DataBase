@@ -1,10 +1,10 @@
 # AI safety research
 
-**Stage: development pilot and working manuscript.** [Read the paper](paper/manuscript.md) · [Latest results](pilot/results/2026-09-15-freeform-v3/README.md) · [Research state](RESEARCH_STATE.md)
+**Stage: development pilot and working manuscript.** [Read the paper](paper/manuscript.md) · [Latest results](pilot/results/2026-09-16-verification-only/README.md) · [Research state](RESEARCH_STATE.md)
 
 ## Research question
 
-Can a model distinguish a correct answer from a valid supporting calculation when responding to a user's proposed correction? The broader candidate asks whether anti-sycophancy interventions change this distinction. The current pilot establishes usable local measurements before testing an intervention. **Novelty remains unverified.**
+Can a model distinguish a correct answer from a valid supporting calculation when responding to a user's proposed correction? The broader candidate asks whether anti-sycophancy interventions change this distinction. The current pilots test whether the proposed measurements are usable before an intervention study. **Novelty remains unverified.**
 
 ## Work completed
 
@@ -16,13 +16,14 @@ Can a model distinguish a correct answer from a valid supporting calculation whe
 | Forty-two diagnostic calls, including failed output protocols | [Diagnostic report and raw results](pilot/results/2026-09-15-protocol-screen/README.md) |
 | Revised freeform protocol, advance/stop rules, independent AI methods review | [Frozen v3 protocol](pilot/PROTOCOL_V3.md), [Claude review](pilot/reviews/claude-methods-review.txt) |
 | 130 additional local calls, strict scoring and separate extraction audit | [V3 results and raw artifacts](pilot/results/2026-09-15-freeform-v3/README.md) |
+| Sixty verification-only calls under a separately frozen protocol | [September 16 results](pilot/results/2026-09-16-verification-only/README.md), [protocol](pilot/VERIFICATION_ONLY_PROTOCOL.md) |
 | Working manuscript, verified result tables and four checked references | [Manuscript](paper/manuscript.md), [related work](paper/related_work.md), [bibliography](paper/references.bib) |
 
-## Current experiment
+## Latest experiment
 
-The [v3 protocol](pilot/PROTOCOL_V3.md) permits ordinary calculations before a delimited final verdict. Each eligible model completes 120 calls over ten underlying questions: initial answers, conversational corrections, and standalone trace reviews. Local inference runs sequentially on shared hardware within the nine-machine-hour weekly allowance.
+The [verification-only screen](pilot/VERIFICATION_ONLY_PROTOCOL.md) asked each model for a binary judgment on thirty existing traces. Both runs are complete. Llama returned usable `VALID` labels for all thirty, missing every invalid trace. Qwen generated extra text and hit the sixteen-token limit on all thirty calls, leaving no usable classifications. Both failed the frozen gate.
 
-V3 is complete for this work session: Llama finished 120 calls with 60 strict-valid outputs; Qwen stopped after ten calls with two strict-valid outputs. Both failed their applicable gate. All 41 parseable Llama trace judgments rejected the trace, including valid examples. The repository records **172 calls total** across development protocols. No intervention has run.
+The repository records **232 calls total** across development protocols. Today's model calls took 52.1 seconds of recorded client execution; inference remained local and sequential. Qwen's zero usable-label score does not establish zero reasoning ability. No intervention has run.
 
 ## Reading and writing map
 
@@ -33,6 +34,6 @@ V3 is complete for this work session: Llama finished 120 calls with 60 strict-va
 
 ## Next stage and limits
 
-Next: plan a small verification-only feasibility test, then fix dataset confounds and create held-out evaluation before a matched intervention study. Every injected first error is at step one, and invalid traces with correct versus wrong conclusions have different error counts. Ten reused questions, two arithmetic families, and one confidence phrase cannot support broad alignment claims. An empty naturally incorrect initial cohort makes natural correction acceptance unmeasurable.
+Next: prepare an offline measurement-validation plan using a published verification interface and scorer, with separate calibration material and fixed settings before further inference. Every injected first error is at step one, and invalid traces with correct versus wrong conclusions have different error counts. Ten reused questions, two arithmetic families, and one confidence phrase cannot support broad alignment claims. Reliable measurements, corrected confounds and held-out data are needed before the intended intervention study.
 
 The examples need an independent human audit. AI assistants helped prepare code, notes, and methods advice; their reviews are not verified evidence. Written calculations are not proof of faithful internal reasoning. The literature's reported experiments have not been independently reproduced here; consult linked primary sources before citing them. Manuscript or repository availability does not establish conference acceptance.

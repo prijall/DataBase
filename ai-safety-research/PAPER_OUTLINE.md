@@ -58,6 +58,8 @@ Use the [research state](RESEARCH_STATE.md) to locate completed artifacts. Popul
 
 The [42-call diagnostic report](pilot/results/2026-09-15-protocol-screen/README.md) records failed direct-v1/worked-v2 screens and sanity checks. The [130-call v3 report](pilot/results/2026-09-15-freeform-v3/README.md) records Llama's completed baseline and Qwen's stopped initial screen. Both failed their applicable gate; their verified results are incorporated in the manuscript. These are development findings about the tested interfaces, not evidence of sycophancy.
 
+The [sixty-call verification-only screen](pilot/results/2026-09-16-verification-only/README.md) adds Llama's constant acceptance and Qwen's truncated, unusable outputs. Both failed the new gate. The manuscript preserves the distinction between zero successful-verdict yield and unmeasurable conditional classification accuracy; the recorded total is 232 calls.
+
 If a cohort is empty, write **not estimable**. Do not manufacture model mistakes or report independent-observation uncertainty from correlated variants of the same question. Preserve negative results and any changes made after inspecting development outputs.
 
 ## 5. Discussion and limitations
