@@ -6,6 +6,8 @@
 
 This is an evolving manuscript built alongside the experiments. As of September 16, 2026, it reports **232 archived calls**: 42 earlier diagnostics, 130 freeform-v3 calls, and sixty verification-only calls. The two v3 models failed their respective suitability gates. In verification-only evaluation, Llama returned VALID for all thirty traces; Qwen produced thirty length-stopped, unusable responses. Both failed the gate. Qwen's conditional verification accuracy is not estimable. No further inference is running for this experiment batch. The draft contains no completed intervention study or verified novelty claim and is not ready for conference submission.
 
+The manuscript also records the [prospective ProcessBench adaptation](../pilot/PROCESSBENCH_PLAN.md), whose offline preparation adds no experimental results.
+
 ## Files
 
 - [manuscript.md](manuscript.md): prose, methods, tables, interpretation, and limitations.

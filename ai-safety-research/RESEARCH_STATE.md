@@ -18,7 +18,7 @@ Conduct independent AI safety research with AI assistance, local experiments, an
 
 ## Execution status
 
-The inference and analysis tools passed **48 regression tests**, exact arithmetic checks, and independent AI review. The repository now archives **232 local experimental/diagnostic completions**: 42 earlier calls, 130 freeform-v3 calls and sixty verification-only calls.
+The inference and analysis tools passed **60 regression tests** (48 prior checks plus 12 offline ProcessBench checks), exact arithmetic checks, and independent AI review. The repository now archives **232 local experimental/diagnostic completions**: 42 earlier calls, 130 freeform-v3 calls and sixty verification-only calls.
 
 **Latest result:** the [September 16 verification-only screen](pilot/results/2026-09-16-verification-only/README.md) completed all thirty planned calls per model. Llama produced thirty usable `VALID` labels, accepting all valid traces and missing all twenty invalid traces (50% primary balanced accuracy). Qwen produced thirty extra-text responses, all truncated at sixteen tokens and unusable under the fixed parser. Its usable-conditional accuracy is not estimable. Both primary gates failed; neither outcome supports an intervention study. The manuscript now incorporates both screens.
 
@@ -46,7 +46,11 @@ After merging while signed into the personal account, clone or pull the reposito
 
 ## Next decision
 
-Stop inference for the completed screen. The next deliverable is an **offline measurement-validation plan**: review the existing failures, select a published verification interface and documented scoring procedure for a bounded baseline replication, and specify separate calibration material, generation settings and stopping rules before further inference. Increasing Qwen's budget alone is not a demonstrated remedy: its observed prefixes already contain disallowed prose. Do not reinterpret those prefixes as successful judgments under the frozen rule.
+The **offline measurement-validation preparation is complete**: [ProcessBench source audit](pilot/PUBLISHED_INTERFACE_AUDIT.md), [prospective local plan](pilot/PROCESSBENCH_PLAN.md), [pinned provenance](pilot/processbench/provenance.json), and [grouped selection](pilot/processbench/selection.json). The independently implemented adapter reproduces the inspected greedy prompt/scoring semantics without running a model. The pinned GSM8K domain has 400 solutions (193 error-free, 207 erroneous), with 375 distinct exact problem strings. The plan reserves 20 calibration and 40 evaluation cases, each balanced by process label and separated by normalized problem text. This is a local interface adaptation, not reproduction of published scores. No new subject calls were added; the archive total remains 232.
+
+**Next implement and review the local runner and its resource preflights.** Planned model: existing Llama-3.2 3B; 8,192 total context / 1,024 output tokens, one sample, sequential local execution. Verify token counts, model/chat-template identity, memory fit, cancellation and budget enforcement before freezing the execution commit. Calibration advances only with all 20 records, at least 18 normally completed in-range predictions, and at least 8/10 completion-gated exact judgments in each class. Only then use the untouched 40-case evaluation reservation. The entire prospective cohort is capped at 60 requests / 90 minutes. No runner or automation was started for it.
+
+Increasing Qwen's budget alone is not a demonstrated remedy: its observed prefixes already contain disallowed prose. Do not reinterpret those prefixes as successful judgments under the frozen rule.
 
 Before returning to the conversational research question, establish reliable valid acceptance and invalid rejection. Then address error-position/error-count confounds, obtain independent example review, and freeze held-out data and matched intervention controls. Continue the remaining literature checks before claiming novelty.
 

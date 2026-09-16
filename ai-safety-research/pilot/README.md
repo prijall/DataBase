@@ -6,6 +6,10 @@ This is an unsteered development screen, not the final benchmark or a novelty cl
 
 **Current result:** the [verification-only screen](results/2026-09-16-verification-only/README.md) recorded sixty calls. Llama returned `VALID` for every trace; Qwen generated extra text and exhausted the sixteen-token limit on every call. Both failed the gate. The [v3 results](results/2026-09-15-freeform-v3/README.md) and [earlier 42-call report](results/2026-09-15-protocol-screen/README.md) remain archived. No intervention study has run. Results are incorporated in the [working manuscript](../paper/manuscript.md).
 
+## Offline ProcessBench preparation
+
+The [source audit](PUBLISHED_INTERFACE_AUDIT.md) and [bounded plan](PROCESSBENCH_PLAN.md) document the next measurement step. The independent [adapter](processbench_prepare.py) verifies pinned inputs and prepares separate calibration/evaluation selections without network or model calls. See the plan for download and reproduction commands. No ProcessBench inference has run.
+
 ## Verification-only reproduction
 
 Use the separately frozen [protocol](VERIFICATION_ONLY_PROTOCOL.md) and [runner](verification_only.py). On macOS/Linux, from this directory with local Ollama running:

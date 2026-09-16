@@ -46,6 +46,14 @@ Following the v3 failures, a separately specified [verification-only protocol](.
 
 The primary comparison was balanced between ten valid/correct and ten invalid/wrong traces; ten invalid/correct traces were secondary. The feasibility gate required all thirty recorded responses, at least 27 usable labels overall and nine in every condition, and at least eight successful judgments in each primary class. A primary pass could coexist with failure on invalid traces ending correctly and would not establish verification independent of conclusions. Both models completed the fixed thirty calls without outcome-based revisions or retries. This protocol changed multiple task and output factors together, so its comparison with v3 does not identify an isolated cause.
 
+### 3.5 Prospective published-interface adaptation (not yet executed)
+
+After the failed screens, we inspected the pinned official ProcessBench critic template and greedy scorer (Zheng et al., 2025). The reference interface permits prose critique and extracts the last boxed integer, using zero-based paragraph indices and −1 for an error-free solution. This differs from our earlier labels and whole-response parsing contracts. Its aggregate is the harmonic mean of exact-index accuracies for erroneous and error-free solutions, rather than precision/recall F1. The [source audit](../pilot/PUBLISHED_INTERFACE_AUDIT.md) records the immutable sources and behavioral details.
+
+Our [prospective local plan](../pilot/PROCESSBENCH_PLAN.md) reserves 20 calibration and 40 evaluation solutions from the pinned GSM8K domain, balanced by process label and disjoint by whitespace-normalized problem text, with one solution per selected group. The original 400-case domain contains 193 error-free and 207 erroneous solutions. This reservation is held out from our own development, not from unknown model pretraining. The offline adapter prepares IDs and prompt-size metadata and checks scoring semantics without generating responses.
+
+The planned installed Llama-3.2 3B run uses 1,024 generated tokens and an 8,192-token total context, subject to resource and token preflights; the published ordinary greedy allowance is 8,192 generated tokens. Model, quantization, backend, sample and generation changes make this a feasibility adaptation, not replication of a published score. Calibration must yield at least 18/20 normally completed in-range predictions and at least 8/10 completion-gated exact matches per class before evaluation. Official-compatible and completion-gated scores will remain distinct. No ProcessBench subject inference has run, and this plan contributes no results to the tables below.
+
 ## 4. Results
 
 ### 4.1 Earlier elicitation screens
@@ -107,7 +115,7 @@ The completed Llama v3 run separates successful initial arithmetic from failure 
 
 The evidence remains narrow. Ten reused questions cannot establish general alignment behavior. Fixed first-error positions prevent a genuine localization test; unequal error counts confound conclusion comparisons. Conversational and standalone conditions differ in history and prior calculations, so their contrast does not isolate commitment. One confidence phrase provides limited rhetorical coverage. Two quantized models with different patterns of unusable output do not support broad model-family comparisons. Held-out and repeated-call evaluations remain absent.
 
-The earlier protocol revisions changed prompts, output constraints, and available computation together. Their outcomes establish only package-level feasibility differences. The post-hoc extraction analysis is explicitly selected after failures and cannot serve as confirmatory evidence. Written calculations are observable text, not proof of faithful internal reasoning. The verification-only screen did not yield usable, balanced judgments for either model. Any further interface investigation requires a separate prospective plan; this completed screen supplies no basis for expanding an intervention study.
+The earlier protocol revisions changed prompts, output constraints, and available computation together. Their outcomes establish only package-level feasibility differences. The post-hoc extraction analysis is explicitly selected after failures and cannot serve as confirmatory evidence. Written calculations are observable text, not proof of faithful internal reasoning. The verification-only screen did not yield usable, balanced judgments for either model. The separate prospective ProcessBench plan addresses the next measurement check; this completed screen supplies no basis for expanding an intervention study.
 
 ## 6. Reproducibility and AI assistance
 
