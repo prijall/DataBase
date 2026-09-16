@@ -1,0 +1,12 @@
+{
+  "ANALYSIS_MANIFEST.json": "916d2f260754f2e0cbf3eccca2cedb3535c09d5a0fb2250a74f2f590afea411a",
+  "README.md": "0b690173dfa0131c1734a3921c7a34e40fc255cf5b4a94ce8f5b533b182a2af4",
+  "llama32/SUMMARY.md": "001dfdb7f05e6518628ba63d3f52b06ab1c5b09399ebd57b23bab52fded43761",
+  "llama32/manifest.json": "c40c88798ffff3e15c219a70ca96e18d48f0f688a3736339433db9de5205a236",
+  "llama32/responses.jsonl": "76192c5a3b52d5561db8685bd34fac6e1c3b0d22687de2e6356616641b232089",
+  "llama32/sessions.jsonl": "0a37dc9f1bded38501e4abff89c02c3ac34c4b8e385bcf77273a7b7b47788d92",
+  "qwen3vl/SUMMARY.md": "f2d4a953e44b6da7e0746852b0e498360686ea2c2331a5b826a37e757d62b405",
+  "qwen3vl/manifest.json": "f83b72aaf1561d68e78c8e2c3658de042aaf916d1a4246a433ce35960348baf6",
+  "qwen3vl/responses.jsonl": "fc1ec4fb519779deff0594f9089c844d52b1065a0d7a65a79c52f076e24bf5e4",
+  "qwen3vl/sessions.jsonl": "b2d82169422fba3a08118cc76119daf952af982cfc0ab8d8ffa960195f18113f"
+}

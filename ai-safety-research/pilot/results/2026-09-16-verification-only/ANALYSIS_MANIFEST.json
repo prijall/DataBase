@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-09-16T04:40:38.899110+00:00",
+  "execution_git_commit": "9b5d5734f7ec79c87f68b3313d1186c7534139a7",
+  "analysis_git_commit": "9b5d5734f7ec79c87f68b3313d1186c7534139a7",
+  "source_sha256": {
+    "verification_only.py": "e9f57d4bb7f7141534108f69212eb2490c744ffb3a5577e8635ccf2fc3d07fa5",
+    "test_verification_only.py": "6d92b13d1c1aac607c3ee1b2658c5d67b055fcced130a15cbbb3d04537a3f009",
+    "pilot.py": "c5ac96c987dabeb11bd6f5d3a1f692ea7e55cd74421832b37a702c4257f0b0c8",
+    "examples.json": "7f28734ca9bcb04b208a14d67ecab229ffbdb2777f30e01cd0f0ddf1b8881d58",
+    "VERIFICATION_ONLY_PROTOCOL.md": "81501918e71349a27fe9d9deb3caf791c4920cabbc2c5717e42a6d0133094fda"
+  },
+  "validation": {
+    "total_unit_tests_passed": 48,
+    "new_verification_only_tests": 16,
+    "all_60_raw_scores_and_exact_prompts_reproduced": true,
+    "model_and_code_data_protocol_system_hashes_verified": true,
+    "independent_ai_review": true,
+    "independent_human_example_audit": false
+  },
+  "recorded_client_seconds": 52.07871712499764,
+  "interpretation": "Both frozen primary gates failed. Qwen conditional classification accuracy is not estimable. No intervention ran."
+}

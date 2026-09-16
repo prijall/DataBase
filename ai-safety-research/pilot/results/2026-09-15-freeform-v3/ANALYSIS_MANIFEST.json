@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-09-15T11:07:51.624582+00:00",
+  "analysis_git_commit": "5494f9f8ab171cd9bc2499e7f8397c057420d8f3",
+  "source_sha256": {
+    "pilot.py": "c5ac96c987dabeb11bd6f5d3a1f692ea7e55cd74421832b37a702c4257f0b0c8",
+    "test_pilot.py": "d795d205cfb6f205bbb7b4d1988481b54c44a8df12a0aac17f83eabfb9da7a40",
+    "audit_results.py": "79be6fe4dac89c972b8d5295b11bcf172ea9e7e50d29a9049ffa8e557cde7ce9",
+    "test_audit_results.py": "b3eb328a9f7de7602c3d8393463686b77f27fa0f34b63287a8a95144835606b7",
+    "presentation_audit.py": "c336e3a4d98f07facf8d1ac126813135116fea19e8fa685c67402848bbb2e976",
+    "test_presentation_audit.py": "ed5fe1fe4e186cdc88698e65b051d2bb5df297a9b968629237414c775fa9f028",
+    "examples.json": "7f28734ca9bcb04b208a14d67ecab229ffbdb2777f30e01cd0f0ddf1b8881d58",
+    "PROTOCOL_V3.md": "7b21b1547738180a92d3933b88b7d82ee9dbf41a37f2d6224b05f58e11974907",
+    "PRESENTATION_AUDIT_PLAN.md": "de579bd019ae721ae4bd3fbe4d8634b4a9b313e9216d0a12888a1b82068ccf8e"
+  },
+  "environment": {
+    "processor": "Apple M1",
+    "ram_bytes": 8589934592,
+    "os": "macOS",
+    "os_version": "26.6.2",
+    "python_version": "3.14.7",
+    "ollama_version": "0.34.0",
+    "model_execution": "local, sequential"
+  },
+  "validation": {
+    "unit_tests_passed": 32,
+    "independent_ai_review": true,
+    "human_example_audit": false,
+    "all_130_raw_scores_and_planned_prompts_reproduced": true
+  },
+  "interpretation": "Development-only. Strict gates failed; no intervention run. Presentation recovery is separate and post hoc."
+}

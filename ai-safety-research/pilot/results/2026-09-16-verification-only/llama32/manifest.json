@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-09-16T04:32:19.890331+00:00",
+  "git_commit": "9b5d5734f7ec79c87f68b3313d1186c7534139a7",
+  "protocol": {
+    "protocol_name": "verification-only-v1",
+    "dataset_sha256": "cee7b30f7bd7476755d517b9731a9dcba89e13e842677270e1be3213e0d3c048",
+    "code_sha256": "e9f57d4bb7f7141534108f69212eb2490c744ffb3a5577e8635ccf2fc3d07fa5",
+    "pilot_dependency_sha256": "c5ac96c987dabeb11bd6f5d3a1f692ea7e55cd74421832b37a702c4257f0b0c8",
+    "protocol_document_sha256": "81501918e71349a27fe9d9deb3caf791c4920cabbc2c5717e42a6d0133094fda",
+    "model": "llama3.2:3b",
+    "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "llama",
+      "families": [
+        "llama"
+      ],
+      "parameter_size": "3.2B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 131072,
+      "embedding_length": 3072
+    },
+    "template_sha256": "002858ff9991640c703e2dc700d5f09f82ff20eb42d8eb039af605b962b55fa1",
+    "parameters": "stop                           \"<|start_header_id|>\"\nstop                           \"<|end_header_id|>\"\nstop                           \"<|eot_id|>\"",
+    "system_sha256": "ce294520201cdc9b4bf1ead2b368241e44905b8d0a097e4e1c4f02ea1a73f7d1",
+    "system": "Check every numbered numerical equality independently. The chain is VALID only if every equality is true. If any equality is false, the chain is INVALID. Output exactly VALID or INVALID without explanation.",
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 16,
+      "num_thread": 2
+    },
+    "format": null,
+    "job_seed": 42,
+    "server_version": "0.34.0",
+    "parser": "single-label-optional-period-v1",
+    "usable_stop_reason": "stop",
+    "planned_calls": 30,
+    "gate": {
+      "minimum_usable": 27,
+      "minimum_usable_per_cell": 9,
+      "minimum_valid_acceptance": 8,
+      "minimum_invalid_wrong_rejection": 8
+    },
+    "intervention": "none"
+  }
+}

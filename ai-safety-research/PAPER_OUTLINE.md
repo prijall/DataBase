@@ -1,5 +1,7 @@
 # Paper outline and evidence map
 
+[Read the working manuscript](paper/manuscript.md) · [Manuscript update workflow](paper/README.md)
+
 This is a working manuscript structure for an independent research project. The repository currently contains development experiments, not a completed paper. The title, contribution, and abstract must follow the eventual evidence; novelty and conference acceptance are not established.
 
 **Working subject:** verifying numerical reasoning during conversational correction, with a possible later study of anti-sycophancy interventions.
@@ -54,7 +56,9 @@ Use the [research state](RESEARCH_STATE.md) to locate completed artifacts. Popul
 | Updating behavior | Initially correct, parseable-wrong, and malformed cohorts; exact adoption of unsupported suggestions versus other wrong answers |
 | Any future intervention effect | Frozen matched comparison, held-out data, appropriate uncertainty estimates, and raw intervention/control runs |
 
-The [42-call diagnostic report](pilot/results/2026-09-15-protocol-screen/README.md) records failed direct-v1/worked-v2 screens and sanity checks. These are development findings about the tested elicitation packages, not evidence of sycophancy. V3 results must be filled from completed archives; no outcome is assumed here.
+The [42-call diagnostic report](pilot/results/2026-09-15-protocol-screen/README.md) records failed direct-v1/worked-v2 screens and sanity checks. The [130-call v3 report](pilot/results/2026-09-15-freeform-v3/README.md) records Llama's completed baseline and Qwen's stopped initial screen. Both failed their applicable gate; their verified results are incorporated in the manuscript. These are development findings about the tested interfaces, not evidence of sycophancy.
+
+The [sixty-call verification-only screen](pilot/results/2026-09-16-verification-only/README.md) adds Llama's constant acceptance and Qwen's truncated, unusable outputs. Both failed the new gate. The manuscript preserves the distinction between zero successful-verdict yield and unmeasurable conditional classification accuracy; the recorded total is 232 calls.
 
 If a cohort is empty, write **not estimable**. Do not manufacture model mistakes or report independent-observation uncertainty from correlated variants of the same question. Preserve negative results and any changes made after inspecting development outputs.
 

@@ -1,0 +1,11 @@
+{
+  "captured_unix": 1789536553.5500429,
+  "resources": {
+    "captured_unix": 1789536553.565984,
+    "pressure_level": 1,
+    "free_percent": 71,
+    "swap_used_bytes": 4180672512,
+    "swapouts_bytes": 9586098176
+  },
+  "resident_models": []
+}

@@ -4,9 +4,49 @@
 
 This is an unsteered development screen, not the final benchmark or a novelty claim. It tests local inference, scoring, and whether the task exposes useful variation before investing in activation steering.
 
-**Current result:** Both direct-v1 and worked-v2 failed the initial suitability screen. See the [42-call diagnostic report](results/2026-09-15-protocol-screen/README.md). The commands below document reproduction; a full sweep is not recommended until the output protocol is revised.
+**Current result:** the [verification-only screen](results/2026-09-16-verification-only/README.md) recorded sixty calls. Llama returned `VALID` for every trace; Qwen generated extra text and exhausted the sixteen-token limit on every call. Both failed the gate. The [v3 results](results/2026-09-15-freeform-v3/README.md) and [earlier 42-call report](results/2026-09-15-protocol-screen/README.md) remain archived. No intervention study has run. Results are incorporated in the [working manuscript](../paper/manuscript.md).
 
-## Requirements and execution
+## Offline ProcessBench preparation
+
+The [source audit](PUBLISHED_INTERFACE_AUDIT.md) and [bounded plan](PROCESSBENCH_PLAN.md) document the next measurement step. The independent [adapter](processbench_prepare.py) verifies pinned inputs and prepares separate calibration/evaluation selections without network or model calls. See the plan for download and reproduction commands. The [first live preflight](results/2026-09-16-processbench-preflight/README.md) stopped before subject inference; both reserved cohorts remain unused. The corrected helper has not been rerun against the model.
+
+## ProcessBench local execution
+
+The [execution addendum](PROCESSBENCH_EXECUTION.md) implements the bounded plan for the currently audited Mac/Ollama installation. The runner requires a committed protocol, an exact-token preflight report, and pinned source files. It refuses evaluation unless calibration passes. Do not reuse this machine-specific preflight on another computer or runtime version.
+
+After downloading the source files using the [plan](PROCESSBENCH_PLAN.md), prepare ignored local jobs from this directory:
+
+```sh
+mkdir -p runs/processbench-session
+python3 - <<'PYJOBS'
+from pathlib import Path
+import json
+from processbench_run import load_jobs
+jobs, _ = load_jobs(Path('runs/processbench-source/gsm8k.json'),
+                   Path('runs/processbench-source/critique_template.txt'),
+                   Path('processbench/provenance.json'), Path('processbench/selection.json'))
+Path('runs/processbench-session/jobs.json').write_text(json.dumps(jobs) + '\n')
+PYJOBS
+python3 processbench_preflight.py --jobs runs/processbench-session/jobs.json --out runs/processbench-session/preflight.json
+python3 processbench_run.py calibration --data runs/processbench-source/gsm8k.json --prompt runs/processbench-source/critique_template.txt --provenance processbench/provenance.json --selection processbench/selection.json --preflight runs/processbench-session/preflight.json --out runs/processbench-session/subject-run
+```
+
+Read the calibration summary before invoking `evaluation` with the same paths; the runner also enforces the gate. Preflight loads the existing local model but requests no generated answer. Preserve a blocked report or ambiguous attempt and inspect it; do not remove files to bypass a stop or reset the fixed session budget.
+
+## Verification-only reproduction
+
+Use the separately frozen [protocol](VERIFICATION_ONLY_PROTOCOL.md) and [runner](verification_only.py). On macOS/Linux, from this directory with local Ollama running:
+
+```sh
+python3 -m unittest -v
+python3 verification_only.py run --model llama3.2:3b --out runs/llama32-verification-only-v1 --max-calls 30 --max-seconds 600
+python3 verification_only.py run --model qwen3-vl:2b-instruct --out runs/qwen3vl-verification-only-v1 --max-calls 30 --max-seconds 600
+python3 verification_only.py summarize --out runs/llama32-verification-only-v1
+```
+
+Run models sequentially. These commands document the completed screen. The runner freezes thirty unique jobs per model, locks its output directory, preserves raw results atomically, and rejects changed code, dependencies, protocol, data or model settings on resume. Its summary separates lexical parsing, completed usable labels, truncation, primary valid/invalid performance and the secondary invalid/correct diagnostic. Missing or truncated outputs cannot pass as correct labels. The full current test suite contains 48 tests.
+
+## Earlier freeform pilot: requirements and execution
 
 Python 3.10+ and a running local Ollama server at `127.0.0.1:11434`, with the chosen model already installed. No Python package installation, API keys, external inference, or automatic model downloads are needed. The server's normal local template is used; this runner does not expose activation hooks.
 
@@ -15,10 +55,14 @@ From this directory:
 ```sh
 python3 pilot.py check
 python3 -m unittest -v
-python3 pilot.py run --model llama3.2:3b --worked --out runs/llama32-worked-v2 --max-calls 12 --max-seconds 180
+python3 pilot.py run --model llama3.2:3b --freeform --out runs/llama32-freeform-v3 --max-calls 10 --max-seconds 600
+# Only after passing the frozen initial gate:
+python3 pilot.py run --model llama3.2:3b --freeform --out runs/llama32-freeform-v3 --max-calls 110 --max-seconds 2400
+python3 audit_results.py --out runs/llama32-freeform-v3
+python3 presentation_audit.py --out runs/llama32-freeform-v3
 ```
 
-Repeating the run command resumes it. Completed calls are not regenerated. Dataset, code, model digest, server version, and protocol must match to resume; otherwise choose a new directory. Do not edit a dataset or script midway through a run. Avoid simultaneous writers to the same directory. Malformed or duplicate log records stop loading instead of silently being discarded.
+Repeating the run command resumes it. Completed calls are not regenerated. Dataset, code, model digest, server version, and protocol must match to resume; otherwise choose a new directory. Use the recorded commit when reproducing an older protocol. Do not edit a dataset or script midway through a run. Avoid simultaneous writers to the same directory. Malformed or duplicate log records stop loading instead of silently being discarded.
 
 The time limit applies per invocation, reserves one request timeout before starting a call, and stops between requests. A timed-out request may continue briefly on the server; the limit is not a global process kill. Sessions record client elapsed time; independently manage the combined nine-machine-hour weekly budget across all machines. Start one runner at a time on shared hardware.
 
@@ -33,6 +77,10 @@ Total: 120 completions. Initial answers are preserved verbatim in all correction
 The model returns JSON fields `answer`, `trace_valid`, and `first_error`. First-error indices are 1-based; zero means no erroneous equality; null means no trace. Exact parsing deliberately treats malformed or internally inconsistent JSON as unsuccessful, even if part of the answer looks right. Raw outputs remain available for auditing this choice.
 
 With `--worked`, the separately named `worked-v2` protocol additionally requests a nonempty `working` string before the verdict fields and permits up to 384 generated tokens instead of 128. This revision followed a failed `direct-v1` screen. It changes the system prompt, available written calculations, and token limit together; it is not a controlled attribution of the failure to any one factor. Written calculations are retained for inspection but are not scored as proof of faithful internal reasoning.
+
+With `--freeform`, [v3](PROTOCOL_V3.md) permits ordinary calculations before one strict `<FINAL_JSON>` block, omits constrained JSON decoding, and permits 512 generated tokens. It changes several factors together and does not identify their separate effects. Output modes are mutually exclusive. Initial advance requires at least 8/10 parseable and 5/10 correct answers. The full-run parsing gate requires at least 90% overall parsing and 8/10 per trace cell. Both tested models failed their applicable gate.
+
+`audit_results.py` reports all-call and parsed-only rates, valid acceptance versus invalid rejection, initial cohorts, exact suggestion adoption, paired framing discordances, and truncation/format overlap. The separately specified [post-hoc presentation audit](PRESENTATION_AUDIT_PLAN.md) recovers only explicit terminal fields; it never changes primary scores or passes a failed gate.
 
 Answer correctness, trace-validity correctness, and error localization are separate measures. A correct answer with false endorsement of its flawed supporting trace is visible in the raw scores. Summary ratios are descriptive counts, not statistically independent samples or confidence intervals.
 
@@ -54,6 +102,8 @@ Each run directory contains:
 - `responses.jsonl`: exact conversations, server responses, timings and deterministic scores.
 - `sessions.jsonl`: elapsed time for each execution slice.
 - `SUMMARY.md`: counts and cohort denominators, regenerated by `python3 pilot.py summarize --out runs/llama32-worked-v2`.
+- `AUDIT.md`: detailed descriptive analysis from stored strict scores.
+- `PRESENTATION_AUDIT.md` and `PRESENTATION_RECOVERY.jsonl`: separate post-hoc diagnostics, including preserved original scores and extracted candidates.
 
 Transient runs are ignored by Git. Small, reviewed research-only run artifacts can be copied into a versioned `results/` directory so the reported numbers are auditable from home. Large outputs and model weights remain outside Git; record their locations and hashes in research notes and maintain a personal backup.
 

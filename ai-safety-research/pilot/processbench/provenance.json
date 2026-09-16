@@ -1,0 +1,26 @@
+{
+  "repository_revision": "e8024636bcabdf8bd514440551b531d3f90dd18b",
+  "dataset_revision": "3bdcd5371ed567559a78f559c01c13a6deee7604",
+  "inspected_on": "2026-09-16",
+  "paper_url": "https://aclanthology.org/2025.acl-long.50/",
+  "files": {
+    "data": {
+      "url": "https://huggingface.co/datasets/Qwen/ProcessBench/resolve/3bdcd5371ed567559a78f559c01c13a6deee7604/gsm8k.json",
+      "sha256": "fb1c59dfd1e83e1c5a48dbe598db27e4bc0b8bc524a09445f2d4b69178f61349",
+      "dataset_card_license": "Apache-2.0"
+    },
+    "prompt": {
+      "url": "https://raw.githubusercontent.com/QwenLM/ProcessBench/e8024636bcabdf8bd514440551b531d3f90dd18b/code/templates/critique_template.txt",
+      "sha256": "0e7dba24bfaa9dea379907e11b8dc701c6cd6e74453ab2ffc9b1d63237cc4434"
+    },
+    "reference_evaluator": {
+      "url": "https://raw.githubusercontent.com/QwenLM/ProcessBench/e8024636bcabdf8bd514440551b531d3f90dd18b/code/run_eval.py",
+      "sha256": "66d09fc7a3d20d46f166d4bba4e04835f3d7473e1534b6908cd9045aefc7b704"
+    },
+    "dataset_card": {
+      "url": "https://huggingface.co/datasets/Qwen/ProcessBench/resolve/3bdcd5371ed567559a78f559c01c13a6deee7604/README.md",
+      "sha256": "525e4455e981213919c574146196258ddb63986c11637116f58d7ba8b990c6f5"
+    }
+  },
+  "redistribution": "Only original adapter code and selection metadata are committed. Fetch upstream prompt and examples into ignored local storage; no upstream code license was found."
+}

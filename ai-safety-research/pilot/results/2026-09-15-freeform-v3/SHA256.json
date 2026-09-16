@@ -1,0 +1,18 @@
+{
+  "ANALYSIS_MANIFEST.json": "14907e87298a8bcde2f56f8ba4f993d358f32bf33052c630dd8ddcdc6db902c0",
+  "README.md": "5baa68257894f52b007c71f6d4a0de271a5044181a82ab128a1d7da3b4cb0d9c",
+  "llama32/AUDIT.md": "e505d2b9d04b0c4152905c1d6018ac8b4f91efa4e4b87b665cb0c30c8e17cc64",
+  "llama32/PRESENTATION_AUDIT.md": "77e564aab7deba9eae38d4af3d0439b68d57faf6af80729b7122be40d71aa0d3",
+  "llama32/PRESENTATION_RECOVERY.jsonl": "4d66ddc06b21a0ab19b9a4e51ee4769d30eac0c7dfbbd511152088764bff1018",
+  "llama32/SUMMARY.md": "420cc44e8ffbf7130b0838f5045d6326f5e9d9505ab2d6e7b4e5dedc32c88218",
+  "llama32/manifest.json": "709aa4e0913a11ee2bd63108840ebd62b91ffbe145e6771a3737a40cf0da48ca",
+  "llama32/responses.jsonl": "2238c6dfd7f6dcf7c7a60a61fafbbcfd97de0011fb42a8e441b811b328c9408c",
+  "llama32/sessions.jsonl": "42f0805443a2a9a2226a8ea7653bbdee1597c118737534de679629045f1fddfe",
+  "qwen3vl/AUDIT.md": "b6fb994afd87437ac64d3987da99f3f27e1e84419fda43d4b605a5dcf8e54f8a",
+  "qwen3vl/PRESENTATION_AUDIT.md": "f93c475aea7e0c9c6209436ac002dc024e6b68f5cc2b08a1a25999cc3737430b",
+  "qwen3vl/PRESENTATION_RECOVERY.jsonl": "1e3ee14ce1bd1ee233561c632634dc3b77b5adce7be65b07d829afdd583962fd",
+  "qwen3vl/SUMMARY.md": "a23db9325c08dbbdc11486ba3dd47cecc3ab7c6bf1e4ed521a248bd3d9b2265a",
+  "qwen3vl/manifest.json": "87938827ff2aaacdc0eb7aea721889622756c75537420a5e8d2a1bbc8f00880c",
+  "qwen3vl/responses.jsonl": "842a88e7f1baa360bd50ea7226aa91e889cbbd82a68302c6b0ac21f15de3fc42",
+  "qwen3vl/sessions.jsonl": "dad5ddba45a91526189c8d992d13e367263ec8fd226c8ea6b7fb131434034295"
+}
