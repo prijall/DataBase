@@ -1,0 +1,125 @@
+{
+  "schema": "processbench-exact-token-preflight-v1",
+  "jobs_sha256": "97e9f98f7bfdc9976111b98e8f063447b6f89f2d67a455f582f1264e9420a9d5",
+  "model": "llama3.2:3b",
+  "options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 8192,
+    "num_predict": 1024,
+    "num_thread": 2
+  },
+  "sources": {
+    "ollama_commit": "d8ab4b4f0ca24b51d3a46b3bf4f462e58ce66b1f",
+    "llama_cpp_commit": "0f3a71be15af836d277c9f918adfafb45732677e"
+  },
+  "preflight_code_sha256": "a61d5f80fdc8ee182243ed82397bc89774d9a91de8f0b1255b39238ce29762a5",
+  "resource_code_sha256": "22aac93f9718fcf6fa99689e843391574536c45a5dcd7a38213328483101649b",
+  "budget_started_unix": 1789536458.28765,
+  "resource_baseline": {
+    "captured_unix": 1789536458.302468,
+    "pressure_level": 1,
+    "free_percent": 60,
+    "swap_used_bytes": 2940794306,
+    "swapouts_bytes": 7700234240
+  },
+  "status": "blocked",
+  "operations": [
+    {
+      "port": 11434,
+      "endpoint": "/api/ps",
+      "started_unix": 1789536458.312394,
+      "status": "received",
+      "finished_unix": 1789536458.317237
+    },
+    {
+      "port": 11434,
+      "endpoint": "/api/version",
+      "started_unix": 1789536458.324822,
+      "status": "received",
+      "finished_unix": 1789536458.326327
+    },
+    {
+      "port": 11434,
+      "endpoint": "/api/tags",
+      "started_unix": 1789536458.332885,
+      "status": "received",
+      "finished_unix": 1789536458.3365781
+    },
+    {
+      "port": 11434,
+      "endpoint": "/api/show",
+      "started_unix": 1789536458.3431401,
+      "status": "received",
+      "finished_unix": 1789536458.354711
+    },
+    {
+      "port": 11434,
+      "endpoint": "/api/ps",
+      "started_unix": 1789536458.39185,
+      "status": "received",
+      "finished_unix": 1789536458.39257
+    },
+    {
+      "port": 11434,
+      "endpoint": "/api/chat",
+      "started_unix": 1789536458.410505,
+      "status": "received",
+      "finished_unix": 1789536462.8154612
+    }
+  ],
+  "generation_requests": 0,
+  "runtime_state": "unverified_after_debug_request",
+  "resource_observations": [
+    {
+      "captured_unix": 1789536458.302468,
+      "pressure_level": 1,
+      "free_percent": 60,
+      "swap_used_bytes": 2940794306,
+      "swapouts_bytes": 7700234240
+    },
+    {
+      "captured_unix": 1789536458.38445,
+      "pressure_level": 1,
+      "free_percent": 60,
+      "swap_used_bytes": 2940794306,
+      "swapouts_bytes": 7700234240
+    },
+    {
+      "captured_unix": 1789536458.403563,
+      "pressure_level": 1,
+      "free_percent": 60,
+      "swap_used_bytes": 2940794306,
+      "swapouts_bytes": 7700234240
+    }
+  ],
+  "tokens": {},
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "server_version": "0.34.0",
+  "template_sha256": "966de95ca8a62200913e3f8bfbf84c8494536f1b94b49166851e76644e966396",
+  "parameters_sha256": "2801e61a8848e505a6e20beeaea63cca1600200f6720e5f916ba7d6da5c3ba39",
+  "model_path": "/Users/missioncontrol/.ollama/models/blobs/sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff",
+  "model_details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "llama",
+    "families": [
+      "llama"
+    ],
+    "parameter_size": "3.2B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 131072,
+    "embedding_length": 3072
+  },
+  "binary_sha256": "12a8bd0922404bb941fcd4f3fb56ea32251acfdd11e6af8aa99c8703557c23d6",
+  "library_sha256": "207fecc90bd3279588ce08c3cfef690d914317d30eb91d07a359881b3d4fb6ff",
+  "reason": "Debug rendering missing, changed, or truncated the user message",
+  "finished_unix": 1789536462.8171709,
+  "operation_counts": {
+    "/api/chat": 1,
+    "/api/ps": 2,
+    "/api/show": 1,
+    "/api/tags": 1,
+    "/api/version": 1
+  }
+}

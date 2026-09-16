@@ -1,0 +1,18 @@
+{
+  "provenance": "Transcribed without alteration from the live exec tool response during root follow-up inspection; this snapshot was originally printed, not written by the preflight helper.",
+  "resources": {
+    "captured_unix": 1789536487.990797,
+    "pressure_level": 2,
+    "free_percent": 20,
+    "swap_used_bytes": 4340056064,
+    "swapouts_bytes": 9586098176
+  },
+  "resident_model": {
+    "name": "llama3.2:3b",
+    "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+    "context_length": 8192,
+    "size": 3026850938,
+    "size_vram": 3026850938,
+    "expires_at": "2026-09-16T11:13:12.807989+05:45"
+  }
+}

@@ -8,7 +8,30 @@ This is an unsteered development screen, not the final benchmark or a novelty cl
 
 ## Offline ProcessBench preparation
 
-The [source audit](PUBLISHED_INTERFACE_AUDIT.md) and [bounded plan](PROCESSBENCH_PLAN.md) document the next measurement step. The independent [adapter](processbench_prepare.py) verifies pinned inputs and prepares separate calibration/evaluation selections without network or model calls. See the plan for download and reproduction commands. No ProcessBench inference has run.
+The [source audit](PUBLISHED_INTERFACE_AUDIT.md) and [bounded plan](PROCESSBENCH_PLAN.md) document the next measurement step. The independent [adapter](processbench_prepare.py) verifies pinned inputs and prepares separate calibration/evaluation selections without network or model calls. See the plan for download and reproduction commands. The [first live preflight](results/2026-09-16-processbench-preflight/README.md) stopped before subject inference; both reserved cohorts remain unused. The corrected helper has not been rerun against the model.
+
+## ProcessBench local execution
+
+The [execution addendum](PROCESSBENCH_EXECUTION.md) implements the bounded plan for the currently audited Mac/Ollama installation. The runner requires a committed protocol, an exact-token preflight report, and pinned source files. It refuses evaluation unless calibration passes. Do not reuse this machine-specific preflight on another computer or runtime version.
+
+After downloading the source files using the [plan](PROCESSBENCH_PLAN.md), prepare ignored local jobs from this directory:
+
+```sh
+mkdir -p runs/processbench-session
+python3 - <<'PYJOBS'
+from pathlib import Path
+import json
+from processbench_run import load_jobs
+jobs, _ = load_jobs(Path('runs/processbench-source/gsm8k.json'),
+                   Path('runs/processbench-source/critique_template.txt'),
+                   Path('processbench/provenance.json'), Path('processbench/selection.json'))
+Path('runs/processbench-session/jobs.json').write_text(json.dumps(jobs) + '\n')
+PYJOBS
+python3 processbench_preflight.py --jobs runs/processbench-session/jobs.json --out runs/processbench-session/preflight.json
+python3 processbench_run.py calibration --data runs/processbench-source/gsm8k.json --prompt runs/processbench-source/critique_template.txt --provenance processbench/provenance.json --selection processbench/selection.json --preflight runs/processbench-session/preflight.json --out runs/processbench-session/subject-run
+```
+
+Read the calibration summary before invoking `evaluation` with the same paths; the runner also enforces the gate. Preflight loads the existing local model but requests no generated answer. Preserve a blocked report or ambiguous attempt and inspect it; do not remove files to bypass a stop or reset the fixed session budget.
 
 ## Verification-only reproduction
 
