@@ -40,6 +40,12 @@ The [v3 protocol](../pilot/PROTOCOL_V3.md) was frozen before its first model cal
 
 A secondary presentation audit was specified after inspecting the first six Llama format failures. It accepts only a unique terminal three-field JSON object or three complete scalar lines satisfying the original semantic checks. It does not infer judgments from prose, repair nulls, or select between competing verdicts. Original strict scores and gate decisions remain unchanged.
 
+### 3.4 Verification-only feasibility screen
+
+Following the v3 failures, a separately specified [verification-only protocol](../pilot/VERIFICATION_ONLY_PROTOCOL.md) removes answer generation, first-error localization and conversation history. Each model receives the thirty unchanged numerical traces in a fixed shuffled order and returns a single validity label. The frozen parser accepts a case-insensitive `VALID` or `INVALID`, optionally followed by one period, with surrounding whitespace removed. A usable label additionally requires a normal, successful server stop; truncated or unknown-status outputs cannot count as correct. The output allowance is sixteen tokens, with the other requested sampling settings retained.
+
+The primary comparison is balanced between ten valid/correct and ten invalid/wrong traces. The ten invalid/correct traces are reported separately. The primary feasibility gate requires responses for all thirty jobs, at least 27 usable labels overall and nine in every condition, and at least eight successful judgments in each primary class. These thresholds are development choices. A primary pass can coexist with failure on invalid traces ending at the correct answer, so it does not establish reasoning verification independent of conclusions. Each model is scheduled for all thirty calls without outcome-based prompt revisions. This protocol changes multiple task and output factors together and does not identify a single cause of differences from v3. Results will be added only after execution and verification.
+
 ## 4. Results
 
 ### 4.1 Earlier elicitation screens
