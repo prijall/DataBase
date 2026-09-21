@@ -50,7 +50,7 @@ Recorded v3 client sessions total **1,505.20 seconds (25.09 minutes)**. The veri
 
 ## Continue from home
 
-[PR #1](https://github.com/prijall/DataBase/pull/1), [PR #2](https://github.com/prijall/DataBase/pull/2), [PR #3](https://github.com/prijall/DataBase/pull/3) and [PR #4](https://github.com/prijall/DataBase/pull/4) are merged. The current cache-diagnostic archive and design draft are on `codex/shared-workload-runtime`, pending publication as a new pull request. The office connection has read access to the personal repository, so publication uses a fork and pull request.
+[PR #1](https://github.com/prijall/DataBase/pull/1), [PR #2](https://github.com/prijall/DataBase/pull/2), [PR #3](https://github.com/prijall/DataBase/pull/3) and [PR #4](https://github.com/prijall/DataBase/pull/4) are merged. The current cache-diagnostic archive, manuscript updates and design draft are published in [PR #5](https://github.com/prijall/DataBase/pull/5) on `codex/shared-workload-runtime`, awaiting merge. The office connection has read access to the personal repository, so publication uses a fork and pull request.
 
 After merging while signed into the personal account, clone or pull the repository at home. Read this file, then the latest result report. Before switching machines, commit and push research files and update this state. GitHub does not automatically contain chat history, model weights, or ignored run directories.
 
