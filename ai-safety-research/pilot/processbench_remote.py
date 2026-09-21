@@ -21,19 +21,37 @@ API_PORT = 11435
 ROOT = Path(__file__).resolve().parent
 REMOTE_RESERVE = 150
 PROFILE_NAMES = ('original', 'small-context-v1')
+DIAGNOSTIC_PROFILE = 'runtime-cache-diagnostic-v1'
+DIAGNOSTIC_PROMPTS = (
+    'Continue this list with one word: amber, blue, coral,',
+    'Continue this list with one word: garden, meadow, woodland,',
+    'Continue this list with one word: paper, pencil, notebook,',
+    'Continue this list with one word: morning, afternoon, evening,')
+
+
+def diagnostic_jobs():
+    result = []
+    for index, content in enumerate(DIAGNOSTIC_PROMPTS, 1):
+        messages = [{'role': 'user', 'content': content}]
+        result.append({'id': 'runtime-cache-%02d' % index, 'messages': messages,
+                       'messages_sha256': sha(json.dumps(messages, sort_keys=True, ensure_ascii=False).encode())})
+    return result
+
 SMALL_PROFILE_FILES = {'profile_plan': 'PROCESSBENCH_SMALL_CONTEXT_PLAN.md',
                        'profile_selector': 'processbench_small_selection.py',
                        'profile_selection': 'processbench/selection-small-context.json'}
 
 
 def profile_options(profile):
-    if profile not in PROFILE_NAMES:
+    if profile not in PROFILE_NAMES + (DIAGNOSTIC_PROFILE,):
         raise ValueError('Unknown execution profile')
-    return {'temperature': 0, 'seed': 42, 'num_ctx': 2048 if profile == 'small-context-v1' else 8192,
-            'num_predict': 1024, 'num_thread': 2}
+    return {'temperature': 0, 'seed': 42, 'num_ctx': 8192 if profile == 'original' else 2048,
+            'num_predict': 1 if profile == DIAGNOSTIC_PROFILE else 1024, 'num_thread': 2}
 
 
 def job_loader(profile):
+    if profile not in PROFILE_NAMES:
+        raise ValueError('Diagnostic profile cannot load benchmark jobs')
     profile_options(profile)
     if profile == 'small-context-v1':
         from processbench_small_selection import load_jobs
@@ -92,14 +110,16 @@ def load_bundle(request):
     pf.file_hash = lambda path: hashes[str(path)] if str(path) in hashes else real_hash(path)
     pf.API_PORT = 11435
     profile = request.get('transport', {}).get('profile', 'original')
-    if profile not in ('original', 'small-context-v1'):
+    if profile not in ('original', 'small-context-v1', 'runtime-cache-diagnostic-v1'):
         raise ValueError('Unknown execution profile')
-    options = dict(pf.OPTIONS, num_ctx=2048 if profile == 'small-context-v1' else 8192)
+    diagnostic = profile == 'runtime-cache-diagnostic-v1'
+    options = dict(pf.OPTIONS, num_ctx=8192 if profile == 'original' else 2048,
+                   num_predict=1 if diagnostic else 1024)
     supplied = request.get('transport', {}).get('options', options)
     if supplied != options:
         raise ValueError('Execution profile/options mismatch')
     pf.OPTIONS = options
-    if profile == 'small-context-v1':
+    if profile != 'original':
         original_loaded_state = pf.loaded_state
         def exact_loaded_state(require_loaded=False):
             resident = original_loaded_state(require_loaded)
@@ -107,6 +127,28 @@ def load_bundle(request):
                 raise ValueError('Small-context profile requires exactly 2048 resident tokens')
             return resident
         pf.loaded_state = exact_loaded_state
+    if diagnostic:
+        prompts = ('Continue this list with one word: amber, blue, coral,',
+                   'Continue this list with one word: garden, meadow, woodland,',
+                   'Continue this list with one word: paper, pencil, notebook,',
+                   'Continue this list with one word: morning, afternoon, evening,')
+        expected_jobs = []
+        for index, content in enumerate(prompts, 1):
+            messages = [{'role': 'user', 'content': content}]
+            expected_jobs.append({'id': 'runtime-cache-%02d' % index, 'messages': messages,
+                                  'messages_sha256': pf.digest(messages)})
+        def validate_diagnostic_jobs(jobs):
+            if jobs != expected_jobs:
+                raise ValueError('Diagnostic requires exactly four fixed synthetic jobs; no benchmark inputs')
+        pf.validate_jobs = validate_diagnostic_jobs
+        pf.BUDGET_SECONDS = 600
+        pf.SCHEMA = 'runtime-cache-diagnostic-preflight-v1'
+        original_bindings = pf.bindings
+        def diagnostic_bindings(jobs, model, options):
+            validate_diagnostic_jobs(jobs)
+            return dict(original_bindings(jobs, model, options),
+                        purpose='runtime-cache-diagnostic-v1', benchmark_admission=False)
+        pf.bindings = diagnostic_bindings
     return pf, modules['processbench_resources']
 
 def check_report(pf, request):
@@ -119,7 +161,7 @@ def check_report(pf, request):
         if report.get(name) != value:
             raise ValueError('Preflight source/job/config binding changed: ' + name)
     started = report.get('budget_started_unix')
-    if type(started) not in (int, float) or not 0 <= time.time() - started < 5400 - 150:
+    if type(started) not in (int, float) or not 0 <= time.time() - started < pf.BUDGET_SECONDS - 150:
         raise ValueError('Original session budget invalid or exhausted')
     return report
 
@@ -132,7 +174,7 @@ def dispatch(request):
         return resources.snapshot()
     if action == 'create_preflight':
         started = request['budget_started_unix']
-        if type(started) not in (int, float) or not 0 <= time.time() - started < 30:
+        if type(started) not in (int, float) or not 0 <= time.time() - started < (450 if pf.BUDGET_SECONDS == 600 else 30):
             raise ValueError('Controller/target clock or preflight dispatch delay invalid')
         report = dict(pf.bindings(request['jobs'], pf.MODEL, pf.OPTIONS),
                       transport=request['transport'], budget_started_unix=started,
@@ -204,7 +246,12 @@ def main(request):
         raise ValueError('Unknown remote action')
     # SIGALRM defaults to process termination: survives controller disappearance.
     signal.signal(signal.SIGALRM, signal.SIG_DFL)
-    signal.alarm(durations[request['action']])
+    duration = durations[request['action']]
+    if request.get('transport', {}).get('profile') == 'runtime-cache-diagnostic-v1':
+        started = request.get('budget_started_unix', request.get('report', {}).get('budget_started_unix'))
+        if started is not None:
+            duration = min(duration, 450, max(1, int(600 - (time.time() - started) - 30)))
+    signal.alarm(duration)
     try:
         result = dispatch(request)
         emit({'result': result})
@@ -244,6 +291,11 @@ def transport_binding(sources, profile='original'):
     options = profile_options(profile)
     profile_hashes = ({name: sha((ROOT / path).read_bytes()) for name, path in SMALL_PROFILE_FILES.items()}
                       if profile == 'small-context-v1' else {})
+    if profile == DIAGNOSTIC_PROFILE:
+        profile_hashes = {name: sha((ROOT / filename).read_bytes()) for name, filename in {
+            'diagnostic_protocol': 'RUNTIME_CACHE_DIAGNOSTIC_PROTOCOL.md',
+            'diagnostic_runner': 'runtime_cache_probe.py', 'record_io': 'processbench_run.py',
+            'atomic_io': 'verification_only.py'}.items()}
     return {'profile': profile, 'options': options, 'profile_sha256': profile_hashes,'kind': 'ssh-stdin-memory-only-v1', 'target': TARGET, 'api_port': API_PORT,
             'connector_sha256': sha(Path(__file__).read_bytes()), 'worker_sha256': sha(WORKER.encode()),
             'source_sha256': {name: item['sha256'] for name, item in sources.items()},
@@ -261,6 +313,13 @@ def worker_program(request):
 def rpc(action, sources, binding, on_line=None, **fields):
     """Exactly one SSH attempt; preserve received raw chunks before any failure."""
     timeout = 915 if action in ('create_preflight', 'verify_preflight') else 100 if action == 'stream_subject' else 30
+    if binding.get('profile') == DIAGNOSTIC_PROFILE:
+        started = fields.get('budget_started_unix', fields.get('report', {}).get('budget_started_unix'))
+        if started is not None:
+            remaining = 600 - (time.time() - started)
+            if remaining <= 30:
+                raise TimeoutError('Diagnostic budget cannot cover RPC and cleanup')
+            timeout = min(timeout, 465, remaining - 15)
     request = dict(fields, action=action, bundle=sources, transport=binding)
     process = subprocess.Popen(SSH, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                stderr=subprocess.PIPE, start_new_session=True)

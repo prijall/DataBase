@@ -18,6 +18,8 @@ The new calibration has six used and fourteen unattempted cases; the original tw
 
 The screen is closed. No automatic retry or configuration change is authorized. Next work is targeted runtime/cache investigation and human review of the six outputs, preserving primary scores. The [implementation guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) retains the executed configuration and reproduction commands, not an instruction to restart.
 
+A separate [runtime diagnostic protocol](RUNTIME_CACHE_DIAGNOSTIC_PROTOCOL.md) permits at most four synthetic one-token requests to check a cache setting identified in the [source audit](RUNTIME_MEMORY_AUDIT_2026-09-21.md). It uses no benchmark cases and cannot pass an accuracy gate. Office applications remain available throughout; larger-model trials are deferred.
+
 ## Original ProcessBench local execution (reproduction reference)
 
 The [execution addendum](PROCESSBENCH_EXECUTION.md) implements the bounded plan for the currently audited Mac/Ollama installation. The runner requires a committed protocol, an exact-token preflight report, and pinned source files. It refuses evaluation unless calibration passes. Do not reuse this machine-specific preflight on another computer or runtime version.

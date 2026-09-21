@@ -45,6 +45,8 @@ Those completed development screens account for **232 calls**, before the two se
 
 ## Next stage and limits
 
+Research must run alongside the usual office workload. Larger-model trials are deferred. The [next-baseline decision](NEXT_BASELINE_EVIDENCE_2026-09-21.md) separates this hardware constraint from the failed verifier gate and proposes a shorter, externally checkable task for offline design and human review.
+
 The [readiness record](pilot/processbench/READINESS_2026-09-21.md) preserves the closed M4 sessions. No automatic retry or configuration change is authorized by the completed smaller-context protocol. Next: investigate the runtime's cache allocation and have a human review the six archived outputs before deciding on any further experiment. The [post-hoc output review](pilot/results/2026-09-21-processbench-small-context/OUTPUT_REVIEW.md) is AI-assisted qualitative interpretation, with primary scores unchanged. Preserve missing coverage and the untouched evaluation reservation. A different calibration set prevents a causal comparison of the two context sizes.
 
 In the earlier synthetic development traces, every injected first error is at step one, and invalid traces with correct versus wrong conclusions have different error counts. Ten reused questions, two arithmetic families, and one confidence phrase cannot support broad alignment claims. Reliable measurements, corrected confounds and held-out data are needed before the intended intervention study.
