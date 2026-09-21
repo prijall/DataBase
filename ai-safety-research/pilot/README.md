@@ -8,7 +8,13 @@ This is an unsteered development screen, not the final benchmark or a novelty cl
 
 ## Offline ProcessBench preparation
 
-The [source audit](PUBLISHED_INTERFACE_AUDIT.md) and [bounded plan](PROCESSBENCH_PLAN.md) document the next measurement step. The independent [adapter](processbench_prepare.py) verifies pinned inputs and prepares separate calibration/evaluation selections without network or model calls. See the plan for download and reproduction commands. The [first live preflight](results/2026-09-16-processbench-preflight/README.md) stopped before subject inference; both reserved cohorts remain unused. The [September 21 M4 preflight](results/2026-09-21-processbench-m4/README.md) also stopped before subject inference: its immediate post-load memory guard failed before the corrected response reader or tokenization ran. Cleanup is verified; that session is closed and cannot resume.
+The [source audit](PUBLISHED_INTERFACE_AUDIT.md) and [bounded plan](PROCESSBENCH_PLAN.md) document the next measurement step. The independent [adapter](processbench_prepare.py) verifies pinned inputs and prepares separate calibration/evaluation selections without network or model calls. See the plan for download and reproduction commands. The [first live preflight](results/2026-09-16-processbench-preflight/README.md) stopped before subject inference, leaving both cohorts unused at that stage. The [September 21 M4 preflight](results/2026-09-21-processbench-m4/README.md) also stopped before subject inference: its immediate post-load memory guard failed before the corrected response reader or tokenization ran. Cleanup is verified; that session is closed and cannot resume.
+
+## Latest ProcessBench session
+
+The [second M4 session](results/2026-09-21-processbench-m4-session2/README.md) passed exact-token preflight for all sixty prompts (308–778 tokens). It then recorded two of twenty calibration responses: one usable and correct error index, one length-stopped and out of range. Both examples were erroneous; no valid example was attempted, so balanced performance is not estimable. Free memory then fell to 19%, stopping the run under the unchanged guard. Cleanup is verified and the session is closed. The archive now has **234 generated completions**; eighteen calibration and all forty evaluation cases remain unattempted.
+
+The [smaller-context plan](PROCESSBENCH_SMALL_CONTEXT_PLAN.md) proposes a separate 2,048-token adaptation after observing a maximum prompt-plus-output reserve of 1,802 tokens. That proposal is not implemented or executed. Do not change settings and resume the original manifest, interpret unseen cases as wrong predictions, or relax resource/calibration gates.
 
 ## ProcessBench local execution
 
@@ -37,7 +43,7 @@ Read the calibration summary before invoking `evaluation` with the same paths; t
 
 The reviewed [SSH transport](processbench_remote.py) uses an isolated target loopback service and sends Python code and input data through stdin and process memory. Research files and artifacts stay on the controller. The [session rules](PROCESSBENCH_M4_SESSION.md) describe service ownership, fixed target/runtime checks, a 90-second model-request deadline, a 100-second transport cap, and a 150-second reserve within the unchanged 90-minute cohort budget.
 
-The September 21 run is closed after a resource stop; **do not reuse its failed report**. For a separately documented future session with the owned service prepared under those rules, the controller CLI is:
+Both September 21 sessions are closed after resource stops. Preserve the first failed preflight and the second passed preflight with its two partial calibration records; **do not resume either closed session or change its settings**. For a separately documented future session with the owned service prepared under those rules, the controller CLI is:
 
 ```sh
 python3 processbench_remote.py create-preflight --data runs/processbench-source/gsm8k.json --prompt runs/processbench-source/critique_template.txt --provenance processbench/provenance.json --selection processbench/selection.json --preflight runs/NEW-SESSION/preflight.json --out runs/NEW-SESSION/subject-run

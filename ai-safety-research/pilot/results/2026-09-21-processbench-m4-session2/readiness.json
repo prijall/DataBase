@@ -1,0 +1,27 @@
+{
+  "controller_observed_unix": 1789964965.4835541,
+  "target": "prabs@100.74.220.25",
+  "observation": {
+    "resources": {
+      "captured_unix": 1789964965.426086,
+      "pressure_level": 1,
+      "free_percent": 46,
+      "swap_used_bytes": 9482335682,
+      "swapouts_bytes": 38187892736
+    },
+    "hardware": "Apple M4",
+    "memory_bytes": 17179869184,
+    "load_average": "{ 1.87 1.97 1.89 }",
+    "vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                    57537.\nPages active:                                 205482.\nPages inactive:                               162793.\nPages speculative:                             43207.\nPages throttled:                                   0.\nPages wired down:                             439585.\nPages purgeable:                                1631.\n\"Translation faults\":                     3277053806.\nPages copy-on-write:                       219037709.\nPages zero filled:                        1813936832.\nPages reactivated:                         337717057.\nPages purged:                               19998443.\nFile-backed pages:                            148426.\nAnonymous pages:                              263056.\nPages stored in compressor:                  1171312.\nPages occupied by compressor:                 105365.\nDecompressions:                            216713114.\nCompressions:                              252669257.\nPageins:                                   122398194.\nPageouts:                                    1223050.\nSwapins:                                     1406309.\nSwapouts:                                    2330804.\n",
+    "python": "3.9.6",
+    "ports": {
+      "11434": {
+        "listening": false
+      },
+      "11435": {
+        "listening": false
+      }
+    }
+  },
+  "model_requests": 0
+}

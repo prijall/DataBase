@@ -1,0 +1,104 @@
+{
+  "calibration": {
+    "split": "calibration",
+    "planned": 20,
+    "recorded": 2,
+    "missing": 18,
+    "complete": false,
+    "usable": 1,
+    "classes": {
+      "valid": {
+        "planned": 10,
+        "recorded": 0,
+        "missing": 10,
+        "usable": 0,
+        "official_matches": 0,
+        "local_matches": 0,
+        "conditional_local_accuracy": null
+      },
+      "error": {
+        "planned": 10,
+        "recorded": 2,
+        "missing": 8,
+        "usable": 1,
+        "official_matches": 1,
+        "local_matches": 1,
+        "conditional_local_accuracy": 1.0
+      }
+    },
+    "calibration_gate_passed": false,
+    "official_observed": {
+      "classes": {
+        "error": {
+          "n": 2,
+          "matches": 1,
+          "accuracy_percent": 50.0
+        },
+        "correct": {
+          "n": 0,
+          "matches": 0,
+          "accuracy_percent": null
+        }
+      },
+      "harmonic_mean_percent": null,
+      "undefined_convention": "null for an empty class; zero for zero-sum accuracies (explicit deviation from unguarded upstream division)"
+    },
+    "official_exact_matches": 1,
+    "local_exact_matches": 1,
+    "malformed": 0,
+    "out_of_range": 1,
+    "length_stops": 1,
+    "request_errors": 0
+  },
+  "evaluation": {
+    "split": "evaluation",
+    "planned": 40,
+    "recorded": 0,
+    "missing": 40,
+    "complete": false,
+    "usable": 0,
+    "classes": {
+      "valid": {
+        "planned": 20,
+        "recorded": 0,
+        "missing": 20,
+        "usable": 0,
+        "official_matches": 0,
+        "local_matches": 0,
+        "conditional_local_accuracy": null
+      },
+      "error": {
+        "planned": 20,
+        "recorded": 0,
+        "missing": 20,
+        "usable": 0,
+        "official_matches": 0,
+        "local_matches": 0,
+        "conditional_local_accuracy": null
+      }
+    },
+    "calibration_gate_passed": false,
+    "official_observed": {
+      "classes": {
+        "error": {
+          "n": 0,
+          "matches": 0,
+          "accuracy_percent": null
+        },
+        "correct": {
+          "n": 0,
+          "matches": 0,
+          "accuracy_percent": null
+        }
+      },
+      "harmonic_mean_percent": null,
+      "undefined_convention": "null for an empty class; zero for zero-sum accuracies (explicit deviation from unguarded upstream division)"
+    },
+    "official_exact_matches": 0,
+    "local_exact_matches": 0,
+    "malformed": 0,
+    "out_of_range": 0,
+    "length_stops": 0,
+    "request_errors": 0
+  }
+}

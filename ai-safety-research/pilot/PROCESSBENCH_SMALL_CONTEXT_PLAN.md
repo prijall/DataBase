@@ -1,0 +1,48 @@
+# Prospective ProcessBench screen with a 2,048-token context
+
+September 21, 2026. **Proposed next configuration; not implemented, frozen or executed by this document.** This is a dated amendment to the [original plan](PROCESSBENCH_PLAN.md), [execution rules](PROCESSBENCH_EXECUTION.md) and [M4 session rules](PROCESSBENCH_M4_SESSION.md). It authorizes no automatic experiment. Implement the new selection/configuration, independently review it and freeze its manifest and code before another subject call.
+
+## Evidence and reason for the change
+
+The second M4 session passed exact rendering/tokenization for all 60 original jobs: 308–778 prompt tokens with an 8,192-token context. Calibration then stopped when reported free memory reached 19%, below the unchanged 20% floor. Two responses were recorded: `gsm8k-160` completed normally with the correct error index; `gsm8k-109` reached the 1,024-token generation limit and its last boxed integer was out of range. Both are erroneous-solution cases. Evaluation received no subject calls.
+
+Preserve those raw responses, streams, journal, resource observations, source identities and partial scores in the [versioned session archive](results/2026-09-21-processbench-m4-session2/README.md) (controller originals: `runs/processbench-m4-2026-09-21-session2`). They increase the cumulative subject-call count from 232 to **234**. They are not a completed calibration, a two-class accuracy estimate, or evidence that the model is ready for an alignment intervention. Do not repair, retry, replace or incorporate either response into the next configuration's score.
+
+The proposed change is **context capacity 8,192 → 2,048**, retaining the **1,024-token output allowance**. The original maximum would require 778 + 1,024 = 1,802 tokens, leaving 246 tokens of capacity. This supports testing a smaller allocation; it does not establish memory fit or improved answers. The new calibration described below may have longer prompts, so the original maximum does not certify its fit. A separate preflight must measure every newly selected job at the new context.
+
+## One new calibration; preserve the untouched evaluation
+
+1. Retain the original selection manifest unchanged. Retire all 20 original calibration IDs from this phase's next adequacy gate, including the 18 without responses. Keep the two exposed cases explicitly marked as development observations.
+2. Construct **20 new calibration cases: 10 error-free and 10 erroneous**, from the same pinned 400-example `gsm8k` source. Exclude the normalized problem groups of **all 60 originally selected cases**, including every unselected sibling in those groups. Use the existing NFC-plus-collapsed-whitespace grouping, with at most one selected solution per group.
+3. Make selection deterministic without responses or length-based screening: retain the original hash salt `processbench-grouped-hash-v1:42`, group ranking and within-group record ranking. Traverse the remaining groups in that order, taking the first record whose class quota is still open, until both quotas equal 10. If quotas cannot be filled, stop preparation; do not try alternative seeds or exclusion rules. Assign a new selection-version label describing the original-group exclusion, without changing the specified ranking salt.
+4. Carry over the **same original 40 evaluation cases**, unchanged in IDs, order, labels, groups and message hashes. Save a new manifest containing the 20 new calibration cases and these 40 evaluation cases, plus the old manifest hash and excluded group list. Independently verify balance, 60 unique IDs/groups, all exclusions and byte/hash equality of the evaluation reservation.
+
+Keeping those 40 cases is a deliberate exception to the original plan's blanket request for a fresh evaluation reservation after a configuration revision. No evaluation answers exist, and no selection is being changed in response to evaluation performance. Input rendering/token counts are not model-answer exposure. Reusing this fixed reservation avoids shopping for a more favorable test set. It remains held out from answer-based development, not secret or demonstrably free of pretraining contamination. If any evaluation answer has in fact been generated or examined, this exception is invalid: stop and document exposure before drafting another plan.
+
+## Fixed configuration and fresh admission checks
+
+Keep the installed Llama-3.2 3B Q4_K_M model and pinned digest, Ollama 0.34.0, official ProcessBench critique template, zero-based paragraph tags, original text, one user message and the reviewed default chat header. Keep temperature 0, seed 42, two threads, one sequential sample, 30-second residency, 1,024 output tokens, and the existing extraction/scoring rules. Do not add a brevity instruction, alter the prompt, lower the output budget or change the parser in response to the exposed examples.
+
+Before any answer generation:
+
+- Freeze the new manifest, **2,048 context** configuration and reviewed code together; verify that both controller and remote worker enforce and record this value. Existing code pins 8,192 and must not be treated as already supporting this proposal.
+- Start a new, uniquely named session with a new pre-load target resource baseline. Do not overwrite either earlier M4 session or reuse their preflight approval. Account for time already spent against the user's nine combined machine-hours per week.
+- Verify the same model, backend, template and source identities, isolated loopback service, idle state and absence of competing model activity. All research artifacts remain on the controller; no new software or weights are installed on the M4.
+- Freshly render and tokenize **all 60 new-manifest jobs** through the verified non-generating path, including special tokens. Require complete original user content, exact message/render hashes and `prompt_tokens + 1024 <= 2048` for every job. Verify the actual loaded context agrees with the new configuration. If any job fails, stop: no truncation, substitution, filtering or further configuration change within this plan.
+- Check target resources before loading, immediately afterward, during preflight and around each subject call. Missing telemetry or an identity/count mismatch blocks execution. Passing preflight permits an attempt; it does not guarantee sustained headroom during generation.
+
+## Unchanged limits and gates
+
+Stop immediately for non-normal kernel memory pressure, free memory **below 20%**, swap growth **over 256 MiB**, or swapout growth **over 128 MiB**, measured against this session's pre-load baseline. Never reset that baseline within the session. Do not close office applications, clear caches, evict another workload or weaken a limit to pass the gate.
+
+The next session permits at most **60 subject attempts and 90 minutes**, including loading, preflight, pauses, failed calls and cleanup, subject also to the remaining weekly budget. Preserve the 90-second model-request deadline, 95-second remote worker limit, 100-second SSH cap and **150-second reserve before each subject attempt**. The service retains its independent 5,400-second watchdog. Preflight operations are recorded separately from subject calls.
+
+Attempt the fixed 20 new calibration cases once each unless a resource, timeout, transport or identity stop occurs. Advance only with all 20 records, at least **18 normal completed in-range predictions**, and at least **8/10 completion-gated exact-index matches in each class**. The usability and task-adequacy conditions remain separate engineering gates. An infrastructure stop does not become an ordinary accuracy-gate failure; either prevents evaluation admission.
+
+Only a passed calibration admits the original 40 evaluation cases, with identical settings and within the same budget. Stop and archive any partial evaluation if a runtime limit is reached. No replay of an attempted ID, automatic resume with a fresh budget, outcome-based replacement, cross-configuration pooling or promotion of calibration successes is allowed. A stop ends this planned session; no further context, prompt or model revisions are implicit in this plan. Verify termination of the owned service/runner after shutdown; unresolved cancellation remains explicitly unresolved.
+
+## Reporting and decision
+
+Report planned, attempted, recorded, usable and exact-match counts by class, with truncations, malformed/out-of-range extractions, errors and missing coverage. Preserve official-compatible last-boxed-integer scoring and completion-gated local scoring separately. Partial coverage is not a completed benchmark score; unused evaluation cases are not model errors. The two old responses remain a separate 8,192-context development result. A new calibration on different cases cannot support a paired or causal accuracy comparison between context sizes.
+
+This remains a **local feasibility adaptation**, not a reproduction of published model scores: the model/backend, small balanced subset and 1,024-token generation ceiling differ from the published setup. Source pins remain ProcessBench repository `e8024636bcabdf8bd514440551b531d3f90dd18b` and dataset `3bdcd5371ed567559a78f559c01c13a6deee7604`; see the [published-interface audit](PUBLISHED_INTERFACE_AUDIT.md). Even a successful completed screen would validate a measurement candidate, not establish an alignment contribution or conference-ready finding. Failure should close this bounded screen with its evidence preserved, before deciding on a different model or research design.

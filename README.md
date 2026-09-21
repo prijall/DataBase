@@ -4,8 +4,6 @@ SQL and database work, with a separate workspace for my independent AI safety re
 
 ## AI safety research
 
-**Stage: development experiments and working paper.** The [research workspace](ai-safety-research/README.md) tracks completed work and evidence. Read the [manuscript](ai-safety-research/paper/manuscript.md) and [latest runtime check](ai-safety-research/pilot/results/2026-09-21-processbench-m4/README.md): 232 local calls across development protocols, with failed screens preserved.
+**Stage: development experiments and working paper.** Read the [research workspace](ai-safety-research/README.md), [manuscript](ai-safety-research/paper/manuscript.md), and [current research state](ai-safety-research/RESEARCH_STATE.md).
 
-Start with the [current research state](ai-safety-research/RESEARCH_STATE.md) to see the latest outcomes and continue from another computer.
-
-The latest [M4 preflight](ai-safety-research/pilot/results/2026-09-21-processbench-m4/README.md) stopped at the memory guard before calibration. Cleanup is verified; both reserved cohorts remain unused. No research files were saved on the M4.
+The [latest M4 session](ai-safety-research/pilot/results/2026-09-21-processbench-m4-session2/README.md) passed exact-token preflight, then stopped at a memory guard after two calibration responses. The archive now records **234 generated completions**. Calibration is incomplete; all 40 evaluation cases remain unused. Cleanup is verified, and research files remain on the controller and GitHub.

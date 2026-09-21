@@ -1,0 +1,565 @@
+{
+  "git_commit": "d2dd756ce237ab09f504db3f10173fd17040b5cc",
+  "protocol": {
+    "protocol_name": "processbench-local-v1",
+    "model": "llama3.2:3b",
+    "identity": {
+      "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "3.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 3072
+      },
+      "template_sha256": "966de95ca8a62200913e3f8bfbf84c8494536f1b94b49166851e76644e966396",
+      "server_version": "0.34.0",
+      "transport": {
+        "kind": "ssh-stdin-memory-only-v1",
+        "target": "prabs@100.74.220.25",
+        "api_port": 11435,
+        "connector_sha256": "574a67aa83c847b804decf8907bbfa035cc1743ae2dc67d04969f53f4ec42957",
+        "worker_sha256": "eb1081cafc25242d0af29cbfa33bd7ca52bcc7862146f4f24a6ad5ebd4c9feb5",
+        "source_sha256": {
+          "processbench_preflight": "2569aefc92879b6a02ab06aa100d226fb993aff4580f545ea6cd5c08ba53b99f",
+          "processbench_resources": "22aac93f9718fcf6fa99689e843391574536c45a5dcd7a38213328483101649b",
+          "stream": "a4374e5ada23e1e2e264d36c933c433cca40d707e9db38a32e4360bd5bf82c60"
+        },
+        "session_policy_sha256": "ce2e4e8fb89a19ea9a46ffa3e77601229abf159fed4bde42d895d01955a43406",
+        "session_helper_sha256": "69ac542cb6fd9a9d5192529acfa4becc3598c27eb40a815aa7ef4036f1e806f6",
+        "http_deadline_seconds": 90,
+        "worker_deadline_seconds": 95,
+        "ssh_subject_deadline_seconds": 100,
+        "reserve_seconds": 150
+      }
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 1024,
+      "num_thread": 2
+    },
+    "request_deadline_seconds": 90,
+    "request_behavior": {
+      "stream": true,
+      "truncate": false,
+      "shift": false,
+      "keep_alive": "30s"
+    },
+    "reserve_seconds": 150,
+    "budget_seconds": 5400,
+    "max_attempts": 60,
+    "budget_started_unix": 1789965050.070567,
+    "deadline_unix": 1789970450.070567,
+    "input_hashes": {
+      "data": "fb1c59dfd1e83e1c5a48dbe598db27e4bc0b8bc524a09445f2d4b69178f61349",
+      "prompt": "0e7dba24bfaa9dea379907e11b8dc701c6cd6e74453ab2ffc9b1d63237cc4434",
+      "provenance": "c8920b20f1d775735158fa9a020218d683934fb44990941f878d55b7eac5f9e2",
+      "selection": "2fb187e84c18bf6587334d72853577b4a94569fe8ad42cab5d739670c433bab8"
+    },
+    "code_hashes": {
+      "runner": "1b420ae2f454ff551b648427a407ee6f4f3df3e824cb7e0d08d7a2addeaec36e",
+      "adapter": "574c9d6bcbfcf21a15e5ac878cbe892869bb47c8634920846dc69d0630feae28",
+      "pilot": "c5ac96c987dabeb11bd6f5d3a1f692ea7e55cd74421832b37a702c4257f0b0c8",
+      "atomic_io": "e9f57d4bb7f7141534108f69212eb2490c744ffb3a5577e8635ccf2fc3d07fa5",
+      "preflight": "2569aefc92879b6a02ab06aa100d226fb993aff4580f545ea6cd5c08ba53b99f",
+      "resources": "22aac93f9718fcf6fa99689e843391574536c45a5dcd7a38213328483101649b",
+      "plan": "b2e88f4ef0c7aef9ada7de55f0f138825b226999495cd5c06afaf90327a9dae6",
+      "execution_addendum": "bd67521efbf3b968bccc47311fb9c029236975e12669805ca0f2fb18ae23c2e3",
+      "remote_connector": "574a67aa83c847b804decf8907bbfa035cc1743ae2dc67d04969f53f4ec42957",
+      "remote_worker": "eb1081cafc25242d0af29cbfa33bd7ca52bcc7862146f4f24a6ad5ebd4c9feb5",
+      "remote_stream": "a4374e5ada23e1e2e264d36c933c433cca40d707e9db38a32e4360bd5bf82c60",
+      "remote_session_policy": "ce2e4e8fb89a19ea9a46ffa3e77601229abf159fed4bde42d895d01955a43406",
+      "remote_session_helper": "69ac542cb6fd9a9d5192529acfa4becc3598c27eb40a815aa7ef4036f1e806f6"
+    },
+    "preflight_sha256": "1224bd5d4a6f3932f6a67b34ca90994436445fdf12aea4ccdb927bdb50738223",
+    "jobs": [
+      {
+        "id": "gsm8k-160",
+        "split": "calibration",
+        "gold_label": 2,
+        "step_count": 5,
+        "messages_sha256": "a37380c58e1d2081c0deabec26b137c1c93b30860e30856ba80af8f866757920",
+        "problem_group_sha256": "0db78aa60991967366234e2b072b1e2a623e706b76a8bfecce302ceade066291"
+      },
+      {
+        "id": "gsm8k-109",
+        "split": "calibration",
+        "gold_label": 1,
+        "step_count": 8,
+        "messages_sha256": "b559251463e6015f76db0225fdfedf53a75b0f3292f0834c6b8000281a00da18",
+        "problem_group_sha256": "8730001ccf1ee4a04e9c84b7f64e81a600c2d2b96621dee1a194827cddbf77ff"
+      },
+      {
+        "id": "gsm8k-366",
+        "split": "calibration",
+        "gold_label": -1,
+        "step_count": 3,
+        "messages_sha256": "19c3998eb51bd757658fe646f2c186c5db4e289342731c5e66a878cc955540d7",
+        "problem_group_sha256": "51945676cecd05b62661047f595dc0f2af363080d30a528c8cb6048cf8e95c83"
+      },
+      {
+        "id": "gsm8k-357",
+        "split": "calibration",
+        "gold_label": -1,
+        "step_count": 4,
+        "messages_sha256": "db0f1fa60ccf308379ded0a43450306d595e8adf61c945025f40f20e190607c5",
+        "problem_group_sha256": "9ef4bdeda0b9b726d48af2a602c6f723e8e4a2acd2a7b5296d1070182b6fd435"
+      },
+      {
+        "id": "gsm8k-392",
+        "split": "calibration",
+        "gold_label": -1,
+        "step_count": 5,
+        "messages_sha256": "eebede4ef222a47f3176fa6fa43f87673397df9dc017622e1b55cd2f8f44c168",
+        "problem_group_sha256": "8cae947b581d6be24ea0d1a2bd867b715a54e880ccff5fd798f4fd073c7bd4bc"
+      },
+      {
+        "id": "gsm8k-117",
+        "split": "calibration",
+        "gold_label": 3,
+        "step_count": 4,
+        "messages_sha256": "431cceadc719b5a2086e94213aa299f35be66f7967133a864ac1c3fa46d66404",
+        "problem_group_sha256": "dc1b264fc4aefafbed621c9e844315a6e512d5d91ccbdc591d21512a2ab9e855"
+      },
+      {
+        "id": "gsm8k-66",
+        "split": "calibration",
+        "gold_label": 6,
+        "step_count": 10,
+        "messages_sha256": "3bce1019277aa2fc4a1374a94e1051dc0e5f1611940608c7a163897cec52a3f3",
+        "problem_group_sha256": "0a0bddef7a050862a43d5201017530932a9d0dfb98d4534ad4b96decee5811b5"
+      },
+      {
+        "id": "gsm8k-276",
+        "split": "calibration",
+        "gold_label": -1,
+        "step_count": 4,
+        "messages_sha256": "b7c3e1a160caf86c73ea0eb7e88ff3eb1e0367340a8e678312dade27235c0979",
+        "problem_group_sha256": "94c5beec9be8ef681c69764b01b26cb8b78c5c014829904c6496fc1249c9c2c9"
+      },
+      {
+        "id": "gsm8k-133",
+        "split": "calibration",
+        "gold_label": 3,
+        "step_count": 6,
+        "messages_sha256": "cafc7a6653f9190d4747ded58e5b0e3a4b69587c27b87ba118d400a0ba325b44",
+        "problem_group_sha256": "f0b8d0f869a251635471e64e7f6ed1bfb89598cd860f2c57bf28f6dfcf55addc"
+      },
+      {
+        "id": "gsm8k-312",
+        "split": "calibration",
+        "gold_label": 0,
+        "step_count": 3,
+        "messages_sha256": "5bf4fb12f12ff9b0311ab5af36d12c81ececfc1cc0ce41f76a6d9e2cb052aef9",
+        "problem_group_sha256": "136846f0ef6caf11983ac6eee83126a31b0249cc0735257ac77a5754c7983cea"
+      },
+      {
+        "id": "gsm8k-67",
+        "split": "calibration",
+        "gold_label": 1,
+        "step_count": 5,
+        "messages_sha256": "4e8d40d36787aa80660ae5e19030cd7b36bcc8cd8c59b2bd6e69458419369ecd",
+        "problem_group_sha256": "488aa286b6b6cddbdb001031732f99ca7f2b6ea5977e3ee2e161ab52382e002b"
+      },
+      {
+        "id": "gsm8k-22",
+        "split": "calibration",
+        "gold_label": 5,
+        "step_count": 7,
+        "messages_sha256": "7a28d33b4ddc31bdc818508c9dc409d00f1064dea27998d3323afe0232d88ea8",
+        "problem_group_sha256": "91e7fa5da4a5aae2e242857891e906cd32f3dd4d1971ea6a0da63269b6a2b004"
+      },
+      {
+        "id": "gsm8k-201",
+        "split": "calibration",
+        "gold_label": -1,
+        "step_count": 6,
+        "messages_sha256": "546d85124674f0339f8f0f381744702def2d7255a20116871653aeb5ab1263a3",
+        "problem_group_sha256": "8e2693d6c9f71919efc5b114804e03d91e220571db0109a9ce79f7627b0e1fdd"
+      },
+      {
+        "id": "gsm8k-223",
+        "split": "calibration",
+        "gold_label": -1,
+        "step_count": 4,
+        "messages_sha256": "bdb1e3b66978351d8f99c7afb7bd45c1cc1faf6c360da7acbf377c22c609fd59",
+        "problem_group_sha256": "613e7767a989ba48b38d8d81f9882863b68491389a49ab833369a42fcb3946df"
+      },
+      {
+        "id": "gsm8k-318",
+        "split": "calibration",
+        "gold_label": -1,
+        "step_count": 6,
+        "messages_sha256": "06ad3e1f5fa62d0c30ee569b50480b48ebf952defe7fa7880e2e35a7ac884531",
+        "problem_group_sha256": "390c280ec65799fa4938059f7f5fd3a9bdf0485655e55c97f1a93f0a1e5a5e71"
+      },
+      {
+        "id": "gsm8k-344",
+        "split": "calibration",
+        "gold_label": -1,
+        "step_count": 5,
+        "messages_sha256": "af0c415bbd6d6ac38838a5c137b20fbd19dfd9463e4ae98a3c04864eb45dd6f4",
+        "problem_group_sha256": "07cde4e475a98b4bfa2c6756218ad05c143f352779dfcd4b197bc0f2691bd79f"
+      },
+      {
+        "id": "gsm8k-356",
+        "split": "calibration",
+        "gold_label": -1,
+        "step_count": 5,
+        "messages_sha256": "8eea1e58ca6ac8f4393a61c4d31a8f16332f1a7c3c83c574296d4f5bfc587187",
+        "problem_group_sha256": "b7ddd1bf0537596dbc5d17d8edc8a5abc579b49365b270b8e32296c4fcdfa006"
+      },
+      {
+        "id": "gsm8k-379",
+        "split": "calibration",
+        "gold_label": -1,
+        "step_count": 5,
+        "messages_sha256": "46bb6b59f6361f2d8133a22f6d7fa155661371c9f771c4223dffafa710896db6",
+        "problem_group_sha256": "06591e3000388735364d0f5a24cb2d03e55a8c5ff25a847e956a23829d27ed01"
+      },
+      {
+        "id": "gsm8k-42",
+        "split": "calibration",
+        "gold_label": 3,
+        "step_count": 7,
+        "messages_sha256": "76b51c034a4df5be9f22c13c667c282ae125dfb8f89f76e6376e4f13773bb21d",
+        "problem_group_sha256": "5380d0e581e97d54aa4d548d0cfb93189471df492f5cf140d94d602da7951a70"
+      },
+      {
+        "id": "gsm8k-5",
+        "split": "calibration",
+        "gold_label": 2,
+        "step_count": 4,
+        "messages_sha256": "76f02d7157c551fb86ba67ef0536d9857b8df3ca324514284bbeb31b76bb6c16",
+        "problem_group_sha256": "40e976db65024c72a3722acf07ad0199595bc30b62957832f6d5b2a0b0520c76"
+      },
+      {
+        "id": "gsm8k-221",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 4,
+        "messages_sha256": "0ee59416ed99ac408f8568065f3e5b9a997e31353114a0a440960ee140ce309b",
+        "problem_group_sha256": "3ecdc8a41a4e8d006c6b69b655b8ee286515bce34db6d5cf150a546b32a05804"
+      },
+      {
+        "id": "gsm8k-291",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 4,
+        "messages_sha256": "92414629ba6b3beb2b82a9e44c262e9ac95792ca6a8b54e87f79cf3717e55734",
+        "problem_group_sha256": "ef88a9e1719ce4c54e6cceeb7ada89825c0f54ec2ca37dd0056cbd515b10835b"
+      },
+      {
+        "id": "gsm8k-134",
+        "split": "evaluation",
+        "gold_label": 1,
+        "step_count": 5,
+        "messages_sha256": "2862111d509f5885468a756be99c74a1913119891c5231219964253e1ad7d714",
+        "problem_group_sha256": "b8ef5dec533b9ddba8774b4d1a36a370d8bba70e5962bb515cc895c3bb88103a"
+      },
+      {
+        "id": "gsm8k-342",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 4,
+        "messages_sha256": "c4bda5c2add5021c9efb497114f6c9f51f3e9c7ac6b91d85d1789f21d0f23169",
+        "problem_group_sha256": "2e9bb88c177fdf7ec236c94689a74f348fbef535135cdffd083c4a26f800013c"
+      },
+      {
+        "id": "gsm8k-17",
+        "split": "evaluation",
+        "gold_label": 0,
+        "step_count": 4,
+        "messages_sha256": "03877a4ecf3e788d70b95a40204daf58df8fb25353e26fa21eabb5e0e2579a39",
+        "problem_group_sha256": "67ab79f900374ccf522331a8ad660c723bfba7d83e1fd2bc80cd21e955803058"
+      },
+      {
+        "id": "gsm8k-32",
+        "split": "evaluation",
+        "gold_label": 2,
+        "step_count": 5,
+        "messages_sha256": "08f9da532f616d702b4b1ec47f4af047b9fbaaaa274e6a1c7cdacc1222808239",
+        "problem_group_sha256": "03f76a647338acaaeca5701b293c7268d8a6f38026a3b039e16ba58bd93931a7"
+      },
+      {
+        "id": "gsm8k-206",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 4,
+        "messages_sha256": "26f065bec22b61690b8d2c1567b0f342708baad94ef4a0666af87838f8bd9e3e",
+        "problem_group_sha256": "d57571231810302224ce0e5d194f2de41b073fbbfe67684abb13c244d9c34315"
+      },
+      {
+        "id": "gsm8k-327",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 6,
+        "messages_sha256": "010dd400e0ab145e1f41287996af6973eb5ac9a0b25322200a6d9d726405a72c",
+        "problem_group_sha256": "1f6b279966936dbf2737ee360212cc51b1ae949cc0ed24c61b531bd46c2c960a"
+      },
+      {
+        "id": "gsm8k-388",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 4,
+        "messages_sha256": "42848cd7b0a7225c09cdc0447ac53336d6b20310718d99dad50ed9fa78183036",
+        "problem_group_sha256": "44a2b84ca387a0883bff0e8976d76e12385f3fd3f83a85d6aa14459618821f29"
+      },
+      {
+        "id": "gsm8k-284",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 5,
+        "messages_sha256": "0a1ec8ea764456912325e4e756cd54f7662cc592b9572c8e700e4eaf30e9e676",
+        "problem_group_sha256": "c41d4feabce1e9a42763dab6291231bff11efb6688afd2295b81acf924a38624"
+      },
+      {
+        "id": "gsm8k-65",
+        "split": "evaluation",
+        "gold_label": 4,
+        "step_count": 10,
+        "messages_sha256": "41dce21aa1d1ab69ff0d32ea8b7a95e19790d10b8e372154b87ade85c51b0d30",
+        "problem_group_sha256": "05b5db5d64d2d00de50f6a888f178163b53c9c52c5afd1888084ba5e9852947a"
+      },
+      {
+        "id": "gsm8k-332",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 5,
+        "messages_sha256": "6ccc139a0f79c9047d7a18ae55e97f2ca5befb73a15394ce952dcf5da382b2dc",
+        "problem_group_sha256": "72fa5474be137a1a94dab2a968096ca28c9aa9a45e27a70ccad177d7e03b0d12"
+      },
+      {
+        "id": "gsm8k-165",
+        "split": "evaluation",
+        "gold_label": 2,
+        "step_count": 6,
+        "messages_sha256": "ba0c334cfdae0f0d45ad221eeba5584cc968bddee166ae28e50eb509029feb28",
+        "problem_group_sha256": "f2e3baa08b2afa6c6662bcb475c5b1a8cbfb2613ba6785fdbbed53d31c545d95"
+      },
+      {
+        "id": "gsm8k-251",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 5,
+        "messages_sha256": "5f79e86f7b050a178ab3260f73865c163a43a19e003de9b91136bf2e13a5bd4e",
+        "problem_group_sha256": "e2582278258ec9017c50c297f50e1b836ab0b4fe7cc6e72e08c939c949eff73c"
+      },
+      {
+        "id": "gsm8k-192",
+        "split": "evaluation",
+        "gold_label": 2,
+        "step_count": 8,
+        "messages_sha256": "1a9fc5eb4ce9c448d17281c804ed7ae15eaa60b7559edc6f7de8855b9487089b",
+        "problem_group_sha256": "db22fa8e24434d81ecb2059824dc4e9303a7a50882cb2c3bc4de7588be493e7b"
+      },
+      {
+        "id": "gsm8k-97",
+        "split": "evaluation",
+        "gold_label": 2,
+        "step_count": 5,
+        "messages_sha256": "8626f3abe03299ffdbfa686c33a3a17ad80e20b02d541b59387aef11110b5183",
+        "problem_group_sha256": "bfa26e430b44d5e644c4dcf9223d88ef17bbc9928fa5be31c2321d184786a1da"
+      },
+      {
+        "id": "gsm8k-229",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 6,
+        "messages_sha256": "73881a6d7d77eada6a65e9a03d0b38f2c565ad914dfd3942b2ea4612408590d8",
+        "problem_group_sha256": "e97f4c0f6994a883d33bffce9d02b8e2d5419fd82d7c79d6da77983f4f4aa9ba"
+      },
+      {
+        "id": "gsm8k-208",
+        "split": "evaluation",
+        "gold_label": 4,
+        "step_count": 5,
+        "messages_sha256": "39d4c5d04453c7859f996f4533b1becb8917b201c654eafb68b27754d4efad27",
+        "problem_group_sha256": "a4de1b0d96af78d00d1b12f579d5462845c2528aca7cfd8e4437c22bd9315886"
+      },
+      {
+        "id": "gsm8k-182",
+        "split": "evaluation",
+        "gold_label": 2,
+        "step_count": 5,
+        "messages_sha256": "ba1ee64b68d166ebeb21339ece5f4d3132ae0da5a06b23aa36d5cb096850b306",
+        "problem_group_sha256": "32c3bf9fb98cf5f8712f53dbddd3f7ff00e0195564bac32b0f75bf692427f81c"
+      },
+      {
+        "id": "gsm8k-178",
+        "split": "evaluation",
+        "gold_label": 1,
+        "step_count": 4,
+        "messages_sha256": "150b7a0cfb661db1e7c967bc0567b04d96c5fe1dc5163e2fe4d0ecd71cfaba71",
+        "problem_group_sha256": "a6e52b3379ebd479057fddbfa267255e844713a195b6abc71f8e78aedec32f3f"
+      },
+      {
+        "id": "gsm8k-269",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 5,
+        "messages_sha256": "d21b65d200d0d525014ee8bed61c335df0ca963a12f606bdf789c90b628d37b1",
+        "problem_group_sha256": "576b2cfdf78a68a7e9cce95372cb67c9d4b838bdb6e5f2ba19dd3b936a3019ae"
+      },
+      {
+        "id": "gsm8k-130",
+        "split": "evaluation",
+        "gold_label": 2,
+        "step_count": 5,
+        "messages_sha256": "05e3a76318d9308a9ff56e26b62bef0240d672d9a631d2bee378369f86ade70c",
+        "problem_group_sha256": "4efe4e1fc88e20e96eeac19cf59b667fb9dd673cdee5f8031857ee8e7e4f0a34"
+      },
+      {
+        "id": "gsm8k-124",
+        "split": "evaluation",
+        "gold_label": 0,
+        "step_count": 4,
+        "messages_sha256": "167dce9c12a1f5550ceb94df8ea3e50ecfd9f261e3f0a0bfe3a8e543a11a8f3d",
+        "problem_group_sha256": "c4de7ed44de7a40cfffbf89ae426303a03b55a927f0444af45774c9e65f098c7"
+      },
+      {
+        "id": "gsm8k-37",
+        "split": "evaluation",
+        "gold_label": 1,
+        "step_count": 4,
+        "messages_sha256": "d6dcb621265cf06ad08d33f67b182bd8dc886f04ddb9638ac071ae4da9b0b5de",
+        "problem_group_sha256": "912e4d5a0315ec9daf450ab7c785f4c511cc4f75b920897cef58cc47c3bf6162"
+      },
+      {
+        "id": "gsm8k-294",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 4,
+        "messages_sha256": "2eb9868cdf30c2979511c2b7afc0b80a7248a71bd3375ad488419d2a6eff8284",
+        "problem_group_sha256": "4b7297b47da8c4f180a211eb3a06300210670e13c65b9175e318afadc08de540"
+      },
+      {
+        "id": "gsm8k-103",
+        "split": "evaluation",
+        "gold_label": 2,
+        "step_count": 7,
+        "messages_sha256": "9104af71934b62d4a76d6c2e39842839d8f1e6ae5429a20e688daa78299437fb",
+        "problem_group_sha256": "a937db18df217fc94c419e7066511d2e5ed9bb519ec658fa63a0a006633c6ffb"
+      },
+      {
+        "id": "gsm8k-152",
+        "split": "evaluation",
+        "gold_label": 1,
+        "step_count": 4,
+        "messages_sha256": "f7605bb918f8b6ba3cc204c4b07cae91387db426e72d49c78220b555d8ccbd03",
+        "problem_group_sha256": "ac925787851878177e16593e83f7c696df7a8cee7dd3c8f4277c1be376b0a371"
+      },
+      {
+        "id": "gsm8k-334",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 4,
+        "messages_sha256": "b46770efa163e309b5708f0542debc2eba93fa0c00fd9a7dae2e4c537bc989bb",
+        "problem_group_sha256": "2e4540b8e9e3979c0567cb565c74c6810a1e09d38284af035ef73b1aae7ee92e"
+      },
+      {
+        "id": "gsm8k-199",
+        "split": "evaluation",
+        "gold_label": 2,
+        "step_count": 3,
+        "messages_sha256": "a49b5ae35aa9c22dd4cfb02f3d1b64b78888b8b67f3653474f7f2d77f64f1edb",
+        "problem_group_sha256": "2064b5a551cb06925e74d2930d1d87c173108567db38dfe87e071e19beb4730e"
+      },
+      {
+        "id": "gsm8k-114",
+        "split": "evaluation",
+        "gold_label": 1,
+        "step_count": 4,
+        "messages_sha256": "c8f5dbd92460fb40b345d183933faa535d7a8e6f28ae42cff6a0f6b979e28cea",
+        "problem_group_sha256": "336b088daff70c602c2e1b5cde07d18e433016ddd1180949710fd2cefa07453c"
+      },
+      {
+        "id": "gsm8k-194",
+        "split": "evaluation",
+        "gold_label": 2,
+        "step_count": 4,
+        "messages_sha256": "f8a1ae8aae15f3e1da88fcf2eff0021a8c2e3240c271106720e828fa35870a89",
+        "problem_group_sha256": "d28d879c9589742f3cb5852e22b1e0b0ca8399cbc97183339662a347945325fb"
+      },
+      {
+        "id": "gsm8k-299",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 7,
+        "messages_sha256": "f2c959d8e84eed3e89159e37b2b109e3180379569622602f0d104ffd07945145",
+        "problem_group_sha256": "d266c2c989b6d4b00f4b98e4fcdecd09a55b6fb2520d5d8bb43a1f5f3cec7cc0"
+      },
+      {
+        "id": "gsm8k-105",
+        "split": "evaluation",
+        "gold_label": 1,
+        "step_count": 4,
+        "messages_sha256": "ff07da013264ecfb08f6e320f7ee7373ef6a83e0684499949e669cc490639281",
+        "problem_group_sha256": "154c8df41aba1614e0af88f0bdbc3d2dc10e0e76789989a6c3c7c011bdb9309b"
+      },
+      {
+        "id": "gsm8k-320",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 5,
+        "messages_sha256": "1b37fd1e79c570589449c50f9568743042bd1c86b2f12cdaa5646c302dfe3f8b",
+        "problem_group_sha256": "0a2730fdc05ef2edb6c988513ccfaa1db0792771f0fc93fb25e365f11a44f2d6"
+      },
+      {
+        "id": "gsm8k-171",
+        "split": "evaluation",
+        "gold_label": 2,
+        "step_count": 7,
+        "messages_sha256": "2d46c15652bb9febcd38473d9852cdbe2c4d73ca828a855c7ae9f645ff2c004d",
+        "problem_group_sha256": "b7f59158b17ad0c29c87d8a94177e34cffceba9fe3ea77e028e09b79d6e4c2b9"
+      },
+      {
+        "id": "gsm8k-345",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 6,
+        "messages_sha256": "042f285f0e01a2f3a2cf20481550061ee5f636de8310ce004af4070a11f3a99c",
+        "problem_group_sha256": "569fe2a067082d1d21647bd6dea12fbd43afe6b7bff23d4ca71e779ae19d3b2a"
+      },
+      {
+        "id": "gsm8k-369",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 3,
+        "messages_sha256": "90e927a0e34a100880cfdfd0feade6e5ec3db296a0afbfa0d7abb3eadaccb0bd",
+        "problem_group_sha256": "966ffbb662da449ad6d0ccb87cf798429d6bf27c503f57e0a2d7a657af814404"
+      },
+      {
+        "id": "gsm8k-370",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 4,
+        "messages_sha256": "ecd9783d3743c4d5fa9e86f6da54b2395c2a68442c8c46946e5924ef161f90e0",
+        "problem_group_sha256": "46ce7073561764ace4b5738771fa594bc93ee562c5ac3f922ce4538d4715ca8f"
+      },
+      {
+        "id": "gsm8k-303",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 5,
+        "messages_sha256": "2ccabd643bc6333634993f533df677b90a82e00214255bab7145d316dc8c3e6b",
+        "problem_group_sha256": "8a979bc837e6e49762ca03d71a4dd891c67fee2988356ee5ca60fdd59414892a"
+      },
+      {
+        "id": "gsm8k-282",
+        "split": "evaluation",
+        "gold_label": -1,
+        "step_count": 3,
+        "messages_sha256": "16cd49b1c4fc07fd5aec5da828f633e1c455b5bdb0c3d24eb5dca08419af5491",
+        "problem_group_sha256": "ff564eee69afe358b3d19537910ae7268b833443f3ad192771aa42f33cc37cfd"
+      }
+    ]
+  }
+}

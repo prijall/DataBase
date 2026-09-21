@@ -1,0 +1,25 @@
+{
+  "controller_start": {
+    "event": "local_start",
+    "host": "prabs@100.74.220.25",
+    "remote_code_sha256": "3cd954654a4d7103447586da9c496fc93ae9033afe48e08db3e367fdae4d492b"
+  },
+  "events": [
+    {
+      "event": "spawned",
+      "pid": 39222,
+      "pgid": 39222,
+      "watchdog_seconds": 5400,
+      "readiness": "not_yet_checked"
+    },
+    {
+      "event": "cleanup",
+      "pid": 39222,
+      "reason": "requested_stop",
+      "returncode": 0,
+      "owned_group_absent": true
+    }
+  ],
+  "full_controller_log_sha256": "3e3df4bd951a19c00edd1a034e9434a3381a032c9c0b7173a5cb20a629255cfb",
+  "note": "Lifecycle records extracted verbatim; full startup/runtime log stays on controller."
+}
