@@ -78,3 +78,7 @@ If normal office use cannot support even the eventual short-task workload, pursu
 ## Subsequent operational decision
 
 The [executed cache-disabled diagnostic](pilot/results/2026-09-21-runtime-cache-diagnostic/README.md) confirmed the setting took effect, but the first render-only model load crossed the pressure and free-memory guards. It generated zero answers; cleanup was verified. Defer further M4 loading under the current office workload and continue the [offline design draft](TASK_MATCHED_DESIGN_DRAFT.md). This outcome changes neither the literature evidence nor the closed scientific gates.
+
+## Later offline review
+
+The [fresh comparison](DESIGN_LITERATURE_COMPARISON_2026-09-21.md) found strong prior overlap, so the shortened arithmetic design remains a development instrument. Its exact checker is complete but human review is pending. The next bounded task is [public-log metric reproduction](PUBLIC_LOG_REANALYSIS_FEASIBILITY.md), after verifying one pinned response-log artifact. This route makes no new model calls and changes no prior score.

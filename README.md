@@ -4,8 +4,8 @@ SQL and database work, with a separate workspace for my independent AI safety re
 
 ## AI safety research
 
-**Stage: development experiments and working paper.** Read the [research workspace](ai-safety-research/README.md), [manuscript](ai-safety-research/paper/manuscript.md), and [current research state](ai-safety-research/RESEARCH_STATE.md).
+[Research overview](ai-safety-research/README.md) · [Working manuscript](ai-safety-research/paper/manuscript.md) · [Current state](ai-safety-research/RESEARCH_STATE.md)
 
-The [2,048-token M4 calibration](ai-safety-research/pilot/results/2026-09-21-processbench-small-context/README.md) passed exact-token preflight and recorded six calibration responses before a memory-pressure stop: four usable, one correct. The archive now records **240 generated completions**. Calibration remains incomplete; all forty evaluation cases are untouched. Cleanup is verified, and research files remain on the controller and GitHub.
+**Current stage:** offline design review and preparation for public-data reanalysis. The literature review found substantial overlap with the proposed evidence-versus-confidence study. Four development examples now have an exact arithmetic checker and twelve passing tests. A pinned public response-log file is verified for a [CPU-only reproduction route](ai-safety-research/PUBLIC_LOG_REANALYSIS_FEASIBILITY.md).
 
-A subsequent [cache-disabled loading check](ai-safety-research/pilot/results/2026-09-21-runtime-cache-diagnostic/README.md) also hit the resource guards, before generating answers. Cleanup is verified. Research must coexist with office work; the next step is the [offline task design](ai-safety-research/TASK_MATCHED_DESIGN_DRAFT.md), with further model loading deferred.
+Historical experiments contain **240 generated completions**; no intervention or held-out evaluation has run. Shared-M4 loading remains deferred after the [verified resource stop and cleanup](ai-safety-research/pilot/results/2026-09-21-runtime-cache-diagnostic/README.md). See the research workspace for evidence and limitations.

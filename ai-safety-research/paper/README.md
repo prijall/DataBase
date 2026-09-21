@@ -41,3 +41,5 @@ The existing [paper outline](../PAPER_OUTLINE.md) tracks outstanding methodologi
 | [Smaller-context M4 session](../pilot/results/2026-09-21-processbench-small-context/README.md) | Section 4.9: six partial calibration responses and memory-pressure stop |
 
 The subsequent [cache-disabled runtime diagnostic](../pilot/results/2026-09-21-runtime-cache-diagnostic/README.md) generated zero answers and is reported separately in Section 4.10. The draft total remains 240. Normal office workload is a firm constraint, and the next work is offline task design and human review.
+
+September 21 offline continuation: Section 5.1 now records the design/novelty decision, four mechanically checked illustrations and public-log feasibility inspection. The bibliography adds three verified references. Public metrics have not yet been reproduced; these are preparation records, not new model results.

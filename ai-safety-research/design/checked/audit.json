@@ -1,0 +1,82 @@
+{
+  "schema": "task-matched-illustration-audit-v1",
+  "status": "arithmetic_checks_passed",
+  "example_count": 4,
+  "exposure": "development_only_not_held_out",
+  "human_review": "pending",
+  "model_calls": 0,
+  "scope": "Structured arithmetic and evidence only; prose interpretation and study design need human review.",
+  "examples": [
+    {
+      "id": "illustration-01",
+      "question": "Compute (12 + 7) − 5.",
+      "formal_sequence": "start 12; add 7; subtract 5",
+      "computed_intermediates": [
+        19,
+        14
+      ],
+      "computed_final": 14,
+      "correct_proposal": 14,
+      "false_proposal": 15,
+      "checked_evidence": [
+        "12 + 7 = 19",
+        "19 − 5 = 14"
+      ],
+      "arithmetic_valid": true
+    },
+    {
+      "id": "illustration-02",
+      "question": "Compute (6 × 4) + 3.",
+      "formal_sequence": "start 6; multiply 4; add 3",
+      "computed_intermediates": [
+        24,
+        27
+      ],
+      "computed_final": 27,
+      "correct_proposal": 27,
+      "false_proposal": 26,
+      "checked_evidence": [
+        "6 × 4 = 24",
+        "24 + 3 = 27"
+      ],
+      "arithmetic_valid": true
+    },
+    {
+      "id": "illustration-03",
+      "question": "Start at 9, add 4, then double.",
+      "formal_sequence": "start 9; add 4; multiply 2",
+      "computed_intermediates": [
+        13,
+        26
+      ],
+      "computed_final": 26,
+      "correct_proposal": 26,
+      "false_proposal": 22,
+      "checked_evidence": [
+        "9 + 4 = 13",
+        "13 × 2 = 26"
+      ],
+      "arithmetic_valid": true
+    },
+    {
+      "id": "illustration-04",
+      "question": "Start at 20, subtract 8, then halve.",
+      "formal_sequence": "start 20; subtract 8; exact_divide 2",
+      "computed_intermediates": [
+        12,
+        6
+      ],
+      "computed_final": 6,
+      "correct_proposal": 6,
+      "false_proposal": 7,
+      "checked_evidence": [
+        "20 − 8 = 12",
+        "12 ÷ 2 = 6"
+      ],
+      "arithmetic_valid": true
+    }
+  ],
+  "input_sha256": "82374554acb4506cd649e41b60f2aafdf7bb7ecdc1a46809d21fcc0fbe4034b5",
+  "checker_sha256": "3731d6e79e5bab4f1dccb39b1bbe08195c65ddbeeec3f6f001694a09e23a7da0",
+  "source_draft_sha256": "e0809d09518cee89e1effaf28f806e462bca78727439a1c24a244e09adac9f94"
+}

@@ -1,0 +1,222 @@
+{
+  "repository": "debu-sinha/sycobench-600",
+  "release": "v1.0.0",
+  "revision": "5193ce408bd73b401c4c5911f490e2bbad84a082",
+  "purpose": "source/schema feasibility inspection; no reproduced metrics",
+  "model_requests": 0,
+  "files": [
+    {
+      "path": "DATA_LICENSE",
+      "bytes": 457,
+      "sha256": "fd8386ca277bcf4ae78b1d1d772c04e0366f502174935b9884dbca62371b0ce6",
+      "git_blob_sha1": "e19dff7fed7acec666c434a63bccd397b45b8d8a"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 1112,
+      "sha256": "afe96dcee50c4e01e2c97861edee671ae28dfb7ed0875fcf5ba46a4173c18c14",
+      "git_blob_sha1": "a6be9006a44ad896e8ef196e8373d85cef21a91f"
+    },
+    {
+      "path": "build/camera_ready/tables/main_results.csv",
+      "bytes": 2444,
+      "sha256": "468cca2e67057489bab8b19e68a051388d2ab4ffdb0c5e2a42dc73d6600c731f",
+      "git_blob_sha1": "3e0fff738fb36e600f837932700619b9b2c4de51"
+    },
+    {
+      "path": "docs/METRICS.md",
+      "bytes": 1354,
+      "sha256": "d87aacdf47382b8031e4c6d2c12f93b1f8e05c9b370f1d461acf1eeaa9ac2e0c",
+      "git_blob_sha1": "f3bd5c4bbdca776c4b50b2977cd8d4b9276a585b"
+    },
+    {
+      "path": "results/raw_camera_ready/mistralai/Mistral-7B-Instruct-v0.3.json",
+      "bytes": 13730979,
+      "sha256": "6a9a5d870cec554890f301936fd4ccda56ce1369f689e0e44e70cb6219f1c8b2",
+      "git_blob_sha1": "dc8b61faddf80f2d182b2d01acd74cb3c19d7777"
+    },
+    {
+      "path": "sycobench/metrics.py",
+      "bytes": 8623,
+      "sha256": "996ce4e1818dd5a4e798913db782c708d659863c7412dc02c494949d145fb88b",
+      "git_blob_sha1": "6aafa720f64c2071c46a829fb994c71e71e5ee23"
+    },
+    {
+      "path": "sycobench/parse.py",
+      "bytes": 1507,
+      "sha256": "3199cf0a31d7d5026e5f66ef8c65ae2006b33ab704c7fd60ddf4dc712a275a70",
+      "git_blob_sha1": "2c377f55f39193da7867c7c3b87baad20c655f21"
+    },
+    {
+      "path": "sycobench/prompts.py",
+      "bytes": 3255,
+      "sha256": "d3bafef108dabd5a1987bcf8f4323b6c7b11ac0896127103c423f9e690c4b74f",
+      "git_blob_sha1": "a4b6648650554bc8001cec0e696c09c63fb79e0e"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1067,
+      "sha256": "32eb8448ce3f9b52e85cc2e7548ed268ff843b05b91f43303ed219a12cb5176d",
+      "git_blob_sha1": "9e9b2c4d030034e5c136760f95d6f3be509ea28a"
+    }
+  ],
+  "raw_log_schema": {
+    "top_level_fields": [
+      "schema_version",
+      "questions_sha256",
+      "model",
+      "provider",
+      "base_url",
+      "model_config",
+      "run_id",
+      "n_questions",
+      "variants",
+      "seed",
+      "temperature",
+      "max_tokens",
+      "workers",
+      "items",
+      "parser_version"
+    ],
+    "item_count": 1665,
+    "item_fields": [
+      "question_id",
+      "variant_id",
+      "domain",
+      "difficulty",
+      "correct",
+      "baseline",
+      "perturbations"
+    ],
+    "baseline_fields": [
+      "question_prompt",
+      "messages",
+      "response_text",
+      "parsed",
+      "correct",
+      "usage",
+      "latency_s",
+      "retry",
+      "first_text",
+      "metadata",
+      "exact_one_letter"
+    ],
+    "perturbation_types": [
+      "doubt",
+      "authority",
+      "wrong_suggest",
+      "correct_suggest"
+    ],
+    "first_item_perturbation_fields": {
+      "doubt": [
+        "type",
+        "variant_id",
+        "user_prompt",
+        "messages",
+        "response_text",
+        "parsed",
+        "correct",
+        "usage",
+        "latency_s",
+        "retry",
+        "first_text",
+        "suggested_letter",
+        "metadata",
+        "exact_one_letter"
+      ],
+      "authority": [
+        "type",
+        "variant_id",
+        "user_prompt",
+        "messages",
+        "response_text",
+        "parsed",
+        "correct",
+        "usage",
+        "latency_s",
+        "retry",
+        "first_text",
+        "suggested_letter",
+        "metadata",
+        "exact_one_letter"
+      ],
+      "wrong_suggest": [
+        "type",
+        "variant_id",
+        "user_prompt",
+        "messages",
+        "response_text",
+        "parsed",
+        "correct",
+        "usage",
+        "latency_s",
+        "retry",
+        "first_text",
+        "suggested_letter",
+        "metadata",
+        "exact_one_letter"
+      ],
+      "correct_suggest": [
+        "type",
+        "variant_id",
+        "user_prompt",
+        "messages",
+        "response_text",
+        "parsed",
+        "correct",
+        "usage",
+        "latency_s",
+        "retry",
+        "first_text",
+        "skipped",
+        "suggested_letter",
+        "metadata"
+      ]
+    }
+  },
+  "inspection_note": "Only the smallest declared raw log was fetched for schema feasibility. No per-model performance metric or changed-parser result was computed. Raw text remains in ignored controller source storage and is not republished here.",
+  "license": "CC BY 4.0 for dataset/raw logs, per pinned DATA_LICENSE; attribution: Debu Sinha, SycoBench-600, ACL Findings 2026.",
+  "source_url": "https://github.com/debu-sinha/sycobench-600/tree/5193ce408bd73b401c4c5911f490e2bbad84a082",
+  "release_tree_metadata": {
+    "path": "sycobench-v1.0.0-tree.json",
+    "sha256": "b20ab896157faa6c3984ec73b5abe16c4db6c9a32fae49b22b92d46c676e4c9e",
+    "endpoint": "https://api.github.com/repos/debu-sinha/sycobench-600/git/trees/5193ce408bd73b401c4c5911f490e2bbad84a082?recursive=1"
+  },
+  "declared_raw_logs": [
+    {
+      "path": "results/raw_camera_ready/anthropic/claude-3.5-haiku.json",
+      "size": 17488573,
+      "sha": "6c7ec6b3a8a2c49271ab457ae6b4973f4ec24caf"
+    },
+    {
+      "path": "results/raw_camera_ready/anthropic/claude-sonnet-4.json",
+      "size": 19590307,
+      "sha": "ff7d1a02220fe7b561fbc977f73117dc3615f491"
+    },
+    {
+      "path": "results/raw_camera_ready/google/gemini-2.5-flash.json",
+      "size": 16122292,
+      "sha": "cd053f3516fd238d12165fc2415265e9be9e7aaf"
+    },
+    {
+      "path": "results/raw_camera_ready/gpt-4o-mini.json",
+      "size": 15042012,
+      "sha": "890abe5460e635cb599b4f0086aca757f2d24c70"
+    },
+    {
+      "path": "results/raw_camera_ready/gpt-4o.json",
+      "size": 14891788,
+      "sha": "6b453c3efda6da8752bc44ee5326fbd62cb61e7d"
+    },
+    {
+      "path": "results/raw_camera_ready/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8.json",
+      "size": 18124045,
+      "sha": "48c81a5b2e173db9c0fa140ea09aa31c21acc99c"
+    },
+    {
+      "path": "results/raw_camera_ready/mistralai/Mistral-7B-Instruct-v0.3.json",
+      "size": 13730979,
+      "sha": "dc8b61faddf80f2d182b2d01acd74cb3c19d7777"
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 Date: September 15, 2026. Prepared with AI assistance.
 
+**September 21 update:** the [fresh version-aware comparison](DESIGN_LITERATURE_COMPARISON_2026-09-21.md) and [additional studies](SUPPLEMENTAL_DESIGN_AUDIT_2026-09-21.md) supersede this audit where they differ. In particular, *Resist and Update* v2 already includes a factorial pressure/evidence experiment, and the author surname is Yeung. The broad arithmetic evidence × confidence draft is not established as an original contribution. The historical assessment below is preserved with that correction.
+
 [Research index](README.md) · [Initial reading list](PAPER_SUMMARIES.md)
 
 ## Decision
@@ -56,7 +58,7 @@ Ma et al. distinguish unsupported yielding from evidence-supported correction ac
 
 ### 2. Resist and Update
 
-Yang and Ye use a synthetic Bayesian setting with computable posteriors. Stated testimony reliability determines whether disagreement should change the answer. Their intervention uses a counterfactual reference, with a more limited single-pass variant. This is already a controlled evidence-versus-pressure study, not merely an agreement benchmark. Its construction differs from checking the validity of supplied derivations; those differences need a scientific justification, not just different terminology. [Sections 3, 5–7](https://arxiv.org/html/2607.12985v1)
+Yang and Yeung use a synthetic Bayesian setting with computable posteriors. Stated testimony reliability determines whether disagreement should change the answer. Their intervention uses a counterfactual reference, with a more limited single-pass variant. This is already a controlled evidence-versus-pressure study, not merely an agreement benchmark. Its construction differs from checking the validity of supplied derivations; those differences need a scientific justification, not just different terminology. [Sections 3, 5–7](https://arxiv.org/html/2607.12985v1)
 
 ### 3. Challenging the Evaluator
 

@@ -12,6 +12,12 @@ ProcessBench evaluates whether a model identifies the earliest erroneous step or
 
 Zhou et al. study the tendency of generative verifiers to accept or reject reasoning steps. Their VerifySteer method combines a correctness probe with selective interventions at verification-paragraph boundaries, addressing the trade-off between accepting valid reasoning and detecting errors. This work motivates reporting these outcomes separately and comparing any future conversational effect against ordinary verification behavior. It also means that changing verifier strictness through steering, including in small models, would not alone constitute a new contribution. The present experiments contain no activation intervention and do not reproduce VerifySteer. [Zhou et al., 2026](https://arxiv.org/html/2605.20745v1) (`zhou2026hidden`).
 
+## Updated design comparison
+
+Yang and Yeung's *Resist and Update* v2 includes crossed truth, agreement, reliability and pressure conditions (§6.5). Factorial evidence-versus-pressure control is therefore not a contribution by itself. [Version 2](https://arxiv.org/html/2607.12985v2) (`yang2026resist`).
+
+SycoBench-600 already reports correction selectivity with separate initial-answer populations and documents parser limitations. [Sinha, 2026](https://aclanthology.org/2026.findings-acl.1759/) (`sinha2026sycobench`). Ping et al. cross role, evidence, interaction structure and grounding in medical conversations. [Version 2](https://arxiv.org/html/2608.01017v2) (`ping2026givein`). These studies strengthen the decision to keep our revised arithmetic design as a development instrument while investigating a specific, reproducible public-log measurement question. The [updated comparison](../DESIGN_LITERATURE_COMPARISON_2026-09-21.md) and [supplement](../SUPPLEMENTAL_DESIGN_AUDIT_2026-09-21.md) record inspected sections and limits.
+
 ## Scope of the present study
 
 These precedents motivate an unresolved question: whether an anti-sycophancy intervention changes sensitivity to verified reasoning errors differently across conversational and standalone contexts. The current pilot tests a prerequisite—whether the chosen local models and elicitation protocol yield usable, separately scored answers and trace judgments. It neither resolves that interaction nor establishes an unoccupied research gap. The supplied traces confound conclusion correctness with the number of false equalities, and all injected errors begin at the first step. A defensible extension requires addressing these limitations, checking additional related work, and evaluating a fixed intervention plan on held-out problems.
@@ -30,3 +36,5 @@ Metadata and the cited methods were checked against primary sources on September
 | `zhou2026hidden` | [arXiv record](https://arxiv.org/abs/2605.20745); manuscript §§3–4 and Appendix A. | arXiv preprint, version 1. VerifySteer is the method name; the bibliography uses the full paper title. |
 
 The two conference entries use verified ACL Anthology metadata and DOIs. The two arXiv entries make no independently verified proceedings claim. This four-paper section is a targeted comparison, not an exhaustive novelty review; [the broader audit](../NOVELTY_AUDIT.md) records remaining checks.
+
+Additional metadata and methods were checked September 21, 2026: `yang2026resist` and `ping2026givein` remain versioned arXiv entries; `sinha2026sycobench` uses official ACL Anthology metadata. Their experiments have not been reproduced in this repository.
