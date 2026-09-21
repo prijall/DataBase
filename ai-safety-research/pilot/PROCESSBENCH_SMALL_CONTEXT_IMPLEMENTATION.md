@@ -2,6 +2,12 @@
 
 This guide describes the separate `small-context-v1` execution profile. Its [prospective protocol](PROCESSBENCH_SMALL_CONTEXT_PLAN.md) specifies a 2,048-token context with the existing 1,024-token output allowance. The original 8,192-token profile remains available as `original` for reproducibility. Earlier closed sessions must not be resumed.
 
+## Executed screen: closed after six responses
+
+The [archived screen](results/2026-09-21-processbench-small-context/README.md), frozen at `5d73d85`, passed sixty token checks (290–789 tokens) and verified the actual loaded 2,048-token context. Calibration recorded six of twenty responses: four usable, one correct, two malformed extractions, and no length stops or request errors. A pressure-level-2 reading stopped execution. Cleanup verified normal pressure, closed ports, and no owned processes.
+
+No automatic retry or configuration revision is authorized. Fourteen calibration cases and all forty evaluation cases remain unattempted. The error class has one match in four observations and could reach only 7/10 even if all six remaining cases succeeded, below the required 8/10. Runtime repair alone cannot rescue this gate. Next work is runtime/cache investigation and human review of existing outputs, preserving primary scores.
+
 ## Selection and evidence
 
 The [new selection](processbench/selection-small-context.json) reserves twenty fresh calibration cases, ten per process-label class. Selection excludes every normalized problem group in the original sixty-case reservation, including unselected solutions in those groups. It retains the original deterministic hash ordering without consulting model responses or screening by prompt length.
@@ -10,13 +16,13 @@ The original forty evaluation cases are carried over unchanged. The two previous
 
 Both the controller and the in-memory remote worker enforce the selected profile. Reports and manifests bind the profile, configuration, selection and implementation identities. The smaller profile requires an actual loaded context of 2,048 tokens. Passing an earlier report, changing a selection, or changing profiles cannot authorize resuming an old run.
 
-## Before a live run
+## Reproduction reference (closed screen)
 
-The new configuration has not yet been tested on the M4. The previous sixty prompts measured 308–778 tokens, but those counts do not certify the new calibration cases. A fresh preflight must verify every full prompt with `prompt_tokens + 1024 <= 2048`, without truncation, filtering or substitution. It must also pass the original memory and swap limits.
+The executed preflight verified every full prompt with `prompt_tokens + 1024 <= 2048`, without truncation, filtering or substitution; the largest total was 1,813. Initial resource admission did not ensure sustained headroom during generation. Commands below document the recorded interface and do not authorize restarting this closed cohort.
 
 Use the pinned input downloads from the [original plan](PROCESSBENCH_PLAN.md). All files in the commands below are on the controller. The [service wrapper](processbench_server_session.py) sends its program through SSH and does not create a research directory on the M4.
 
-Choose a previously unused session directory and record its start and remaining weekly budget. The commands below use `runs/m4-small-context-001` as an example for that new session.
+The commands use `runs/m4-small-context-001` as a placeholder. Any later experiment requires a separate documented decision; never reset a marker or budget to bypass this stopped screen.
 
 In a controller terminal, keep the service wrapper attached:
 
@@ -43,4 +49,4 @@ At completion or any stop, send `STOP` followed by Enter to the service terminal
 
 ## Offline verification
 
-All 127 offline tests pass. Run `python3 -B -m unittest discover -v` from the pilot directory. The [independent implementation review](processbench/SMALL_CONTEXT_IMPLEMENTATION_REVIEW.md) records the selection, configuration and failure-path checks. Offline tests establish implementation behavior; only a fresh live preflight can establish resource and token fit on the M4.
+All 127 offline tests pass. Run `python3 -B -m unittest discover -v` from the pilot directory. The [independent implementation review](processbench/SMALL_CONTEXT_IMPLEMENTATION_REVIEW.md) records the selection, configuration and failure-path checks. Offline tests establish implementation behavior; the live screen passed initial admission but later stopped at a memory-pressure guard.

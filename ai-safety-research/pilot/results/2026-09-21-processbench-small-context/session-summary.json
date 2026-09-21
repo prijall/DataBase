@@ -1,0 +1,24 @@
+{
+  "status": "calibration_incomplete_resource_stop",
+  "execution_commit": "5d73d858be2e7069a9881f5c6299371b87e9af31",
+  "profile": "small-context-v1",
+  "preflight_status": "passed",
+  "preflight_seconds": 12.315832138061523,
+  "preflight_tokenized_jobs": 60,
+  "prompt_token_range": [
+    290,
+    789
+  ],
+  "generated_responses": 6,
+  "total_historical_responses": 240,
+  "usable": 4,
+  "local_exact_matches": 1,
+  "subject_client_seconds": 70.88101058301982,
+  "calibration_session_seconds": 117.9962809085846,
+  "preflight_start_to_calibration_stop_seconds": 162.13329792022705,
+  "preflight_start_to_cleanup_check_seconds": 221.55232095718384,
+  "stop_reason": "Resource stop: memory pressure is not normal",
+  "calibration_missing": 14,
+  "evaluation_unattempted": 40,
+  "cleanup_verified": true
+}

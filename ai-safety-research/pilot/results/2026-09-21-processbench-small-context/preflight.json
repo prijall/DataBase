@@ -1,0 +1,3919 @@
+{
+  "schema": "processbench-exact-token-preflight-v1",
+  "api_port": 11435,
+  "jobs_sha256": "17257b2bfaba6fc51c99fd330842471e570156c5ca1c44839aaaafbcd759e138",
+  "model": "llama3.2:3b",
+  "options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 2048,
+    "num_predict": 1024,
+    "num_thread": 2
+  },
+  "sources": {
+    "ollama_commit": "d8ab4b4f0ca24b51d3a46b3bf4f462e58ce66b1f",
+    "llama_cpp_commit": "0f3a71be15af836d277c9f918adfafb45732677e"
+  },
+  "preflight_code_sha256": "2569aefc92879b6a02ab06aa100d226fb993aff4580f545ea6cd5c08ba53b99f",
+  "resource_code_sha256": "22aac93f9718fcf6fa99689e843391574536c45a5dcd7a38213328483101649b",
+  "transport": {
+    "profile": "small-context-v1",
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 1024,
+      "num_thread": 2
+    },
+    "profile_sha256": {
+      "profile_plan": "5260640998f82e107e418b21d50093b8225fb2bc1f2f8d5a03bd5c086dbe2db1",
+      "profile_selector": "be5081795dc5db74a9249e3b9de4046a6afffccdb12ea6ff1dd640e284bec3b3",
+      "profile_selection": "55e84656d599431ebab9658b6fb40ba2aee283c4c994577f72eceb281832b456"
+    },
+    "kind": "ssh-stdin-memory-only-v1",
+    "target": "prabs@100.74.220.25",
+    "api_port": 11435,
+    "connector_sha256": "011303534c8726d5fe79900939f8ad57b49c0cc1c9601e60f4cbe7841f0eb24f",
+    "worker_sha256": "c9cf655f6289d224ce3a49570fb6053c897cb580c7b915e430c2f90198409dc6",
+    "source_sha256": {
+      "processbench_preflight": "2569aefc92879b6a02ab06aa100d226fb993aff4580f545ea6cd5c08ba53b99f",
+      "processbench_resources": "22aac93f9718fcf6fa99689e843391574536c45a5dcd7a38213328483101649b",
+      "stream": "a4374e5ada23e1e2e264d36c933c433cca40d707e9db38a32e4360bd5bf82c60"
+    },
+    "session_policy_sha256": "ce2e4e8fb89a19ea9a46ffa3e77601229abf159fed4bde42d895d01955a43406",
+    "session_helper_sha256": "69ac542cb6fd9a9d5192529acfa4becc3598c27eb40a815aa7ef4036f1e806f6",
+    "http_deadline_seconds": 90,
+    "worker_deadline_seconds": 95,
+    "ssh_subject_deadline_seconds": 100,
+    "reserve_seconds": 150
+  },
+  "budget_started_unix": 1789966758.911041,
+  "resource_baseline": {
+    "captured_unix": 1789966761.0225012,
+    "pressure_level": 1,
+    "free_percent": 47,
+    "swap_used_bytes": 9129825402,
+    "swapouts_bytes": 38187892736
+  },
+  "status": "passed",
+  "operations": [
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966761.02282,
+      "status": "received",
+      "finished_unix": 1789966761.032968
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/version",
+      "started_unix": 1789966761.033653,
+      "status": "received",
+      "finished_unix": 1789966761.034375
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/tags",
+      "started_unix": 1789966761.034518,
+      "status": "received",
+      "finished_unix": 1789966761.037166
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/show",
+      "started_unix": 1789966761.0373209,
+      "status": "received",
+      "finished_unix": 1789966761.137996
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966761.15891,
+      "status": "received",
+      "finished_unix": 1789966761.159965
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966761.166969,
+      "status": "received",
+      "finished_unix": 1789966765.81462
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966765.838978,
+      "status": "received",
+      "finished_unix": 1789966765.8410099
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966765.945274,
+      "status": "received",
+      "finished_unix": 1789966765.946621
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966765.9467819,
+      "status": "received",
+      "finished_unix": 1789966765.949301
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966765.955049,
+      "status": "received",
+      "finished_unix": 1789966765.955955
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966765.956118,
+      "status": "received",
+      "finished_unix": 1789966765.9599411
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966765.964737,
+      "status": "received",
+      "finished_unix": 1789966765.965821
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.041106,
+      "status": "received",
+      "finished_unix": 1789966766.0422132
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966766.042367,
+      "status": "received",
+      "finished_unix": 1789966766.043943
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.049155,
+      "status": "received",
+      "finished_unix": 1789966766.0500789
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966766.050234,
+      "status": "received",
+      "finished_unix": 1789966766.0537531
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966766.058205,
+      "status": "received",
+      "finished_unix": 1789966766.059264
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.129647,
+      "status": "received",
+      "finished_unix": 1789966766.1307268
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966766.1308742,
+      "status": "received",
+      "finished_unix": 1789966766.132558
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.1377192,
+      "status": "received",
+      "finished_unix": 1789966766.138577
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966766.138735,
+      "status": "received",
+      "finished_unix": 1789966766.1423948
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966766.1469162,
+      "status": "received",
+      "finished_unix": 1789966766.1479292
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.217241,
+      "status": "received",
+      "finished_unix": 1789966766.218383
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966766.2185369,
+      "status": "received",
+      "finished_unix": 1789966766.221001
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.226337,
+      "status": "received",
+      "finished_unix": 1789966766.227278
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966766.227442,
+      "status": "received",
+      "finished_unix": 1789966766.23084
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966766.2353432,
+      "status": "received",
+      "finished_unix": 1789966766.236289
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.306345,
+      "status": "received",
+      "finished_unix": 1789966766.307463
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966766.3076181,
+      "status": "received",
+      "finished_unix": 1789966766.30899
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.314305,
+      "status": "received",
+      "finished_unix": 1789966766.315138
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966766.3153,
+      "status": "received",
+      "finished_unix": 1789966766.318677
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966766.323155,
+      "status": "received",
+      "finished_unix": 1789966766.3240151
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.3941078,
+      "status": "received",
+      "finished_unix": 1789966766.39534
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966766.395502,
+      "status": "received",
+      "finished_unix": 1789966766.3980968
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.403341,
+      "status": "received",
+      "finished_unix": 1789966766.404285
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966766.404445,
+      "status": "received",
+      "finished_unix": 1789966766.408149
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966766.412686,
+      "status": "received",
+      "finished_unix": 1789966766.4136431
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.483731,
+      "status": "received",
+      "finished_unix": 1789966766.484857
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966766.48501,
+      "status": "received",
+      "finished_unix": 1789966766.486672
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.491803,
+      "status": "received",
+      "finished_unix": 1789966766.492738
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966766.492896,
+      "status": "received",
+      "finished_unix": 1789966766.496969
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966766.501398,
+      "status": "received",
+      "finished_unix": 1789966766.50227
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.572854,
+      "status": "received",
+      "finished_unix": 1789966766.573973
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966766.574124,
+      "status": "received",
+      "finished_unix": 1789966766.5759628
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.5810401,
+      "status": "received",
+      "finished_unix": 1789966766.581995
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966766.5821419,
+      "status": "received",
+      "finished_unix": 1789966766.585896
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966766.590185,
+      "status": "received",
+      "finished_unix": 1789966766.5910761
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.6610858,
+      "status": "received",
+      "finished_unix": 1789966766.6624289
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966766.662575,
+      "status": "received",
+      "finished_unix": 1789966766.664292
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.6692748,
+      "status": "received",
+      "finished_unix": 1789966766.670134
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966766.6702888,
+      "status": "received",
+      "finished_unix": 1789966766.673795
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966766.678231,
+      "status": "received",
+      "finished_unix": 1789966766.679369
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.7490811,
+      "status": "received",
+      "finished_unix": 1789966766.750172
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966766.750326,
+      "status": "received",
+      "finished_unix": 1789966766.752019
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.7569978,
+      "status": "received",
+      "finished_unix": 1789966766.757959
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966766.758698,
+      "status": "received",
+      "finished_unix": 1789966766.762584
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966766.76712,
+      "status": "received",
+      "finished_unix": 1789966766.768118
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.839689,
+      "status": "received",
+      "finished_unix": 1789966766.84082
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966766.840974,
+      "status": "received",
+      "finished_unix": 1789966766.84267
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.8477728,
+      "status": "received",
+      "finished_unix": 1789966766.848747
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966766.848896,
+      "status": "received",
+      "finished_unix": 1789966766.852457
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966766.856781,
+      "status": "received",
+      "finished_unix": 1789966766.857779
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.9274838,
+      "status": "received",
+      "finished_unix": 1789966766.928739
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966766.928888,
+      "status": "received",
+      "finished_unix": 1789966766.930872
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966766.935879,
+      "status": "received",
+      "finished_unix": 1789966766.936765
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966766.936918,
+      "status": "received",
+      "finished_unix": 1789966766.940419
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966766.944803,
+      "status": "received",
+      "finished_unix": 1789966766.945929
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.015349,
+      "status": "received",
+      "finished_unix": 1789966767.0164669
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966767.016615,
+      "status": "received",
+      "finished_unix": 1789966767.018146
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.023152,
+      "status": "received",
+      "finished_unix": 1789966767.024011
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966767.0241652,
+      "status": "received",
+      "finished_unix": 1789966767.0280588
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966767.032394,
+      "status": "received",
+      "finished_unix": 1789966767.0332851
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.103157,
+      "status": "received",
+      "finished_unix": 1789966767.104224
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966767.104379,
+      "status": "received",
+      "finished_unix": 1789966767.106082
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.11119,
+      "status": "received",
+      "finished_unix": 1789966767.1125708
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966767.112721,
+      "status": "received",
+      "finished_unix": 1789966767.1156669
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966767.1200042,
+      "status": "received",
+      "finished_unix": 1789966767.120996
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.190442,
+      "status": "received",
+      "finished_unix": 1789966767.191553
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966767.191707,
+      "status": "received",
+      "finished_unix": 1789966767.1929522
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.197966,
+      "status": "received",
+      "finished_unix": 1789966767.198905
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966767.199054,
+      "status": "received",
+      "finished_unix": 1789966767.2021172
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966767.206432,
+      "status": "received",
+      "finished_unix": 1789966767.207319
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.277022,
+      "status": "received",
+      "finished_unix": 1789966767.278162
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966767.278333,
+      "status": "received",
+      "finished_unix": 1789966767.2800488
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.285012,
+      "status": "received",
+      "finished_unix": 1789966767.2858949
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966767.286043,
+      "status": "received",
+      "finished_unix": 1789966767.289452
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966767.2937548,
+      "status": "received",
+      "finished_unix": 1789966767.2949991
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.364556,
+      "status": "received",
+      "finished_unix": 1789966767.365665
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966767.365821,
+      "status": "received",
+      "finished_unix": 1789966767.3677492
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.372745,
+      "status": "received",
+      "finished_unix": 1789966767.3736792
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966767.373827,
+      "status": "received",
+      "finished_unix": 1789966767.377286
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966767.381685,
+      "status": "received",
+      "finished_unix": 1789966767.382627
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.452296,
+      "status": "received",
+      "finished_unix": 1789966767.453156
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966767.4533,
+      "status": "received",
+      "finished_unix": 1789966767.454283
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.4591,
+      "status": "received",
+      "finished_unix": 1789966767.45999
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966767.4601421,
+      "status": "received",
+      "finished_unix": 1789966767.463928
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966767.468257,
+      "status": "received",
+      "finished_unix": 1789966767.469171
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.539784,
+      "status": "received",
+      "finished_unix": 1789966767.540859
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966767.541006,
+      "status": "received",
+      "finished_unix": 1789966767.5424662
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.5476859,
+      "status": "received",
+      "finished_unix": 1789966767.5485911
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966767.548738,
+      "status": "received",
+      "finished_unix": 1789966767.5523
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966767.556573,
+      "status": "received",
+      "finished_unix": 1789966767.5574489
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.628132,
+      "status": "received",
+      "finished_unix": 1789966767.629308
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966767.629463,
+      "status": "received",
+      "finished_unix": 1789966767.631165
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.636087,
+      "status": "received",
+      "finished_unix": 1789966767.636927
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966767.6370811,
+      "status": "received",
+      "finished_unix": 1789966767.640388
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966767.6447942,
+      "status": "received",
+      "finished_unix": 1789966767.6461031
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.7160718,
+      "status": "received",
+      "finished_unix": 1789966767.717217
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966767.7173681,
+      "status": "received",
+      "finished_unix": 1789966767.7187982
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.723886,
+      "status": "received",
+      "finished_unix": 1789966767.72477
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966767.724916,
+      "status": "received",
+      "finished_unix": 1789966767.728422
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966767.732979,
+      "status": "received",
+      "finished_unix": 1789966767.733908
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.803416,
+      "status": "received",
+      "finished_unix": 1789966767.80437
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966767.80454,
+      "status": "received",
+      "finished_unix": 1789966767.805423
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.811382,
+      "status": "received",
+      "finished_unix": 1789966767.812305
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966767.812475,
+      "status": "received",
+      "finished_unix": 1789966767.81443
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966767.820149,
+      "status": "received",
+      "finished_unix": 1789966767.821144
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.910719,
+      "status": "received",
+      "finished_unix": 1789966767.911624
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966767.911805,
+      "status": "received",
+      "finished_unix": 1789966767.912815
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966767.9215622,
+      "status": "received",
+      "finished_unix": 1789966767.9224782
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966767.922657,
+      "status": "received",
+      "finished_unix": 1789966767.925984
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966767.930673,
+      "status": "received",
+      "finished_unix": 1789966767.9316878
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.0023942,
+      "status": "received",
+      "finished_unix": 1789966768.0034611
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.003642,
+      "status": "received",
+      "finished_unix": 1789966768.005166
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.0103621,
+      "status": "received",
+      "finished_unix": 1789966768.0114071
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.011568,
+      "status": "received",
+      "finished_unix": 1789966768.015231
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.019658,
+      "status": "received",
+      "finished_unix": 1789966768.020561
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.089928,
+      "status": "received",
+      "finished_unix": 1789966768.091014
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.091169,
+      "status": "received",
+      "finished_unix": 1789966768.0927958
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.097982,
+      "status": "received",
+      "finished_unix": 1789966768.098932
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.099095,
+      "status": "received",
+      "finished_unix": 1789966768.102636
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.10707,
+      "status": "received",
+      "finished_unix": 1789966768.107903
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.1784189,
+      "status": "received",
+      "finished_unix": 1789966768.17961
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.1797671,
+      "status": "received",
+      "finished_unix": 1789966768.181767
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.186966,
+      "status": "received",
+      "finished_unix": 1789966768.187863
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.1880121,
+      "status": "received",
+      "finished_unix": 1789966768.1914618
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.195992,
+      "status": "received",
+      "finished_unix": 1789966768.196971
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.26664,
+      "status": "received",
+      "finished_unix": 1789966768.267741
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.2678962,
+      "status": "received",
+      "finished_unix": 1789966768.26948
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.274493,
+      "status": "received",
+      "finished_unix": 1789966768.275316
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.2754729,
+      "status": "received",
+      "finished_unix": 1789966768.279519
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.284022,
+      "status": "received",
+      "finished_unix": 1789966768.284991
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.354711,
+      "status": "received",
+      "finished_unix": 1789966768.355813
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.355965,
+      "status": "received",
+      "finished_unix": 1789966768.357655
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.362893,
+      "status": "received",
+      "finished_unix": 1789966768.363806
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.363956,
+      "status": "received",
+      "finished_unix": 1789966768.3674262
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.371941,
+      "status": "received",
+      "finished_unix": 1789966768.372882
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.442987,
+      "status": "received",
+      "finished_unix": 1789966768.4439712
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.444117,
+      "status": "received",
+      "finished_unix": 1789966768.445909
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.451158,
+      "status": "received",
+      "finished_unix": 1789966768.452078
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.452225,
+      "status": "received",
+      "finished_unix": 1789966768.455439
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.4598558,
+      "status": "received",
+      "finished_unix": 1789966768.460874
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.530775,
+      "status": "received",
+      "finished_unix": 1789966768.531845
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.531998,
+      "status": "received",
+      "finished_unix": 1789966768.5334852
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.538578,
+      "status": "received",
+      "finished_unix": 1789966768.539446
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.539604,
+      "status": "received",
+      "finished_unix": 1789966768.544715
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.549164,
+      "status": "received",
+      "finished_unix": 1789966768.5502028
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.6192808,
+      "status": "received",
+      "finished_unix": 1789966768.6203609
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.620517,
+      "status": "received",
+      "finished_unix": 1789966768.62241
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.627712,
+      "status": "received",
+      "finished_unix": 1789966768.629004
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.629168,
+      "status": "received",
+      "finished_unix": 1789966768.632719
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.637181,
+      "status": "received",
+      "finished_unix": 1789966768.63806
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.708859,
+      "status": "received",
+      "finished_unix": 1789966768.710148
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.710297,
+      "status": "received",
+      "finished_unix": 1789966768.711703
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.716722,
+      "status": "received",
+      "finished_unix": 1789966768.717597
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.7177448,
+      "status": "received",
+      "finished_unix": 1789966768.7212539
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.725666,
+      "status": "received",
+      "finished_unix": 1789966768.7266932
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.796663,
+      "status": "received",
+      "finished_unix": 1789966768.79773
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.797878,
+      "status": "received",
+      "finished_unix": 1789966768.799553
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.804609,
+      "status": "received",
+      "finished_unix": 1789966768.80544
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.805589,
+      "status": "received",
+      "finished_unix": 1789966768.8093922
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.81658,
+      "status": "received",
+      "finished_unix": 1789966768.8174238
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.8952708,
+      "status": "received",
+      "finished_unix": 1789966768.896368
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.896518,
+      "status": "received",
+      "finished_unix": 1789966768.898101
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.903109,
+      "status": "received",
+      "finished_unix": 1789966768.903976
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.904133,
+      "status": "received",
+      "finished_unix": 1789966768.9076009
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.9122229,
+      "status": "received",
+      "finished_unix": 1789966768.913135
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.9821188,
+      "status": "received",
+      "finished_unix": 1789966768.983222
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966768.983375,
+      "status": "received",
+      "finished_unix": 1789966768.984834
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966768.989716,
+      "status": "received",
+      "finished_unix": 1789966768.990593
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966768.990749,
+      "status": "received",
+      "finished_unix": 1789966768.994443
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966768.998836,
+      "status": "received",
+      "finished_unix": 1789966768.999763
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.070009,
+      "status": "received",
+      "finished_unix": 1789966769.071161
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966769.071313,
+      "status": "received",
+      "finished_unix": 1789966769.072835
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.080232,
+      "status": "received",
+      "finished_unix": 1789966769.0812988
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966769.08148,
+      "status": "received",
+      "finished_unix": 1789966769.0851169
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966769.0899909,
+      "status": "received",
+      "finished_unix": 1789966769.09087
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.161803,
+      "status": "received",
+      "finished_unix": 1789966769.16289
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966769.163048,
+      "status": "received",
+      "finished_unix": 1789966769.164713
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.169815,
+      "status": "received",
+      "finished_unix": 1789966769.1706839
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966769.170845,
+      "status": "received",
+      "finished_unix": 1789966769.174212
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966769.178839,
+      "status": "received",
+      "finished_unix": 1789966769.1798558
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.249443,
+      "status": "received",
+      "finished_unix": 1789966769.2505338
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966769.2506938,
+      "status": "received",
+      "finished_unix": 1789966769.2525802
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.2577112,
+      "status": "received",
+      "finished_unix": 1789966769.258582
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966769.258732,
+      "status": "received",
+      "finished_unix": 1789966769.2622862
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966769.2666712,
+      "status": "received",
+      "finished_unix": 1789966769.2675881
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.337725,
+      "status": "received",
+      "finished_unix": 1789966769.338917
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966769.339076,
+      "status": "received",
+      "finished_unix": 1789966769.340766
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.345845,
+      "status": "received",
+      "finished_unix": 1789966769.3468149
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966769.346965,
+      "status": "received",
+      "finished_unix": 1789966769.3503911
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966769.3546681,
+      "status": "received",
+      "finished_unix": 1789966769.355596
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.425697,
+      "status": "received",
+      "finished_unix": 1789966769.426837
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966769.4269881,
+      "status": "received",
+      "finished_unix": 1789966769.428712
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.433627,
+      "status": "received",
+      "finished_unix": 1789966769.4345212
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966769.43467,
+      "status": "received",
+      "finished_unix": 1789966769.438119
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966769.4424052,
+      "status": "received",
+      "finished_unix": 1789966769.4433138
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.5129228,
+      "status": "received",
+      "finished_unix": 1789966769.5140102
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966769.5141618,
+      "status": "received",
+      "finished_unix": 1789966769.515557
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.520523,
+      "status": "received",
+      "finished_unix": 1789966769.521446
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966769.5216022,
+      "status": "received",
+      "finished_unix": 1789966769.525138
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966769.5295959,
+      "status": "received",
+      "finished_unix": 1789966769.530569
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.6007402,
+      "status": "received",
+      "finished_unix": 1789966769.601841
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966769.601995,
+      "status": "received",
+      "finished_unix": 1789966769.6037052
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.608632,
+      "status": "received",
+      "finished_unix": 1789966769.6094751
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966769.609628,
+      "status": "received",
+      "finished_unix": 1789966769.6132748
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966769.617732,
+      "status": "received",
+      "finished_unix": 1789966769.618696
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.6892009,
+      "status": "received",
+      "finished_unix": 1789966769.69029
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966769.690443,
+      "status": "received",
+      "finished_unix": 1789966769.691943
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.697006,
+      "status": "received",
+      "finished_unix": 1789966769.69795
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966769.6981041,
+      "status": "received",
+      "finished_unix": 1789966769.701507
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966769.7057621,
+      "status": "received",
+      "finished_unix": 1789966769.706593
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.781989,
+      "status": "received",
+      "finished_unix": 1789966769.783089
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966769.783249,
+      "status": "received",
+      "finished_unix": 1789966769.7848792
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.7900212,
+      "status": "received",
+      "finished_unix": 1789966769.790912
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966769.791065,
+      "status": "received",
+      "finished_unix": 1789966769.794801
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966769.799188,
+      "status": "received",
+      "finished_unix": 1789966769.800098
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.8710248,
+      "status": "received",
+      "finished_unix": 1789966769.872106
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966769.872256,
+      "status": "received",
+      "finished_unix": 1789966769.8739798
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.878996,
+      "status": "received",
+      "finished_unix": 1789966769.8799858
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966769.880141,
+      "status": "received",
+      "finished_unix": 1789966769.88361
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966769.887833,
+      "status": "received",
+      "finished_unix": 1789966769.888701
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.9653618,
+      "status": "received",
+      "finished_unix": 1789966769.9663749
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966769.9665651,
+      "status": "received",
+      "finished_unix": 1789966769.967624
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966769.975093,
+      "status": "received",
+      "finished_unix": 1789966769.9759638
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966769.976127,
+      "status": "received",
+      "finished_unix": 1789966769.978406
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966769.983383,
+      "status": "received",
+      "finished_unix": 1789966769.9862678
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.057014,
+      "status": "received",
+      "finished_unix": 1789966770.0581388
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966770.0582871,
+      "status": "received",
+      "finished_unix": 1789966770.059936
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.065263,
+      "status": "received",
+      "finished_unix": 1789966770.066157
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966770.066307,
+      "status": "received",
+      "finished_unix": 1789966770.069771
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966770.074351,
+      "status": "received",
+      "finished_unix": 1789966770.0753121
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.1457322,
+      "status": "received",
+      "finished_unix": 1789966770.146948
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966770.147111,
+      "status": "received",
+      "finished_unix": 1789966770.148672
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.1537259,
+      "status": "received",
+      "finished_unix": 1789966770.1546261
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966770.1547751,
+      "status": "received",
+      "finished_unix": 1789966770.158098
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966770.162555,
+      "status": "received",
+      "finished_unix": 1789966770.1635
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.2325811,
+      "status": "received",
+      "finished_unix": 1789966770.2336588
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966770.233807,
+      "status": "received",
+      "finished_unix": 1789966770.235188
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.240385,
+      "status": "received",
+      "finished_unix": 1789966770.241368
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966770.241518,
+      "status": "received",
+      "finished_unix": 1789966770.2449012
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966770.2494059,
+      "status": "received",
+      "finished_unix": 1789966770.250345
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.3195379,
+      "status": "received",
+      "finished_unix": 1789966770.320632
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966770.320787,
+      "status": "received",
+      "finished_unix": 1789966770.322582
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.327743,
+      "status": "received",
+      "finished_unix": 1789966770.328843
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966770.3289979,
+      "status": "received",
+      "finished_unix": 1789966770.332476
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966770.336898,
+      "status": "received",
+      "finished_unix": 1789966770.3377888
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.4089332,
+      "status": "received",
+      "finished_unix": 1789966770.4101021
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966770.4102552,
+      "status": "received",
+      "finished_unix": 1789966770.411933
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.4168499,
+      "status": "received",
+      "finished_unix": 1789966770.417732
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966770.41788,
+      "status": "received",
+      "finished_unix": 1789966770.421365
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966770.425594,
+      "status": "received",
+      "finished_unix": 1789966770.4264371
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.4967291,
+      "status": "received",
+      "finished_unix": 1789966770.497876
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966770.498028,
+      "status": "received",
+      "finished_unix": 1789966770.499767
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.5047932,
+      "status": "received",
+      "finished_unix": 1789966770.5056372
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966770.505785,
+      "status": "received",
+      "finished_unix": 1789966770.509509
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966770.514039,
+      "status": "received",
+      "finished_unix": 1789966770.514884
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.584109,
+      "status": "received",
+      "finished_unix": 1789966770.5852401
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966770.585388,
+      "status": "received",
+      "finished_unix": 1789966770.58749
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.592643,
+      "status": "received",
+      "finished_unix": 1789966770.593719
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966770.5938811,
+      "status": "received",
+      "finished_unix": 1789966770.597416
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966770.601842,
+      "status": "received",
+      "finished_unix": 1789966770.602731
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.673711,
+      "status": "received",
+      "finished_unix": 1789966770.674796
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966770.674944,
+      "status": "received",
+      "finished_unix": 1789966770.676578
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.6816928,
+      "status": "received",
+      "finished_unix": 1789966770.6825979
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966770.6827478,
+      "status": "received",
+      "finished_unix": 1789966770.686235
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966770.69054,
+      "status": "received",
+      "finished_unix": 1789966770.691351
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.7614348,
+      "status": "received",
+      "finished_unix": 1789966770.762569
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966770.762727,
+      "status": "received",
+      "finished_unix": 1789966770.7646568
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.769792,
+      "status": "received",
+      "finished_unix": 1789966770.7706602
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966770.770817,
+      "status": "received",
+      "finished_unix": 1789966770.774229
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966770.77852,
+      "status": "received",
+      "finished_unix": 1789966770.779456
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.849716,
+      "status": "received",
+      "finished_unix": 1789966770.850789
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966770.850934,
+      "status": "received",
+      "finished_unix": 1789966770.8527622
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.8577979,
+      "status": "received",
+      "finished_unix": 1789966770.858647
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966770.858798,
+      "status": "received",
+      "finished_unix": 1789966770.86248
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966770.866863,
+      "status": "received",
+      "finished_unix": 1789966770.867899
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.936463,
+      "status": "received",
+      "finished_unix": 1789966770.9376252
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966770.9377742,
+      "status": "received",
+      "finished_unix": 1789966770.939044
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966770.9440799,
+      "status": "received",
+      "finished_unix": 1789966770.94512
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966770.9452748,
+      "status": "received",
+      "finished_unix": 1789966770.9487119
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966770.953025,
+      "status": "received",
+      "finished_unix": 1789966770.953952
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966771.023455,
+      "status": "received",
+      "finished_unix": 1789966771.024544
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966771.024696,
+      "status": "received",
+      "finished_unix": 1789966771.026002
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966771.031151,
+      "status": "received",
+      "finished_unix": 1789966771.0321321
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966771.0322912,
+      "status": "received",
+      "finished_unix": 1789966771.035892
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966771.040286,
+      "status": "received",
+      "finished_unix": 1789966771.041284
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966771.1114151,
+      "status": "received",
+      "finished_unix": 1789966771.112416
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966771.112569,
+      "status": "received",
+      "finished_unix": 1789966771.113867
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966771.118973,
+      "status": "received",
+      "finished_unix": 1789966771.1198962
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789966771.120054,
+      "status": "received",
+      "finished_unix": 1789966771.123539
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789966771.127906,
+      "status": "received",
+      "finished_unix": 1789966771.1291342
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966771.1999931,
+      "status": "received",
+      "finished_unix": 1789966771.201083
+    },
+    {
+      "port": 61457,
+      "endpoint": "/tokenize",
+      "started_unix": 1789966771.201236,
+      "status": "received",
+      "finished_unix": 1789966771.203443
+    },
+    {
+      "port": 61457,
+      "endpoint": "/slots",
+      "started_unix": 1789966771.2036989,
+      "status": "received",
+      "finished_unix": 1789966771.204122
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/version",
+      "started_unix": 1789966771.209106,
+      "status": "received",
+      "finished_unix": 1789966771.210216
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/tags",
+      "started_unix": 1789966771.210346,
+      "status": "received",
+      "finished_unix": 1789966771.212499
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/show",
+      "started_unix": 1789966771.212645,
+      "status": "received",
+      "finished_unix": 1789966771.21787
+    }
+  ],
+  "generation_requests": 0,
+  "runtime_state": "idle_confirmed",
+  "resource_observations": [
+    {
+      "captured_unix": 1789966761.0225012,
+      "pressure_level": 1,
+      "free_percent": 47,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966761.1585631,
+      "pressure_level": 1,
+      "free_percent": 47,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966761.166634,
+      "pressure_level": 1,
+      "free_percent": 47,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966765.8382652,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966765.8585532,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966765.954842,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966765.964531,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966765.970165,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.048963,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.0580108,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.063544,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.1375282,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.146709,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.152169,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.2261372,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.2351549,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.2404218,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.314107,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.322979,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.3283782,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.4031308,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.412481,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.417832,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.491621,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.5012019,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.50704,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.5808399,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.590014,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.595139,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.669085,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.6780381,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.6836312,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.756811,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.766901,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.772463,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.8475862,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.856601,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.861938,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.935693,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.9445918,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966766.950103,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.022966,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.032207,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.037458,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.110998,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.119822,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.1251252,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.19778,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.20624,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.2113779,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.284836,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.2935748,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.299179,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.372561,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.381502,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.3867369,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.458907,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.4680588,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.473174,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.5475042,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.556384,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.5616488,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.6358972,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.644581,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.65013,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.723706,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.732799,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.738094,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.811156,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.8198972,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.830055,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.9213529,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.930478,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966767.9360042,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.0101702,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.019465,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.024817,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.097781,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.1068742,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.1120472,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.18678,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.1957881,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.2012181,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.274315,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.2838259,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.2891068,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.362697,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.371757,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.3769732,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.450968,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.459668,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.4650502,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.538375,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.548973,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.554313,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.627498,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.636999,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.6422431,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.7165492,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.725474,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.730828,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.804424,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.816384,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.821902,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.9029272,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.9120152,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.9172459,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.989532,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966768.998653,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.003807,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.0800178,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.0897658,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.095374,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.169624,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.178633,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.183985,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.257528,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.266492,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.271745,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.3456671,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.354474,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.3598158,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.433439,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.442219,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.4474082,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.520333,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.529402,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.534633,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.608449,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.617532,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.6227279,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.6968188,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.705577,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.7109,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.7898262,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.799005,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.804131,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.878806,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.8876522,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.8927748,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.974855,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.983165,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966769.990536,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.0650802,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.0741482,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.079623,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.153543,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.1623502,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.1674361,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.2401931,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.249208,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.25443,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.3275242,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.336719,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.341986,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.416675,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.425395,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.430699,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.504608,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.513846,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.518952,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.592441,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.6016471,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.60696,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.6815119,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.6903622,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.695349,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.769609,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.778337,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.7836301,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.8576179,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.866679,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.8719769,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.943885,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.952833,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966770.95804,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966771.03096,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966771.0400572,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966771.045509,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966771.118779,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966771.127708,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966771.133318,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789966771.20891,
+      "pressure_level": 1,
+      "free_percent": 26,
+      "swap_used_bytes": 9129825402,
+      "swapouts_bytes": 38187892736
+    }
+  ],
+  "tokens": {
+    "gsm8k-63": {
+      "prompt_tokens": 495,
+      "rendered_sha256": "5a0547aa9cd6b4e5f8e943f80317153353c32ebd37bfed789e1fa5abe72319fb",
+      "messages_sha256": "109dbacdc21422ccc829ba18cfc47c32637cd51ea9e0509ed283049dfca9fbb3",
+      "tokens_sha256": "1e042061d9cd55e4a2d6dd8c94c3232c79743030c990bde90b5da2e4b48fad60"
+    },
+    "gsm8k-147": {
+      "prompt_tokens": 300,
+      "rendered_sha256": "4b01a04ec69ad51613a12a5bed97e0401e8c0f9f01ce4583b122d685e65560d7",
+      "messages_sha256": "b33cb073adca38e5d732aa3b8437f694403c5b6eeac8e2cfa8e780214205af40",
+      "tokens_sha256": "a7112f505161f5da2ac036e6c817b73dacc9bc5ac5552b489b19b7cdc4840408"
+    },
+    "gsm8k-40": {
+      "prompt_tokens": 403,
+      "rendered_sha256": "93dadf2159747453b9cf763fea54465f3ae0c71e4a9d516025085d89cc4b5e00",
+      "messages_sha256": "d98e9e34a844723e4267541dac6037a5ecf964a5b87c59e4e618b2fc7e54a88e",
+      "tokens_sha256": "2d2442ff491906a8997841d40b5c24547e29a8d756792cdd6e4a5932906d6abd"
+    },
+    "gsm8k-143": {
+      "prompt_tokens": 656,
+      "rendered_sha256": "65f4f73f86747d3074870e3329d2f611a6f23cc34512438de84ed1933b49cefd",
+      "messages_sha256": "e096c87e37401b5dc97cc13136dd3a1d86f96f0e7762656273ef879a03c60b14",
+      "tokens_sha256": "034673824854b9eeceaed2c97c9f8515a3662984184733f9a06965e8690d3097"
+    },
+    "gsm8k-234": {
+      "prompt_tokens": 350,
+      "rendered_sha256": "7753961f9ea3d1a943594a6c5f73e44a2e3c7cc97b2834558a1f60c8acb8a44f",
+      "messages_sha256": "3e68be40a405595917318cada052a1e2c3782612d8b901768d70249402d60efd",
+      "tokens_sha256": "d2fb433dd11b30c588bcff8518e7cc38dcbda1031ffbdb6eb2d7d672a4d418d5"
+    },
+    "gsm8k-204": {
+      "prompt_tokens": 789,
+      "rendered_sha256": "488a36728843585901ce26c9530ed8fafa5b37a043d6a750f77e27ffb9d38661",
+      "messages_sha256": "894bce0772b9f9cc655a22f98e202f86a428da4c8cd90a2bde8084ad4ed248a3",
+      "tokens_sha256": "886877b61fe33573a670b071c846bceecd63d76c03c6fae0ff8f8e3a8d51ba7c"
+    },
+    "gsm8k-75": {
+      "prompt_tokens": 493,
+      "rendered_sha256": "3377fe52e202b2ee95ab6766d81791b7cab81b08e876a5f07f0437d1423c61d4",
+      "messages_sha256": "841ded03c87ebfbed5e0933e7defd74451f1f9f56db646fbb8c943eceaa8ac11",
+      "tokens_sha256": "532bbf40d1ef9822d6d1bf56fe4db5414f47bb70570138d1bfb66b5ba3cebb83"
+    },
+    "gsm8k-181": {
+      "prompt_tokens": 641,
+      "rendered_sha256": "55f0d228c708e37fe28900b2ec0dbd280940658b6e49f564e4dd26a969a11a63",
+      "messages_sha256": "c3dfa06dbad75d96d1f59cecfb5ea26617146187390384a8451bed305f3256e8",
+      "tokens_sha256": "fdf20a900f88032379adbfb1d4b62e4fd6d6b4ae75ee63dac6a3f13868a8110a"
+    },
+    "gsm8k-174": {
+      "prompt_tokens": 497,
+      "rendered_sha256": "af8f1ccd43fdffc9de0c8e4f1637f2353b2a15b78777780b2a6fcf7ce7b3c563",
+      "messages_sha256": "7ebe4aa1e4a041c02c0883672a22c601f767421b6565eb3927590a920e68fc33",
+      "tokens_sha256": "1854743c1d4ff4a7389f34e4e9d2c17294da89f05e4b46da0881bdc6c96a6e63"
+    },
+    "gsm8k-61": {
+      "prompt_tokens": 507,
+      "rendered_sha256": "44a742f8beb13d0174a0f59c3d70f11ad1ca71e70fcebae40974c94da47e157d",
+      "messages_sha256": "1da9abcf93de5f42143c454a80fc61d78063a7ff6502345cc819d1471d6ce768",
+      "tokens_sha256": "bdc11f6dc995a79044def90153028ced7e6f1f01b93fcde94d8fc3eccd70f1b0"
+    },
+    "gsm8k-212": {
+      "prompt_tokens": 511,
+      "rendered_sha256": "ebce6b0b64bc27ac503267dbf8979fd2e8fc3e71a6d4db0ebd53fcda33d93044",
+      "messages_sha256": "dec548c8de17d5dd4a9071e3af8fa819e2a7a592c14581c3740c170525a899c9",
+      "tokens_sha256": "58e11a389049d94297e07b8150f63147cee5fb89479f4e84ab036388335d4fde"
+    },
+    "gsm8k-280": {
+      "prompt_tokens": 540,
+      "rendered_sha256": "81fc28c874b6596e13ad4630d0e79288be0e598a9523e046724785349f68c2c3",
+      "messages_sha256": "02d7687be557d490a59e7680dda3021ea08041b6ccd0d9003a92dc96ca6e2f82",
+      "tokens_sha256": "f659ee3a1da48df374731d63d60bc1a7974f518b8e0d7d1c129a5c100060af3d"
+    },
+    "gsm8k-350": {
+      "prompt_tokens": 361,
+      "rendered_sha256": "67023f988fe820201c69fcd2bf1da784487a06569e196d472e9dc6864efdb6f6",
+      "messages_sha256": "c05b4924f04027550acdf1f11f03dc96aecb68f7fb45ed30f7ac29a3c6cd0278",
+      "tokens_sha256": "8ddddd03c727f4c9756122e3b5cfe90e49426a35b42628749ea3b088fa265f55"
+    },
+    "gsm8k-245": {
+      "prompt_tokens": 555,
+      "rendered_sha256": "c184dacef32c930bbd5135626c270f382b6b4513b2507298d38fd254b8c46d57",
+      "messages_sha256": "0b208cd0270458127657739908a5d9e84f56282b4c4c1158b547188e6a7565cc",
+      "tokens_sha256": "14655d672ff21a82827c2a48bd3495adfe2d2952c945f2342d25d479096fa504"
+    },
+    "gsm8k-253": {
+      "prompt_tokens": 412,
+      "rendered_sha256": "ccfb1b015d9f4def144cb1fde64ca4c2a32457ef83a1ab79fb62b4b0e495b85a",
+      "messages_sha256": "037c83da5cb60a17d07bad2195a30d30c68e04fe0f8afb61189d87eef37032a8",
+      "tokens_sha256": "18f19e14abdad4ceda634c6ad0b2227329fa98b739c73057c5b29d42818a5a25"
+    },
+    "gsm8k-242": {
+      "prompt_tokens": 385,
+      "rendered_sha256": "2e2f87955f640efa54b167a7b3af2471e9c2bc7b06555a691fcb8f35bdb1d33f",
+      "messages_sha256": "1980f5eac7b84ff7aeb474e49c8495c605c35e1bb39d4329c7be05964ab2327d",
+      "tokens_sha256": "6139637003615b98bd5d8fb1812af5ea78c3ae60d2cbb37aaf127dc9ee80de9e"
+    },
+    "gsm8k-62": {
+      "prompt_tokens": 607,
+      "rendered_sha256": "f32be09590b77d958a10ef4822ff9978e00a10682910a63f5013f7289d7d78ec",
+      "messages_sha256": "13fc9f060f506fc306150fb0fa264f36e0d0640f5b4272530c12f5770977ada3",
+      "tokens_sha256": "e8a24f357ff64efd115bfdbdb650d03fa84219f76d35aa238fab1bfbc8e0f233"
+    },
+    "gsm8k-386": {
+      "prompt_tokens": 290,
+      "rendered_sha256": "38b97846ad0a2fbc0843fcf60ccc28294282c338548f560d5f93ccdd6c70cf66",
+      "messages_sha256": "575ec6523006f5117182b9155152ca9f8760a4f3741760cf74bcd59edd61a2a4",
+      "tokens_sha256": "a67f783c62821d7135fe8108db1c5a63d8fc8da3c2a729d111f8a50b5474604d"
+    },
+    "gsm8k-283": {
+      "prompt_tokens": 428,
+      "rendered_sha256": "4ac5e7873f8ea34bf4d0719d7ff3b01b029d02a585d33a37ea777574eeea3dc2",
+      "messages_sha256": "4865327d5d0e744246f46233bcc25e8f85c96ac4441a8d6824bbd62dca0815e9",
+      "tokens_sha256": "5db189ad53729b7931cf402de3a7c8a78f34ece7c324efb4fd46893d9df737c4"
+    },
+    "gsm8k-86": {
+      "prompt_tokens": 513,
+      "rendered_sha256": "85cfc2fcfacfcde93cf7fdfd39bfffeb66eab7096f183e3b13670e8189a96b7f",
+      "messages_sha256": "a95cb9244b6fdea7783982fe7e6ae1813712a94ed927d7c7975af158083b381b",
+      "tokens_sha256": "7ec4150a4df45df9a846183709cb9b3248c93f86f3466fb8a500f747c54efc93"
+    },
+    "gsm8k-221": {
+      "prompt_tokens": 322,
+      "rendered_sha256": "b1912718aa98df67a736c2a93ffe1b30052f26f568abd26db5d283832ca9a2c2",
+      "messages_sha256": "0ee59416ed99ac408f8568065f3e5b9a997e31353114a0a440960ee140ce309b",
+      "tokens_sha256": "51248f4ef56d38f61c864f6ef12ee7d206f6491127f804d3aea82dce43f1e87d"
+    },
+    "gsm8k-291": {
+      "prompt_tokens": 380,
+      "rendered_sha256": "5379e1cb7f18ee87f898f8dec030b98f5170df4160f936aa4b7ddb8aac02ce66",
+      "messages_sha256": "92414629ba6b3beb2b82a9e44c262e9ac95792ca6a8b54e87f79cf3717e55734",
+      "tokens_sha256": "074435f7eaba1e6ec0843d5d7e89317b1951512f548dac7934c886a271e7743d"
+    },
+    "gsm8k-134": {
+      "prompt_tokens": 547,
+      "rendered_sha256": "61b8a7f31f75880f3f9db68573608ec0b509148d91d56dd22129a473e54988af",
+      "messages_sha256": "2862111d509f5885468a756be99c74a1913119891c5231219964253e1ad7d714",
+      "tokens_sha256": "9115e2dbba478b4e2e50f8c76ab6be430d82183c991bbef1eaa62cd08026953c"
+    },
+    "gsm8k-342": {
+      "prompt_tokens": 416,
+      "rendered_sha256": "0623f1886b1d3bc9a2a1af327e5e13db0945414cce8c3f2cd15fc99edf4f9dac",
+      "messages_sha256": "c4bda5c2add5021c9efb497114f6c9f51f3e9c7ac6b91d85d1789f21d0f23169",
+      "tokens_sha256": "dbae6e00145160b0effbb83d54174756283494980930619ae79180844fd02784"
+    },
+    "gsm8k-17": {
+      "prompt_tokens": 390,
+      "rendered_sha256": "d3b297b71b4b5f9776652076000291427be8509b7f360493991490f7ecd10a80",
+      "messages_sha256": "03877a4ecf3e788d70b95a40204daf58df8fb25353e26fa21eabb5e0e2579a39",
+      "tokens_sha256": "b83230cfe17ed204430dba6a7372f7e3093d05d106251145a2342189761f3d41"
+    },
+    "gsm8k-32": {
+      "prompt_tokens": 682,
+      "rendered_sha256": "2e5c1f940acbd0dc5b408a65bb8b4c8ff6dbab996a22542e3bbf5ef6d8bdc9ad",
+      "messages_sha256": "08f9da532f616d702b4b1ec47f4af047b9fbaaaa274e6a1c7cdacc1222808239",
+      "tokens_sha256": "e9f6cba0ed0a4deab0aaaf4c0aca41e10d0c91e3e9e191e5ba4e81ec4b8f9f65"
+    },
+    "gsm8k-206": {
+      "prompt_tokens": 425,
+      "rendered_sha256": "a717a6b8260ea2303f43772c7e93bc1d0e5ac3b81b5c2c3fdf2920f961e3596a",
+      "messages_sha256": "26f065bec22b61690b8d2c1567b0f342708baad94ef4a0666af87838f8bd9e3e",
+      "tokens_sha256": "d3cce56fb4ede372d466b358670bf08fc6d2d23c5c5197eed1ac6d53cb801d18"
+    },
+    "gsm8k-327": {
+      "prompt_tokens": 550,
+      "rendered_sha256": "3c2d945bc0ea4736399d8c55ee67662833ef3d380cf4be6ce83f8d93486a4f2d",
+      "messages_sha256": "010dd400e0ab145e1f41287996af6973eb5ac9a0b25322200a6d9d726405a72c",
+      "tokens_sha256": "0cf63797dd2bc3981b5e55ae8490c74b3b82dff7a13c9b4e7dcc4ca8ead827e5"
+    },
+    "gsm8k-388": {
+      "prompt_tokens": 443,
+      "rendered_sha256": "e02f02be6342f58f2a6c520854b83ee3ac33d622c9830fd65731a2135c006268",
+      "messages_sha256": "42848cd7b0a7225c09cdc0447ac53336d6b20310718d99dad50ed9fa78183036",
+      "tokens_sha256": "a0f5f7c7620e360bb0887a3f82ea329e9cef1de80ab91e7d3513b5e109da1af4"
+    },
+    "gsm8k-284": {
+      "prompt_tokens": 421,
+      "rendered_sha256": "89d225857d8ea0e89500398c3d569b9b2aa4b09c2d06e1e2b8f3b0a1d243878a",
+      "messages_sha256": "0a1ec8ea764456912325e4e756cd54f7662cc592b9572c8e700e4eaf30e9e676",
+      "tokens_sha256": "08f6d5885fa86839edd73e1f36ff642657c585aedc46759f45caff75a1670936"
+    },
+    "gsm8k-65": {
+      "prompt_tokens": 649,
+      "rendered_sha256": "de071d3b0b08547f10fb619bc6079b463913adf7e2e62d848aa15ce0efd2eb57",
+      "messages_sha256": "41dce21aa1d1ab69ff0d32ea8b7a95e19790d10b8e372154b87ade85c51b0d30",
+      "tokens_sha256": "276734fff43bc69be77d395969134e2ea933804fe0bfb347d7805041bd4839e0"
+    },
+    "gsm8k-332": {
+      "prompt_tokens": 348,
+      "rendered_sha256": "66dd3dfe4fefcf94ae2d2428645eeb2c80adc077d5cb1665fde907c15360f7e8",
+      "messages_sha256": "6ccc139a0f79c9047d7a18ae55e97f2ca5befb73a15394ce952dcf5da382b2dc",
+      "tokens_sha256": "131c47f2fa20b68b6e3eeedec00aaf6cd9d2d07dc61f4af810a7d94ba212eca0"
+    },
+    "gsm8k-165": {
+      "prompt_tokens": 479,
+      "rendered_sha256": "642e81918bee2fef29e9b80669b1d898f571fdff1fe1f07b260a9f20fae09889",
+      "messages_sha256": "ba0c334cfdae0f0d45ad221eeba5584cc968bddee166ae28e50eb509029feb28",
+      "tokens_sha256": "b7d5db1524f31c2a72435659d3ae4b993ff1545bcbfae7ff8a685edd1cfbccd5"
+    },
+    "gsm8k-251": {
+      "prompt_tokens": 428,
+      "rendered_sha256": "7f2a8429bec8e5314e5df9ed6802ca63c1d80ef41f95aeeead280a38fbf58bc9",
+      "messages_sha256": "5f79e86f7b050a178ab3260f73865c163a43a19e003de9b91136bf2e13a5bd4e",
+      "tokens_sha256": "2c582c259950ffacd6bc70deae422e92695279ea3f0ac522c2c2be6527fee111"
+    },
+    "gsm8k-192": {
+      "prompt_tokens": 515,
+      "rendered_sha256": "82a47238209434ae8c7e1e98edcd67cb028b963caf38c32847024e1c18f34d85",
+      "messages_sha256": "1a9fc5eb4ce9c448d17281c804ed7ae15eaa60b7559edc6f7de8855b9487089b",
+      "tokens_sha256": "9eadb3cca61a8b39df25d49263c7ad5190eaf3dfe29d64082a381d8fcc02f604"
+    },
+    "gsm8k-97": {
+      "prompt_tokens": 506,
+      "rendered_sha256": "819cb7731c2a345dfb115665a30b6e0a54060adae1fc73583b6e3817af07e318",
+      "messages_sha256": "8626f3abe03299ffdbfa686c33a3a17ad80e20b02d541b59387aef11110b5183",
+      "tokens_sha256": "598ff3eb55cabe40370aa63d866f45cf25af864d5f621eac50f3f909ca3857ff"
+    },
+    "gsm8k-229": {
+      "prompt_tokens": 490,
+      "rendered_sha256": "00d13d1a0100b6283eb582a1765183dbc4df397af7bf4fc954a14ef9c140aec3",
+      "messages_sha256": "73881a6d7d77eada6a65e9a03d0b38f2c565ad914dfd3942b2ea4612408590d8",
+      "tokens_sha256": "5f87261520b05f2d52b9a794c9360f656833eabf71004954e598b9cd366ac1c7"
+    },
+    "gsm8k-208": {
+      "prompt_tokens": 613,
+      "rendered_sha256": "5458a35fac1443fd3ce1b7e0751e2f210a5bb89579084911a85b449be9fd5470",
+      "messages_sha256": "39d4c5d04453c7859f996f4533b1becb8917b201c654eafb68b27754d4efad27",
+      "tokens_sha256": "9fff118227df2b466e1ea6d3d9cfc3dce0aa7a97517067d0f0cae7720c809719"
+    },
+    "gsm8k-182": {
+      "prompt_tokens": 485,
+      "rendered_sha256": "491fd81d4bf3cbbd9c880670ddbfc7285ef7bf5dfb3fd1d0e27261bbdb73d094",
+      "messages_sha256": "ba1ee64b68d166ebeb21339ece5f4d3132ae0da5a06b23aa36d5cb096850b306",
+      "tokens_sha256": "63d980903f3027485772b5c77c24c0c211b0c23c5d620f06704e63f6d3b57673"
+    },
+    "gsm8k-178": {
+      "prompt_tokens": 430,
+      "rendered_sha256": "8fb60bde20a59d57438374fb252a046ef8d8f619bce1d29fb940e2451971cfc9",
+      "messages_sha256": "150b7a0cfb661db1e7c967bc0567b04d96c5fe1dc5163e2fe4d0ecd71cfaba71",
+      "tokens_sha256": "c24352ed49985234a5ad5dba906715c2f103db9d63f73c50dfe0d8a58552aec6"
+    },
+    "gsm8k-269": {
+      "prompt_tokens": 374,
+      "rendered_sha256": "e74e2bba442cc60448c1b9213b7002b512a86dd65c8d9fbc69afac814adb4b0e",
+      "messages_sha256": "d21b65d200d0d525014ee8bed61c335df0ca963a12f606bdf789c90b628d37b1",
+      "tokens_sha256": "eab185740c78a41f056b9ba246adc005bb00ae4a8ec6556cca0341c222e04f69"
+    },
+    "gsm8k-130": {
+      "prompt_tokens": 537,
+      "rendered_sha256": "e9e37dd33c0cf3ce8bffd5d7f756ff3c2c822835663b3f94d07432ca9f9b9eea",
+      "messages_sha256": "05e3a76318d9308a9ff56e26b62bef0240d672d9a631d2bee378369f86ade70c",
+      "tokens_sha256": "b23f210be1297443814f789c75096797ca7516580583417efcbaa20d8fa5f7b6"
+    },
+    "gsm8k-124": {
+      "prompt_tokens": 435,
+      "rendered_sha256": "c51c2b301aebcc3869e58ce3664748343259db22f4097111e54d9152be96019f",
+      "messages_sha256": "167dce9c12a1f5550ceb94df8ea3e50ecfd9f261e3f0a0bfe3a8e543a11a8f3d",
+      "tokens_sha256": "fef744b255f682f47cda40d7c156c2ff36264d78a17b883f0d32654e2761e5db"
+    },
+    "gsm8k-37": {
+      "prompt_tokens": 406,
+      "rendered_sha256": "b2571f16e20682b71fc0f72453645fe894ccd4f41840ea045e248b1b6353fac3",
+      "messages_sha256": "d6dcb621265cf06ad08d33f67b182bd8dc886f04ddb9638ac071ae4da9b0b5de",
+      "tokens_sha256": "806f26e61418075aa9e4c277862865ad7774c81ccb90932b7bf18b81d2844330"
+    },
+    "gsm8k-294": {
+      "prompt_tokens": 547,
+      "rendered_sha256": "128b06382d36d926e110151d23cd0729708d68f5f60be2be8eddde4297ce0252",
+      "messages_sha256": "2eb9868cdf30c2979511c2b7afc0b80a7248a71bd3375ad488419d2a6eff8284",
+      "tokens_sha256": "5751238b0f9f7d35dbe5cc3fd4948479f3d9fe786e5f82f26dc92ca0f8f1aa6c"
+    },
+    "gsm8k-103": {
+      "prompt_tokens": 581,
+      "rendered_sha256": "10bbbb1cacff23982cbad33a4934f59259036fd1556784b6739b331bbbce7cd3",
+      "messages_sha256": "9104af71934b62d4a76d6c2e39842839d8f1e6ae5429a20e688daa78299437fb",
+      "tokens_sha256": "86294147ac7975cc405677d1d7fcb84942d4e550e96e53670e0e04ce8481ef3a"
+    },
+    "gsm8k-152": {
+      "prompt_tokens": 475,
+      "rendered_sha256": "6e2fc28a9da5bc59d4a82a377c033590f264d25efcbc0a1b5fa055b376fec794",
+      "messages_sha256": "f7605bb918f8b6ba3cc204c4b07cae91387db426e72d49c78220b555d8ccbd03",
+      "tokens_sha256": "96ec714417bf1c064916213ec9b6ba3c1801fca904b48b2990aa0f393a2585dc"
+    },
+    "gsm8k-334": {
+      "prompt_tokens": 370,
+      "rendered_sha256": "2bd9cf676825fb5fcad7abaad514bbb78b459b70d1069705897b02c25bb4f9c5",
+      "messages_sha256": "b46770efa163e309b5708f0542debc2eba93fa0c00fd9a7dae2e4c537bc989bb",
+      "tokens_sha256": "822d943e295e63e1ad07ff3eae71d04d0e04626d5aca80c5fb39cd71ca7ed477"
+    },
+    "gsm8k-199": {
+      "prompt_tokens": 321,
+      "rendered_sha256": "da5e7618da16cb91fe1e297b09f2ddb5f096cc59007f58b37cbd9571cb3d990c",
+      "messages_sha256": "a49b5ae35aa9c22dd4cfb02f3d1b64b78888b8b67f3653474f7f2d77f64f1edb",
+      "tokens_sha256": "5f3c76af4e3cf71e96cda9857d6ba31ebaeb7eba583a2b53ed62651aeaf84e3f"
+    },
+    "gsm8k-114": {
+      "prompt_tokens": 580,
+      "rendered_sha256": "7ccd75c4c20fe6c3052aa0d1818fb9434fb9abfa8b7340b400bfbc6a59ce8f9d",
+      "messages_sha256": "c8f5dbd92460fb40b345d183933faa535d7a8e6f28ae42cff6a0f6b979e28cea",
+      "tokens_sha256": "1e386ea456b57fa37cfaeaddd5f831fc876439667aaeab0e3142ee77e80e9d37"
+    },
+    "gsm8k-194": {
+      "prompt_tokens": 403,
+      "rendered_sha256": "9e636194225eef91c2babe033f1447ad67412ada371aa204585408efffd843c7",
+      "messages_sha256": "f8a1ae8aae15f3e1da88fcf2eff0021a8c2e3240c271106720e828fa35870a89",
+      "tokens_sha256": "414881b603529ab1f6f3183546db7ce2c3b3f1d00050333ecae11c6f56dc06ac"
+    },
+    "gsm8k-299": {
+      "prompt_tokens": 535,
+      "rendered_sha256": "1db7bcb571e5b2b8e42642195001927d22c2cd70d70095d95a3625d48204ce5b",
+      "messages_sha256": "f2c959d8e84eed3e89159e37b2b109e3180379569622602f0d104ffd07945145",
+      "tokens_sha256": "12f0898fd288e78bc94e4d6e9a2157966647164acbe73fca8077857ccf25567e"
+    },
+    "gsm8k-105": {
+      "prompt_tokens": 748,
+      "rendered_sha256": "26ef0189d19d881ccb46eab667144fb918bd6a98d5a7c976cf0badb905d4745d",
+      "messages_sha256": "ff07da013264ecfb08f6e320f7ee7373ef6a83e0684499949e669cc490639281",
+      "tokens_sha256": "c635844779fe830618442c64ba554dcc6746abd56ac92831ff0d105b1011f7bd"
+    },
+    "gsm8k-320": {
+      "prompt_tokens": 454,
+      "rendered_sha256": "500354e6f0a9279071e89143186408e421a3637486ba1110b6b2ab4c38207d00",
+      "messages_sha256": "1b37fd1e79c570589449c50f9568743042bd1c86b2f12cdaa5646c302dfe3f8b",
+      "tokens_sha256": "648d5c592cc9fb8b38bf49b179516f4463241629c1e6f71ad88f3575a409e76d"
+    },
+    "gsm8k-171": {
+      "prompt_tokens": 639,
+      "rendered_sha256": "097001ad12fa35dfdda1265c7a1c241aef37ae696f4b7387852c006a1bc7d74b",
+      "messages_sha256": "2d46c15652bb9febcd38473d9852cdbe2c4d73ca828a855c7ae9f645ff2c004d",
+      "tokens_sha256": "ba5fc4dde9974e339d9e30eeb9bdacb7cc787bfaf8a4999d8be97ebb329c9cd4"
+    },
+    "gsm8k-345": {
+      "prompt_tokens": 598,
+      "rendered_sha256": "57003412ace3d068561983ca521c849c8e2cc39eac983ce8f303e73d297e33f7",
+      "messages_sha256": "042f285f0e01a2f3a2cf20481550061ee5f636de8310ce004af4070a11f3a99c",
+      "tokens_sha256": "02243578d2c372b0f190b509dc86529b77d7320918e34dc24f4c1846a952f1e2"
+    },
+    "gsm8k-369": {
+      "prompt_tokens": 350,
+      "rendered_sha256": "a3ecf0bf622f79f200801c63f585844266e41932970e296c79d9c96fbac55b74",
+      "messages_sha256": "90e927a0e34a100880cfdfd0feade6e5ec3db296a0afbfa0d7abb3eadaccb0bd",
+      "tokens_sha256": "1043e2a344546b619dd9189b325e9399bf838e5d4fef9d27ec7e081e592178d6"
+    },
+    "gsm8k-370": {
+      "prompt_tokens": 308,
+      "rendered_sha256": "4a7273e959cf4c417280a04e0ad4b742c83e55b4c75fae2149ab59f98968e257",
+      "messages_sha256": "ecd9783d3743c4d5fa9e86f6da54b2395c2a68442c8c46946e5924ef161f90e0",
+      "tokens_sha256": "c62925d36cfc1f4acfab8d3062f7d385338438a03304432bf1ae4edf0841f6e4"
+    },
+    "gsm8k-303": {
+      "prompt_tokens": 516,
+      "rendered_sha256": "e3e2f0bd6f1e50eec9a75b1c43c8a7dc06267670fe2c4c362642ea7e15ba1b4e",
+      "messages_sha256": "2ccabd643bc6333634993f533df677b90a82e00214255bab7145d316dc8c3e6b",
+      "tokens_sha256": "b02a6d8f775ef6f662aedc9dd77a2939f19af3637f4ec60254be086f2f0d1876"
+    },
+    "gsm8k-282": {
+      "prompt_tokens": 778,
+      "rendered_sha256": "00abcc781e1d765f20c83fd3b6a3a5e5ab5b94ac7ce80b6f27fda7e6a298e4a9",
+      "messages_sha256": "16cd49b1c4fc07fd5aec5da828f633e1c455b5bdb0c3d24eb5dca08419af5491",
+      "tokens_sha256": "2779e12ea8f84c1ed75a58bf549fb33dc7baa0c9481be259329722affc702f1a"
+    }
+  },
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "server_version": "0.34.0",
+  "template_sha256": "966de95ca8a62200913e3f8bfbf84c8494536f1b94b49166851e76644e966396",
+  "parameters_sha256": "2801e61a8848e505a6e20beeaea63cca1600200f6720e5f916ba7d6da5c3ba39",
+  "model_path": "/Users/prabs/.ollama/models/blobs/sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff",
+  "model_details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "llama",
+    "families": [
+      "llama"
+    ],
+    "parameter_size": "3.2B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 131072,
+    "embedding_length": 3072
+  },
+  "binary_sha256": "12a8bd0922404bb941fcd4f3fb56ea32251acfdd11e6af8aa99c8703557c23d6",
+  "library_sha256": "207fecc90bd3279588ce08c3cfef690d914317d30eb91d07a359881b3d4fb6ff",
+  "runner": {
+    "pid": 45135,
+    "port": 61457,
+    "parent_pid": 45071
+  },
+  "resident_models": [
+    {
+      "name": "llama3.2:3b",
+      "model": "llama3.2:3b",
+      "size": 2311438990,
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "3.2B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-09-21T10:45:01.123264+05:45",
+      "size_vram": 2311438990,
+      "context_length": 2048
+    }
+  ],
+  "finished_unix": 1789966771.2268732,
+  "operation_counts": {
+    "/api/chat": 60,
+    "/api/ps": 62,
+    "/api/show": 2,
+    "/api/tags": 2,
+    "/api/version": 2,
+    "/slots": 120,
+    "/tokenize": 60
+  }
+}

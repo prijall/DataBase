@@ -12,9 +12,11 @@ The [source audit](PUBLISHED_INTERFACE_AUDIT.md) and [bounded plan](PROCESSBENCH
 
 ## Latest ProcessBench session
 
-The [second M4 session](results/2026-09-21-processbench-m4-session2/README.md) passed exact-token preflight for all sixty prompts (308–778 tokens). It then recorded two of twenty calibration responses: one usable and correct error index, one length-stopped and out of range. Both examples were erroneous; no valid example was attempted, so balanced performance is not estimable. Free memory then fell to 19%, stopping the run under the unchanged guard. Cleanup is verified and the session is closed. The archive now has **234 generated completions**; eighteen calibration and all forty evaluation cases remain unattempted.
+The [2,048-token session](results/2026-09-21-processbench-small-context/README.md) passed sixty exact-token checks (290–789 prompt tokens) and verified the actual loaded context. It recorded six of twenty calibration responses: four usable, one correct, two malformed extractions, and no length stops or request errors. Memory pressure reached level 2 after the sixth response; the fixed guard stopped execution. Cleanup is verified. The archive now contains **240 generated completions**.
 
-The [smaller-context plan](PROCESSBENCH_SMALL_CONTEXT_PLAN.md) proposes a separate 2,048-token adaptation after observing a maximum prompt-plus-output reserve of 1,802 tokens. The separate `small-context-v1` profile and [fresh selection](processbench/selection-small-context.json) are implemented; live preflight and execution are pending. See the [implementation guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) for the current commands. Do not change settings and resume the original manifest, interpret unseen cases as wrong predictions, or relax resource/calibration gates.
+The new calibration has six used and fourteen unattempted cases; the original twenty-case calibration is retired and all forty evaluation cases remain untouched. The error class has one match in four observed cases, leaving at most seven matches out of ten even if every remaining case succeeded—below the fixed eight-match gate. The actual stop was resource pressure and the cohort remains incomplete; this arithmetic is not a completed accuracy estimate. Fixing memory alone cannot rescue that gate.
+
+The screen is closed. No automatic retry or configuration change is authorized. Next work is targeted runtime/cache investigation and human review of the six outputs, preserving primary scores. The [implementation guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) retains the executed configuration and reproduction commands, not an instruction to restart.
 
 ## Original ProcessBench local execution (reproduction reference)
 
@@ -43,7 +45,7 @@ Read the calibration summary before invoking `evaluation` with the same paths; t
 
 The reviewed [SSH transport](processbench_remote.py) uses an isolated target loopback service and sends Python code and input data through stdin and process memory. Research files and artifacts stay on the controller. The [session rules](PROCESSBENCH_M4_SESSION.md) describe service ownership, fixed target/runtime checks, a 90-second model-request deadline, a 100-second transport cap, and a 150-second reserve within the unchanged 90-minute cohort budget.
 
-Both September 21 sessions are closed after resource stops. Preserve the first failed preflight and the second passed preflight with its two partial calibration records; **do not resume either closed session or change its settings**. The following original-profile commands are retained as reproduction references. Use the [smaller-context guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) for the next planned configuration:
+All September 21 M4 sessions are closed after resource stops. Preserve the first failed preflight and the second passed preflight with its two partial calibration records; **do not resume either closed session or change its settings**. The following original-profile commands are retained as reproduction references. Use the [smaller-context guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) for the later, also closed screen:
 
 ```sh
 python3 processbench_remote.py create-preflight --data runs/processbench-source/gsm8k.json --prompt runs/processbench-source/critique_template.txt --provenance processbench/provenance.json --selection processbench/selection.json --preflight runs/NEW-SESSION/preflight.json --out runs/NEW-SESSION/subject-run

@@ -1,0 +1,26 @@
+{
+  "controller_observed_unix": 1789966693.6726909,
+  "target": "prabs@100.74.220.25",
+  "observation": {
+    "resources": {
+      "captured_unix": 1789966693.632708,
+      "pressure_level": 1,
+      "free_percent": 46,
+      "swap_used_bytes": 9138214010,
+      "swapouts_bytes": 38187892736
+    },
+    "hardware": "Apple M4",
+    "memory_bytes": 17179869184,
+    "load_average": "{ 2.56 2.22 2.10 }",
+    "python": "3.9.6",
+    "ports": {
+      "11434": {
+        "listening": false
+      },
+      "11435": {
+        "listening": false
+      }
+    }
+  },
+  "model_requests": 0
+}

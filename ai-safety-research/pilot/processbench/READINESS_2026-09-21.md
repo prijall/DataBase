@@ -1,8 +1,14 @@
 # M4 readiness and closed session — September 21, 2026
 
-**Latest outcome: second-session calibration stopped after two responses; cleanup verified.** The archive now contains **234 generated completions**. The [second M4 session](../results/2026-09-21-processbench-m4-session2/README.md), frozen at `d2dd756`, passed all sixty exact-token checks (308–778 prompt tokens; maximum 1,802 with the output reserve). It recorded two error-class calibration responses: one normally completed, usable, correct index and one length-stopped, out-of-range prediction. No valid-class example was attempted, so balanced performance is not estimable.
+**Latest outcome: smaller-context calibration stopped after six responses; cleanup verified.** The archive now contains **240 generated completions**. The [2,048-token session](../results/2026-09-21-processbench-small-context/README.md), frozen at `5d73d85`, passed sixty exact-token checks (290–789 prompt tokens; maximum 1,813 with the output reserve) and confirmed the loaded context. Calibration recorded six responses: four usable, one correct, two malformed extractions, no length stops, and no request errors. Valid-class coverage was two cases (one usable, zero correct); error-class coverage was four (three usable, one correct).
 
-The post-second-call free-memory reading was 19%, triggering the unchanged guard; pressure was normal and recorded subject checks showed no swap growth. Cleanup confirmed pressure level 1, 41% free memory, closed ports 11435/58808/59236, and no owned research processes. Calibration is incomplete: two cases used, eighteen unattempted, all forty evaluation cases untouched. The session is closed. The [2,048-token implementation](../PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) is now available with a fresh calibration reservation; its live preflight and execution remain pending. Keep all prior evidence and resource/calibration thresholds.
+Pressure level 2 after the sixth response triggered the unchanged guard, with 22% free memory and no swap growth. Cleanup confirmed pressure level 1, 42% free memory, ports 11435/61457 closed, and no owned research processes. Fourteen new calibration cases and all forty evaluation cases remain unattempted; the original twenty-case calibration is retired. Even six further error-class successes could yield only 7/10, below the required 8/10. This does not turn the resource stop into a completed accuracy estimate.
+
+The screen is closed with no automatic retry or further configuration change. Investigate runtime/cache allocation and obtain human review of the six outputs before deciding on another experiment. Preserve primary scores and all failed/partial sessions.
+
+## Original-context partial session (historical)
+
+The [second M4 session](../results/2026-09-21-processbench-m4-session2/README.md), frozen at `d2dd756`, passed sixty token checks with an 8,192-token context and recorded two error-class responses: one usable/correct and one length-stopped/out of range. It stopped at 19% free memory. Cleanup confirmed pressure level 1, 41% free memory, ports 11435/58808/59236 closed, and no owned processes. At that point the total was 234; those two responses remain separate development observations.
 
 ## First M4 session (historical)
 
