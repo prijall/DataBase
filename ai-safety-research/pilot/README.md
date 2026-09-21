@@ -8,9 +8,17 @@ This is an unsteered development screen, not the final benchmark or a novelty cl
 
 ## Offline ProcessBench preparation
 
-The [source audit](PUBLISHED_INTERFACE_AUDIT.md) and [bounded plan](PROCESSBENCH_PLAN.md) document the next measurement step. The independent [adapter](processbench_prepare.py) verifies pinned inputs and prepares separate calibration/evaluation selections without network or model calls. See the plan for download and reproduction commands. The [first live preflight](results/2026-09-16-processbench-preflight/README.md) stopped before subject inference; both reserved cohorts remain unused. The corrected helper has not been rerun against the model.
+The [source audit](PUBLISHED_INTERFACE_AUDIT.md) and [bounded plan](PROCESSBENCH_PLAN.md) document the next measurement step. The independent [adapter](processbench_prepare.py) verifies pinned inputs and prepares separate calibration/evaluation selections without network or model calls. See the plan for download and reproduction commands. The [first live preflight](results/2026-09-16-processbench-preflight/README.md) stopped before subject inference, leaving both cohorts unused at that stage. The [September 21 M4 preflight](results/2026-09-21-processbench-m4/README.md) also stopped before subject inference: its immediate post-load memory guard failed before the corrected response reader or tokenization ran. Cleanup is verified; that session is closed and cannot resume.
 
-## ProcessBench local execution
+## Latest ProcessBench session
+
+The [2,048-token session](results/2026-09-21-processbench-small-context/README.md) passed sixty exact-token checks (290–789 prompt tokens) and verified the actual loaded context. It recorded six of twenty calibration responses: four usable, one correct, two malformed extractions, and no length stops or request errors. Memory pressure reached level 2 after the sixth response; the fixed guard stopped execution. Cleanup is verified. The archive now contains **240 generated completions**.
+
+The new calibration has six used and fourteen unattempted cases; the original twenty-case calibration is retired and all forty evaluation cases remain untouched. The error class has one match in four observed cases, leaving at most seven matches out of ten even if every remaining case succeeded—below the fixed eight-match gate. The actual stop was resource pressure and the cohort remains incomplete; this arithmetic is not a completed accuracy estimate. Fixing memory alone cannot rescue that gate.
+
+The screen is closed. No automatic retry or configuration change is authorized. Next work is targeted runtime/cache investigation and human review of the six outputs, preserving primary scores. The [implementation guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) retains the executed configuration and reproduction commands, not an instruction to restart.
+
+## Original ProcessBench local execution (reproduction reference)
 
 The [execution addendum](PROCESSBENCH_EXECUTION.md) implements the bounded plan for the currently audited Mac/Ollama installation. The runner requires a committed protocol, an exact-token preflight report, and pinned source files. It refuses evaluation unless calibration passes. Do not reuse this machine-specific preflight on another computer or runtime version.
 
@@ -33,6 +41,20 @@ python3 processbench_run.py calibration --data runs/processbench-source/gsm8k.js
 
 Read the calibration summary before invoking `evaluation` with the same paths; the runner also enforces the gate. Preflight loads the existing local model but requests no generated answer. Preserve a blocked report or ambiguous attempt and inspect it; do not remove files to bypass a stop or reset the fixed session budget.
 
+## Memory-only M4 transport
+
+The reviewed [SSH transport](processbench_remote.py) uses an isolated target loopback service and sends Python code and input data through stdin and process memory. Research files and artifacts stay on the controller. The [session rules](PROCESSBENCH_M4_SESSION.md) describe service ownership, fixed target/runtime checks, a 90-second model-request deadline, a 100-second transport cap, and a 150-second reserve within the unchanged 90-minute cohort budget.
+
+All September 21 M4 sessions are closed after resource stops. Preserve the first failed preflight and the second passed preflight with its two partial calibration records; **do not resume either closed session or change its settings**. The following original-profile commands are retained as reproduction references. Use the [smaller-context guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) for the later, also closed screen:
+
+```sh
+python3 processbench_remote.py create-preflight --data runs/processbench-source/gsm8k.json --prompt runs/processbench-source/critique_template.txt --provenance processbench/provenance.json --selection processbench/selection.json --preflight runs/NEW-SESSION/preflight.json --out runs/NEW-SESSION/subject-run
+# Only after the fresh preflight passes; retain the same paths and budget:
+python3 processbench_remote.py calibration --data runs/processbench-source/gsm8k.json --prompt runs/processbench-source/critique_template.txt --provenance processbench/provenance.json --selection processbench/selection.json --preflight runs/NEW-SESSION/preflight.json --out runs/NEW-SESSION/subject-run
+```
+
+`NEW-SESSION` is a placeholder for a newly documented session. Use `evaluation` only after the unchanged calibration gate passes. The CLI durably records preflight dispatch before SSH and subject attempts before requests. Interrupted or ambiguous requests cannot be retried automatically; deleting a marker to reset the budget is not a valid resume.
+
 ## Verification-only reproduction
 
 Use the separately frozen [protocol](VERIFICATION_ONLY_PROTOCOL.md) and [runner](verification_only.py). On macOS/Linux, from this directory with local Ollama running:
@@ -44,7 +66,7 @@ python3 verification_only.py run --model qwen3-vl:2b-instruct --out runs/qwen3vl
 python3 verification_only.py summarize --out runs/llama32-verification-only-v1
 ```
 
-Run models sequentially. These commands document the completed screen. The runner freezes thirty unique jobs per model, locks its output directory, preserves raw results atomically, and rejects changed code, dependencies, protocol, data or model settings on resume. Its summary separates lexical parsing, completed usable labels, truncation, primary valid/invalid performance and the secondary invalid/correct diagnostic. Missing or truncated outputs cannot pass as correct labels. The full current test suite contains 48 tests.
+Run models sequentially. These commands document the completed screen. The runner freezes thirty unique jobs per model, locks its output directory, preserves raw results atomically, and rejects changed code, dependencies, protocol, data or model settings on resume. Its summary separates lexical parsing, completed usable labels, truncation, primary valid/invalid performance and the secondary invalid/correct diagnostic. Missing or truncated outputs cannot pass as correct labels. The current integrated suite contains 127 tests, including 79 ProcessBench checks.
 
 ## Earlier freeform pilot: requirements and execution
 

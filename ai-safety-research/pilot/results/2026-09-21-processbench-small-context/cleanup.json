@@ -1,0 +1,22 @@
+{
+  "captured_unix": 1789966980.463362,
+  "observation": {
+    "resources": {
+      "captured_unix": 1789966980.394895,
+      "pressure_level": 1,
+      "free_percent": 42,
+      "swap_used_bytes": 9003723653,
+      "swapouts_bytes": 38187892736
+    },
+    "ports": {
+      "11435": {
+        "listening": false
+      },
+      "61457": {
+        "listening": false
+      }
+    },
+    "owned_group_absent": true,
+    "owned_processes": []
+  }
+}

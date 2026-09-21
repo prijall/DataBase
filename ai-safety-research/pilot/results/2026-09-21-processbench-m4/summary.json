@@ -1,0 +1,16 @@
+{
+  "status": "blocked",
+  "execution_commit": "017f1d708943876bda16bba67cc32b97c9ebaa14",
+  "generated_completions": 0,
+  "debug_requests": 1,
+  "tokenized_jobs": 0,
+  "preflight_seconds": 6.679351091384888,
+  "cleanup_verified_seconds_from_preflight_start": 42.751872062683105,
+  "swap_growth_bytes": 1679944581,
+  "swapout_growth_bytes": 1679949824,
+  "pressure_before": 1,
+  "pressure_after_load": 2,
+  "free_percent_before": 36,
+  "free_percent_after_load": 15,
+  "cleanup_verified": true
+}

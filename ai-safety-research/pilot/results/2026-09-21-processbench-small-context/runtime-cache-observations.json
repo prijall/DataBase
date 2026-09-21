@@ -1,0 +1,42 @@
+{
+  "full_controller_log_sha256": "a3adad624e70069947c127dcf2b9b9d167434508d37bd2b2ce30d9a761fe7e75",
+  "observations": [
+    {
+      "line": 184,
+      "text": "llama_kv_cache:       MTL0 KV buffer size =   224.00 MiB"
+    },
+    {
+      "line": 204,
+      "text": "srv    load_model: prompt cache is enabled, size limit: 8192 MiB"
+    },
+    {
+      "line": 208,
+      "text": "srv          init: idle slots will be saved to prompt cache upon starting a new task"
+    },
+    {
+      "line": 734,
+      "text": "srv        update:  - cache state: 0 prompts, 0.000 MiB (limits: 8192.000 MiB, 2048 tokens, 8589934592 est)"
+    },
+    {
+      "line": 768,
+      "text": "srv        update:  - cache state: 1 prompts, 88.276 MiB (limits: 8192.000 MiB, 2048 tokens, 74889 est)"
+    },
+    {
+      "line": 803,
+      "text": "srv        update:  - cache state: 2 prompts, 149.204 MiB (limits: 8192.000 MiB, 2048 tokens, 74889 est)"
+    },
+    {
+      "line": 841,
+      "text": "srv        update:  - cache state: 3 prompts, 221.510 MiB (limits: 8192.000 MiB, 2048 tokens, 74889 est)"
+    },
+    {
+      "line": 883,
+      "text": "srv        update:  - cache state: 4 prompts, 346.211 MiB (limits: 8192.000 MiB, 2048 tokens, 74889 est)"
+    },
+    {
+      "line": 924,
+      "text": "srv        update:  - cache state: 5 prompts, 408.015 MiB (limits: 8192.000 MiB, 2048 tokens, 74889 est)"
+    }
+  ],
+  "interpretation": "Observed runtime cache occupancy, not isolated attribution of system memory-pressure changes."
+}

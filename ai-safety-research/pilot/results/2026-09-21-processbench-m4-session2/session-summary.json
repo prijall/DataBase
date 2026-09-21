@@ -1,0 +1,23 @@
+{
+  "status": "calibration_incomplete_resource_stop",
+  "execution_commit": "d2dd756ce237ab09f504db3f10173fd17040b5cc",
+  "preflight_status": "passed",
+  "preflight_seconds": 13.22101616859436,
+  "preflight_tokenized_jobs": 60,
+  "prompt_token_range": [
+    308,
+    778
+  ],
+  "generated_responses": 2,
+  "total_historical_responses": 234,
+  "usable": 1,
+  "local_exact_matches": 1,
+  "subject_client_seconds": 39.288865916008945,
+  "calibration_session_seconds": 54.71082019805908,
+  "preflight_start_to_calibration_stop_seconds": 120.73672819137573,
+  "preflight_start_to_cleanup_check_seconds": 165.2769799232483,
+  "stop_reason": "Resource stop: memory free percentage below 20",
+  "calibration_missing": 18,
+  "evaluation_unattempted": 40,
+  "cleanup_verified": true
+}

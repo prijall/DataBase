@@ -4,9 +4,9 @@
 
 ## Stage
 
-This is an evolving manuscript built alongside the experiments. As of September 16, 2026, it reports **232 archived calls**: 42 earlier diagnostics, 130 freeform-v3 calls, and sixty verification-only calls. The two v3 models failed their respective suitability gates. In verification-only evaluation, Llama returned VALID for all thirty traces; Qwen produced thirty length-stopped, unusable responses. Both failed the gate. Qwen's conditional verification accuracy is not estimable. No further inference is running for this experiment batch. The draft contains no completed intervention study or verified novelty claim and is not ready for conference submission.
+This is an evolving manuscript built alongside the experiments. As of September 21, 2026, it reports **240 archived generated completions**: 232 calls from completed diagnostic/development screens, two original-context calibration responses, and six smaller-context calibration responses. The two v3 models failed their respective suitability gates. In verification-only evaluation, Llama returned VALID for all thirty traces; Qwen produced thirty length-stopped, unusable responses. Both failed the gate. Qwen's conditional verification accuracy is not estimable. No further inference is running for this experiment batch. The draft contains no completed intervention study or verified novelty claim and is not ready for conference submission.
 
-The manuscript also records the [prospective ProcessBench adaptation](../pilot/PROCESSBENCH_PLAN.md), whose first [live preflight](../pilot/results/2026-09-16-processbench-preflight/README.md) stopped before tokenization or subject generation. The runner is implemented; the corrected response parser remains untested live, and shared-machine resource limits prevented continuation. This adds no model-accuracy results.
+The manuscript also records the [latest smaller-context session](../pilot/results/2026-09-21-processbench-small-context/README.md): passed exact-token preflight, six of twenty calibration responses, four usable outputs, one correct index, and a memory-pressure stop. Two extractions were malformed; no response reached the output cap or had a request error. Calibration remains incomplete and the forty evaluation cases are untouched. Cleanup is verified. No automatic retry or configuration revision follows from this result; runtime investigation and human output review are the next tasks.
 
 ## Files
 
@@ -36,3 +36,6 @@ The existing [paper outline](../PAPER_OUTLINE.md) tracks outstanding methodologi
 | [Verification-only protocol](../pilot/VERIFICATION_ONLY_PROTOCOL.md) and [sixty-call archive](../pilot/results/2026-09-16-verification-only/README.md) | Binary interface, primary/secondary comparisons, failed gates, and timing |
 | [Llama binary summary](../pilot/results/2026-09-16-verification-only/llama32/SUMMARY.md) and [Qwen binary summary](../pilot/results/2026-09-16-verification-only/qwen3vl/SUMMARY.md) | Per-condition scores, unusable/truncated outputs, and paired outcomes |
 | [Novelty audit](../NOVELTY_AUDIT.md) | Scope and overlap with prior work |
+| [M4 preflight and cleanup](../pilot/results/2026-09-21-processbench-m4/README.md) | Section 4.7: resource stop, no subject outcomes, closed session |
+| [Second M4 session](../pilot/results/2026-09-21-processbench-m4-session2/README.md) | Section 4.8: passed token preflight, two observed calibration responses, resource stop |
+| [Smaller-context M4 session](../pilot/results/2026-09-21-processbench-small-context/README.md) | Section 4.9: six partial calibration responses and memory-pressure stop |
