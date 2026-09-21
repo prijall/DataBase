@@ -1,6 +1,6 @@
 # AI safety research
 
-**Stage: development pilot and working manuscript.** [Read the paper](paper/manuscript.md) · [Latest runtime check](pilot/results/2026-09-16-processbench-preflight/README.md) · [Research state](RESEARCH_STATE.md)
+**Stage: development pilot and working manuscript.** [Read the paper](paper/manuscript.md) · [Latest runtime check](pilot/results/2026-09-21-processbench-m4/README.md) · [Research state](RESEARCH_STATE.md)
 
 ## Research question
 
@@ -19,11 +19,12 @@ Can a model distinguish a correct answer from a valid supporting calculation whe
 | Sixty verification-only calls under a separately frozen protocol | [September 16 results](pilot/results/2026-09-16-verification-only/README.md), [protocol](pilot/VERIFICATION_ONLY_PROTOCOL.md) |
 | Published-interface audit and offline ProcessBench preparation | [Source audit](pilot/PUBLISHED_INTERFACE_AUDIT.md), [bounded plan](pilot/PROCESSBENCH_PLAN.md), [selection manifest](pilot/processbench/selection.json) |
 | Local ProcessBench runner and live preflight stop before calibration | [Execution rules](pilot/PROCESSBENCH_EXECUTION.md), [preflight evidence](pilot/results/2026-09-16-processbench-preflight/README.md) |
+| M4 memory-only SSH transport and resource stop before calibration | [M4 archive](pilot/results/2026-09-21-processbench-m4/README.md), [session rules](pilot/PROCESSBENCH_M4_SESSION.md) |
 | Working manuscript, verified result tables and four checked references | [Manuscript](paper/manuscript.md), [related work](paper/related_work.md), [bibliography](paper/references.bib) |
 
 ## Latest work
 
-The ProcessBench runner is implemented. Its [live preflight](pilot/results/2026-09-16-processbench-preflight/README.md) stopped before calibration: a debug-response field was misread, and follow-up memory checks also exceeded the fixed pressure/swap limits after model loading. The field and check ordering were fixed offline. The model has unloaded; no subject inference or retry followed. **Both reserved cohorts remain unused.**
+The September 21 [M4 preflight](pilot/results/2026-09-21-processbench-m4/README.md) stopped on the first non-generating model load: memory pressure and swap growth exceeded the fixed limits. No prompt tokenization or subject answers completed. Cleanup confirmed normal pressure, closed research service ports, and no owned research processes. **The total remains 232 calls; both reserved cohorts are unused.** Research code and inputs passed through memory over SSH; records were saved on the controller for GitHub, with no research files persisted on the M4.
 
 ## Latest completed experiment
 
@@ -40,8 +41,8 @@ The repository records **232 calls total** across development protocols. The ver
 
 ## Next stage and limits
 
-**Resumption requested September 21:** the corrected preflight passed independent offline re-review and 40 ProcessBench tests pass. [Readiness check](pilot/processbench/READINESS_2026-09-21.md). M4 identity/access and live validation remain pending; no experiment is running.
+The [September 21 readiness record](pilot/processbench/READINESS_2026-09-21.md) now includes verified M4 access and a completed, blocked runtime check. The integrated offline suite passes 109 tests, including 61 ProcessBench checks. That session is closed and cannot resume from its failed report. Next: establish a low-workload session with enough available memory and perform a fresh documented preflight, keeping the resource and calibration gates unchanged. Global memory readings do not identify the cause or show that the M4 is generally unsuitable.
 
-The [offline ProcessBench preparation](pilot/PROCESSBENCH_PLAN.md) now pins a published interface and scorer and reserves 20 calibration plus 40 evaluation cases. No ProcessBench answers were generated. The runner is now implemented, but the live preflight failed. Next: establish a resource-feasible setup before another documented preflight—verify access to the 16GB M4 or design a smaller-context check. Keep inference stopped on the tested shared-M1 configuration. Every injected first error is at step one, and invalid traces with correct versus wrong conclusions have different error counts. Ten reused questions, two arithmetic families, and one confidence phrase cannot support broad alignment claims. Reliable measurements, corrected confounds and held-out data are needed before the intended intervention study.
+The [ProcessBench plan](pilot/PROCESSBENCH_PLAN.md) reserves 20 calibration and 40 evaluation cases. No ProcessBench answers have been generated. In the earlier synthetic development traces, every injected first error is at step one, and invalid traces with correct versus wrong conclusions have different error counts. Ten reused questions, two arithmetic families, and one confidence phrase cannot support broad alignment claims. Reliable measurements, corrected confounds and held-out data are needed before the intended intervention study.
 
 The examples need an independent human audit. AI assistants helped prepare code, notes, and methods advice; their reviews are not verified evidence. Written calculations are not proof of faithful internal reasoning. The literature's reported experiments have not been independently reproduced here; consult linked primary sources before citing them. Manuscript or repository availability does not establish conference acceptance.

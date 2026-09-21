@@ -4,9 +4,9 @@
 
 ## Stage
 
-This is an evolving manuscript built alongside the experiments. As of September 16, 2026, it reports **232 archived calls**: 42 earlier diagnostics, 130 freeform-v3 calls, and sixty verification-only calls. The two v3 models failed their respective suitability gates. In verification-only evaluation, Llama returned VALID for all thirty traces; Qwen produced thirty length-stopped, unusable responses. Both failed the gate. Qwen's conditional verification accuracy is not estimable. No further inference is running for this experiment batch. The draft contains no completed intervention study or verified novelty claim and is not ready for conference submission.
+This is an evolving manuscript built alongside the experiments. As of September 21, 2026, it reports **232 archived calls**: 42 earlier diagnostics, 130 freeform-v3 calls, and sixty verification-only calls. The two v3 models failed their respective suitability gates. In verification-only evaluation, Llama returned VALID for all thirty traces; Qwen produced thirty length-stopped, unusable responses. Both failed the gate. Qwen's conditional verification accuracy is not estimable. No further inference is running for this experiment batch. The draft contains no completed intervention study or verified novelty claim and is not ready for conference submission.
 
-The manuscript also records the [prospective ProcessBench adaptation](../pilot/PROCESSBENCH_PLAN.md), whose first [live preflight](../pilot/results/2026-09-16-processbench-preflight/README.md) stopped before tokenization or subject generation. The runner is implemented; the corrected response parser remains untested live, and shared-machine resource limits prevented continuation. This adds no model-accuracy results.
+The manuscript also records the [ProcessBench adaptation](../pilot/PROCESSBENCH_PLAN.md) and two blocked runtime preflights. The [September 21 M4 check](../pilot/results/2026-09-21-processbench-m4/README.md) stopped on memory guards after one non-generating debug load, with zero exact token checks or subject answers. Cleanup is verified. The session is closed and cannot resume; both cohorts remain unused. These operational findings add no model-accuracy results and do not establish general M4 infeasibility.
 
 ## Files
 
@@ -36,3 +36,4 @@ The existing [paper outline](../PAPER_OUTLINE.md) tracks outstanding methodologi
 | [Verification-only protocol](../pilot/VERIFICATION_ONLY_PROTOCOL.md) and [sixty-call archive](../pilot/results/2026-09-16-verification-only/README.md) | Binary interface, primary/secondary comparisons, failed gates, and timing |
 | [Llama binary summary](../pilot/results/2026-09-16-verification-only/llama32/SUMMARY.md) and [Qwen binary summary](../pilot/results/2026-09-16-verification-only/qwen3vl/SUMMARY.md) | Per-condition scores, unusable/truncated outputs, and paired outcomes |
 | [Novelty audit](../NOVELTY_AUDIT.md) | Scope and overlap with prior work |
+| [M4 preflight and cleanup](../pilot/results/2026-09-21-processbench-m4/README.md) | Section 4.7: resource stop, no subject outcomes, closed session |

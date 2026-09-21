@@ -1,0 +1,151 @@
+{
+  "schema": "processbench-exact-token-preflight-v1",
+  "api_port": 11435,
+  "jobs_sha256": "97e9f98f7bfdc9976111b98e8f063447b6f89f2d67a455f582f1264e9420a9d5",
+  "model": "llama3.2:3b",
+  "options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 8192,
+    "num_predict": 1024,
+    "num_thread": 2
+  },
+  "sources": {
+    "ollama_commit": "d8ab4b4f0ca24b51d3a46b3bf4f462e58ce66b1f",
+    "llama_cpp_commit": "0f3a71be15af836d277c9f918adfafb45732677e"
+  },
+  "preflight_code_sha256": "2569aefc92879b6a02ab06aa100d226fb993aff4580f545ea6cd5c08ba53b99f",
+  "resource_code_sha256": "22aac93f9718fcf6fa99689e843391574536c45a5dcd7a38213328483101649b",
+  "transport": {
+    "kind": "ssh-stdin-memory-only-v1",
+    "target": "prabs@100.74.220.25",
+    "api_port": 11435,
+    "connector_sha256": "574a67aa83c847b804decf8907bbfa035cc1743ae2dc67d04969f53f4ec42957",
+    "worker_sha256": "eb1081cafc25242d0af29cbfa33bd7ca52bcc7862146f4f24a6ad5ebd4c9feb5",
+    "source_sha256": {
+      "processbench_preflight": "2569aefc92879b6a02ab06aa100d226fb993aff4580f545ea6cd5c08ba53b99f",
+      "processbench_resources": "22aac93f9718fcf6fa99689e843391574536c45a5dcd7a38213328483101649b",
+      "stream": "a4374e5ada23e1e2e264d36c933c433cca40d707e9db38a32e4360bd5bf82c60"
+    },
+    "session_policy_sha256": "ce2e4e8fb89a19ea9a46ffa3e77601229abf159fed4bde42d895d01955a43406",
+    "session_helper_sha256": "69ac542cb6fd9a9d5192529acfa4becc3598c27eb40a815aa7ef4036f1e806f6",
+    "http_deadline_seconds": 90,
+    "worker_deadline_seconds": 95,
+    "ssh_subject_deadline_seconds": 100,
+    "reserve_seconds": 150
+  },
+  "budget_started_unix": 1789964490.57323,
+  "resource_baseline": {
+    "captured_unix": 1789964492.711225,
+    "pressure_level": 1,
+    "free_percent": 36,
+    "swap_used_bytes": 7861111357,
+    "swapouts_bytes": 36507942912
+  },
+  "status": "blocked",
+  "operations": [
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789964492.71153,
+      "status": "received",
+      "finished_unix": 1789964492.7142231
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/version",
+      "started_unix": 1789964492.714902,
+      "status": "received",
+      "finished_unix": 1789964492.715416
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/tags",
+      "started_unix": 1789964492.7155662,
+      "status": "received",
+      "finished_unix": 1789964492.740788
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/show",
+      "started_unix": 1789964492.7409542,
+      "status": "received",
+      "finished_unix": 1789964492.744307
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789964492.768739,
+      "status": "received",
+      "finished_unix": 1789964492.770123
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789964492.7750242,
+      "status": "received",
+      "finished_unix": 1789964497.229294
+    }
+  ],
+  "generation_requests": 0,
+  "runtime_state": "unverified_after_debug_request",
+  "resource_observations": [
+    {
+      "captured_unix": 1789964492.711225,
+      "pressure_level": 1,
+      "free_percent": 36,
+      "swap_used_bytes": 7861111357,
+      "swapouts_bytes": 36507942912
+    },
+    {
+      "captured_unix": 1789964492.7684321,
+      "pressure_level": 1,
+      "free_percent": 35,
+      "swap_used_bytes": 7861111357,
+      "swapouts_bytes": 36507942912
+    },
+    {
+      "captured_unix": 1789964492.7747781,
+      "pressure_level": 1,
+      "free_percent": 35,
+      "swap_used_bytes": 7861111357,
+      "swapouts_bytes": 36507942912
+    },
+    {
+      "captured_unix": 1789964497.252469,
+      "pressure_level": 2,
+      "free_percent": 15,
+      "swap_used_bytes": 9541055938,
+      "swapouts_bytes": 38187892736
+    }
+  ],
+  "tokens": {},
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "server_version": "0.34.0",
+  "template_sha256": "966de95ca8a62200913e3f8bfbf84c8494536f1b94b49166851e76644e966396",
+  "parameters_sha256": "2801e61a8848e505a6e20beeaea63cca1600200f6720e5f916ba7d6da5c3ba39",
+  "model_path": "/Users/prabs/.ollama/models/blobs/sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff",
+  "model_details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "llama",
+    "families": [
+      "llama"
+    ],
+    "parameter_size": "3.2B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 131072,
+    "embedding_length": 3072
+  },
+  "binary_sha256": "12a8bd0922404bb941fcd4f3fb56ea32251acfdd11e6af8aa99c8703557c23d6",
+  "library_sha256": "207fecc90bd3279588ce08c3cfef690d914317d30eb91d07a359881b3d4fb6ff",
+  "reason": "ValueError: Resource guard: memory pressure is not normal; memory free percentage below 20; swap usage grew by more than 256 MiB; more than 128 MiB of additional swapouts",
+  "finished_unix": 1789964497.2525811,
+  "operation_counts": {
+    "/api/chat": 1,
+    "/api/ps": 2,
+    "/api/show": 1,
+    "/api/tags": 1,
+    "/api/version": 1
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "observed_unix": 1789964128.045332,
+  "python": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "chip": "Apple M4",
+  "memory_bytes": 17179869184,
+  "server": {
+    "version": "0.34.0"
+  },
+  "api_port": 11435,
+  "resident_models": [],
+  "selected_model": [
+    {
+      "name": "llama3.2:3b",
+      "model": "llama3.2:3b",
+      "modified_at": "2026-09-02T16:58:50.139178474+05:45",
+      "size": 2019393189,
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "3.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 3072
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    }
+  ],
+  "template_sha256": "966de95ca8a62200913e3f8bfbf84c8494536f1b94b49166851e76644e966396",
+  "parameters_sha256": "2801e61a8848e505a6e20beeaea63cca1600200f6720e5f916ba7d6da5c3ba39",
+  "model_details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "llama",
+    "families": [
+      "llama"
+    ],
+    "parameter_size": "3.2B",
+    "quantization_level": "Q4_K_M"
+  },
+  "remote_research_files_written": false,
+  "generated_answers": 0
+}

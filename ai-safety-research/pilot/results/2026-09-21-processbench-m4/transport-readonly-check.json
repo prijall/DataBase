@@ -1,0 +1,32 @@
+{
+  "captured_unix": 1789964270.035993,
+  "identity": {
+    "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+    "server_version": "0.34.0",
+    "template_sha256": "966de95ca8a62200913e3f8bfbf84c8494536f1b94b49166851e76644e966396",
+    "parameters_sha256": "2801e61a8848e505a6e20beeaea63cca1600200f6720e5f916ba7d6da5c3ba39",
+    "model_path": "/Users/prabs/.ollama/models/blobs/sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff",
+    "model_details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "llama",
+      "families": [
+        "llama"
+      ],
+      "parameter_size": "3.2B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 131072,
+      "embedding_length": 3072
+    },
+    "binary_sha256": "12a8bd0922404bb941fcd4f3fb56ea32251acfdd11e6af8aa99c8703557c23d6",
+    "library_sha256": "207fecc90bd3279588ce08c3cfef690d914317d30eb91d07a359881b3d4fb6ff"
+  },
+  "resources": {
+    "captured_unix": 1789964273.855263,
+    "pressure_level": 1,
+    "free_percent": 36,
+    "swap_used_bytes": 7861111357,
+    "swapouts_bytes": 36507942912
+  },
+  "generated_answers": 0
+}
