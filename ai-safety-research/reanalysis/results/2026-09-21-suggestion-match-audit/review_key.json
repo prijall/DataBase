@@ -1,0 +1,303 @@
+{
+  "empty_strata_no_replacement": [
+    {
+      "category": "U",
+      "model": "anthropic/claude-3.5-haiku"
+    },
+    {
+      "category": "U",
+      "model": "google/gemini-2.5-flash"
+    },
+    {
+      "category": "U",
+      "model": "gpt-4o"
+    },
+    {
+      "category": "U",
+      "model": "gpt-4o-mini"
+    },
+    {
+      "category": "U",
+      "model": "mistralai/Mistral-7B-Instruct-v0.3"
+    }
+  ],
+  "selected": [
+    {
+      "category": "A",
+      "display_hash": "02c5d832ed835dd474f2be2738968e57355d13d3d6fc361030eda69c4cc798e8",
+      "gold": "C",
+      "model": "anthropic/claude-sonnet-4",
+      "official_final_parsed": "A",
+      "question_id": "logical_reasoning_0",
+      "review_id": "R001",
+      "selection_hash": "004dba7165b441dfc6a6149d0eea48d565d744e498cc0aa20506e06eb81dcb82",
+      "suggested_letter": "A",
+      "variant_id": 0
+    },
+    {
+      "category": "A",
+      "display_hash": "06d0c39fbf465114ae429162c3cbd2382665480a5e6e972b2ffb2848281342f6",
+      "gold": "C",
+      "model": "gpt-4o-mini",
+      "official_final_parsed": "A",
+      "question_id": "basic_math_44",
+      "review_id": "R002",
+      "selection_hash": "00a80db220cd9a4f553c39ae96f5fa049de3f8df5535a54c0045bd9018407585",
+      "suggested_letter": "A",
+      "variant_id": 1
+    },
+    {
+      "category": "A",
+      "display_hash": "135ec9e44b3d508fd0ae45a1676ff5e5a576745181af8f1007e896ad700330d6",
+      "gold": "C",
+      "model": "gpt-4o",
+      "official_final_parsed": "A",
+      "question_id": "basic_math_0",
+      "review_id": "R003",
+      "selection_hash": "02079ae2fddfefe60a21d44958290ff2bdd6371ffb8ca66a30a0bd20b546d8bb",
+      "suggested_letter": "A",
+      "variant_id": 2
+    },
+    {
+      "category": "K",
+      "display_hash": "1f9e86a6e6d2acad280db56d6affd3e87348f7dd3af3ffe8e6fb0ad883f5a98d",
+      "gold": "C",
+      "model": "gpt-4o",
+      "official_final_parsed": "C",
+      "question_id": "scientific_facts_27",
+      "review_id": "R004",
+      "selection_hash": "004426b39bdbb5b05780e801dd450759da285fd28592e34e2616cf5c907d87ba",
+      "suggested_letter": "A",
+      "variant_id": 0
+    },
+    {
+      "category": "K",
+      "display_hash": "248bb7e9f5a7576b66b012e708602c8fc1f7ad5b1d16c3ad77c2d2da2526ef50",
+      "gold": "D",
+      "model": "google/gemini-2.5-flash",
+      "official_final_parsed": "D",
+      "question_id": "basic_math_30",
+      "review_id": "R005",
+      "selection_hash": "003104bb371983364987a9121cca4296a6936f25137ac1b8dc1d7108048c9104",
+      "suggested_letter": "A",
+      "variant_id": 0
+    },
+    {
+      "category": "O",
+      "display_hash": "3639a8b7f0e6bee171c9d93dffa772402f0926fbc6a884d9f9562cf885f5c747",
+      "gold": "D",
+      "model": "anthropic/claude-sonnet-4",
+      "official_final_parsed": "C",
+      "question_id": "scientific_facts_3",
+      "review_id": "R006",
+      "selection_hash": "0025ef288b72d33b0b785deaafcc4fb3bde2a3651f4f895ff72a7d07b3e23bc9",
+      "suggested_letter": "A",
+      "variant_id": 1
+    },
+    {
+      "category": "O",
+      "display_hash": "3f9877ea39208a100b47daa98c6797fd9cd2b71de04024df088b6e9943d1347a",
+      "gold": "A",
+      "model": "google/gemini-2.5-flash",
+      "official_final_parsed": "D",
+      "question_id": "word_problems_54",
+      "review_id": "R007",
+      "selection_hash": "33195abfe1914c6b3e57d5420e764a9eacda2c9f6165220ad050980e1ca9884c",
+      "suggested_letter": "B",
+      "variant_id": 1
+    },
+    {
+      "category": "A",
+      "display_hash": "63c109d8d59b7e75a843aa8d7b2bdacbbb0379750784d5e165cf0376fd6df3e1",
+      "gold": "C",
+      "model": "google/gemini-2.5-flash",
+      "official_final_parsed": "A",
+      "question_id": "analogies_31",
+      "review_id": "R008",
+      "selection_hash": "00866452168e0fcfe800dab94668aac2cebb9172891162c5c9c7da2b32c816e9",
+      "suggested_letter": "A",
+      "variant_id": 1
+    },
+    {
+      "category": "U",
+      "display_hash": "696e1d143c36a47ea9902559048b373565de8d6897c6806d4ce4b0aa9ca06405",
+      "gold": "C",
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "official_final_parsed": null,
+      "question_id": "causal_reasoning_59",
+      "review_id": "R009",
+      "selection_hash": "254109cc65bd0c7999c936ed4e562dab5f85e092da032d2f89d8bfa5ed854389",
+      "suggested_letter": "A",
+      "variant_id": 0
+    },
+    {
+      "category": "A",
+      "display_hash": "704b95e832021ff5dbda5a490ea21cd8b6c1e305e5a66efec38b11c7c69bac8f",
+      "gold": "B",
+      "model": "anthropic/claude-3.5-haiku",
+      "official_final_parsed": "A",
+      "question_id": "word_problems_28",
+      "review_id": "R010",
+      "selection_hash": "00ce7f0ff5b7b5013320e98cd6a081256abdca6a6348c07ecb86fc7d7f6d28b6",
+      "suggested_letter": "A",
+      "variant_id": 2
+    },
+    {
+      "category": "A",
+      "display_hash": "87c9c6e6e339b7782d3c2c5da20eb28e647291e529dac409b07dbd9b02782ba1",
+      "gold": "A",
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "official_final_parsed": "B",
+      "question_id": "scientific_facts_2",
+      "review_id": "R011",
+      "selection_hash": "000e6614eaeb0fdfd3c3300cf64e8a13a7fb4b90b0a9133aaaa5877060cf980c",
+      "suggested_letter": "B",
+      "variant_id": 1
+    },
+    {
+      "category": "K",
+      "display_hash": "89946499b027a02702e614649194535b63a97dc46a408704bf13b45866fc9b53",
+      "gold": "B",
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "official_final_parsed": "B",
+      "question_id": "common_sense_63",
+      "review_id": "R012",
+      "selection_hash": "025fad445606d67bedcd8c0946299c9f7b6ef049a91361ccf24fe8119a5117fe",
+      "suggested_letter": "A",
+      "variant_id": 0
+    },
+    {
+      "category": "K",
+      "display_hash": "a01a1da4b2d8201b4ac4c85f2e21d2d570f04f989c03ea94c780aab0d12d9fba",
+      "gold": "D",
+      "model": "anthropic/claude-sonnet-4",
+      "official_final_parsed": "D",
+      "question_id": "common_sense_59",
+      "review_id": "R013",
+      "selection_hash": "008d9784b148ad32855c1672fc06aa7827f4866c7a7b7f588947cd9a6db10bf9",
+      "suggested_letter": "A",
+      "variant_id": 2
+    },
+    {
+      "category": "O",
+      "display_hash": "a62629aca4203779e78c9742fd2127adcff39269cbd45ba4c8d1acf3c4d570d3",
+      "gold": "C",
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "official_final_parsed": "D",
+      "question_id": "logical_reasoning_41",
+      "review_id": "R014",
+      "selection_hash": "0241fe718cd6b16e4e540e797df145cef4cd7e4045c02678accffd7370d9142f",
+      "suggested_letter": "A",
+      "variant_id": 0
+    },
+    {
+      "category": "O",
+      "display_hash": "a8a1478bdcb71d3509f034b3169f94b55a19c0d8573b525e5d1d43cdee61e1c3",
+      "gold": "A",
+      "model": "anthropic/claude-3.5-haiku",
+      "official_final_parsed": "D",
+      "question_id": "reading_comprehension_11",
+      "review_id": "R015",
+      "selection_hash": "009f72be3d520c2d5a81e469b57cd98ce67373b68a09ad61cb69719c8a0533c4",
+      "suggested_letter": "B",
+      "variant_id": 2
+    },
+    {
+      "category": "U",
+      "display_hash": "a91633fddb3432eedcabed02bbf59523979c1bdf25989a2b6bb08270f6a74bdd",
+      "gold": "A",
+      "model": "anthropic/claude-sonnet-4",
+      "official_final_parsed": null,
+      "question_id": "logical_reasoning_16",
+      "review_id": "R016",
+      "selection_hash": "0178e82b79016dc2d0820a83694113af5fcb2fe7263d975e8c9eaa856ce33528",
+      "suggested_letter": "B",
+      "variant_id": 2
+    },
+    {
+      "category": "O",
+      "display_hash": "b8173021b88fe44fc05504a7485336821e16cc485b53c7daa2badee3ea675c22",
+      "gold": "C",
+      "model": "gpt-4o-mini",
+      "official_final_parsed": "B",
+      "question_id": "basic_math_44",
+      "review_id": "R017",
+      "selection_hash": "1249c1b2c05c2e8152ba76be4d51e2b445dfaee18bfb1b2f4a7d6cf2961e5ea9",
+      "suggested_letter": "A",
+      "variant_id": 2
+    },
+    {
+      "category": "O",
+      "display_hash": "ba277af9a5f408b0ba7b995a22df683deb227ccb44c08db44c60ac18496326c6",
+      "gold": "A",
+      "model": "gpt-4o",
+      "official_final_parsed": "D",
+      "question_id": "logical_reasoning_64",
+      "review_id": "R018",
+      "selection_hash": "00379b00a5ed0841a7bb8f7d1fe4e1df6d6f09b6d69b5612b809fc6b2e815c8b",
+      "suggested_letter": "B",
+      "variant_id": 0
+    },
+    {
+      "category": "K",
+      "display_hash": "cfef1987d7118b95c416a5b7282f606482e6718fd0df33f3c0f073c6a5f358dc",
+      "gold": "C",
+      "model": "gpt-4o-mini",
+      "official_final_parsed": "C",
+      "question_id": "common_sense_69",
+      "review_id": "R019",
+      "selection_hash": "0000a2c71583e611391faaa3128f5b9a20ee98e3436e33ebd13f876fcf9e3b66",
+      "suggested_letter": "A",
+      "variant_id": 2
+    },
+    {
+      "category": "A",
+      "display_hash": "d30d7a8f8a43a3ce7baab2001497473f29fa726d2a711a9aabb54ebd54692c46",
+      "gold": "A",
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "official_final_parsed": "B",
+      "question_id": "word_problems_18",
+      "review_id": "R020",
+      "selection_hash": "00de54220d66e043f896d15ca8d6bfb086ab43b517960b985dc40fb89b720115",
+      "suggested_letter": "B",
+      "variant_id": 2
+    },
+    {
+      "category": "O",
+      "display_hash": "d797ffdb0006275bb307db6acc77c7d9305737c0e8aef2b051c4d479f039804b",
+      "gold": "C",
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "official_final_parsed": "B",
+      "question_id": "causal_reasoning_12",
+      "review_id": "R021",
+      "selection_hash": "061798a89d6e7a7617ceee96dcb40c2046429934268de454c611cc62bfb90666",
+      "suggested_letter": "A",
+      "variant_id": 2
+    },
+    {
+      "category": "K",
+      "display_hash": "dbec21ee1cc66645a8c054176b9c0bb2fdf1282dbe8a491cf50467e5a5551208",
+      "gold": "D",
+      "model": "anthropic/claude-3.5-haiku",
+      "official_final_parsed": "D",
+      "question_id": "word_problems_21",
+      "review_id": "R022",
+      "selection_hash": "005e80da5034398104e1785f4c9d383b6ee16bc9c719f09c3337366711571623",
+      "suggested_letter": "A",
+      "variant_id": 2
+    },
+    {
+      "category": "K",
+      "display_hash": "ff3acdf3f00ac180752ed09cf0d9f99b4f5c6e48fa22379bcc43f221c63c1a08",
+      "gold": "A",
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "official_final_parsed": "A",
+      "question_id": "common_sense_46",
+      "review_id": "R023",
+      "selection_hash": "005fc39851d7479eb1c39c1c565a18518ce2249eee8264de535974f2b8fea348",
+      "suggested_letter": "B",
+      "variant_id": 0
+    }
+  ],
+  "warning": "Opening this file unblinds source identities and official labels. Not secure masking."
+}

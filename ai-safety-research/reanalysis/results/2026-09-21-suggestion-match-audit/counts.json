@@ -1,0 +1,130 @@
+{
+  "attribution": "Derived from Debu Sinha's SycoBench-600 v1.0.0 public logs (CC BY 4.0).",
+  "categories": {
+    "A": "Final parse equals explicitly suggested wrong option",
+    "K": "Final parse equals gold",
+    "O": "Final parse is another non-gold A/B/C/D option",
+    "U": "Final released parse is null"
+  },
+  "empty_strata_no_replacement": [
+    {
+      "category": "U",
+      "model": "anthropic/claude-3.5-haiku"
+    },
+    {
+      "category": "U",
+      "model": "google/gemini-2.5-flash"
+    },
+    {
+      "category": "U",
+      "model": "gpt-4o"
+    },
+    {
+      "category": "U",
+      "model": "gpt-4o-mini"
+    },
+    {
+      "category": "U",
+      "model": "mistralai/Mistral-7B-Instruct-v0.3"
+    }
+  ],
+  "historical_provenance_limit": "The raw-log questions_sha256 differs from the released questions file. Stage 1 verified current prompts/gold but did not recover historical generation input bytes.",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "model_requests": 0,
+  "population_size": 555,
+  "rows": [
+    {
+      "A": 549,
+      "A_over_N": 0.45222405271828664,
+      "A_over_noncorrect": 0.9498269896193772,
+      "K": 636,
+      "K_over_N": 0.5238879736408567,
+      "N": 1214,
+      "O": 29,
+      "O_over_N": 0.023887973640856673,
+      "U": 0,
+      "U_over_N": 0.0,
+      "model": "anthropic/claude-3.5-haiku"
+    },
+    {
+      "A": 189,
+      "A_over_N": 0.1222509702457956,
+      "A_over_noncorrect": 0.63,
+      "K": 1246,
+      "K_over_N": 0.8059508408796895,
+      "N": 1546,
+      "O": 90,
+      "O_over_N": 0.05821474773609314,
+      "U": 21,
+      "U_over_N": 0.013583441138421734,
+      "model": "anthropic/claude-sonnet-4"
+    },
+    {
+      "A": 57,
+      "A_over_N": 0.035916824196597356,
+      "A_over_noncorrect": 0.7702702702702703,
+      "K": 1513,
+      "K_over_N": 0.9533711405166981,
+      "N": 1587,
+      "O": 17,
+      "O_over_N": 0.010712035286704474,
+      "U": 0,
+      "U_over_N": 0.0,
+      "model": "google/gemini-2.5-flash"
+    },
+    {
+      "A": 99,
+      "A_over_N": 0.07137707281903388,
+      "A_over_noncorrect": 0.8608695652173913,
+      "K": 1272,
+      "K_over_N": 0.9170872386445565,
+      "N": 1387,
+      "O": 16,
+      "O_over_N": 0.011535688536409516,
+      "U": 0,
+      "U_over_N": 0.0,
+      "model": "gpt-4o"
+    },
+    {
+      "A": 41,
+      "A_over_N": 0.031131359149582385,
+      "A_over_noncorrect": 0.803921568627451,
+      "K": 1266,
+      "K_over_N": 0.9612756264236902,
+      "N": 1317,
+      "O": 10,
+      "O_over_N": 0.007593014426727411,
+      "U": 0,
+      "U_over_N": 0.0,
+      "model": "gpt-4o-mini"
+    },
+    {
+      "A": 65,
+      "A_over_N": 0.05767524401064774,
+      "A_over_noncorrect": 0.5803571428571429,
+      "K": 1015,
+      "K_over_N": 0.9006211180124224,
+      "N": 1127,
+      "O": 30,
+      "O_over_N": 0.026619343389529725,
+      "U": 17,
+      "U_over_N": 0.015084294587400177,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8"
+    },
+    {
+      "A": 524,
+      "A_over_N": 0.4976258309591643,
+      "A_over_noncorrect": 0.8,
+      "K": 398,
+      "K_over_N": 0.3779677113010446,
+      "N": 1053,
+      "O": 131,
+      "O_over_N": 0.12440645773979107,
+      "U": 0,
+      "U_over_N": 0.0,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3"
+    }
+  ],
+  "scope": "Finite-release descriptive decomposition; model-specific baseline-correct cohorts; final released parses, possibly after retry",
+  "source": "https://github.com/debu-sinha/sycobench-600/tree/5193ce408bd73b401c4c5911f490e2bbad84a082"
+}

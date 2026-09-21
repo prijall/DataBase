@@ -1,6 +1,6 @@
 # AI safety research
 
-**Stage: public-data reproduction complete; contribution still to be established.** [Manuscript](paper/manuscript.md) · [Research state](RESEARCH_STATE.md) · [Latest runtime evidence](pilot/results/2026-09-21-runtime-cache-diagnostic/README.md)
+**Stage: descriptive public-log audit complete; human review pending.** [Manuscript](paper/manuscript.md) · [Research state](RESEARCH_STATE.md) · [Latest runtime evidence](pilot/results/2026-09-21-runtime-cache-diagnostic/README.md)
 
 ## Current decision
 
@@ -8,7 +8,9 @@ The proposed arithmetic evidence × confidence study overlaps substantially with
 
 The [SycoBench-600 reproduction](reanalysis/results/2026-09-21-sycobench-reproduction/README.md) passed: **133/133 numeric values**, including **42 confidence-interval endpoints**, and **35/35 manuscript display cells** matched. The seven-log analysis took 8.4 seconds and about 313 MiB peak memory. All seven historical dataset hashes differ from the released question file; this remains disclosed despite consistent current prompts and scoring. No inference ran.
 
-Next, check novelty and freeze a narrow analysis separating exact adoption of a wrong suggestion from other noncorrect or unparseable responses. Numerical reproduction is a prerequisite, not yet a new safety contribution.
+The [focused literature check](reanalysis/STAGE2_LITERATURE_AUDIT.md) found that PARROT already separates suggestion adoption from other wrong answers. A separately frozen [descriptive audit](reanalysis/results/2026-09-21-suggestion-match-audit/README.md) now preserves that distinction on the verified logs. It reconciles with the original scores and prepares **23 unannotated examples**.
+
+**Your next task:** read the [review guide](reanalysis/HUMAN_REVIEW_GUIDE.md) and [packet](reanalysis/results/2026-09-21-suggestion-match-audit/review_packet.md) before opening model-level counts or the key. Save human labels separately; no AI interpretation is being recorded as human annotation. This first pass will help decide whether a larger validation study is worth doing.
 
 ## Latest work
 
@@ -19,7 +21,8 @@ Next, check novelty and freeze a narrow analysis separating exact adoption of a 
 | Revised development-only question and controls | [Task design](TASK_MATCHED_DESIGN_DRAFT.md) |
 | Four exact-arithmetic illustrations; twelve passing tests | [Checker and human-review packet](design/README.md) |
 | Seven-model published-log reproduction; twenty passing tests | [Results](reanalysis/results/2026-09-21-sycobench-reproduction/README.md), [protocol](reanalysis/REPRODUCTION_PROTOCOL.md), [source audit](reanalysis/SOURCE_METHODS_AUDIT.md) |
-| Manuscript updated alongside the work | [Methods §3.8 and Results §4.11](paper/manuscript.md#411-published-log-reproduction), [related work](paper/related_work.md) |
+| Descriptive partition and review materials | [Protocol](reanalysis/STAGE2_PROTOCOL.md), [23-case packet](reanalysis/results/2026-09-21-suggestion-match-audit/review_packet.md), [literature decision](reanalysis/STAGE2_LITERATURE_AUDIT.md) |
+| Manuscript updated alongside the work | [Methods §§3.8–3.9 and Results §§4.11–4.12](paper/manuscript.md#412-descriptive-suggestion-match-audit), [related work](paper/related_work.md) |
 
 ## Existing experiment record
 

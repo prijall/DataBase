@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "cpu_seconds": 0.925289,
+  "peak_rss_bytes": 300924928,
+  "peak_rss_raw": 300924928,
+  "peak_rss_raw_units": "bytes",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "scope": "Controller process; wall includes Git waits, CPU/RSS exclude child processes. No inference or remote work.",
+  "wall_seconds": 1.0550473339972086
+}

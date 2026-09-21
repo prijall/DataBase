@@ -1,0 +1,77 @@
+{
+  "attribution": "Derived from Debu Sinha's SycoBench-600 v1.0.0 public logs (CC BY 4.0).",
+  "display_rule": "ascending sha256('display|' + selection_hash); ties by selection_hash",
+  "git_commit": "b7a219255ee497b3f717cc230d0e747b3ccc006f",
+  "input_files": {
+    "data/questions.json": {
+      "bytes": 287224,
+      "git_blob_sha1": "0d3e8d6760b27ba362b2b8b837c075baa86e1c06",
+      "sha256": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d"
+    },
+    "results/raw_camera_ready/anthropic/claude-3.5-haiku.json": {
+      "bytes": 17488573,
+      "git_blob_sha1": "6c7ec6b3a8a2c49271ab457ae6b4973f4ec24caf",
+      "sha256": "5030c961ff59fd330868c5bb88a4fa5dd3d2471e00575ae27ade9fc307eebbc2"
+    },
+    "results/raw_camera_ready/anthropic/claude-sonnet-4.json": {
+      "bytes": 19590307,
+      "git_blob_sha1": "ff7d1a02220fe7b561fbc977f73117dc3615f491",
+      "sha256": "705d5ea1d1231738d1b5b1abaf03541fa512cde8dccb8052d29b52c4d3ec0b45"
+    },
+    "results/raw_camera_ready/google/gemini-2.5-flash.json": {
+      "bytes": 16122292,
+      "git_blob_sha1": "cd053f3516fd238d12165fc2415265e9be9e7aaf",
+      "sha256": "8cf05946190ecb1acdf2f88254cb9433261c0e15079b8503f7c77085735d57ec"
+    },
+    "results/raw_camera_ready/gpt-4o-mini.json": {
+      "bytes": 15042012,
+      "git_blob_sha1": "890abe5460e635cb599b4f0086aca757f2d24c70",
+      "sha256": "5d8eb6d5254ca6ce6e12ccae5b5ef32fa3ea57e8e14c81c03aac8fb840ec5ab1"
+    },
+    "results/raw_camera_ready/gpt-4o.json": {
+      "bytes": 14891788,
+      "git_blob_sha1": "6b453c3efda6da8752bc44ee5326fbd62cb61e7d",
+      "sha256": "292a7cb0d9a107f0887a148c0a6839c098d5afdd6d988c555637c90f8cdb19b8"
+    },
+    "results/raw_camera_ready/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8.json": {
+      "bytes": 18124045,
+      "git_blob_sha1": "48c81a5b2e173db9c0fa140ea09aa31c21acc99c",
+      "sha256": "3a5a8f260297b64cdae597893823ed726fd94c4001c6343b279edc5918f667d6"
+    },
+    "results/raw_camera_ready/mistralai/Mistral-7B-Instruct-v0.3.json": {
+      "bytes": 13730979,
+      "git_blob_sha1": "dc8b61faddf80f2d182b2d01acd74cb3c19d7777",
+      "sha256": "6a9a5d870cec554890f301936fd4ccda56ce1369f689e0e44e70cb6219f1c8b2"
+    }
+  },
+  "model_requests": 0,
+  "network_requests": 0,
+  "output_sha256": {
+    "counts.csv": "f9120eb054923374b7e92fd802599886417ac78ed84388d16f630e8bde33012d",
+    "counts.json": "b8fb711e58a8482ffd1c004ad76af97cf4670873eaef189005558eea4e06230d",
+    "review_form.json": "e30ab7c1097dfce054a82ac1fcbdee0c8aaaf79e7998d72e36ef9e4a4283484a",
+    "review_key.json": "11b75585e4f9df64a6b5f40bf1bcb3a472eabda88be904515582402afcf5cb92",
+    "review_packet.md": "9691b1a22a21a3f9e96ced1661c459a2f9542140543999bda071d90aa9d003b2",
+    "status.json": "cbdd980b88b3a5853bf6a195e6455d23eab9893afd75518c8acfe42a4432cfb6"
+  },
+  "python": "3.14.7",
+  "release_revision": "5193ce408bd73b401c4c5911f490e2bbad84a082",
+  "selection_rule": "minimum sha256('stage2-v1|20260921|' + model + '|' + qid + '|' + str(variant)) within each model/K,A,O,U stratum; ties by question_id then variant_id",
+  "source_hashes": {
+    "STAGE2_PROTOCOL.md": "51392800fb7afc7216048c51d70969e247d5c8e8ed6e462ea6c336ad00b2a06f",
+    "decompose.py": "20f4f8c91d20fc16a32ca080274d35d1344e322034649c63436fd1eee76dd027",
+    "reproduce.py": "2e909ecad6e52a08e457f1574884b820533d9e71b48b23d7b3daec447586ae34",
+    "test_decompose.py": "7d63dc6628eab0c10b693f8f277f13ea2e10b3850f62936ba2fed115bfdb3cd0"
+  },
+  "stage1_commit": "b4e0a27cd9d1575e572f1184c513eade2bb8bd0a",
+  "stage1_files": {
+    "analysis.json": "87fe3f4426bb1c518daff976a5ed283d59e1252cd52ecbf9384b9c9da09abaaf",
+    "comparison.json": "9929b73344187dad20145917888ed60b111d654dc51cd2d10d7d595aaba765fa",
+    "main_results.csv": "821cab48878d764540b2cd3ed1ec0c0038e709f9d12eeb13eda04747078acf2f",
+    "provenance.json": "15ae69a5862e01fcc650a1514856c34d596f11f36c6553e4a1e7c3fd8bc66d5d",
+    "status.json": "e7adc8abd09762dec58113da7e49dfc543d2c1a75fdb821e40c1669f30b6add2",
+    "validation.json": "0e0d896a43a7e6b3ce1d6e8b51fc8b8e8b3195c7d55508a3db39cdabf2f1191a"
+  },
+  "tree_sha256": "b20ab896157faa6c3984ec73b5abe16c4db6c9a32fae49b22b92d46c676e4c9e",
+  "upstream_code_executed": false
+}

@@ -1,0 +1,27 @@
+{
+  "started_at_utc": "2026-09-21T11:37:39.050466+00:00",
+  "git_commit": "b7a219255ee497b3f717cc230d0e747b3ccc006f",
+  "command": [
+    "python3",
+    "-B",
+    "ai-safety-research/reanalysis/decompose.py",
+    "--cache",
+    "ai-safety-research/pilot/runs/sycobench-release-inspection",
+    "--tree",
+    "ai-safety-research/public-data/sycobench-v1.0.0-tree.json",
+    "--stage1",
+    "ai-safety-research/reanalysis/results/2026-09-21-sycobench-reproduction",
+    "--protocol",
+    "ai-safety-research/reanalysis/STAGE2_PROTOCOL.md",
+    "--out",
+    "ai-safety-research/reanalysis/results/2026-09-21-suggestion-match-audit"
+  ],
+  "timeout_seconds": 600,
+  "model_requests": 0,
+  "exit_code": 0,
+  "stdout": "{\"out\": \"/Users/missioncontrol/Documents/ChatGPT/AI-Safety Research/DataBase/ai-safety-research/reanalysis/results/2026-09-21-suggestion-match-audit\", \"complete\": true, \"selected_review_records\": 23, \"human_review_status\": \"pending\", \"model_requests\": 0}\n",
+  "stderr": "",
+  "timed_out": false,
+  "completed_at_utc": "2026-09-21T11:37:40.231387+00:00",
+  "wrapper_wall_seconds": 1.1805572500015842
+}

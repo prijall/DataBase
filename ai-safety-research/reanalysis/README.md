@@ -2,7 +2,7 @@
 
 Reconstruct the published SycoBench-600 camera-ready table using a local, standard-library CPU analysis. This is a reproduction of released outputs, not new model inference.
 
-**Latest result:** [Stage 1 passed](results/2026-09-21-sycobench-reproduction/README.md): 133 numeric values and 35 manuscript display cells matched; 8.4 seconds, about 313 MiB peak memory. Historical dataset-hash provenance remains qualified.
+**Latest work:** [descriptive Stage 2 audit](results/2026-09-21-suggestion-match-audit/README.md) complete. Start the [human-review guide](HUMAN_REVIEW_GUIDE.md) and [23-case packet](results/2026-09-21-suggestion-match-audit/review_packet.md) before reading its counts/key. [Stage 1 reproduction](results/2026-09-21-sycobench-reproduction/README.md) remains unchanged: all 133 numeric values matched. The [literature audit](STAGE2_LITERATURE_AUDIT.md) finds direct prior work; novelty remains unestablished.
 
 - [Frozen acceptance protocol](REPRODUCTION_PROTOCOL.md)
 - [Source and measurement audit](SOURCE_METHODS_AUDIT.md)
@@ -26,8 +26,23 @@ python3 -B ai-safety-research/reanalysis/reproduce.py \
 
 Use a fresh output directory: existing results are never overwritten. The archived run uses an external 600-second subprocess timeout; apply the same bound when rerunning. `main_results.csv` and `comparison.json` hold numeric reproduction, `validation.json` holds integrity checks, `analysis.json` records population/denominators, `provenance.json` binds inputs and implementation, and `runtime.json` separately records measured resource use. `status.json` distinguishes numerical agreement from audit acceptance.
 
+## Run the bounded Stage 2 diagnostic
+
+The [Stage 2 protocol](STAGE2_PROTOCOL.md) fixes descriptive counts and a maximum 28-case human-review sample; it changes no parser or original score. Code/test/protocol bytes must match HEAD, and the imported Stage 1 adapter and archive must match their pinned hashes.
+
+```sh
+python3 -B ai-safety-research/reanalysis/decompose.py \
+  --cache ai-safety-research/pilot/runs/sycobench-release-inspection \
+  --tree ai-safety-research/public-data/sycobench-v1.0.0-tree.json \
+  --stage1 ai-safety-research/reanalysis/results/2026-09-21-sycobench-reproduction \
+  --protocol ai-safety-research/reanalysis/STAGE2_PROTOCOL.md \
+  --out ai-safety-research/pilot/runs/suggestion-match-check
+```
+
+Use a fresh output directory and the same external 600-second bound as the archived run. Human labels are separate work: preserve the generated blank form and fill a copy after reading the rubric. `review_key.json` contains labels and identities that should remain unseen until the first pass is saved.
+
 ## Attribution
 
 Source: Debu Sinha, *SycoBench-600*, [Findings of ACL 2026](https://aclanthology.org/2026.findings-acl.1759/), [release v1.0.0](https://github.com/debu-sinha/sycobench-600/releases/tag/v1.0.0), commit `5193ce408bd73b401c4c5911f490e2bbad84a082`. The author's code is MIT licensed ([retained notice](UPSTREAM_LICENSE.txt)); dataset, logs and generated tables are [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Our derived tables retain this attribution and license notice. Changes consist of an independent standard-library reproduction and added provenance/consistency audits; the author does not endorse this analysis.
 
-Published source data remain in ignored storage. Small derived reports and manifests are versioned so the result is reviewable from GitHub. Our historical total of 240 generated completions is separate and unchanged.
+Full raw logs remain in ignored storage. Selected attributed response excerpts appear in the human-review packet; derived reports and manifests are versioned for review from GitHub. Our historical total of 240 generated completions is separate and unchanged.

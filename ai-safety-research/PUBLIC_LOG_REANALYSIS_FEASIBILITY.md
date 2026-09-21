@@ -2,7 +2,7 @@
 
 September 21, 2026. **Artifact feasibility established for one log; scientific contribution unverified.** This is the next bounded offline work item. It uses published model responses, ordinary CPU computation and no inference API, M4 session, downloads of weights or office data.
 
-**Update:** Stage 1 is now [complete](reanalysis/results/2026-09-21-sycobench-reproduction/README.md). The text below preserves the initial one-log feasibility assessment and proposed stages.
+**Update:** Stage 1 is now [complete](reanalysis/results/2026-09-21-sycobench-reproduction/README.md). A bounded [descriptive Stage 2 extension](reanalysis/results/2026-09-21-suggestion-match-audit/README.md) is also complete, with human review pending. The text below preserves the initial one-log feasibility assessment and proposed stages.
 
 ## Question worth checking
 

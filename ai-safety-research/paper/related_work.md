@@ -18,6 +18,12 @@ Yang and Yeung's *Resist and Update* v2 includes crossed truth, agreement, relia
 
 SycoBench-600 already reports correction selectivity with separate initial-answer populations and documents parser limitations. [Sinha, 2026](https://aclanthology.org/2026.findings-acl.1759/) (`sinha2026sycobench`). Ping et al. cross role, evidence, interaction structure and grounding in medical conversations. [Version 2](https://arxiv.org/html/2608.01017v2) (`ping2026givein`). These studies strengthen the decision to keep our revised arithmetic design as a development instrument while investigating a specific, reproducible public-log measurement question. The [updated comparison](../DESIGN_LITERATURE_COMPARISON_2026-09-21.md) and [supplement](../SUPPLEMENTAL_DESIGN_AUDIT_2026-09-21.md) record inspected sections and limits.
 
+## Measurement definitions and response classification
+
+PARROT already separates following a false suggestion from switching to another wrong answer (§3.4). Our proposed fixed-cohort decomposition therefore applies an existing distinction rather than introducing a taxonomy. [Çelebi et al., v2](https://arxiv.org/html/2511.17220v2) (`celebi2025parrot`). SycEval distinguishes response-quality categories and includes human checks of automated judgments, under a different task and scoring design. [Fanous et al., v4](https://arxiv.org/html/2502.08177v4) (`fanous2025syceval`).
+
+Ye et al. document differing constructs under the sycophancy label; Young studies classifier sensitivity in hint-acknowledgment evaluation and explicitly identifies missing human labels as a limitation. Neither establishes novelty for our narrow MCQ analysis. [Ye et al., v1](https://arxiv.org/html/2605.21778v1) (`ye2026counts`), [Young, v2](https://arxiv.org/html/2603.20172v2) (`young2026measurement`). The [focused audit](../reanalysis/STAGE2_LITERATURE_AUDIT.md) limits the next increment to descriptive counts and human-review preparation. A metric difference alone does not establish causal agreement or a new safety result.
+
 ## Scope of the present study
 
 These precedents motivate an unresolved question: whether an anti-sycophancy intervention changes sensitivity to verified reasoning errors differently across conversational and standalone contexts. The current pilot tests a prerequisite—whether the chosen local models and elicitation protocol yield usable, separately scored answers and trace judgments. It neither resolves that interaction nor establishes an unoccupied research gap. The supplied traces confound conclusion correctness with the number of false equalities, and all injected errors begin at the first step. A defensible extension requires addressing these limitations, checking additional related work, and evaluating a fixed intervention plan on held-out problems.
@@ -37,4 +43,6 @@ Metadata and the cited methods were checked against primary sources on September
 
 The two conference entries use verified ACL Anthology metadata and DOIs. The two arXiv entries make no independently verified proceedings claim. This four-paper section is a targeted comparison, not an exhaustive novelty review; [the broader audit](../NOVELTY_AUDIT.md) records remaining checks.
 
-Additional metadata and methods were checked September 21, 2026: `yang2026resist` and `ping2026givein` remain versioned arXiv entries; `sinha2026sycobench` uses official ACL Anthology metadata. Their experiments have not been reproduced in this repository.
+Additional metadata and methods were checked September 21, 2026: `yang2026resist` and `ping2026givein` remain versioned arXiv entries; `sinha2026sycobench` uses official ACL Anthology metadata. Only the SycoBench released-table calculations have been reproduced here; none of these studies’ model generation has been independently repeated.
+
+The four measurement references above were checked against versioned primary arXiv manuscripts on September 21, 2026; the [focused audit](../reanalysis/STAGE2_LITERATURE_AUDIT.md) records inspected sections. SycEval’s arXiv record identifies AIES 2025; a separate proceedings citation was not verified in this increment.
