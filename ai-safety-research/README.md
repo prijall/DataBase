@@ -40,7 +40,7 @@ The repository records **232 calls total** across development protocols. The ver
 
 ## Next stage and limits
 
-**Paused:** the M4 is shut down. No background experiment or automatic restart is scheduled.
+**Resumption requested September 21:** the corrected preflight passed independent offline re-review and 40 ProcessBench tests pass. [Readiness check](pilot/processbench/READINESS_2026-09-21.md). M4 identity/access and live validation remain pending; no experiment is running.
 
 The [offline ProcessBench preparation](pilot/PROCESSBENCH_PLAN.md) now pins a published interface and scorer and reserves 20 calibration plus 40 evaluation cases. No ProcessBench answers were generated. The runner is now implemented, but the live preflight failed. Next: establish a resource-feasible setup before another documented preflight—verify access to the 16GB M4 or design a smaller-context check. Keep inference stopped on the tested shared-M1 configuration. Every injected first error is at step one, and invalid traces with correct versus wrong conclusions have different error counts. Ten reused questions, two arithmetic families, and one confidence phrase cannot support broad alignment claims. Reliable measurements, corrected confounds and held-out data are needed before the intended intervention study.
 

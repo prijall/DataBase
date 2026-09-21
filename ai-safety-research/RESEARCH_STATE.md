@@ -1,6 +1,6 @@
 # Research state
 
-Updated: September 16, 2026. **Paused at the user’s request; the M4 is currently shut down.** This file is the handoff for continuing on another computer or in another assistant conversation.
+Updated: September 21, 2026. **Resumption requested; awaiting M4 identity and SSH access confirmation.** This file is the handoff for continuing on another computer or in another assistant conversation.
 
 ## Objective
 
@@ -42,13 +42,13 @@ Recorded v3 client sessions total **1,505.20 seconds (25.09 minutes)**. The veri
 
 ## Continue from home
 
-The earlier [PR #1](https://github.com/prijall/DataBase/pull/1) and [PR #2](https://github.com/prijall/DataBase/pull/2) are merged. PR #2 was merged while experiments continued, so the completed results and manuscript are proposed in [PR #3](https://github.com/prijall/DataBase/pull/3), on `codex/reasoning-pilot-experiments`. Until merged, use PR #3's branch for the latest work. The office connection has read access to the personal repository, so publication uses a fork and pull request.
+[PR #1](https://github.com/prijall/DataBase/pull/1), [PR #2](https://github.com/prijall/DataBase/pull/2) and [PR #3](https://github.com/prijall/DataBase/pull/3) are merged. The experiment archives and manuscript are on `main`; the current readiness update is on `codex/m4-research-readiness`. The office connection has read access to the personal repository, so publication uses a fork and pull request.
 
 After merging while signed into the personal account, clone or pull the repository at home. Read this file, then the latest result report. Before switching machines, commit and push research files and update this state. GitHub does not automatically contain chat history, model weights, or ignored run directories.
 
 ## Next decision
 
-Resume only when the user returns. No scheduled restart or background experiment is active. The corrected preflight has passed offline tests; its final independent re-review and a fresh hardware-specific preflight remain pending. The prior 90-minute session is closed and must not be resumed using an expired report. Keep its evidence; document a new session before any future attempt.
+The user has requested resumption. No scheduled restart or background experiment is active. The [September 21 readiness check](pilot/processbench/READINESS_2026-09-21.md) completed the corrected preflight’s independent offline re-review, and all 40 ProcessBench tests passed. Apollo is reachable over Tailscale, but its identity as the M4 and the SSH account are not yet confirmed. A fresh hardware-specific preflight remains pending. The prior 90-minute session is closed and must not be resumed using an expired report. Keep its evidence; document a new session before any future attempt.
 
 The **offline measurement-validation preparation is complete**: [ProcessBench source audit](pilot/PUBLISHED_INTERFACE_AUDIT.md), [prospective local plan](pilot/PROCESSBENCH_PLAN.md), [pinned provenance](pilot/processbench/provenance.json), and [grouped selection](pilot/processbench/selection.json). The independently implemented adapter reproduces the inspected greedy prompt/scoring semantics without running a model. The pinned GSM8K domain has 400 solutions (193 error-free, 207 erroneous), with 375 distinct exact problem strings. The plan reserves 20 calibration and 40 evaluation cases, each balanced by process label and separated by normalized problem text. This is a local interface adaptation, not reproduction of published scores. No new subject calls were added; the archive total remains 232. The latest increment adds the runner, execution addendum and failed live preflight evidence.
 
