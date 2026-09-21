@@ -1,6 +1,6 @@
 # Prospective ProcessBench screen with a 2,048-token context
 
-September 21, 2026. **Proposed next configuration; not implemented, frozen or executed by this document.** This is a dated amendment to the [original plan](PROCESSBENCH_PLAN.md), [execution rules](PROCESSBENCH_EXECUTION.md) and [M4 session rules](PROCESSBENCH_M4_SESSION.md). It authorizes no automatic experiment. Implement the new selection/configuration, independently review it and freeze its manifest and code before another subject call.
+September 21, 2026. **Prospectively specified configuration; implementation is now available, with no live execution yet.** This is a dated amendment to the [original plan](PROCESSBENCH_PLAN.md), [execution rules](PROCESSBENCH_EXECUTION.md) and [M4 session rules](PROCESSBENCH_M4_SESSION.md). The [implementation guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) and [independent review](processbench/SMALL_CONTEXT_IMPLEMENTATION_REVIEW.md) describe the offline implementation. Freeze its manifest and code before another subject call; a fresh live preflight remains required.
 
 ## Evidence and reason for the change
 
@@ -25,7 +25,7 @@ Keep the installed Llama-3.2 3B Q4_K_M model and pinned digest, Ollama 0.34.0, o
 
 Before any answer generation:
 
-- Freeze the new manifest, **2,048 context** configuration and reviewed code together; verify that both controller and remote worker enforce and record this value. Existing code pins 8,192 and must not be treated as already supporting this proposal.
+- Freeze the new manifest, **2,048 context** configuration and reviewed code together; verify that both controller and remote worker enforce and record this value. Select the explicit `small-context-v1` profile; the default `original` profile still pins 8,192.
 - Start a new, uniquely named session with a new pre-load target resource baseline. Do not overwrite either earlier M4 session or reuse their preflight approval. Account for time already spent against the user's nine combined machine-hours per week.
 - Verify the same model, backend, template and source identities, isolated loopback service, idle state and absence of competing model activity. All research artifacts remain on the controller; no new software or weights are installed on the M4.
 - Freshly render and tokenize **all 60 new-manifest jobs** through the verified non-generating path, including special tokens. Require complete original user content, exact message/render hashes and `prompt_tokens + 1024 <= 2048` for every job. Verify the actual loaded context agrees with the new configuration. If any job fails, stop: no truncation, substitution, filtering or further configuration change within this plan.

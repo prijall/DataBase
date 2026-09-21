@@ -1,6 +1,6 @@
 # Research state
 
-Updated: September 21, 2026. **Second M4 session stopped after two calibration responses; cleanup verified and session closed.** This file is the handoff for continuing on another computer or in another assistant conversation.
+Updated: September 21, 2026. **The 2,048-token implementation and new calibration reservation are prepared; live preflight remains pending.** This file is the handoff for continuing on another computer or in another assistant conversation.
 
 ## Objective
 
@@ -18,7 +18,7 @@ Conduct independent AI safety research with AI assistance, local experiments, an
 
 ## Execution status
 
-The repository now archives **234 generated completions**: 232 earlier diagnostic/development calls and two responses from an incomplete ProcessBench calibration. The reviewed code passed 109 offline tests, including 61 ProcessBench checks, before execution.
+The repository now archives **234 generated completions**: 232 earlier diagnostic/development calls and two responses from an incomplete ProcessBench calibration. The prior execution code passed 109 offline tests before those runs. The smaller-context implementation now passes **127 offline tests**, including 79 ProcessBench checks; it has generated no new responses.
 
 **Latest result:** the [second M4 session](pilot/results/2026-09-21-processbench-m4-session2/README.md), frozen at `d2dd756`, passed exact-token preflight for all sixty selected prompts. Counts range from 308 to 778, with at most 1,802 tokens including the 1,024-token output reserve. Calibration recorded **2/20** responses, both error-class examples. One completed normally with the correct, in-range first-error index; the second hit the output-length cap and its last boxed integer was out of range. There were no request errors. No valid-class example was attempted, so balanced accuracy and the official class harmonic mean are not estimable. The eighteen unattempted cases are missing observations, not wrong model predictions. The calibration gate was not passed, and all forty evaluation cases remain unused.
 
@@ -54,7 +54,7 @@ After merging while signed into the personal account, clone or pull the reposito
 
 The latest attempt is closed; no scheduled restart or owned research process remains. Read the [second M4 archive](pilot/results/2026-09-21-processbench-m4-session2/README.md) and [readiness record](pilot/processbench/READINESS_2026-09-21.md). Preserve the original 8,192-token run and its two used calibration IDs. Eighteen original calibration cases and all forty evaluation cases remain unattempted; they must not be relabeled as failures.
 
-The [prospective smaller-context plan](pilot/PROCESSBENCH_SMALL_CONTEXT_PLAN.md) proposes a separately documented 2,048-token adaptation using the measured maximum prompt-plus-output allowance of 1,802. It is not implemented or executed. The existing manifest cannot be resumed under changed settings; source binding, a fresh resource/token preflight, cohort handling, and unchanged gates need the plan's reviewed implementation before inference.
+The [smaller-context protocol](pilot/PROCESSBENCH_SMALL_CONTEXT_PLAN.md) is now implemented as the explicit `small-context-v1` profile. It enforces a 2,048-token context and unchanged 1,024-token output allowance in both controller and remote worker. The [new selection](pilot/processbench/selection-small-context.json) has twenty fresh balanced calibration cases, excluding all original sixty problem groups, and preserves the exact forty evaluation records. See the [implementation guide](pilot/PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) and [independent review](pilot/processbench/SMALL_CONTEXT_IMPLEMENTATION_REVIEW.md). No new model calls occurred during implementation; the archive total remains 234. A fresh live preflight must establish exact token and resource fit for the new cases before calibration. Earlier reports and run directories cannot authorize this profile.
 
 The [source audit](pilot/PUBLISHED_INTERFACE_AUDIT.md), [original plan](pilot/PROCESSBENCH_PLAN.md), [provenance](pilot/processbench/provenance.json), and [selection](pilot/processbench/selection.json) remain the reference. The pinned GSM8K domain has 400 solutions (193 error-free, 207 erroneous), with 375 distinct exact problem strings. Original calibration and evaluation were balanced by process label and separated by normalized problem text. These are local adaptations, not published-score replications. Calibration requires all 20 records, at least 18 normally completed in-range predictions, and at least 8/10 completion-gated exact judgments per class before any held-out evaluation. Preserve the sixty-request/90-minute cap and the remote 150-second reserve; do not relax resource thresholds to finish a run.
 

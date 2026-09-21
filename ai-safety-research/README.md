@@ -44,7 +44,7 @@ Those completed development screens account for **232 calls**, before the two pa
 
 ## Next stage and limits
 
-The [September 21 readiness record](pilot/processbench/READINESS_2026-09-21.md) preserves both M4 sessions. The second session is closed with calibration incomplete; neither its two observed responses nor its eighteen unattempted cases support a completed accuracy claim. The [prospective smaller-context plan](pilot/PROCESSBENCH_SMALL_CONTEXT_PLAN.md) proposes a 2,048-token context after the measured prompt lengths; it has not been implemented or executed. Existing guards and evaluation thresholds remain unchanged. The 109-test offline suite preceded these runs.
+The [September 21 readiness record](pilot/processbench/READINESS_2026-09-21.md) preserves both M4 sessions. The second session is closed with calibration incomplete; neither its two observed responses nor its eighteen unattempted cases support a completed accuracy claim. The [2,048-token profile](pilot/PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) is now implemented with twenty fresh balanced calibration cases and the unchanged forty evaluation cases. The output allowance, scoring and resource limits remain unchanged. Its live preflight and subject execution are pending; implementation adds no generated responses.
 
 In the earlier synthetic development traces, every injected first error is at step one, and invalid traces with correct versus wrong conclusions have different error counts. Ten reused questions, two arithmetic families, and one confidence phrase cannot support broad alignment claims. Reliable measurements, corrected confounds and held-out data are needed before the intended intervention study.
 

@@ -20,6 +20,27 @@ TARGET = 'prabs@100.74.220.25'
 API_PORT = 11435
 ROOT = Path(__file__).resolve().parent
 REMOTE_RESERVE = 150
+PROFILE_NAMES = ('original', 'small-context-v1')
+SMALL_PROFILE_FILES = {'profile_plan': 'PROCESSBENCH_SMALL_CONTEXT_PLAN.md',
+                       'profile_selector': 'processbench_small_selection.py',
+                       'profile_selection': 'processbench/selection-small-context.json'}
+
+
+def profile_options(profile):
+    if profile not in PROFILE_NAMES:
+        raise ValueError('Unknown execution profile')
+    return {'temperature': 0, 'seed': 42, 'num_ctx': 2048 if profile == 'small-context-v1' else 8192,
+            'num_predict': 1024, 'num_thread': 2}
+
+
+def job_loader(profile):
+    profile_options(profile)
+    if profile == 'small-context-v1':
+        from processbench_small_selection import load_jobs
+    else:
+        from processbench_run import load_jobs
+    return load_jobs
+
 SSH = ['/usr/bin/ssh', '-T', '-o', 'BatchMode=yes', '-o', 'StrictHostKeyChecking=yes',
        '-o', 'ControlMaster=no', '-o', 'ControlPath=none', '-o', 'ConnectTimeout=10',
        TARGET, '/usr/bin/python3 -B -']
@@ -70,6 +91,22 @@ def load_bundle(request):
     real_hash = pf.file_hash
     pf.file_hash = lambda path: hashes[str(path)] if str(path) in hashes else real_hash(path)
     pf.API_PORT = 11435
+    profile = request.get('transport', {}).get('profile', 'original')
+    if profile not in ('original', 'small-context-v1'):
+        raise ValueError('Unknown execution profile')
+    options = dict(pf.OPTIONS, num_ctx=2048 if profile == 'small-context-v1' else 8192)
+    supplied = request.get('transport', {}).get('options', options)
+    if supplied != options:
+        raise ValueError('Execution profile/options mismatch')
+    pf.OPTIONS = options
+    if profile == 'small-context-v1':
+        original_loaded_state = pf.loaded_state
+        def exact_loaded_state(require_loaded=False):
+            resident = original_loaded_state(require_loaded)
+            if resident and resident[0].get('context_length') != 2048:
+                raise ValueError('Small-context profile requires exactly 2048 resident tokens')
+            return resident
+        pf.loaded_state = exact_loaded_state
     return pf, modules['processbench_resources']
 
 def check_report(pf, request):
@@ -203,8 +240,11 @@ def bundle():
     return {name: {'source': source, 'sha256': sha(source.encode())} for name, source in sources.items()}
 
 
-def transport_binding(sources):
-    return {'kind': 'ssh-stdin-memory-only-v1', 'target': TARGET, 'api_port': API_PORT,
+def transport_binding(sources, profile='original'):
+    options = profile_options(profile)
+    profile_hashes = ({name: sha((ROOT / path).read_bytes()) for name, path in SMALL_PROFILE_FILES.items()}
+                      if profile == 'small-context-v1' else {})
+    return {'profile': profile, 'options': options, 'profile_sha256': profile_hashes,'kind': 'ssh-stdin-memory-only-v1', 'target': TARGET, 'api_port': API_PORT,
             'connector_sha256': sha(Path(__file__).read_bytes()), 'worker_sha256': sha(WORKER.encode()),
             'source_sha256': {name: item['sha256'] for name, item in sources.items()},
             'session_policy_sha256': sha((ROOT / 'PROCESSBENCH_M4_SESSION.md').read_bytes()),
@@ -282,11 +322,12 @@ def rpc(action, sources, binding, on_line=None, **fields):
 
 def create_preflight(args):
     import processbench_run as runner
-    jobs, _ = runner.load_jobs(args.data, args.prompt, args.provenance, args.selection)
+    profile = getattr(args, 'profile', 'original')
+    jobs, _ = job_loader(profile)(args.data, args.prompt, args.provenance, args.selection)
     if args.preflight.exists():
         raise ValueError('Preflight report already exists; cannot reset its budget')
     sources = bundle()
-    binding = transport_binding(sources)
+    binding = transport_binding(sources, profile)
     started = time.time()
     marker = {'status': 'dispatching', 'transport': binding, 'budget_started_unix': started,
               'jobs_sha256': runner.canonical_hash(jobs), 'generation_requests': 0,
@@ -314,12 +355,14 @@ def remote_runner(args):
     import processbench_run as runner
     import processbench_preflight as pf
     import processbench_resources as resources
-    jobs, _ = runner.load_jobs(args.data, args.prompt, args.provenance, args.selection)
+    profile = getattr(args, 'profile', 'original')
+    loader = job_loader(profile)
+    jobs, _ = loader(args.data, args.prompt, args.provenance, args.selection)
     sources, state = bundle(), {}
-    binding = transport_binding(sources)
+    binding = transport_binding(sources, profile)
     original = (runner.current_model, runner.stream_chat, runner.dependencies,
                 runner.git_revision, runner.RESERVE_SECONDS, pf.verify_preflight,
-                pf.verify_runtime_idle, resources.snapshot)
+                pf.verify_runtime_idle, resources.snapshot, runner.OPTIONS, runner.load_jobs)
     def verify(path, supplied_jobs, model, options):
         if supplied_jobs != jobs or model != runner.MODEL or options != runner.OPTIONS:
             raise ValueError('Controller job/config mismatch')
@@ -348,11 +391,14 @@ def remote_runner(args):
         return dict(original[2](p, r), remote_connector=binding['connector_sha256'],
                     remote_worker=binding['worker_sha256'], remote_stream=sources['stream']['sha256'],
                     remote_session_policy=binding['session_policy_sha256'],
-                    remote_session_helper=binding['session_helper_sha256'])
+                    remote_session_helper=binding['session_helper_sha256'], **binding['profile_sha256'])
     def revision():
         value = original[3]()
         paths = ['processbench_remote.py', 'test_processbench_remote.py',
                  'PROCESSBENCH_M4_SESSION.md', 'processbench_server_session.py']
+        if profile == 'small-context-v1':
+            paths.extend(SMALL_PROFILE_FILES.values())
+            paths.append('test_processbench_small_selection.py')
         subprocess.check_call(['git', 'ls-files', '--error-unmatch', *paths], cwd=ROOT,
                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         subprocess.check_call(['git', 'diff', '--quiet', 'HEAD', '--', *paths], cwd=ROOT)
@@ -360,6 +406,8 @@ def remote_runner(args):
     runner.current_model, runner.stream_chat = identity, streaming
     runner.dependencies, runner.git_revision = dependencies, revision
     runner.RESERVE_SECONDS = REMOTE_RESERVE
+    runner.OPTIONS = profile_options(profile)
+    runner.load_jobs = loader
     pf.verify_preflight = verify
     pf.verify_runtime_idle = lambda report, model: rpc('runtime_idle', sources, binding, jobs=jobs, report=report)
     resources.snapshot = lambda: rpc('resource_snapshot', sources, binding)
@@ -368,12 +416,13 @@ def remote_runner(args):
     finally:
         (runner.current_model, runner.stream_chat, runner.dependencies,
          runner.git_revision, runner.RESERVE_SECONDS, pf.verify_preflight,
-         pf.verify_runtime_idle, resources.snapshot) = original
+         pf.verify_runtime_idle, resources.snapshot, runner.OPTIONS, runner.load_jobs) = original
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('phase', choices=('create-preflight', 'calibration', 'evaluation'))
+    parser.add_argument('--profile', choices=PROFILE_NAMES, default='original')
     for name in ('data', 'prompt', 'provenance', 'selection', 'preflight', 'out'):
         parser.add_argument('--' + name, type=Path, required=True)
     args = parser.parse_args()

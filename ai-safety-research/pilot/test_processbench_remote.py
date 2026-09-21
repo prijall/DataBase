@@ -201,5 +201,159 @@ class ControllerTests(unittest.TestCase):
                                  preflight.verify_preflight, resources.snapshot))
 
 
+class ProfileTests(unittest.TestCase):
+    @unittest.skipUnless((remote.ROOT / 'runs/processbench-source/gsm8k.json').exists(),
+                         'Pinned optional offline source cache unavailable')
+    def test_real_selection_profile_integration_and_cross_selection_rejection(self):
+        args = argparse.Namespace(profile='small-context-v1',
+            data=remote.ROOT / 'runs/processbench-source/gsm8k.json',
+            prompt=remote.ROOT / 'runs/processbench-source/critique_template.txt',
+            provenance=remote.ROOT / 'processbench/provenance.json',
+            selection=remote.ROOT / 'processbench/selection-small-context.json')
+        loader = remote.job_loader(args.profile)
+        jobs, hashes = loader(args.data, args.prompt, args.provenance, args.selection)
+        self.assertEqual(len(jobs), 60)
+        self.assertEqual(sum(j['split'] == 'calibration' for j in jobs), 20)
+        with self.assertRaises(ValueError):
+            runner.load_jobs(args.data, args.prompt, args.provenance, args.selection)
+        with self.assertRaises(ValueError):
+            loader(args.data, args.prompt, args.provenance, remote.ROOT / 'processbench/selection.json')
+        old_options, old_loader = runner.OPTIONS, runner.load_jobs
+        with remote.remote_runner(args):
+            self.assertEqual(runner.OPTIONS['num_ctx'], 2048)
+            self.assertEqual(preflight.OPTIONS['num_ctx'], 8192)
+            self.assertEqual(runner.load_jobs(args.data, args.prompt, args.provenance, args.selection), (jobs, hashes))
+            binding = remote.transport_binding(remote.bundle(), args.profile)
+            for name, filename in remote.SMALL_PROFILE_FILES.items():
+                self.assertEqual(binding['profile_sha256'][name], remote.sha((remote.ROOT / filename).read_bytes()))
+        self.assertIs(runner.OPTIONS, old_options)
+        self.assertIs(runner.load_jobs, old_loader)
+
+    def test_only_fixed_profiles_with_unchanged_output_and_defaults(self):
+        original = remote.profile_options('original')
+        small = remote.profile_options('small-context-v1')
+        self.assertEqual(original, runner.OPTIONS)
+        self.assertEqual(small, dict(original, num_ctx=2048))
+        self.assertEqual(small['num_predict'], 1024)
+        with self.assertRaisesRegex(ValueError, 'Unknown'):
+            remote.profile_options('arbitrary')
+
+    def test_worker_propagates_profile_and_requires_exact_resident_context(self):
+        request = {'bundle': remote.bundle(), 'transport': {'profile': 'small-context-v1',
+                   'options': remote.profile_options('small-context-v1')}}
+        script = """
+pf, _ = load_bundle(json.loads(%r))
+emit({'options': pf.OPTIONS, 'bindings': pf.bindings([], pf.MODEL, pf.OPTIONS)['options']})
+for context in (2048, 8192, 1024):
+    pf.request_json = lambda *a, **k: {'models': [{'name': pf.MODEL, 'digest': pf.MODEL_DIGEST,
+                                                'context_length': context}]}
+    try:
+        pf.loaded_state(require_loaded=True)
+        emit({'accepted_context': context})
+    except ValueError as error:
+        emit({'rejected_context': context})
+""" % json.dumps(request)
+        output = worker_check(script)
+        self.assertEqual(output[0]['options'], remote.profile_options('small-context-v1'))
+        self.assertEqual(output[0]['bindings'], output[0]['options'])
+        self.assertEqual(output[1:], [{'accepted_context': 2048}, {'rejected_context': 8192},
+                                    {'rejected_context': 1024}])
+
+    def test_worker_rejects_unknown_profile_and_arbitrary_options(self):
+        for profile, options in [('unknown', remote.profile_options('original')),
+                                  ('small-context-v1', remote.profile_options('original')),
+                                  ('small-context-v1', dict(remote.profile_options('small-context-v1'), num_predict=256))]:
+            request = {'bundle': remote.bundle(), 'transport': {'profile': profile, 'options': options}}
+            output = worker_check("""
+try:
+    load_bundle(json.loads(%r))
+except ValueError as error:
+    emit({'error': str(error)})
+""" % json.dumps(request))
+            self.assertEqual(len(output), 1)
+            self.assertIn('profile', output[0]['error'])
+
+    def test_worker_subject_rejects_original_options_without_http(self):
+        request = {'bundle': remote.bundle(), 'action': 'stream_subject', 'jobs': [],
+                   'transport': {'profile': 'small-context-v1', 'options': remote.profile_options('small-context-v1')},
+                   'payload': {'model': preflight.MODEL, 'messages': [], 'stream': True,
+                               'truncate': False, 'shift': False, 'options': remote.profile_options('original'),
+                               'keep_alive': '30s'}}
+        output = worker_check("""
+request = json.loads(%r)
+pf, resources = load_bundle(request)
+request['report'] = dict(pf.bindings([], pf.MODEL, pf.OPTIONS), status='passed',
+    transport=request['transport'], budget_started_unix=time.time())
+try:
+    dispatch(request)
+except ValueError as error:
+    emit({'error': str(error)})
+""" % json.dumps(request))
+        self.assertEqual(output, [{'error': 'Subject configuration differs from frozen settings'}])
+
+    def test_worker_rejects_changed_job_selection(self):
+        request = {'bundle': remote.bundle(), 'jobs': [],
+                   'transport': {'profile': 'small-context-v1', 'options': remote.profile_options('small-context-v1')}}
+        output = worker_check("""
+request = json.loads(%r)
+pf, resources = load_bundle(request)
+request['report'] = dict(pf.bindings([], pf.MODEL, pf.OPTIONS), status='passed',
+    transport=request['transport'], budget_started_unix=time.time())
+request['jobs'] = [{'id': 'other-selection'}]
+try:
+    check_report(pf, request)
+except ValueError as error:
+    emit({'error': str(error)})
+""" % json.dumps(request))
+        self.assertIn('jobs_sha256', output[0]['error'])
+
+    def test_controller_profile_and_loader_restored(self):
+        import processbench_resources as resources
+        original_options, original_loader = runner.OPTIONS, runner.load_jobs
+        original_pf_options = preflight.OPTIONS.copy()
+        args = argparse.Namespace(profile='small-context-v1', data=None, prompt=None,
+                                  provenance=None, selection=None)
+        loader = lambda *a: ([], {})
+        with patch.object(remote, 'job_loader', return_value=loader):
+            with patch.object(remote, 'SMALL_PROFILE_FILES', {}):
+                with remote.remote_runner(args):
+                    self.assertEqual(runner.OPTIONS['num_ctx'], 2048)
+                    self.assertIs(runner.load_jobs, loader)
+                    self.assertEqual(preflight.OPTIONS, original_pf_options)
+        self.assertIs(runner.OPTIONS, original_options)
+        self.assertIs(runner.load_jobs, original_loader)
+
+    def test_cross_profile_report_rejected_before_rpc(self):
+        with tempfile.TemporaryDirectory() as directory:
+            report = Path(directory) / 'preflight.json'
+            report.write_text(json.dumps({'status': 'passed', 'transport': {'profile': 'original'}}))
+            args = argparse.Namespace(profile='small-context-v1', data=None, prompt=None,
+                                      provenance=None, selection=None)
+            with patch.object(remote, 'job_loader', return_value=lambda *a: ([], {})):
+                with patch.object(remote, 'SMALL_PROFILE_FILES', {}):
+                    with remote.remote_runner(args):
+                        with patch.object(remote, 'rpc') as rpc:
+                            with self.assertRaisesRegex(ValueError, 'identity changed'):
+                                preflight.verify_preflight(report, [], runner.MODEL, runner.OPTIONS)
+                            rpc.assert_not_called()
+
+    def test_small_preflight_uses_small_loader_and_binds_profile(self):
+        with tempfile.TemporaryDirectory() as directory:
+            args = argparse.Namespace(profile='small-context-v1', data=None, prompt=None,
+                                      provenance=None, selection=None, preflight=Path(directory) / 'report.json')
+            def blocked(action, sources, binding, **fields):
+                self.assertEqual(binding['profile'], 'small-context-v1')
+                self.assertEqual(binding['options']['num_ctx'], 2048)
+                return dict(status='blocked', reason='test', transport=binding,
+                            jobs_sha256=runner.canonical_hash([]), budget_started_unix=fields['budget_started_unix'])
+            with patch.object(remote, 'job_loader', return_value=lambda *a: ([], {})) as loader:
+                with patch.object(remote, 'SMALL_PROFILE_FILES', {}):
+                    with patch.object(remote, 'rpc', side_effect=blocked):
+                        with self.assertRaisesRegex(ValueError, 'test'):
+                            remote.create_preflight(args)
+                loader.assert_called_once_with('small-context-v1')
+            self.assertEqual(json.loads(args.preflight.read_text())['transport']['profile'], 'small-context-v1')
+
+
 if __name__ == '__main__':
     unittest.main()

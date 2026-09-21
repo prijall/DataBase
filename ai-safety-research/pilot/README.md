@@ -14,9 +14,9 @@ The [source audit](PUBLISHED_INTERFACE_AUDIT.md) and [bounded plan](PROCESSBENCH
 
 The [second M4 session](results/2026-09-21-processbench-m4-session2/README.md) passed exact-token preflight for all sixty prompts (308–778 tokens). It then recorded two of twenty calibration responses: one usable and correct error index, one length-stopped and out of range. Both examples were erroneous; no valid example was attempted, so balanced performance is not estimable. Free memory then fell to 19%, stopping the run under the unchanged guard. Cleanup is verified and the session is closed. The archive now has **234 generated completions**; eighteen calibration and all forty evaluation cases remain unattempted.
 
-The [smaller-context plan](PROCESSBENCH_SMALL_CONTEXT_PLAN.md) proposes a separate 2,048-token adaptation after observing a maximum prompt-plus-output reserve of 1,802 tokens. That proposal is not implemented or executed. Do not change settings and resume the original manifest, interpret unseen cases as wrong predictions, or relax resource/calibration gates.
+The [smaller-context plan](PROCESSBENCH_SMALL_CONTEXT_PLAN.md) proposes a separate 2,048-token adaptation after observing a maximum prompt-plus-output reserve of 1,802 tokens. The separate `small-context-v1` profile and [fresh selection](processbench/selection-small-context.json) are implemented; live preflight and execution are pending. See the [implementation guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) for the current commands. Do not change settings and resume the original manifest, interpret unseen cases as wrong predictions, or relax resource/calibration gates.
 
-## ProcessBench local execution
+## Original ProcessBench local execution (reproduction reference)
 
 The [execution addendum](PROCESSBENCH_EXECUTION.md) implements the bounded plan for the currently audited Mac/Ollama installation. The runner requires a committed protocol, an exact-token preflight report, and pinned source files. It refuses evaluation unless calibration passes. Do not reuse this machine-specific preflight on another computer or runtime version.
 
@@ -43,7 +43,7 @@ Read the calibration summary before invoking `evaluation` with the same paths; t
 
 The reviewed [SSH transport](processbench_remote.py) uses an isolated target loopback service and sends Python code and input data through stdin and process memory. Research files and artifacts stay on the controller. The [session rules](PROCESSBENCH_M4_SESSION.md) describe service ownership, fixed target/runtime checks, a 90-second model-request deadline, a 100-second transport cap, and a 150-second reserve within the unchanged 90-minute cohort budget.
 
-Both September 21 sessions are closed after resource stops. Preserve the first failed preflight and the second passed preflight with its two partial calibration records; **do not resume either closed session or change its settings**. For a separately documented future session with the owned service prepared under those rules, the controller CLI is:
+Both September 21 sessions are closed after resource stops. Preserve the first failed preflight and the second passed preflight with its two partial calibration records; **do not resume either closed session or change its settings**. The following original-profile commands are retained as reproduction references. Use the [smaller-context guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) for the next planned configuration:
 
 ```sh
 python3 processbench_remote.py create-preflight --data runs/processbench-source/gsm8k.json --prompt runs/processbench-source/critique_template.txt --provenance processbench/provenance.json --selection processbench/selection.json --preflight runs/NEW-SESSION/preflight.json --out runs/NEW-SESSION/subject-run
@@ -64,7 +64,7 @@ python3 verification_only.py run --model qwen3-vl:2b-instruct --out runs/qwen3vl
 python3 verification_only.py summarize --out runs/llama32-verification-only-v1
 ```
 
-Run models sequentially. These commands document the completed screen. The runner freezes thirty unique jobs per model, locks its output directory, preserves raw results atomically, and rejects changed code, dependencies, protocol, data or model settings on resume. Its summary separates lexical parsing, completed usable labels, truncation, primary valid/invalid performance and the secondary invalid/correct diagnostic. Missing or truncated outputs cannot pass as correct labels. The current integrated suite contains 109 tests, including 61 ProcessBench checks.
+Run models sequentially. These commands document the completed screen. The runner freezes thirty unique jobs per model, locks its output directory, preserves raw results atomically, and rejects changed code, dependencies, protocol, data or model settings on resume. Its summary separates lexical parsing, completed usable labels, truncation, primary valid/invalid performance and the secondary invalid/correct diagnostic. Missing or truncated outputs cannot pass as correct labels. The current integrated suite contains 127 tests, including 79 ProcessBench checks.
 
 ## Earlier freeform pilot: requirements and execution
 
