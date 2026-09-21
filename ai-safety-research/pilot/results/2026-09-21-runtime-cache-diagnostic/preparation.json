@@ -1,0 +1,47 @@
+{
+  "status": "dispatching",
+  "purpose": "runtime-cache-diagnostic-v1",
+  "benchmark_admission": false,
+  "git_commit": "22083d1ae1dd9bb4a124f6c08d834cbb4f63cfb1",
+  "transport": {
+    "profile": "runtime-cache-diagnostic-v1",
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 1,
+      "num_thread": 2
+    },
+    "profile_sha256": {
+      "diagnostic_protocol": "f7e6f16572ccf31dc13d4ed77ff05fd9356e9498c4baefb0863435e6517a724c",
+      "diagnostic_runner": "36bea81c994a1f1a30b1b9ea88d66d80edc65d594fc2f4812dc2a9bd93e14715",
+      "record_io": "1b420ae2f454ff551b648427a407ee6f4f3df3e824cb7e0d08d7a2addeaec36e",
+      "atomic_io": "e9f57d4bb7f7141534108f69212eb2490c744ffb3a5577e8635ccf2fc3d07fa5"
+    },
+    "kind": "ssh-stdin-memory-only-v1",
+    "target": "prabs@100.74.220.25",
+    "api_port": 11435,
+    "connector_sha256": "7b1cd8de32e855cfb229efc87e7bbc7801bf15b8ed7f68e5357d4d5e065e8150",
+    "worker_sha256": "4981c9a403e2520ebb35943ce5f1bf38fec55bbf4812b4ec7d082c697c06165f",
+    "source_sha256": {
+      "processbench_preflight": "2569aefc92879b6a02ab06aa100d226fb993aff4580f545ea6cd5c08ba53b99f",
+      "processbench_resources": "22aac93f9718fcf6fa99689e843391574536c45a5dcd7a38213328483101649b",
+      "stream": "a4374e5ada23e1e2e264d36c933c433cca40d707e9db38a32e4360bd5bf82c60"
+    },
+    "session_policy_sha256": "ce2e4e8fb89a19ea9a46ffa3e77601229abf159fed4bde42d895d01955a43406",
+    "session_helper_sha256": "59cdc7d1177a5564a98cb7108735e06b5613e1f012157b8f7985d928d61fcae1",
+    "http_deadline_seconds": 90,
+    "worker_deadline_seconds": 95,
+    "ssh_subject_deadline_seconds": 100,
+    "reserve_seconds": 150
+  },
+  "budget_started_unix": 1789968430.0362399,
+  "service_evidence": {
+    "source_log_sha256": "e57d0e36a58a080032b0ca50895282eec49f12648d3175a034dfdce7d400b026",
+    "observed_bytes": 2793,
+    "owned_pid": 50944,
+    "cache_disabled_observed": false,
+    "budget_started_unix": 1789968430.0362399
+  },
+  "jobs_sha256": "5898844d9fbfd0e1290d7263a7886d90377f1d24431f27d3ecf20ce8581017d0"
+}

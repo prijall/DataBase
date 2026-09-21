@@ -39,3 +39,5 @@ The existing [paper outline](../PAPER_OUTLINE.md) tracks outstanding methodologi
 | [M4 preflight and cleanup](../pilot/results/2026-09-21-processbench-m4/README.md) | Section 4.7: resource stop, no subject outcomes, closed session |
 | [Second M4 session](../pilot/results/2026-09-21-processbench-m4-session2/README.md) | Section 4.8: passed token preflight, two observed calibration responses, resource stop |
 | [Smaller-context M4 session](../pilot/results/2026-09-21-processbench-small-context/README.md) | Section 4.9: six partial calibration responses and memory-pressure stop |
+
+The subsequent [cache-disabled runtime diagnostic](../pilot/results/2026-09-21-runtime-cache-diagnostic/README.md) generated zero answers and is reported separately in Section 4.10. The draft total remains 240. Normal office workload is a firm constraint, and the next work is offline task design and human review.

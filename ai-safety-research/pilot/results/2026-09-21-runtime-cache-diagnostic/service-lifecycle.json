@@ -1,0 +1,40 @@
+{
+  "full_controller_log_sha256": "eabae18c7828580508e9f79839db93cad96a37b4c5235b5efb437362bfa7ec5c",
+  "events": [
+    {
+      "event": "local_start",
+      "host": "prabs@100.74.220.25",
+      "budget_started_unix": 1789968430.0362399,
+      "remote_code_sha256": "4b8b67e27dd0ac6b837f27c69e7d4997c25c2ade0632b003351893179f3fc5ee",
+      "cache_ram_mib": 0,
+      "launcher_file_sha256": "59cdc7d1177a5564a98cb7108735e06b5613e1f012157b8f7985d928d61fcae1"
+    },
+    {
+      "event": "service_environment",
+      "cache_ram_override": 0,
+      "allowlisted_environment": {
+        "LLAMA_ARG_CACHE_RAM": "0"
+      },
+      "launcher_source_sha256": "75ecd4c9948376df2bdcd6af1b8cfce78730c2a784eff85df2dc93a96aec2bf4"
+    },
+    {
+      "event": "spawned",
+      "pid": 50944,
+      "pgid": 50944,
+      "watchdog_seconds": 600,
+      "readiness": "not_yet_checked",
+      "budget_started_unix": 1789968430.0362399
+    },
+    {
+      "event": "cleanup",
+      "pid": 50944,
+      "reason": "requested_stop",
+      "returncode": 0,
+      "owned_group_absent": true
+    },
+    {
+      "event": "local_end",
+      "ssh_returncode": 0
+    }
+  ]
+}

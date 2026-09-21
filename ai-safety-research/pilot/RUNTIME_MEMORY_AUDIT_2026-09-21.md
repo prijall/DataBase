@@ -2,6 +2,8 @@
 
 **Scope:** offline inspection of archived logs and pinned public source. No M4 connection, model load, generation, runtime change, binary replacement, or experiment retry was performed for this audit. Public source copies were saved only in the controller's ignored `runs/runtime-memory-source/` directory.
 
+**Subsequent execution:** the separately frozen [diagnostic](results/2026-09-21-runtime-cache-diagnostic/README.md) confirmed cache-disabled initialization, but resource admission failed before generation. The desk-review findings below preserve the pre-execution reasoning; live outcome and limits are in that archive.
+
 ## Finding
 
 The installed backend has a supported environment control, **`LLAMA_ARG_CACHE_RAM=0`**, that disables its separate prompt-state RAM cache. A positive integer sets its MiB limit. The pinned Ollama launcher inherits its own environment when starting that backend and does not pass a competing cache-size argument. Therefore, setting this variable **in the owned temporary Ollama service's environment before startup** is a source-supported way to test disabling that cache without installing software, changing weights, or saving research files on the M4. This propagation is established from source; it has **not been tested live here**. It is a llama.cpp backend control inherited through this pinned Ollama version, not an Ollama HTTP request option or a promise about other versions. [Backend option](https://github.com/ggml-org/llama.cpp/blob/0f3a71be15af836d277c9f918adfafb45732677e/common/arg.cpp#L1712-L1719), [Ollama launch and environment](https://github.com/ollama/ollama/blob/d8ab4b4f0ca24b51d3a46b3bf4f462e58ce66b1f/llm/llama_server.go#L339-L477).
@@ -35,7 +37,7 @@ The pinned server exposes the first three backend cache controls in its [referen
 
 Disabling saved prompt states should cause more recomputation and change latency/memory behavior; it does not change weights, supplied text, or gold labels. It must nevertheless be treated as a new runtime configuration. Backend documentation warns that prompt reuse can change numerical results because different batch shapes need not produce bit-identical logits. Fixed seed and temperature zero therefore do not justify promising identical outputs between cache settings. Active-slot reuse can remain enabled even when the separate RAM cache is absent. [Numerical caveat](https://github.com/ggml-org/llama.cpp/blob/0f3a71be15af836d277c9f918adfafb45732677e/tools/server/README.md#L589), [conditional save/load path](https://github.com/ggml-org/llama.cpp/blob/0f3a71be15af836d277c9f918adfafb45732677e/tools/server/server-context.cpp#L1626-L1643).
 
-## Minimal separate diagnostic proposal — not implemented or run
+## Original diagnostic proposal — subsequently implemented under a separate protocol
 
 First obtain a separate decision to implement a **runtime diagnostic**, with no ProcessBench IDs or scientific accuracy gate. Do not reuse the failed calibration report, budget, or evaluation reservation.
 

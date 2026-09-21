@@ -1,0 +1,23 @@
+{
+  "controller_observed_unix": 1789968208.567837,
+  "observation": {
+    "resources": {
+      "captured_unix": 1789968208.572756,
+      "pressure_level": 1,
+      "free_percent": 44,
+      "swap_used_bytes": 8894545920,
+      "swapouts_bytes": 38187892736
+    },
+    "ports": {
+      "11434": {
+        "listening": false
+      },
+      "11435": {
+        "listening": false
+      }
+    },
+    "hardware": "Apple M4",
+    "memory_bytes": 17179869184
+  },
+  "model_requests": 0
+}
