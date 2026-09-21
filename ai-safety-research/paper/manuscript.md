@@ -54,6 +54,8 @@ Our [prospective local plan](../pilot/PROCESSBENCH_PLAN.md) reserves 20 calibrat
 
 The planned installed Llama-3.2 3B run uses 1,024 generated tokens and an 8,192-token total context, subject to resource and token preflights; the published ordinary greedy allowance is 8,192 generated tokens. Model, quantization, backend, sample and generation changes make this a feasibility adaptation, not replication of a published score. Calibration must yield at least 18/20 normally completed in-range predictions and at least 8/10 completion-gated exact matches per class before evaluation. Official-compatible and completion-gated scores will remain distinct. No ProcessBench subject inference has run, and this plan contributes no results to the tables below. The [execution addendum](../pilot/PROCESSBENCH_EXECUTION.md) specifies exact template/token preflight, relative swap and memory-pressure stops, durable attempt logging and a 90-second absolute request deadline within the 90-minute cohort budget.
 
+The prospective [M4 session addendum](../pilot/PROCESSBENCH_M4_SESSION.md) specifies a second execution target after the shared-M1 resource stop. Read-only inspection verified an Apple M4 with 16 GiB RAM and matching installed model/tokenizer identities. Scripts and request data are supplied through memory over SSH, with all research records stored on the controller. Resource measurements execute on the M4. The selected cases, prompts, model generation settings and calibration thresholds are unchanged; transport deadlines and isolated service startup are documented before subject inference. This setup description is not a successful M4 preflight or a model result.
+
 ## 4. Results
 
 ### 4.1 Earlier elicitation screens

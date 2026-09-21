@@ -16,6 +16,7 @@ import urllib.request
 
 import processbench_resources
 
+API_PORT = 11434
 VERSION = '0.34.0'
 MODEL = 'llama3.2:3b'
 MODEL_DIGEST = 'a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72'
@@ -64,7 +65,7 @@ def request_json(port, path, payload=None, timeout=60):
     """Fixed loopback; proxies/redirects disabled; only non-generating endpoints."""
     if type(port) is not int or not 1 <= port <= 65535:
         raise ValueError('Invalid loopback port')
-    if port == 11434:
+    if port == API_PORT:
         if path not in ('/api/version', '/api/tags', '/api/show', '/api/ps', '/api/chat'):
             raise ValueError('Endpoint refused')
         if path == '/api/chat' and (not isinstance(payload, dict) or payload.get('_debug_render_only') is not True):
@@ -129,14 +130,14 @@ def validate_jobs(jobs):
 def inspect_identity(model, options):
     if model != MODEL or options != OPTIONS:
         raise ValueError('Only the fixed model/configuration is supported')
-    version = request_json(11434, '/api/version').get('version')
+    version = request_json(API_PORT, '/api/version').get('version')
     if version != VERSION:
         raise ValueError('Unaudited server version; refusing even debug requests')
-    tags = request_json(11434, '/api/tags')['models']
+    tags = request_json(API_PORT, '/api/tags')['models']
     matches = [entry for entry in tags if entry.get('name') == model]
     if len(matches) != 1 or matches[0].get('digest') != MODEL_DIGEST or matches[0].get('remote_host'):
         raise ValueError('Installed model identity mismatch')
-    shown = request_json(11434, '/api/show', {'model': model})
+    shown = request_json(API_PORT, '/api/show', {'model': model})
     if shown.get('remote_host') or shown.get('remote_model') or shown.get('system') or shown.get('messages'):
         raise ValueError('Remote model or additional model instructions refused')
     template = shown.get('template')
@@ -158,7 +159,7 @@ def inspect_identity(model, options):
 
 
 def loaded_state(require_loaded=False):
-    models = request_json(11434, '/api/ps')['models']
+    models = request_json(API_PORT, '/api/ps')['models']
     if len(models) > 1 or any(entry.get('name') != MODEL or entry.get('digest') != MODEL_DIGEST for entry in models):
         raise ValueError('Another model is resident; shared workload must not be displaced')
     if require_loaded and (not models or type(models[0].get('context_length')) is not int
@@ -194,7 +195,7 @@ def discover_runner(model_path):
         port = value('--port')
         if port is None or not port.isdigit() or value('--host') not in (None, '127.0.0.1', 'localhost'):
             raise ValueError('Cannot safely identify runner loopback port')
-        if int(port) == 11434:
+        if int(port) == API_PORT:
             raise ValueError('Runner port conflicts with public API')
         found.append({'pid': int(fields[0]), 'port': int(port), 'parent_pid': int(fields[1])})
     if len(found) != 1:
@@ -214,7 +215,7 @@ def verify_runtime_idle(report, model):
     """Refresh exact runner discovery; no cached-port assumptions or model load."""
     if model != MODEL or report.get('model_digest') != MODEL_DIGEST:
         raise ValueError('Wrong runtime model')
-    if request_json(11434, '/api/version').get('version') != VERSION:
+    if request_json(API_PORT, '/api/version').get('version') != VERSION:
         raise ValueError('Runtime server version changed')
     if file_hash(BINARY) != BINARY_SHA256 or file_hash(LIBRARY) != LIBRARY_SHA256:
         raise ValueError('Runtime binary/library changed')
@@ -257,7 +258,7 @@ def run_checks(jobs, model, options, baseline, budget_started):
         if runner:
             ensure_idle(runner['port'])
         try:
-            response = request_json(11434, '/api/chat', {
+            response = request_json(API_PORT, '/api/chat', {
                 'model': model, 'messages': job['messages'], 'stream': False,
                 '_debug_render_only': True, 'truncate': False, 'shift': False,
                 'options': options, 'keep_alive': '30s'}, timeout=60)
@@ -292,7 +293,7 @@ def run_checks(jobs, model, options, baseline, budget_started):
 
 
 def bindings(jobs, model, options):
-    return {'schema': SCHEMA, 'jobs_sha256': digest(jobs), 'model': model, 'options': options,
+    return {'schema': SCHEMA, 'api_port': API_PORT, 'jobs_sha256': digest(jobs), 'model': model, 'options': options,
             'sources': SOURCE, 'preflight_code_sha256': file_hash(__file__),
             'resource_code_sha256': file_hash(processbench_resources.__file__)}
 
