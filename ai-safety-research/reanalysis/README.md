@@ -2,6 +2,8 @@
 
 Reconstruct the published SycoBench-600 camera-ready table using a local, standard-library CPU analysis. This is a reproduction of released outputs, not new model inference.
 
+**Latest result:** [Stage 1 passed](results/2026-09-21-sycobench-reproduction/README.md): 133 numeric values and 35 manuscript display cells matched; 8.4 seconds, about 313 MiB peak memory. Historical dataset-hash provenance remains qualified.
+
 - [Frozen acceptance protocol](REPRODUCTION_PROTOCOL.md)
 - [Source and measurement audit](SOURCE_METHODS_AUDIT.md)
 - [Pinned release tree](../public-data/sycobench-v1.0.0-tree.json)
@@ -22,7 +24,7 @@ python3 -B ai-safety-research/reanalysis/reproduce.py \
   --out ai-safety-research/pilot/runs/sycobench-reproduction-check
 ```
 
-Use a fresh output directory: existing results are never overwritten. The archived run uses an external 600-second subprocess timeout; apply the same bound when rerunning. `main_results.csv` and `comparison.json` hold numeric reproduction, `validation.json` holds integrity checks, `analysis.json` records population/denominators, `provenance.json` binds inputs and implementation, and `runtime.json` separately records measured resource use.
+Use a fresh output directory: existing results are never overwritten. The archived run uses an external 600-second subprocess timeout; apply the same bound when rerunning. `main_results.csv` and `comparison.json` hold numeric reproduction, `validation.json` holds integrity checks, `analysis.json` records population/denominators, `provenance.json` binds inputs and implementation, and `runtime.json` separately records measured resource use. `status.json` distinguishes numerical agreement from audit acceptance.
 
 ## Attribution
 

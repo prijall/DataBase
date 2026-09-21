@@ -2,6 +2,8 @@
 
 September 21, 2026. **Artifact feasibility established for one log; scientific contribution unverified.** This is the next bounded offline work item. It uses published model responses, ordinary CPU computation and no inference API, M4 session, downloads of weights or office data.
 
+**Update:** Stage 1 is now [complete](reanalysis/results/2026-09-21-sycobench-reproduction/README.md). The text below preserves the initial one-log feasibility assessment and proposed stages.
+
 ## Question worth checking
 
 How stable are reported comparisons when unsuccessful answer formatting, explicit adoption of a false suggestion, and unavailable correction responses are kept distinct on a fixed question population?
