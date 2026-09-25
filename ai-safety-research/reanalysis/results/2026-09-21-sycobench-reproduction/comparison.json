@@ -1,0 +1,1458 @@
+{
+  "absolute_tolerance": 1e-12,
+  "all_numeric_fields_match": true,
+  "all_percentage_displays_match": true,
+  "cells": [
+    {
+      "absolute_difference": 0,
+      "actual": 1665,
+      "column": "n_runs",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": null,
+      "published": 1665
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1214,
+      "column": "nC",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": null,
+      "published": 1214
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 451,
+      "column": "nW",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": null,
+      "published": 451
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 451,
+      "column": "nW_eff",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": null,
+      "published": 451
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.7291291291291291,
+      "column": "acc",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.7291291291291291
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.2852852852852853,
+      "column": "pra_all",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.2852852852852853
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5927927927927928,
+      "column": "pra_mean",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.5927927927927928
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.36436024162548053,
+      "column": "syco",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.36436024162548053
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.33221005335579895,
+      "column": "syco_ci_lo",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.33221005335579895
+    },
+    {
+      "absolute_difference": 1.1102230246251565e-16,
+      "actual": 0.3960558751027116,
+      "column": "syco_ci_hi",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.3960558751027115
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.0022172949002217295,
+      "column": "stub_no_change",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.0022172949002217295
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.0,
+      "column": "stub_ci_lo",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.0
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.007177033492822967,
+      "column": "stub_ci_hi",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.007177033492822967
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.9977827050997783,
+      "column": "update",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.9977827050997783
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.47611202635914335,
+      "column": "wrong_flip",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.47611202635914335
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5216706787406349,
+      "column": "selectivity",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.5216706787406349
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.24984984984984984,
+      "column": "pra_ci_lo",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.24984984984984984
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.3219219219219219,
+      "column": "pra_ci_hi",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.3219219219219219
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.960960960960961,
+      "column": "exact_one_letter",
+      "matches": true,
+      "model": "anthropic/claude-3.5-haiku",
+      "one_decimal_percent_matches": true,
+      "published": 0.960960960960961
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1665,
+      "column": "n_runs",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": null,
+      "published": 1665
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1546,
+      "column": "nC",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": null,
+      "published": 1546
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 119,
+      "column": "nW",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": null,
+      "published": 119
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 107,
+      "column": "nW_eff",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": null,
+      "published": 107
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.9285285285285285,
+      "column": "acc",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.9285285285285285
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5741741741741742,
+      "column": "pra_all",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.5741741741741742
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.775975975975976,
+      "column": "pra_mean",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.775975975975976
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.19383354894351013,
+      "column": "syco",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.19383354894351013
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.1732899022801303,
+      "column": "syco_ci_lo",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.1732899022801303
+    },
+    {
+      "absolute_difference": 2.7755575615628914e-17,
+      "actual": 0.21563573883161513,
+      "column": "syco_ci_hi",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.2156357388316151
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.17757009345794392,
+      "column": "stub_no_change",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.17757009345794392
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.07142857142857142,
+      "column": "stub_ci_lo",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.07142857142857142
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.3,
+      "column": "stub_ci_hi",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.3
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.822429906542056,
+      "column": "update",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.822429906542056
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.19404915912031048,
+      "column": "wrong_flip",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.19404915912031048
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.6283807474217455,
+      "column": "selectivity",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.6283807474217455
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5387387387387388,
+      "column": "pra_ci_lo",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.5387387387387388
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.609009009009009,
+      "column": "pra_ci_hi",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.609009009009009
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.6018018018018018,
+      "column": "exact_one_letter",
+      "matches": true,
+      "model": "anthropic/claude-sonnet-4",
+      "one_decimal_percent_matches": true,
+      "published": 0.6018018018018018
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1665,
+      "column": "n_runs",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": null,
+      "published": 1665
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1587,
+      "column": "nC",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": null,
+      "published": 1587
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 78,
+      "column": "nW",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": null,
+      "published": 78
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 78,
+      "column": "nW_eff",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": null,
+      "published": 78
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.9531531531531532,
+      "column": "acc",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.9531531531531532
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.8168168168168168,
+      "column": "pra_all",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.8168168168168168
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.9009009009009009,
+      "column": "pra_mean",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.9009009009009009
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.07099348876286495,
+      "column": "syco",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.07099348876286495
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.057239057239057235,
+      "column": "syco_ci_lo",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.057239057239057235
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.08611111111111112,
+      "column": "syco_ci_hi",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.08611111111111112
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.41025641025641024,
+      "column": "stub_no_change",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.41025641025641024
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.26126126126126126,
+      "column": "stub_ci_lo",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.26126126126126126
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5740740740740741,
+      "column": "stub_ci_hi",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.5740740740740741
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5897435897435898,
+      "column": "update",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.5897435897435898
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.04662885948330183,
+      "column": "wrong_flip",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.04662885948330183
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5431147302602879,
+      "column": "selectivity",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.5431147302602879
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.7861861861861862,
+      "column": "pra_ci_lo",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.7861861861861862
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.8456456456456456,
+      "column": "pra_ci_hi",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.8456456456456456
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.9981981981981982,
+      "column": "exact_one_letter",
+      "matches": true,
+      "model": "google/gemini-2.5-flash",
+      "one_decimal_percent_matches": true,
+      "published": 0.9981981981981982
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1665,
+      "column": "n_runs",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": null,
+      "published": 1665
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1387,
+      "column": "nC",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": null,
+      "published": 1387
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 278,
+      "column": "nW",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": null,
+      "published": 278
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 278,
+      "column": "nW_eff",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": null,
+      "published": 278
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.833033033033033,
+      "column": "acc",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.833033033033033
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.648048048048048,
+      "column": "pra_all",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.648048048048048
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.7831831831831831,
+      "column": "pra_mean",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.7831831831831831
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.14275414563806776,
+      "column": "syco",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.14275414563806776
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.11875746714456392,
+      "column": "syco_ci_lo",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.11875746714456392
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.1688468992248062,
+      "column": "syco_ci_hi",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.1688468992248062
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.19784172661870503,
+      "column": "stub_no_change",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.19784172661870503
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.13857677902621723,
+      "column": "stub_ci_lo",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.13857677902621723
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.2625482625482625,
+      "column": "stub_ci_hi",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.2625482625482625
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.7985611510791367,
+      "column": "update",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.7985611510791367
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.0829127613554434,
+      "column": "wrong_flip",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.0829127613554434
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.7156483897236934,
+      "column": "selectivity",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.7156483897236934
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.6072072072072072,
+      "column": "pra_ci_lo",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.6072072072072072
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.6852852852852853,
+      "column": "pra_ci_hi",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 0.6852852852852853
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 1.0,
+      "column": "exact_one_letter",
+      "matches": true,
+      "model": "gpt-4o",
+      "one_decimal_percent_matches": true,
+      "published": 1.0
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1665,
+      "column": "n_runs",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": null,
+      "published": 1665
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1317,
+      "column": "nC",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": null,
+      "published": 1317
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 348,
+      "column": "nW",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": null,
+      "published": 348
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 348,
+      "column": "nW_eff",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": null,
+      "published": 348
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.790990990990991,
+      "column": "acc",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.790990990990991
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.2978978978978979,
+      "column": "pra_all",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.2978978978978979
+    },
+    {
+      "absolute_difference": 1.1102230246251565e-16,
+      "actual": 0.6334334334334335,
+      "column": "pra_mean",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.6334334334334334
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.3467476588205518,
+      "column": "syco",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.3467476588205518
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.3210894552723638,
+      "column": "syco_ci_lo",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.3210894552723638
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.37389911929543634,
+      "column": "syco_ci_hi",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.37389911929543634
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.646551724137931,
+      "column": "stub_no_change",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.646551724137931
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5910364145658263,
+      "column": "stub_ci_lo",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.5910364145658263
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.6982248520710059,
+      "column": "stub_ci_hi",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.6982248520710059
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.3160919540229885,
+      "column": "update",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.3160919540229885
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.0387243735763098,
+      "column": "wrong_flip",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.0387243735763098
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.2773675804466787,
+      "column": "selectivity",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.2773675804466787
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.26366366366366367,
+      "column": "pra_ci_lo",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.26366366366366367
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.3321321321321321,
+      "column": "pra_ci_hi",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 0.3321321321321321
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 1.0,
+      "column": "exact_one_letter",
+      "matches": true,
+      "model": "gpt-4o-mini",
+      "one_decimal_percent_matches": true,
+      "published": 1.0
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1665,
+      "column": "n_runs",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": null,
+      "published": 1665
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1127,
+      "column": "nC",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": null,
+      "published": 1127
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 538,
+      "column": "nW",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": null,
+      "published": 538
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 371,
+      "column": "nW_eff",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": null,
+      "published": 371
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.6768768768768769,
+      "column": "acc",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.6768768768768769
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5813813813813814,
+      "column": "pra_all",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.5813813813813814
+    },
+    {
+      "absolute_difference": 2.220446049250313e-16,
+      "actual": 0.6878878878878878,
+      "column": "pra_mean",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.687887887887888
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.059154096421177166,
+      "column": "syco",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.059154096421177166
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.04642857142857143,
+      "column": "syco_ci_lo",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.04642857142857143
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.07223208999407933,
+      "column": "syco_ci_hi",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.07223208999407933
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.4582210242587601,
+      "column": "stub_no_change",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.4582210242587601
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.38480392156862747,
+      "column": "stub_ci_lo",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.38480392156862747
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5306122448979592,
+      "column": "stub_ci_hi",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.5306122448979592
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.4339622641509434,
+      "column": "update",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.4339622641509434
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.09937888198757763,
+      "column": "wrong_flip",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.09937888198757763
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.3345833821633658,
+      "column": "selectivity",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.3345833821633658
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5411411411411411,
+      "column": "pra_ci_lo",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.5411411411411411
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.6204204204204204,
+      "column": "pra_ci_hi",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.6204204204204204
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.42582582582582584,
+      "column": "exact_one_letter",
+      "matches": true,
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "one_decimal_percent_matches": true,
+      "published": 0.42582582582582584
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1665,
+      "column": "n_runs",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": null,
+      "published": 1665
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 1053,
+      "column": "nC",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": null,
+      "published": 1053
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 612,
+      "column": "nW",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": null,
+      "published": 612
+    },
+    {
+      "absolute_difference": 0,
+      "actual": 594,
+      "column": "nW_eff",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": null,
+      "published": 594
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.6324324324324324,
+      "column": "acc",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.6324324324324324
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.1735735735735736,
+      "column": "pra_all",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.1735735735735736
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.4006006006006006,
+      "column": "pra_mean",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.4006006006006006
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.5052231718898385,
+      "column": "syco",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.5052231718898385
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.46716464363523186,
+      "column": "syco_ci_lo",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.46716464363523186
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.543728602552132,
+      "column": "syco_ci_hi",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.543728602552132
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.17003367003367004,
+      "column": "stub_no_change",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.17003367003367004
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.135678391959799,
+      "column": "stub_ci_lo",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.135678391959799
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.20993589743589744,
+      "column": "stub_ci_hi",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.20993589743589744
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.7558922558922558,
+      "column": "update",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.7558922558922558
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.6220322886989553,
+      "column": "wrong_flip",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.6220322886989553
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.1338599671933005,
+      "column": "selectivity",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.1338599671933005
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.14594594594594595,
+      "column": "pra_ci_lo",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.14594594594594595
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.2006006006006006,
+      "column": "pra_ci_hi",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.2006006006006006
+    },
+    {
+      "absolute_difference": 0.0,
+      "actual": 0.8396396396396396,
+      "column": "exact_one_letter",
+      "matches": true,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "one_decimal_percent_matches": true,
+      "published": 0.8396396396396396
+    }
+  ],
+  "clean_reproduction": true,
+  "integer_rule": "exact",
+  "manuscript": {
+    "all_match": true,
+    "cells": [
+      {
+        "column": "acc",
+        "computed_display": "72.9",
+        "matches": true,
+        "model": "anthropic/claude-3.5-haiku",
+        "printed_display": "72.9"
+      },
+      {
+        "column": "pra_all",
+        "computed_display": "28.5",
+        "matches": true,
+        "model": "anthropic/claude-3.5-haiku",
+        "printed_display": "28.5"
+      },
+      {
+        "column": "syco_with_ci",
+        "computed_display": "36.4 [33.2--39.6]",
+        "matches": true,
+        "model": "anthropic/claude-3.5-haiku",
+        "printed_display": "36.4 [33.2--39.6]"
+      },
+      {
+        "column": "stub_with_ci",
+        "computed_display": "0.2 [0.0--0.7]",
+        "matches": true,
+        "model": "anthropic/claude-3.5-haiku",
+        "printed_display": "0.2 [0.0--0.7]"
+      },
+      {
+        "column": "selectivity",
+        "computed_display": "52.2",
+        "matches": true,
+        "model": "anthropic/claude-3.5-haiku",
+        "printed_display": "52.2"
+      },
+      {
+        "column": "acc",
+        "computed_display": "92.9",
+        "matches": true,
+        "model": "anthropic/claude-sonnet-4",
+        "printed_display": "92.9"
+      },
+      {
+        "column": "pra_all",
+        "computed_display": "57.4",
+        "matches": true,
+        "model": "anthropic/claude-sonnet-4",
+        "printed_display": "57.4"
+      },
+      {
+        "column": "syco_with_ci",
+        "computed_display": "19.4 [17.3--21.6]",
+        "matches": true,
+        "model": "anthropic/claude-sonnet-4",
+        "printed_display": "19.4 [17.3--21.6]"
+      },
+      {
+        "column": "stub_with_ci",
+        "computed_display": "17.8 [7.1--30.0]",
+        "matches": true,
+        "model": "anthropic/claude-sonnet-4",
+        "printed_display": "17.8 [7.1--30.0]"
+      },
+      {
+        "column": "selectivity",
+        "computed_display": "62.8",
+        "matches": true,
+        "model": "anthropic/claude-sonnet-4",
+        "printed_display": "62.8"
+      },
+      {
+        "column": "acc",
+        "computed_display": "95.3",
+        "matches": true,
+        "model": "google/gemini-2.5-flash",
+        "printed_display": "95.3"
+      },
+      {
+        "column": "pra_all",
+        "computed_display": "81.7",
+        "matches": true,
+        "model": "google/gemini-2.5-flash",
+        "printed_display": "81.7"
+      },
+      {
+        "column": "syco_with_ci",
+        "computed_display": "7.1 [5.7--8.6]",
+        "matches": true,
+        "model": "google/gemini-2.5-flash",
+        "printed_display": "7.1 [5.7--8.6]"
+      },
+      {
+        "column": "stub_with_ci",
+        "computed_display": "41.0 [26.1--57.4]",
+        "matches": true,
+        "model": "google/gemini-2.5-flash",
+        "printed_display": "41.0 [26.1--57.4]"
+      },
+      {
+        "column": "selectivity",
+        "computed_display": "54.3",
+        "matches": true,
+        "model": "google/gemini-2.5-flash",
+        "printed_display": "54.3"
+      },
+      {
+        "column": "acc",
+        "computed_display": "83.3",
+        "matches": true,
+        "model": "gpt-4o",
+        "printed_display": "83.3"
+      },
+      {
+        "column": "pra_all",
+        "computed_display": "64.8",
+        "matches": true,
+        "model": "gpt-4o",
+        "printed_display": "64.8"
+      },
+      {
+        "column": "syco_with_ci",
+        "computed_display": "14.3 [11.9--16.9]",
+        "matches": true,
+        "model": "gpt-4o",
+        "printed_display": "14.3 [11.9--16.9]"
+      },
+      {
+        "column": "stub_with_ci",
+        "computed_display": "19.8 [13.9--26.3]",
+        "matches": true,
+        "model": "gpt-4o",
+        "printed_display": "19.8 [13.9--26.3]"
+      },
+      {
+        "column": "selectivity",
+        "computed_display": "71.6",
+        "matches": true,
+        "model": "gpt-4o",
+        "printed_display": "71.6"
+      },
+      {
+        "column": "acc",
+        "computed_display": "79.1",
+        "matches": true,
+        "model": "gpt-4o-mini",
+        "printed_display": "79.1"
+      },
+      {
+        "column": "pra_all",
+        "computed_display": "29.8",
+        "matches": true,
+        "model": "gpt-4o-mini",
+        "printed_display": "29.8"
+      },
+      {
+        "column": "syco_with_ci",
+        "computed_display": "34.7 [32.1--37.4]",
+        "matches": true,
+        "model": "gpt-4o-mini",
+        "printed_display": "34.7 [32.1--37.4]"
+      },
+      {
+        "column": "stub_with_ci",
+        "computed_display": "64.7 [59.1--69.8]",
+        "matches": true,
+        "model": "gpt-4o-mini",
+        "printed_display": "64.7 [59.1--69.8]"
+      },
+      {
+        "column": "selectivity",
+        "computed_display": "27.7",
+        "matches": true,
+        "model": "gpt-4o-mini",
+        "printed_display": "27.7"
+      },
+      {
+        "column": "acc",
+        "computed_display": "67.7",
+        "matches": true,
+        "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+        "printed_display": "67.7"
+      },
+      {
+        "column": "pra_all",
+        "computed_display": "58.1",
+        "matches": true,
+        "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+        "printed_display": "58.1"
+      },
+      {
+        "column": "syco_with_ci",
+        "computed_display": "5.9 [4.6--7.2]",
+        "matches": true,
+        "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+        "printed_display": "5.9 [4.6--7.2]"
+      },
+      {
+        "column": "stub_with_ci",
+        "computed_display": "45.8 [38.5--53.1]",
+        "matches": true,
+        "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+        "printed_display": "45.8 [38.5--53.1]"
+      },
+      {
+        "column": "selectivity",
+        "computed_display": "33.5",
+        "matches": true,
+        "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+        "printed_display": "33.5"
+      },
+      {
+        "column": "acc",
+        "computed_display": "63.2",
+        "matches": true,
+        "model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "printed_display": "63.2"
+      },
+      {
+        "column": "pra_all",
+        "computed_display": "17.4",
+        "matches": true,
+        "model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "printed_display": "17.4"
+      },
+      {
+        "column": "syco_with_ci",
+        "computed_display": "50.5 [46.7--54.4]",
+        "matches": true,
+        "model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "printed_display": "50.5 [46.7--54.4]"
+      },
+      {
+        "column": "stub_with_ci",
+        "computed_display": "17.0 [13.6--21.0]",
+        "matches": true,
+        "model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "printed_display": "17.0 [13.6--21.0]"
+      },
+      {
+        "column": "selectivity",
+        "computed_display": "13.4",
+        "matches": true,
+        "model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "printed_display": "13.4"
+      }
+    ],
+    "scope": "Main manuscript table only; row and column matched"
+  },
+  "undefined_rule": "matching NaN states; serialized as null"
+}

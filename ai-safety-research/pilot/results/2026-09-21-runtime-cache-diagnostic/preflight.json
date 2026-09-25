@@ -1,0 +1,167 @@
+{
+  "schema": "runtime-cache-diagnostic-preflight-v1",
+  "api_port": 11435,
+  "jobs_sha256": "5898844d9fbfd0e1290d7263a7886d90377f1d24431f27d3ecf20ce8581017d0",
+  "model": "llama3.2:3b",
+  "options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 2048,
+    "num_predict": 1,
+    "num_thread": 2
+  },
+  "sources": {
+    "ollama_commit": "d8ab4b4f0ca24b51d3a46b3bf4f462e58ce66b1f",
+    "llama_cpp_commit": "0f3a71be15af836d277c9f918adfafb45732677e"
+  },
+  "preflight_code_sha256": "2569aefc92879b6a02ab06aa100d226fb993aff4580f545ea6cd5c08ba53b99f",
+  "resource_code_sha256": "22aac93f9718fcf6fa99689e843391574536c45a5dcd7a38213328483101649b",
+  "purpose": "runtime-cache-diagnostic-v1",
+  "benchmark_admission": false,
+  "transport": {
+    "profile": "runtime-cache-diagnostic-v1",
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 1,
+      "num_thread": 2
+    },
+    "profile_sha256": {
+      "diagnostic_protocol": "f7e6f16572ccf31dc13d4ed77ff05fd9356e9498c4baefb0863435e6517a724c",
+      "diagnostic_runner": "36bea81c994a1f1a30b1b9ea88d66d80edc65d594fc2f4812dc2a9bd93e14715",
+      "record_io": "1b420ae2f454ff551b648427a407ee6f4f3df3e824cb7e0d08d7a2addeaec36e",
+      "atomic_io": "e9f57d4bb7f7141534108f69212eb2490c744ffb3a5577e8635ccf2fc3d07fa5"
+    },
+    "kind": "ssh-stdin-memory-only-v1",
+    "target": "prabs@100.74.220.25",
+    "api_port": 11435,
+    "connector_sha256": "7b1cd8de32e855cfb229efc87e7bbc7801bf15b8ed7f68e5357d4d5e065e8150",
+    "worker_sha256": "4981c9a403e2520ebb35943ce5f1bf38fec55bbf4812b4ec7d082c697c06165f",
+    "source_sha256": {
+      "processbench_preflight": "2569aefc92879b6a02ab06aa100d226fb993aff4580f545ea6cd5c08ba53b99f",
+      "processbench_resources": "22aac93f9718fcf6fa99689e843391574536c45a5dcd7a38213328483101649b",
+      "stream": "a4374e5ada23e1e2e264d36c933c433cca40d707e9db38a32e4360bd5bf82c60"
+    },
+    "session_policy_sha256": "ce2e4e8fb89a19ea9a46ffa3e77601229abf159fed4bde42d895d01955a43406",
+    "session_helper_sha256": "59cdc7d1177a5564a98cb7108735e06b5613e1f012157b8f7985d928d61fcae1",
+    "http_deadline_seconds": 90,
+    "worker_deadline_seconds": 95,
+    "ssh_subject_deadline_seconds": 100,
+    "reserve_seconds": 150
+  },
+  "budget_started_unix": 1789968430.0362399,
+  "resource_baseline": {
+    "captured_unix": 1789968456.102987,
+    "pressure_level": 1,
+    "free_percent": 43,
+    "swap_used_bytes": 8886157312,
+    "swapouts_bytes": 38187892736
+  },
+  "status": "blocked",
+  "operations": [
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789968456.103284,
+      "status": "received",
+      "finished_unix": 1789968456.113656
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/version",
+      "started_unix": 1789968456.113844,
+      "status": "received",
+      "finished_unix": 1789968456.114712
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/tags",
+      "started_unix": 1789968456.1148548,
+      "status": "received",
+      "finished_unix": 1789968456.1183
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/show",
+      "started_unix": 1789968456.118459,
+      "status": "received",
+      "finished_unix": 1789968456.2177448
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/ps",
+      "started_unix": 1789968456.237756,
+      "status": "received",
+      "finished_unix": 1789968456.23875
+    },
+    {
+      "port": 11435,
+      "endpoint": "/api/chat",
+      "started_unix": 1789968456.245496,
+      "status": "received",
+      "finished_unix": 1789968461.648524
+    }
+  ],
+  "generation_requests": 0,
+  "runtime_state": "unverified_after_debug_request",
+  "resource_observations": [
+    {
+      "captured_unix": 1789968456.102987,
+      "pressure_level": 1,
+      "free_percent": 43,
+      "swap_used_bytes": 8886157312,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789968456.237408,
+      "pressure_level": 1,
+      "free_percent": 43,
+      "swap_used_bytes": 8886157312,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789968456.245182,
+      "pressure_level": 1,
+      "free_percent": 43,
+      "swap_used_bytes": 8886157312,
+      "swapouts_bytes": 38187892736
+    },
+    {
+      "captured_unix": 1789968461.672392,
+      "pressure_level": 2,
+      "free_percent": 19,
+      "swap_used_bytes": 8886157312,
+      "swapouts_bytes": 38187892736
+    }
+  ],
+  "tokens": {},
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "server_version": "0.34.0",
+  "template_sha256": "966de95ca8a62200913e3f8bfbf84c8494536f1b94b49166851e76644e966396",
+  "parameters_sha256": "2801e61a8848e505a6e20beeaea63cca1600200f6720e5f916ba7d6da5c3ba39",
+  "model_path": "/Users/prabs/.ollama/models/blobs/sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff",
+  "model_details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "llama",
+    "families": [
+      "llama"
+    ],
+    "parameter_size": "3.2B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 131072,
+    "embedding_length": 3072
+  },
+  "binary_sha256": "12a8bd0922404bb941fcd4f3fb56ea32251acfdd11e6af8aa99c8703557c23d6",
+  "library_sha256": "207fecc90bd3279588ce08c3cfef690d914317d30eb91d07a359881b3d4fb6ff",
+  "reason": "ValueError: Resource guard: memory pressure is not normal; memory free percentage below 20",
+  "finished_unix": 1789968461.6725419,
+  "operation_counts": {
+    "/api/chat": 1,
+    "/api/ps": 2,
+    "/api/show": 1,
+    "/api/tags": 1,
+    "/api/version": 1
+  }
+}

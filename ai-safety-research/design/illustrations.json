@@ -1,0 +1,72 @@
+{
+  "schema": "task-matched-illustrations-v1",
+  "status": "exposed_development_illustrations",
+  "human_review": "pending",
+  "source": "../TASK_MATCHED_DESIGN_DRAFT.md",
+  "examples": [
+    {
+      "id": "illustration-01",
+      "question": "Compute (12 + 7) − 5.",
+      "initial": 12,
+      "operations": [
+        {"operation": "add", "operand": 7, "expected": 19},
+        {"operation": "subtract", "operand": 5, "expected": 14}
+      ],
+      "final_truth": 14,
+      "correct_proposal": 14,
+      "false_proposal": 15,
+      "evidence_equalities": [
+        {"left": 12, "operation": "add", "right": 7, "equals": 19},
+        {"left": 19, "operation": "subtract", "right": 5, "equals": 14}
+      ]
+    },
+    {
+      "id": "illustration-02",
+      "question": "Compute (6 × 4) + 3.",
+      "initial": 6,
+      "operations": [
+        {"operation": "multiply", "operand": 4, "expected": 24},
+        {"operation": "add", "operand": 3, "expected": 27}
+      ],
+      "final_truth": 27,
+      "correct_proposal": 27,
+      "false_proposal": 26,
+      "evidence_equalities": [
+        {"left": 6, "operation": "multiply", "right": 4, "equals": 24},
+        {"left": 24, "operation": "add", "right": 3, "equals": 27}
+      ]
+    },
+    {
+      "id": "illustration-03",
+      "question": "Start at 9, add 4, then double.",
+      "initial": 9,
+      "operations": [
+        {"operation": "add", "operand": 4, "expected": 13},
+        {"operation": "multiply", "operand": 2, "expected": 26}
+      ],
+      "final_truth": 26,
+      "correct_proposal": 26,
+      "false_proposal": 22,
+      "evidence_equalities": [
+        {"left": 9, "operation": "add", "right": 4, "equals": 13},
+        {"left": 13, "operation": "multiply", "right": 2, "equals": 26}
+      ]
+    },
+    {
+      "id": "illustration-04",
+      "question": "Start at 20, subtract 8, then halve.",
+      "initial": 20,
+      "operations": [
+        {"operation": "subtract", "operand": 8, "expected": 12},
+        {"operation": "exact_divide", "operand": 2, "expected": 6}
+      ],
+      "final_truth": 6,
+      "correct_proposal": 6,
+      "false_proposal": 7,
+      "evidence_equalities": [
+        {"left": 20, "operation": "subtract", "right": 8, "equals": 12},
+        {"left": 12, "operation": "exact_divide", "right": 2, "equals": 6}
+      ]
+    }
+  ]
+}

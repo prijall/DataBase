@@ -10,7 +10,7 @@ import processbench_server_session as session
 
 class ServerSessionTests(unittest.TestCase):
     def simulate(self, data=b"STOP\n", poll=None, busy=False, watchdog=False,
-                 persistent=False):
+                 persistent=False, cache_ram_mib=None):
         child = MagicMock(pid=43210, returncode=0)
         child.poll.return_value = poll
         socket = MagicMock()
@@ -41,25 +41,29 @@ class ServerSessionTests(unittest.TestCase):
                 patch("time.monotonic", side_effect=now), \
                 patch("time.sleep"), \
                 patch("sys.stdin", MagicMock()), \
+                patch("sys.argv", ["python"]), \
                 patch("sys.stdout", output):
             if busy:
                 with self.assertRaises(OSError):
-                    exec(session.REMOTE_CODE, {})
+                    exec(session.remote_code(cache_ram_mib), {})
                 start.assert_not_called()
                 killed.assert_not_called()
             elif persistent:
                 with self.assertRaisesRegex(RuntimeError, "still present"):
-                    exec(session.REMOTE_CODE, {})
+                    exec(session.remote_code(cache_ram_mib), {})
                 killed.assert_any_call(43210, signal.SIGKILL)
                 self.assertIn('"owned_group_absent": false', output.getvalue())
             else:
-                exec(session.REMOTE_CODE, {})
+                exec(session.remote_code(cache_ram_mib), {})
                 self.assertTrue(start.call_args.kwargs["start_new_session"])
                 self.assertEqual(start.call_args.args[0], [
                     "/Applications/Ollama.app/Contents/Resources/ollama", "serve"])
                 self.assertEqual(start.call_args.kwargs["env"]["OLLAMA_HOST"],
                                  "127.0.0.1:11435")
                 self.assertEqual(start.call_args.kwargs["env"]["OLLAMA_NOPRUNE"], "1")
+                if cache_ram_mib == 0:
+                    self.assertEqual(start.call_args.kwargs['env']['LLAMA_ARG_CACHE_RAM'], '0')
+                    self.assertIn('"LLAMA_ARG_CACHE_RAM": "0"', output.getvalue())
                 killed.assert_any_call(43210, signal.SIGTERM)
                 self.assertIn('"owned_group_absent": true', output.getvalue())
         return output.getvalue()
@@ -81,6 +85,15 @@ class ServerSessionTests(unittest.TestCase):
 
     def test_persistent_group_fails_after_kill(self):
         self.simulate(persistent=True)
+
+    def test_cache_disable_only_owned_service_environment(self):
+        self.simulate(cache_ram_mib=0)
+        command = session.ssh_command(0)
+        self.assertEqual(shlex.split(command[-1]), ['python3', '-B', '-c', session.remote_code(0)])
+        self.assertIn('CACHE_RAM_MIB = 0', session.remote_code(0))
+        for invalid in (-1, 1, 8192, '0', False):
+            with self.assertRaises(ValueError):
+                session.ssh_command(invalid)
 
     def test_ssh_quoting_and_options(self):
         command = session.ssh_command()

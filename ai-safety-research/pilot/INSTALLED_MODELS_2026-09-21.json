@@ -1,0 +1,249 @@
+{
+  "controller_observed_unix": 1789967510.719855,
+  "target": "prabs@100.74.220.25",
+  "observation": {
+    "resources": {
+      "captured_unix": 1789967510.672045,
+      "pressure_level": 1,
+      "free_percent": 45,
+      "swap_used_bytes": 8953392005,
+      "swapouts_bytes": 38187892736
+    },
+    "chip": "Apple M4",
+    "memory_bytes": 17179869184,
+    "models": [
+      {
+        "name": "llama3.2:3b",
+        "exists": true,
+        "manifest_sha256": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+        "config": {
+          "model_format": "gguf",
+          "model_family": "llama",
+          "model_families": [
+            "llama"
+          ],
+          "model_type": "3.2B",
+          "file_type": "Q4_K_M",
+          "architecture": "amd64",
+          "os": "linux",
+          "rootfs": {
+            "type": "layers",
+            "diff_ids": [
+              "sha256:dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff",
+              "sha256:966de95ca8a62200913e3f8bfbf84c8494536f1b94b49166851e76644e966396",
+              "sha256:fcc5a6bec9daf9b561a68827b67ab6088e1dba9d1fa2a50d7bbcc8384e0a265d",
+              "sha256:a70ff7e570d97baaf4e62ac6e6ad9975e04caa6d900d3742d37698494479e0cd",
+              "sha256:56bb8bd477a519ffa694fc449c2413c6f0e1d3b1c88fa7e3c9d88d3ae49d4dcb"
+            ]
+          }
+        },
+        "layers": [
+          {
+            "mediaType": "application/vnd.ollama.image.model",
+            "digest": "sha256:dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff",
+            "manifest_size": 2019377376,
+            "exists": true,
+            "file_bytes": 2019377376
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.template",
+            "digest": "sha256:966de95ca8a62200913e3f8bfbf84c8494536f1b94b49166851e76644e966396",
+            "manifest_size": 1429,
+            "exists": true,
+            "file_bytes": 1429
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.license",
+            "digest": "sha256:fcc5a6bec9daf9b561a68827b67ab6088e1dba9d1fa2a50d7bbcc8384e0a265d",
+            "manifest_size": 7711,
+            "exists": true,
+            "file_bytes": 7711
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.license",
+            "digest": "sha256:a70ff7e570d97baaf4e62ac6e6ad9975e04caa6d900d3742d37698494479e0cd",
+            "manifest_size": 6016,
+            "exists": true,
+            "file_bytes": 6016
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.params",
+            "digest": "sha256:56bb8bd477a519ffa694fc449c2413c6f0e1d3b1c88fa7e3c9d88d3ae49d4dcb",
+            "manifest_size": 96,
+            "exists": true,
+            "file_bytes": 96
+          }
+        ]
+      },
+      {
+        "name": "qwen3.5:4b",
+        "exists": true,
+        "manifest_sha256": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "config": {
+          "model_format": "gguf",
+          "model_family": "qwen35",
+          "model_families": [
+            "qwen35"
+          ],
+          "model_type": "4.7B",
+          "file_type": "Q4_K_M",
+          "renderer": "qwen3.5",
+          "parser": "qwen3.5",
+          "requires": "0.17.1",
+          "architecture": "amd64",
+          "os": "linux",
+          "rootfs": {
+            "type": "layers",
+            "diff_ids": [
+              "sha256:81fb60c7daa80fc1123380b98970b320ae233409f0f71a72ed7b9b0d62f40490",
+              "sha256:7339fa418c9ad3e8e12e74ad0fd26a9cc4be8703f9c110728a992b193be85cb2",
+              "sha256:9371364b27a52acac9d87f88bd93c9db1174d8d6ec57f6888925cdc1788871ff"
+            ]
+          }
+        },
+        "layers": [
+          {
+            "mediaType": "application/vnd.ollama.image.model",
+            "digest": "sha256:81fb60c7daa80fc1123380b98970b320ae233409f0f71a72ed7b9b0d62f40490",
+            "manifest_size": 3389971840,
+            "exists": true,
+            "file_bytes": 3389971840
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.license",
+            "digest": "sha256:7339fa418c9ad3e8e12e74ad0fd26a9cc4be8703f9c110728a992b193be85cb2",
+            "manifest_size": 11355,
+            "exists": true,
+            "file_bytes": 11355
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.params",
+            "digest": "sha256:9371364b27a52acac9d87f88bd93c9db1174d8d6ec57f6888925cdc1788871ff",
+            "manifest_size": 65,
+            "exists": true,
+            "file_bytes": 65
+          }
+        ]
+      },
+      {
+        "name": "gemma3:12b",
+        "exists": true,
+        "manifest_sha256": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+        "config": {
+          "model_format": "gguf",
+          "model_family": "gemma3",
+          "model_families": [
+            "gemma3"
+          ],
+          "model_type": "12.2B",
+          "file_type": "Q4_K_M",
+          "architecture": "amd64",
+          "os": "linux",
+          "rootfs": {
+            "type": "layers",
+            "diff_ids": [
+              "sha256:e8ad13eff07a78d89926e9e8b882317d082ef5bf9768ad7b50fcdbbcd63748de",
+              "sha256:e0a42594d802e5d31cdc786deb4823edb8adff66094d49de8fffe976d753e348",
+              "sha256:dd084c7d92a3c1c14cc09ae77153b903fd2024b64a100a0cc8ec9316063d2dbc",
+              "sha256:3116c52250752e00dd06b16382e952bd33c34fd79fc4fe3a5d2c77cf7de1b14b"
+            ]
+          }
+        },
+        "layers": [
+          {
+            "mediaType": "application/vnd.ollama.image.model",
+            "digest": "sha256:e8ad13eff07a78d89926e9e8b882317d082ef5bf9768ad7b50fcdbbcd63748de",
+            "manifest_size": 8149180896,
+            "exists": true,
+            "file_bytes": 8149180896
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.template",
+            "digest": "sha256:e0a42594d802e5d31cdc786deb4823edb8adff66094d49de8fffe976d753e348",
+            "manifest_size": 358,
+            "exists": true,
+            "file_bytes": 358
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.license",
+            "digest": "sha256:dd084c7d92a3c1c14cc09ae77153b903fd2024b64a100a0cc8ec9316063d2dbc",
+            "manifest_size": 8432,
+            "exists": true,
+            "file_bytes": 8432
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.params",
+            "digest": "sha256:3116c52250752e00dd06b16382e952bd33c34fd79fc4fe3a5d2c77cf7de1b14b",
+            "manifest_size": 77,
+            "exists": true,
+            "file_bytes": 77
+          }
+        ]
+      },
+      {
+        "name": "mistral:latest",
+        "exists": true,
+        "manifest_sha256": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+        "config": {
+          "model_format": "gguf",
+          "model_family": "llama",
+          "model_families": [
+            "llama"
+          ],
+          "model_type": "7.2B",
+          "file_type": "Q4_K_M",
+          "architecture": "amd64",
+          "os": "linux",
+          "rootfs": {
+            "type": "layers",
+            "diff_ids": [
+              "sha256:f5074b1221da0f5a2910d33b642efa5b9eb58cfdddca1c79e16d7ad28aa2b31f",
+              "sha256:43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+              "sha256:c43332387573e98fdfad4a606171279955b53d891ba2500552c2984a6560ffb4",
+              "sha256:ed11eda7790d05b49395598a42b155812b17e263214292f7b87d15e14003d337"
+            ]
+          }
+        },
+        "layers": [
+          {
+            "mediaType": "application/vnd.ollama.image.model",
+            "digest": "sha256:f5074b1221da0f5a2910d33b642efa5b9eb58cfdddca1c79e16d7ad28aa2b31f",
+            "manifest_size": 4372811712,
+            "exists": true,
+            "file_bytes": 4372811712
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.license",
+            "digest": "sha256:43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+            "manifest_size": 11356,
+            "exists": true,
+            "file_bytes": 11356
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.template",
+            "digest": "sha256:1ff5b64b61b9a63146475a24f70d3ca2fd6fdeec44247987163479968896fc0b",
+            "manifest_size": 799,
+            "exists": true,
+            "file_bytes": 799
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.params",
+            "digest": "sha256:ed11eda7790d05b49395598a42b155812b17e263214292f7b87d15e14003d337",
+            "manifest_size": 30,
+            "exists": true,
+            "file_bytes": 30
+          }
+        ]
+      }
+    ],
+    "ports": {
+      "11434": {
+        "listening": false
+      },
+      "11435": {
+        "listening": false
+      }
+    }
+  },
+  "model_requests": 0
+}

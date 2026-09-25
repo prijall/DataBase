@@ -1,0 +1,518 @@
+{
+  "clean_audit_blockers": [],
+  "cross_model_prompt_mismatches": [],
+  "historical_questions_hash_recipe": "Pinned run_eval.py hashes raw input bytes; release mismatch is retained explicitly",
+  "models": {
+    "anthropic/claude-3.5-haiku": {
+      "counts": {
+        "flags/authority/skipped=False/missing=False": 1800,
+        "flags/baseline/skipped=False/missing=False": 1800,
+        "flags/correct_suggest/skipped=False/missing=False": 463,
+        "flags/correct_suggest/skipped=False/missing=True": 6,
+        "flags/correct_suggest/skipped=True/missing=False": 1330,
+        "flags/correct_suggest/skipped=True/missing=True": 1,
+        "flags/doubt/skipped=False/missing=False": 1800,
+        "flags/wrong_suggest/skipped=False/missing=False": 1800,
+        "historical_questions_hash_mismatch": 1,
+        "records/authority": 1800,
+        "records/baseline": 1800,
+        "records/correct_suggest": 1800,
+        "records/doubt": 1800,
+        "records/wrong_suggest": 1800,
+        "reparsed/authority": 1800,
+        "reparsed/baseline": 1800,
+        "reparsed/correct_suggest": 463,
+        "reparsed/doubt": 1800,
+        "reparsed/wrong_suggest": 1800,
+        "unparsed/authority": 40,
+        "unparsed/baseline": 15,
+        "unparsed/correct_suggest": 8,
+        "unparsed/doubt": 36,
+        "unparsed/wrong_suggest": 25
+      },
+      "incomplete_variant_sets": {},
+      "issues": [
+        {
+          "condition": null,
+          "kind": "historical_questions_hash_mismatch",
+          "question_id": null,
+          "release": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d",
+          "stored": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+          "variant_id": null
+        }
+      ],
+      "metadata": {
+        "base_url": "https://openrouter.ai/api/v1",
+        "max_tokens": 128,
+        "model": "anthropic/claude-3.5-haiku",
+        "model_config": {
+          "api_key_env": "OPENROUTER_API_KEY",
+          "base_url": "https://openrouter.ai/api/v1",
+          "name": "anthropic/claude-3.5-haiku",
+          "provider": "openai_compatible"
+        },
+        "n_questions": 600,
+        "parser_version": "last_standalone_letter_v2_case_sensitive",
+        "provider": "openai_compatible",
+        "questions_sha256": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+        "run_id": "anthropic/claude-3.5-haiku_20260104_135156_f52c58bb",
+        "schema_version": "sycobench.v3",
+        "seed": 0,
+        "temperature": 0.0,
+        "variants": 3
+      },
+      "missing_released_question_ids": [],
+      "model": "anthropic/claude-3.5-haiku",
+      "n_items": 1800,
+      "n_questions": 600
+    },
+    "anthropic/claude-sonnet-4": {
+      "counts": {
+        "flags/authority/skipped=False/missing=False": 1800,
+        "flags/baseline/skipped=False/missing=False": 1800,
+        "flags/correct_suggest/skipped=False/missing=False": 140,
+        "flags/correct_suggest/skipped=False/missing=True": 18,
+        "flags/correct_suggest/skipped=True/missing=False": 1642,
+        "flags/doubt/skipped=False/missing=False": 1800,
+        "flags/wrong_suggest/skipped=False/missing=False": 1800,
+        "historical_questions_hash_mismatch": 1,
+        "records/authority": 1800,
+        "records/baseline": 1800,
+        "records/correct_suggest": 1800,
+        "records/doubt": 1800,
+        "records/wrong_suggest": 1800,
+        "reparsed/authority": 1800,
+        "reparsed/baseline": 1800,
+        "reparsed/correct_suggest": 140,
+        "reparsed/doubt": 1800,
+        "reparsed/wrong_suggest": 1800,
+        "unparsed/authority": 111,
+        "unparsed/baseline": 78,
+        "unparsed/correct_suggest": 37,
+        "unparsed/doubt": 79,
+        "unparsed/wrong_suggest": 89
+      },
+      "incomplete_variant_sets": {},
+      "issues": [
+        {
+          "condition": null,
+          "kind": "historical_questions_hash_mismatch",
+          "question_id": null,
+          "release": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d",
+          "stored": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+          "variant_id": null
+        }
+      ],
+      "metadata": {
+        "base_url": "https://openrouter.ai/api/v1",
+        "max_tokens": 128,
+        "model": "anthropic/claude-sonnet-4",
+        "model_config": {
+          "api_key_env": "OPENROUTER_API_KEY",
+          "base_url": "https://openrouter.ai/api/v1",
+          "name": "anthropic/claude-sonnet-4",
+          "provider": "openai_compatible"
+        },
+        "n_questions": 600,
+        "parser_version": "last_standalone_letter_v2_case_sensitive",
+        "provider": "openai_compatible",
+        "questions_sha256": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+        "run_id": "anthropic/claude-sonnet-4_20260104_135155_152dd912",
+        "schema_version": "sycobench.v3",
+        "seed": 0,
+        "temperature": 0.0,
+        "variants": 3
+      },
+      "missing_released_question_ids": [],
+      "model": "anthropic/claude-sonnet-4",
+      "n_items": 1800,
+      "n_questions": 600
+    },
+    "google/gemini-2.5-flash": {
+      "counts": {
+        "flags/authority/skipped=False/missing=False": 1800,
+        "flags/baseline/skipped=False/missing=False": 1800,
+        "flags/correct_suggest/skipped=False/missing=False": 81,
+        "flags/correct_suggest/skipped=True/missing=False": 1719,
+        "flags/doubt/skipped=False/missing=False": 1800,
+        "flags/wrong_suggest/skipped=False/missing=False": 1800,
+        "historical_questions_hash_mismatch": 1,
+        "records/authority": 1800,
+        "records/baseline": 1800,
+        "records/correct_suggest": 1800,
+        "records/doubt": 1800,
+        "records/wrong_suggest": 1800,
+        "reparsed/authority": 1800,
+        "reparsed/baseline": 1800,
+        "reparsed/correct_suggest": 81,
+        "reparsed/doubt": 1800,
+        "reparsed/wrong_suggest": 1800,
+        "unparsed/authority": 3,
+        "unparsed/baseline": 3,
+        "unparsed/correct_suggest": 1,
+        "unparsed/doubt": 18,
+        "unparsed/wrong_suggest": 13
+      },
+      "incomplete_variant_sets": {},
+      "issues": [
+        {
+          "condition": null,
+          "kind": "historical_questions_hash_mismatch",
+          "question_id": null,
+          "release": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d",
+          "stored": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+          "variant_id": null
+        }
+      ],
+      "metadata": {
+        "base_url": "https://openrouter.ai/api/v1",
+        "max_tokens": null,
+        "model": "google/gemini-2.5-flash",
+        "model_config": {
+          "api_key_env": "OPENROUTER_API_KEY",
+          "base_url": "https://openrouter.ai/api/v1",
+          "extra_body": {
+            "provider": {
+              "allow_fallbacks": false,
+              "data_collection": "deny",
+              "only": [
+                "google-vertex"
+              ],
+              "require_parameters": true
+            }
+          },
+          "name": "google/gemini-2.5-flash",
+          "provider": "openai_compatible"
+        },
+        "n_questions": 600,
+        "parser_version": "last_standalone_letter_v2_case_sensitive",
+        "provider": "openai_compatible",
+        "questions_sha256": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+        "run_id": "google/gemini-2.5-flash_20260104_104353_a19056ed",
+        "schema_version": "sycobench.v3",
+        "seed": 0,
+        "temperature": 0.0,
+        "variants": 3
+      },
+      "missing_released_question_ids": [],
+      "model": "google/gemini-2.5-flash",
+      "n_items": 1800,
+      "n_questions": 600
+    },
+    "gpt-4o": {
+      "counts": {
+        "flags/authority/skipped=False/missing=False": 1800,
+        "flags/baseline/skipped=False/missing=False": 1800,
+        "flags/correct_suggest/skipped=False/missing=False": 282,
+        "flags/correct_suggest/skipped=True/missing=False": 1518,
+        "flags/doubt/skipped=False/missing=False": 1800,
+        "flags/wrong_suggest/skipped=False/missing=False": 1800,
+        "historical_questions_hash_mismatch": 1,
+        "records/authority": 1800,
+        "records/baseline": 1800,
+        "records/correct_suggest": 1800,
+        "records/doubt": 1800,
+        "records/wrong_suggest": 1800,
+        "reparsed/authority": 1800,
+        "reparsed/baseline": 1800,
+        "reparsed/correct_suggest": 282,
+        "reparsed/doubt": 1800,
+        "reparsed/wrong_suggest": 1800,
+        "unparsed/authority": 0,
+        "unparsed/baseline": 0,
+        "unparsed/correct_suggest": 0,
+        "unparsed/doubt": 3,
+        "unparsed/wrong_suggest": 0
+      },
+      "incomplete_variant_sets": {},
+      "issues": [
+        {
+          "condition": null,
+          "kind": "historical_questions_hash_mismatch",
+          "question_id": null,
+          "release": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d",
+          "stored": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+          "variant_id": null
+        }
+      ],
+      "metadata": {
+        "base_url": "https://api.openai.com/v1",
+        "max_tokens": null,
+        "model": "gpt-4o",
+        "model_config": {
+          "api_key_env": "OPENAI_API_KEY",
+          "base_url": "https://api.openai.com/v1",
+          "name": "gpt-4o",
+          "provider": "openai_compatible"
+        },
+        "n_questions": 600,
+        "parser_version": "last_standalone_letter_v2_case_sensitive",
+        "provider": "openai_compatible",
+        "questions_sha256": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+        "run_id": "gpt-4o_20260103_221038_34961b91",
+        "schema_version": "sycobench.v3",
+        "seed": 0,
+        "temperature": 0.0,
+        "variants": 3
+      },
+      "missing_released_question_ids": [],
+      "model": "gpt-4o",
+      "n_items": 1800,
+      "n_questions": 600
+    },
+    "gpt-4o-mini": {
+      "counts": {
+        "flags/authority/skipped=False/missing=False": 1800,
+        "flags/baseline/skipped=False/missing=False": 1800,
+        "flags/correct_suggest/skipped=False/missing=False": 355,
+        "flags/correct_suggest/skipped=True/missing=False": 1445,
+        "flags/doubt/skipped=False/missing=False": 1800,
+        "flags/wrong_suggest/skipped=False/missing=False": 1800,
+        "historical_questions_hash_mismatch": 1,
+        "records/authority": 1800,
+        "records/baseline": 1800,
+        "records/correct_suggest": 1800,
+        "records/doubt": 1800,
+        "records/wrong_suggest": 1800,
+        "reparsed/authority": 1800,
+        "reparsed/baseline": 1800,
+        "reparsed/correct_suggest": 355,
+        "reparsed/doubt": 1800,
+        "reparsed/wrong_suggest": 1800,
+        "unparsed/authority": 12,
+        "unparsed/baseline": 0,
+        "unparsed/correct_suggest": 1,
+        "unparsed/doubt": 22,
+        "unparsed/wrong_suggest": 4
+      },
+      "incomplete_variant_sets": {},
+      "issues": [
+        {
+          "condition": null,
+          "kind": "historical_questions_hash_mismatch",
+          "question_id": null,
+          "release": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d",
+          "stored": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+          "variant_id": null
+        }
+      ],
+      "metadata": {
+        "base_url": "https://api.openai.com/v1",
+        "max_tokens": null,
+        "model": "gpt-4o-mini",
+        "model_config": {
+          "api_key_env": "OPENAI_API_KEY",
+          "base_url": "https://api.openai.com/v1",
+          "name": "gpt-4o-mini",
+          "provider": "openai_compatible"
+        },
+        "n_questions": 600,
+        "parser_version": "last_standalone_letter_v2_case_sensitive",
+        "provider": "openai_compatible",
+        "questions_sha256": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+        "run_id": "gpt-4o-mini_20260103_221039_f941fbca",
+        "schema_version": "sycobench.v3",
+        "seed": 0,
+        "temperature": 0.0,
+        "variants": 3
+      },
+      "missing_released_question_ids": [],
+      "model": "gpt-4o-mini",
+      "n_items": 1800,
+      "n_questions": 600
+    },
+    "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
+      "counts": {
+        "flags/authority/skipped=False/missing=False": 1800,
+        "flags/baseline/skipped=False/missing=False": 1800,
+        "flags/correct_suggest/skipped=False/missing=False": 414,
+        "flags/correct_suggest/skipped=False/missing=True": 175,
+        "flags/correct_suggest/skipped=True/missing=False": 1211,
+        "flags/doubt/skipped=False/missing=False": 1800,
+        "flags/wrong_suggest/skipped=False/missing=False": 1800,
+        "historical_questions_hash_mismatch": 1,
+        "records/authority": 1800,
+        "records/baseline": 1800,
+        "records/correct_suggest": 1800,
+        "records/doubt": 1800,
+        "records/wrong_suggest": 1800,
+        "reparsed/authority": 1800,
+        "reparsed/baseline": 1800,
+        "reparsed/correct_suggest": 414,
+        "reparsed/doubt": 1800,
+        "reparsed/wrong_suggest": 1800,
+        "unparsed/authority": 287,
+        "unparsed/baseline": 333,
+        "unparsed/correct_suggest": 104,
+        "unparsed/doubt": 271,
+        "unparsed/wrong_suggest": 222
+      },
+      "incomplete_variant_sets": {},
+      "issues": [
+        {
+          "condition": null,
+          "kind": "historical_questions_hash_mismatch",
+          "question_id": null,
+          "release": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d",
+          "stored": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+          "variant_id": null
+        }
+      ],
+      "metadata": {
+        "base_url": "https://api.together.xyz/v1",
+        "max_tokens": 128,
+        "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+        "model_config": {
+          "api_key_env": "TOGETHER_API_KEY",
+          "base_url": "https://api.together.xyz/v1",
+          "name": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+          "provider": "openai_compatible"
+        },
+        "n_questions": 600,
+        "parser_version": "last_standalone_letter_v2_case_sensitive",
+        "provider": "openai_compatible",
+        "questions_sha256": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+        "run_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8_20260104_135154_ef276783",
+        "schema_version": "sycobench.v3",
+        "seed": 0,
+        "temperature": 0.0,
+        "variants": 3
+      },
+      "missing_released_question_ids": [],
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "n_items": 1800,
+      "n_questions": 600
+    },
+    "mistralai/Mistral-7B-Instruct-v0.3": {
+      "counts": {
+        "flags/authority/skipped=False/missing=False": 1665,
+        "flags/baseline/skipped=False/missing=False": 1665,
+        "flags/correct_suggest/skipped=False/missing=False": 594,
+        "flags/correct_suggest/skipped=False/missing=True": 18,
+        "flags/correct_suggest/skipped=True/missing=False": 1053,
+        "flags/doubt/skipped=False/missing=False": 1665,
+        "flags/wrong_suggest/skipped=False/missing=False": 1665,
+        "historical_questions_hash_mismatch": 1,
+        "records/authority": 1665,
+        "records/baseline": 1665,
+        "records/correct_suggest": 1665,
+        "records/doubt": 1665,
+        "records/wrong_suggest": 1665,
+        "reparsed/authority": 1665,
+        "reparsed/baseline": 1665,
+        "reparsed/correct_suggest": 594,
+        "reparsed/doubt": 1665,
+        "reparsed/wrong_suggest": 1665,
+        "unparsed/authority": 21,
+        "unparsed/baseline": 0,
+        "unparsed/correct_suggest": 0,
+        "unparsed/doubt": 44,
+        "unparsed/wrong_suggest": 3
+      },
+      "incomplete_variant_sets": {},
+      "issues": [
+        {
+          "condition": null,
+          "kind": "historical_questions_hash_mismatch",
+          "question_id": null,
+          "release": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d",
+          "stored": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+          "variant_id": null
+        }
+      ],
+      "metadata": {
+        "base_url": "https://api.together.xyz/v1",
+        "max_tokens": 128,
+        "model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "model_config": {
+          "api_key_env": "TOGETHER_API_KEY",
+          "base_url": "https://api.together.xyz/v1",
+          "name": "mistralai/Mistral-7B-Instruct-v0.3",
+          "provider": "openai_compatible"
+        },
+        "n_questions": 555,
+        "parser_version": "last_standalone_letter_v2_case_sensitive",
+        "provider": "openai_compatible",
+        "questions_sha256": "3c2d71f250f32b9f5f8885d2881439605460a3dd84713b9fdfe122c2bb5078f5",
+        "run_id": "mistralai/Mistral-7B-Instruct-v0.3_20260104_135154_82bcb4fc",
+        "schema_version": "sycobench.v3",
+        "seed": 0,
+        "temperature": 0.0,
+        "variants": 3
+      },
+      "missing_released_question_ids": [
+        "analogies_10",
+        "analogies_14",
+        "analogies_15",
+        "analogies_19",
+        "analogies_24",
+        "analogies_26",
+        "analogies_30",
+        "analogies_33",
+        "analogies_35",
+        "analogies_38",
+        "analogies_39",
+        "analogies_41",
+        "analogies_43",
+        "analogies_46",
+        "analogies_47",
+        "analogies_48",
+        "analogies_49",
+        "analogies_52",
+        "analogies_54",
+        "analogies_55",
+        "analogies_57",
+        "analogies_62",
+        "analogies_63",
+        "analogies_67",
+        "analogies_69",
+        "analogies_71",
+        "analogies_73",
+        "basic_math_1",
+        "basic_math_11",
+        "basic_math_16",
+        "basic_math_21",
+        "basic_math_26",
+        "basic_math_31",
+        "basic_math_36",
+        "basic_math_41",
+        "basic_math_46",
+        "basic_math_51",
+        "basic_math_56",
+        "basic_math_6",
+        "basic_math_61",
+        "basic_math_66",
+        "basic_math_71",
+        "word_problems_1",
+        "word_problems_11",
+        "word_problems_6"
+      ],
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "n_items": 1665,
+      "n_questions": 555
+    }
+  },
+  "question_metadata_check": "Artifact consistency only, not independent human verification of gold answers",
+  "score_policy": "Official stored flags/parses are unchanged; reparse and metadata checks are separate audits",
+  "upstream_validation": {
+    "exact_match": true,
+    "released": {
+      "errors": {
+        "mistralai/Mistral-7B-Instruct-v0.3": [
+          "Missing 45 question_ids: ['analogies_10', 'analogies_14', 'analogies_15', 'analogies_19', 'analogies_24', 'analogies_26', 'analogies_30', 'analogies_33', 'analogies_35', 'analogies_38']..."
+        ]
+      },
+      "global_errors": [],
+      "strict": false
+    },
+    "reproduced": {
+      "errors": {
+        "mistralai/Mistral-7B-Instruct-v0.3": [
+          "Missing 45 question_ids: ['analogies_10', 'analogies_14', 'analogies_15', 'analogies_19', 'analogies_24', 'analogies_26', 'analogies_30', 'analogies_33', 'analogies_35', 'analogies_38']..."
+        ]
+      },
+      "global_errors": [],
+      "strict": false
+    }
+  }
+}

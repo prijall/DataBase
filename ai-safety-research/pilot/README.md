@@ -16,7 +16,9 @@ The [2,048-token session](results/2026-09-21-processbench-small-context/README.m
 
 The new calibration has six used and fourteen unattempted cases; the original twenty-case calibration is retired and all forty evaluation cases remain untouched. The error class has one match in four observed cases, leaving at most seven matches out of ten even if every remaining case succeeded—below the fixed eight-match gate. The actual stop was resource pressure and the cohort remains incomplete; this arithmetic is not a completed accuracy estimate. Fixing memory alone cannot rescue that gate.
 
-The screen is closed. No automatic retry or configuration change is authorized. Next work is targeted runtime/cache investigation and human review of the six outputs, preserving primary scores. The [implementation guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) retains the executed configuration and reproduction commands, not an instruction to restart.
+The screen is closed. No automatic retry or configuration change is authorized. The separate cache investigation is now closed; next work is offline design and human review of the six outputs, preserving primary scores. The [implementation guide](PROCESSBENCH_SMALL_CONTEXT_IMPLEMENTATION.md) retains the executed configuration and reproduction commands, not an instruction to restart.
+
+A separate [runtime diagnostic protocol](RUNTIME_CACHE_DIAGNOSTIC_PROTOCOL.md) permits at most four synthetic one-token requests to check a cache setting identified in the [source audit](RUNTIME_MEMORY_AUDIT_2026-09-21.md). It uses no benchmark cases and cannot pass an accuracy gate. The [executed diagnostic](results/2026-09-21-runtime-cache-diagnostic/README.md) stopped after one non-generating load: cache disabling took effect, but pressure reached level 2 and free memory fell to 19%. Zero new completions were generated and cleanup is verified. Office workload was not changed; further M4 loading and larger-model trials are deferred.
 
 ## Original ProcessBench local execution (reproduction reference)
 

@@ -1,0 +1,4 @@
+# Preserve the archived CSV bytes (including csv.writer's CRLF) and their hashes.
+results/**/main_results.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# The review packet includes verbatim source responses, including trailing spaces.
+results/**/review_packet.md -text -whitespace

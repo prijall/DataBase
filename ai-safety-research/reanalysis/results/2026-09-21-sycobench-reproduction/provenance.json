@@ -1,0 +1,163 @@
+{
+  "adapter_sha256": "2e909ecad6e52a08e457f1574884b820533d9e71b48b23d7b3daec447586ae34",
+  "attribution": "Debu Sinha; upstream code MIT, released data/logs/tables CC BY 4.0",
+  "bootstrap": {
+    "cluster": "question_id in first-appearance order after intersection",
+    "percentile_indices": [
+      50,
+      1950
+    ],
+    "replicates": 2000,
+    "seeds": {
+      "pra_all": 2,
+      "stub_no_change": 1,
+      "syco": 0
+    },
+    "undefined_replicates": "retained and sorted last"
+  },
+  "git_commit": "b4e0a27cd9d1575e572f1184c513eade2bb8bd0a",
+  "input_files": {
+    "DATA_LICENSE": {
+      "bytes": 457,
+      "git_blob_sha1": "e19dff7fed7acec666c434a63bccd397b45b8d8a",
+      "sha256": "fd8386ca277bcf4ae78b1d1d772c04e0366f502174935b9884dbca62371b0ce6"
+    },
+    "LICENSE": {
+      "bytes": 1067,
+      "git_blob_sha1": "9e9b2c4d030034e5c136760f95d6f3be509ea28a",
+      "sha256": "32eb8448ce3f9b52e85cc2e7548ed268ff843b05b91f43303ed219a12cb5176d"
+    },
+    "NOTICE.md": {
+      "bytes": 1112,
+      "git_blob_sha1": "a6be9006a44ad896e8ef196e8373d85cef21a91f",
+      "sha256": "afe96dcee50c4e01e2c97861edee671ae28dfb7ed0875fcf5ba46a4173c18c14"
+    },
+    "build/camera_ready/tables/main_results.csv": {
+      "bytes": 2444,
+      "git_blob_sha1": "3e0fff738fb36e600f837932700619b9b2c4de51",
+      "sha256": "468cca2e67057489bab8b19e68a051388d2ab4ffdb0c5e2a42dc73d6600c731f"
+    },
+    "build/camera_ready/validation_report.json": {
+      "bytes": 310,
+      "git_blob_sha1": "0f0c3f9af1336cd76e548ba8039e2f08eb27baf0",
+      "sha256": "d652edb1d7dfd26e2e8368110ddfe08ea50c088e435503e9ef70750a6002aaa4"
+    },
+    "data/questions.json": {
+      "bytes": 287224,
+      "git_blob_sha1": "0d3e8d6760b27ba362b2b8b837c075baa86e1c06",
+      "sha256": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d"
+    },
+    "docs/DATA_CARD.md": {
+      "bytes": 1813,
+      "git_blob_sha1": "0b82435f34069514961dfa4197d2da9324854262",
+      "sha256": "a84a3fe3dbddbbe37c13682203b19f391bbac5c3f24ce1000f5fbb6f2ae9413c"
+    },
+    "docs/METRICS.md": {
+      "bytes": 1354,
+      "git_blob_sha1": "f3bd5c4bbdca776c4b50b2977cd8d4b9276a585b",
+      "sha256": "d87aacdf47382b8031e4c6d2c12f93b1f8e05c9b370f1d461acf1eeaa9ac2e0c"
+    },
+    "docs/REPRODUCIBILITY.md": {
+      "bytes": 2298,
+      "git_blob_sha1": "3b2a95bea63e8bb5f65f90fd363a5a8b06fc2f4e",
+      "sha256": "2da4f1356981550fcc2ac2b6df02208264cf23eca923643465b95b0394237d54"
+    },
+    "paper/sycobench_camera_ready.tex": {
+      "bytes": 26116,
+      "git_blob_sha1": "cb6432233b95c11c3b273eba8e96f04affa913e8",
+      "sha256": "731b865040653a61dce76caf4d524c78d957c77433af3423aef89fea187e1bac"
+    },
+    "results/raw_camera_ready/anthropic/claude-3.5-haiku.json": {
+      "bytes": 17488573,
+      "git_blob_sha1": "6c7ec6b3a8a2c49271ab457ae6b4973f4ec24caf",
+      "sha256": "5030c961ff59fd330868c5bb88a4fa5dd3d2471e00575ae27ade9fc307eebbc2"
+    },
+    "results/raw_camera_ready/anthropic/claude-sonnet-4.json": {
+      "bytes": 19590307,
+      "git_blob_sha1": "ff7d1a02220fe7b561fbc977f73117dc3615f491",
+      "sha256": "705d5ea1d1231738d1b5b1abaf03541fa512cde8dccb8052d29b52c4d3ec0b45"
+    },
+    "results/raw_camera_ready/google/gemini-2.5-flash.json": {
+      "bytes": 16122292,
+      "git_blob_sha1": "cd053f3516fd238d12165fc2415265e9be9e7aaf",
+      "sha256": "8cf05946190ecb1acdf2f88254cb9433261c0e15079b8503f7c77085735d57ec"
+    },
+    "results/raw_camera_ready/gpt-4o-mini.json": {
+      "bytes": 15042012,
+      "git_blob_sha1": "890abe5460e635cb599b4f0086aca757f2d24c70",
+      "sha256": "5d8eb6d5254ca6ce6e12ccae5b5ef32fa3ea57e8e14c81c03aac8fb840ec5ab1"
+    },
+    "results/raw_camera_ready/gpt-4o.json": {
+      "bytes": 14891788,
+      "git_blob_sha1": "6b453c3efda6da8752bc44ee5326fbd62cb61e7d",
+      "sha256": "292a7cb0d9a107f0887a148c0a6839c098d5afdd6d988c555637c90f8cdb19b8"
+    },
+    "results/raw_camera_ready/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8.json": {
+      "bytes": 18124045,
+      "git_blob_sha1": "48c81a5b2e173db9c0fa140ea09aa31c21acc99c",
+      "sha256": "3a5a8f260297b64cdae597893823ed726fd94c4001c6343b279edc5918f667d6"
+    },
+    "results/raw_camera_ready/mistralai/Mistral-7B-Instruct-v0.3.json": {
+      "bytes": 13730979,
+      "git_blob_sha1": "dc8b61faddf80f2d182b2d01acd74cb3c19d7777",
+      "sha256": "6a9a5d870cec554890f301936fd4ccda56ce1369f689e0e44e70cb6219f1c8b2"
+    },
+    "scripts/run_eval.py": {
+      "bytes": 12614,
+      "git_blob_sha1": "9190d09e5462be9a12781d57e4b1491e93976dc0",
+      "sha256": "ab23ae2a086a85165d952c30359746c98b3727a73cac2061dda0c078f2964cfd"
+    },
+    "scripts/validate_and_build.py": {
+      "bytes": 8194,
+      "git_blob_sha1": "0c05c71c708022cbe3aaffe5fb5cfc04bbb57847",
+      "sha256": "a0e1ddd68df1b1516b5f94ec376db7e0f7099a4c619cb38121a04bd9285d3ed2"
+    },
+    "scripts/validate_paper_full.py": {
+      "bytes": 6533,
+      "git_blob_sha1": "20d556c80e356bea1735920fe62bdea6a0b55770",
+      "sha256": "fd9fcebeb3957bbbc5d75e2797436358162a49f74f7aafe81eee01af0b69c031"
+    },
+    "sycobench/io.py": {
+      "bytes": 766,
+      "git_blob_sha1": "2cc9eb3f4c1a40cc7629dc04db259b076e9fd789",
+      "sha256": "d35d4e0ecf84e1cee4be89be63c8b10613fe0383a12ceed6c11b21cbbaab92c0"
+    },
+    "sycobench/metrics.py": {
+      "bytes": 8623,
+      "git_blob_sha1": "6aafa720f64c2071c46a829fb994c71e71e5ee23",
+      "sha256": "996ce4e1818dd5a4e798913db782c708d659863c7412dc02c494949d145fb88b"
+    },
+    "sycobench/parse.py": {
+      "bytes": 1507,
+      "git_blob_sha1": "2c377f55f39193da7867c7c3b87baad20c655f21",
+      "sha256": "3199cf0a31d7d5026e5f66ef8c65ae2006b33ab704c7fd60ddf4dc712a275a70"
+    },
+    "sycobench/prompts.py": {
+      "bytes": 3255,
+      "git_blob_sha1": "a4b6648650554bc8001cec0e696c09c63fb79e0e",
+      "sha256": "d3bafef108dabd5a1987bcf8f4323b6c7b11ac0896127103c423f9e690c4b74f"
+    },
+    "sycobench/validate.py": {
+      "bytes": 3677,
+      "git_blob_sha1": "837f20c71396637975cae6f8cbc2d085dd7442a6",
+      "sha256": "74a3798c2386fafd0c12f9b777fbc7eceb9bee7660f86f241e3203b13e81009e"
+    }
+  },
+  "model_requests": 0,
+  "network_requests": 0,
+  "output_sha256": {
+    "analysis.json": "87fe3f4426bb1c518daff976a5ed283d59e1252cd52ecbf9384b9c9da09abaaf",
+    "comparison.json": "9929b73344187dad20145917888ed60b111d654dc51cd2d10d7d595aaba765fa",
+    "main_results.csv": "821cab48878d764540b2cd3ed1ec0c0038e709f9d12eeb13eda04747078acf2f",
+    "status.json": "e7adc8abd09762dec58113da7e49dfc543d2c1a75fdb821e40c1669f30b6add2",
+    "validation.json": "0e0d896a43a7e6b3ce1d6e8b51fc8b8e8b3195c7d55508a3db39cdabf2f1191a"
+  },
+  "protocol_sha256": "6dd6b69180854ad7b07a9636fd43d2e7e802cf9779f377bbee5e60389ecfb104",
+  "python": "3.14.7",
+  "python_implementation": "CPython",
+  "release": "SycoBench v1.0.0",
+  "revision": "5193ce408bd73b401c4c5911f490e2bbad84a082",
+  "tests_sha256": "b0e2562ed72ab5f7f50d6e21a47c1d60433bd14929f9f1c337e401bd4ddd2b98",
+  "tree_sha256": "b20ab896157faa6c3984ec73b5abe16c4db6c9a32fae49b22b92d46c676e4c9e",
+  "upstream_code_executed": false
+}

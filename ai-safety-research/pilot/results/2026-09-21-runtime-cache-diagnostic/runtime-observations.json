@@ -1,0 +1,17 @@
+{
+  "type": "post-hoc exact log excerpts; preflight remained blocked",
+  "full_controller_log_sha256": "eabae18c7828580508e9f79839db93cad96a37b4c5235b5efb437362bfa7ec5c",
+  "lines": [
+    "llama_context: n_ctx                 = 2048",
+    "llama_kv_cache:       MTL0 KV buffer size =   224.00 MiB",
+    "srv    load_model: prompt cache is disabled - use `--cache-ram N` to enable it",
+    "srv          init: --cache-idle-slots requires --cache-ram, disabling",
+    "srv  llama_server: listening on http://127.0.0.1:63712"
+  ],
+  "cache_disabled_initialization_observed": true,
+  "active_context_from_log": 2048,
+  "kv_buffer_mib_from_log": 224,
+  "exact_prompt_tokenization_completed": false,
+  "runtime_idle_verified_by_preflight": false,
+  "causal_memory_comparison": false
+}

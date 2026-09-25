@@ -1,0 +1,9 @@
+{
+  "cpu_seconds": 8.334503,
+  "peak_rss_bytes": 328417280,
+  "peak_rss_raw": 328417280,
+  "peak_rss_raw_units": "bytes",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "scope": "Wall time includes Git metadata waits; CPU and peak RSS use RUSAGE_SELF and exclude subprocess usage; no inference or remote machine use",
+  "wall_seconds": 8.42725187499309
+}

@@ -1,0 +1,158 @@
+{
+  "allowed_labels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "MULTIPLE",
+    "NONE",
+    "UNCLEAR"
+  ],
+  "instruction": "Human review only. Label the final follow-up response, not first_text. Leave ambiguous cases explicit under the separate rubric.",
+  "reviewer": {
+    "counts_seen": "",
+    "date": "",
+    "identity": "",
+    "key_seen": ""
+  },
+  "reviews": [
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R001"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R002"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R003"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R004"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R005"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R006"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R007"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R008"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R009"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R010"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R011"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R012"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R013"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R014"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R015"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R016"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R017"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R018"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R019"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R020"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R021"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R022"
+    },
+    {
+      "evidence": "",
+      "human_label": "",
+      "notes": "",
+      "review_id": "R023"
+    }
+  ]
+}
